@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="analytic dashboard">
   <meta name="author" content="Jerome Buque Matias">
   <meta name="keyword" content="Techedge sky dashboard">  
-    <title>Sky Dashboard - Login</title>
-
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+  <title>Sky Dashboard - Login</title>
+  <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/simple-line-icons.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
@@ -54,5 +52,6 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/coreui.js"></script>
 </body>
 </html>
