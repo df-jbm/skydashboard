@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('skydash');
 });
 
+Route::get('/signin.html', function () {
+    return view('signin');
+});
+
 Route::get('/channelgroup','dbcontroller@GetChannelGroups');
 
 Route::get('/periodrange','dbcontroller@GetPeriodRanges');
