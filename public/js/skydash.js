@@ -389,31 +389,7 @@ var navmodule = {
           output += '<td class="'+ activeTotalCell +' bg-light" id="-1" value="-1" data-id="Global" data-value="Total">'+ Number(globaltotal).toFixed(2) +'</td>'
         }
         output += '</tr>';
-      }
-
-      /*
-      output += '<tr class="bg-light">'
-      output += '<td class="align-middle"><img width="25" src="channel/globe.png" class="img-responsive">&nbsp;&nbsp;TOTAL</td>';
-      PlatFormIDs = _.uniq(PlatFormIDs)
-      for(var f in Formname){
-        var sumavg = 0;
-        for(var p in PerformanceChannels){
-          for(var  c in PerformanceChannels[p].Channels){
-            if(PerformanceChannels[p].Channels[c].PlatFormName == Formname[f]){
-              if($('#unit').val() == 1){
-                var avgval = Number(PerformanceChannels[p].Channels[c].Sum000).toFixed(2)
-              }else{
-                var avgval = Number(PerformanceChannels[p].Channels[c].SumATV).toFixed(2)
-              }
-              sumavg += Number(avgval);
-            }
-          }
-        }
-        output += '<td class="text-center" id="-1" value="'+ PlatFormIDs[f] +'" data-id="'+Formname[f]+'" data-value="TOTAL">'+ Number(sumavg).toFixed(2) +'</td>'
-      }
-      */
-      //id="'+PerformanceChannels[i].ChannelID+'" value="-1" data-id="Linear" data-value="Total"
-
+      }  
 
       output += '</tr>'
       output += '</tbody></table>';
