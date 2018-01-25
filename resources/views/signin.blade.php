@@ -40,7 +40,7 @@
               </div>
               <div class="row">
                 <div class="col-12 text-right">
-                    <button type="button" class="btn btn-primary px-4">Login</button>
+                    <button type="button" class="btn btn-primary px-4">Sign in</button>
                 </div>                
               </div>
             </div>
