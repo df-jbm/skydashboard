@@ -197,6 +197,9 @@ body main .row #performance-content .card .card-body .table-responsive{
   position: relative;  
   width: 100%;
 }
+#filterbmi{
+  padding-left: 20px;
+}
 #emptyfilter{ 
   display: inline-block;
   position: absolute;
