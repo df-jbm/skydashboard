@@ -201,6 +201,7 @@ body main .row #performance-content .card .card-body .table-responsive{
 }
 #emptyfilter{
   position: absolute;
-  top: 0;
-  right: 0;
+  position: top right;
+  width: 20px;
+  z-index: 10px;  
 }
