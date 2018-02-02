@@ -52,9 +52,9 @@
           <li class="nav-item">
             <label for="customperiod" class="small col-form-label  align-center">&nbsp;</label>
             <!-- <input type="text" id="customperiod" class="form-control form-control-sm"> -->
-            <div class="input-group mb-3">
+            <div class="filter-group">
               <input type="text" id="customperiod" class="form-control form-control-sm">
-              <button class="btn btn-sm btn-outline-secondary" type="button">x</button>
+              <button class="btn btn-sm btn-outline-secondary" id="emptyfilter" type="button">x</button>
             </div>
           </li>          
           <li class="nav-item">

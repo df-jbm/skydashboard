@@ -192,3 +192,14 @@ body main .row #performance-content .card .card-body .table-responsive{
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+#filter-group{
+  position: relative;  
+}
+#customperiod{
+  width: 100%;
+}
+#emptyfilter{
+  position: absolute;
+  position: top right;
+}
