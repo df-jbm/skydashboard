@@ -1346,7 +1346,11 @@ $(function(){
 
   })
   $('#emptyfilter').click(function(){
-    alert('test')
+    $(this).val('')
+    filterexist = false;
+    navmodule.ChannelPerformanceRequest()
+    $('.dropdown-content').hide();
+    $('#list').html('')
   })
   function parsedperiod(cperiod){
     var character = cperiod.charAt(2)
