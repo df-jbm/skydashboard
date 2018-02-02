@@ -197,21 +197,13 @@ body main .row #performance-content .card .card-body .table-responsive{
   position: relative;  
   width: auto;
 }
-#emptyfilter{
-  width: 12px;
-  height: 12px;
+#emptyfilter{ 
   display: inline-block;
   position: absolute;
   right: 8px;
   top: 4px;
   text-align: center;
-  background-color: #999999;
-  color: #FFFFFF;
-  font-size: 10px;
+  font-size: 14px;
   font-family: monospace;
-  border-radius: 10px;
-  -o-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
   cursor: pointer;
 }
