@@ -51,11 +51,7 @@
           </li>
           <li class="nav-item">
             <label for="customperiod" class="small col-form-label  align-center">&nbsp;</label>
-            <!-- <input type="text" id="customperiod" class="form-control form-control-sm"> -->
-            <div id="filter-group">
-              <input type="text" id="customperiod" class="form-control form-control-sm">
-              <span id="emptyfilter">x</span>              
-            </div>
+            <input type="text" id="customperiod" class="form-control form-control-sm">            
           </li>          
           <li class="nav-item">
             <label for="prev" class="small col-form-label  align-center">&nbsp;</label><br/>
@@ -77,7 +73,11 @@
           </li>
           <li class="nav-item dropdown">
             <label for="bmi" class="small col-form-label  align-center">Search Title or BMI</label>
-            <input type="text" id="filterbmi" class="form-control form-control-sm">
+            <!-- <input type="text" id="filterbmi" class="form-control form-control-sm"> -->
+            <div id="filter-group">
+              <input type="text" id="filterbmi" class="form-control form-control-sm">
+              <span id="emptyfilter">x</span>              
+            </div>
             <div class="dropdown-content">
               <ul id="list"><ul>
             </div>
