@@ -54,7 +54,7 @@
             <!-- <input type="text" id="customperiod" class="form-control form-control-sm"> -->
             <div id="filter-group">
               <input type="text" id="customperiod" class="form-control form-control-sm">
-              <button class="btn btn-sm btn-outline-secondary" id="emptyfilter" type="button">x</button>
+              <span id="emptyfilter">X</span>              
             </div>
           </li>          
           <li class="nav-item">
