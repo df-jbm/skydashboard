@@ -206,4 +206,5 @@ body main .row #performance-content .card .card-body .table-responsive{
   font-size: 14px;
   font-family: monospace;
   cursor: pointer;
+  font-weight: bolder;
 }
