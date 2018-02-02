@@ -55,7 +55,7 @@
             <div class="input-group mb-3">
               <input type="text" id="customperiod" class="form-control form-control-sm" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <button class="btn btn-sm btn-outline-secondary" type="button">Button</button>
+                <button class="btn btn-sm btn-outline-secondary" type="button">x</button>
               </div>
             </div>
           </li>          
