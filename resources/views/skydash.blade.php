@@ -53,8 +53,8 @@
             <label for="customperiod" class="small col-form-label  align-center">&nbsp;</label>
             <!-- <input type="text" id="customperiod" class="form-control form-control-sm"> -->
             <div id="filter-group">
-              <input type="text" id="customperiod" class="form-control form-control-sm">
-              <span id="emptyfilter">X</span>              
+              <input type="text" id="customperiod" class="form-control form-control-sm">              
+              <i id="emptyfilter" class="fas fa-times"></i>              
             </div>
           </li>          
           <li class="nav-item">
