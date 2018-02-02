@@ -195,7 +195,7 @@ body main .row #performance-content .card .card-body .table-responsive{
 
 #filter-group{
   position: relative;  
-  width: auto;
+  width: 100%;
 }
 #emptyfilter{ 
   display: inline-block;
