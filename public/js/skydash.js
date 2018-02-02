@@ -1345,6 +1345,9 @@ $(function(){
     }, 1000);
 
   })
+  $('#emptyfilter').click(function(){
+    alert('test')
+  })
   function parsedperiod(cperiod){
     var character = cperiod.charAt(2)
     if(cperiod.length == 4 && $.isNumeric(cperiod)){
