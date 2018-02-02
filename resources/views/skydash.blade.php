@@ -54,7 +54,7 @@
             <!-- <input type="text" id="customperiod" class="form-control form-control-sm"> -->
             <div id="filter-group">
               <input type="text" id="customperiod" class="form-control form-control-sm">              
-              <i id="emptyfilter" class="fa fa-times"></i>              
+              <i id="emptyfilter" class="fa fa-car"></i>              
             </div>
           </li>          
           <li class="nav-item">
