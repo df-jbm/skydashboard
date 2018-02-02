@@ -1346,7 +1346,7 @@ $(function(){
 
   })
   $('#emptyfilter').click(function(){
-    $(this).val('')
+    $('#filterbmi').val('')
     filterexist = false;
     navmodule.ChannelPerformanceRequest()
     $('.dropdown-content').hide();
