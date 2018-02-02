@@ -54,9 +54,7 @@
             <!-- <input type="text" id="customperiod" class="form-control form-control-sm"> -->
             <div class="input-group mb-3">
               <input type="text" id="customperiod" class="form-control form-control-sm">
-              <div class="input-group-append">
-                <button class="btn btn-sm btn-outline-secondary" type="button">x</button>
-              </div>
+              <button class="btn btn-sm btn-outline-secondary" type="button">x</button>
             </div>
           </li>          
           <li class="nav-item">
