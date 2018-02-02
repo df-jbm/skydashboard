@@ -52,7 +52,7 @@
           <li class="nav-item">
             <label for="customperiod" class="small col-form-label  align-center">&nbsp;</label>
             <!-- <input type="text" id="customperiod" class="form-control form-control-sm"> -->
-            <div class="btn-group mb-3">
+            <div class="input-group mb-3">
               <input type="text" id="customperiod" class="form-control form-control-sm">
               <div class="input-group-append">
                 <button class="btn btn-sm btn-outline-secondary" type="button">x</button>
