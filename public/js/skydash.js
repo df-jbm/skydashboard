@@ -504,10 +504,15 @@ var navmodule = {
         '</tr></thead><tbody>';
 
       for(var i in data){
+      if(PFormID != 2 && PFormID != 3 && PFormID != 4){
+        var programcount = '<td>'+data[i].CNT+'</td>';
+      }else{
+        var programcount;
+      }
       output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
           '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
           '<td>'+ data[i].BMICode +'</td>'+
-          '<td>'+data[i].CNT+'</td>'+
+          programcount +
           '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+
           '<td>'+ Number(data[i].SumATV).toFixed(2) +'</td>'+
         '</tr>';
