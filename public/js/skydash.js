@@ -307,7 +307,7 @@ var navmodule = {
 
               flag = true;
               console.log(delivered + "/" + $.inArray( activeChannel , GetChannelIDs ) + "/" + $.inArray( activePlatForm , GetPlatFormIDs ))
-              if(delivered == false && $.inArray( activeChannel , GetChannelIDs ) == -1 || $.inArray( activePlatForm , GetPlatFormIDs ) == -1){
+              if(delivered == false && $.inArray( activeChannel , GetChannelIDs ) != -1 || $.inArray( activePlatForm , GetPlatFormIDs ) != -1){
                 if(ChannelGroupID != 2000){
                   var ChGroupID = -1;
                   var ChID = PerformanceChannels[i].ChannelID
