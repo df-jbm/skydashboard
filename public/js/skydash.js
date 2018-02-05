@@ -29,6 +29,7 @@ var TrendingPeriod = 0;
 var TrendingPlatFormID = 0;
 var TrendingFilter = '';
 var channelgroupid = 0;
+var channelgroupid = 0;
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -1146,9 +1147,12 @@ $(function(){
     navmodule.ChannelPerformanceRequest()
   })
   $('#channelgroup').on('change',function(){
-    activeChannel = 0;
-    activePlatForm = 0;    
+    if(channelgroupid == 1 || $(this).val() == 1){
+      activeChannel = 0;
+      activePlatForm = 0; 
+    }   
     navmodule.ChannelPerformanceRequest()      
+    channelgroupid = $(this).val()
   })
   /*
   ===== Bind trigger for period range
