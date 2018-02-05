@@ -1321,6 +1321,8 @@ $(function(){
               $(this).click(function(){
                 $('#filterbmi').val($(this).data('value'))
                 filterexist = true
+                activeChannel = 0;
+                activePlatForm = 0;
                 navmodule.ChannelPerformanceRequest()
                 $('.dropdown-content').hide();
                 lilength = 0;
