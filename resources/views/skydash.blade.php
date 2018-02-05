@@ -127,6 +127,6 @@
     <script src="js/underscore-min.js"></script>
     <script src="js/echarts3.js"></script>
     <script src="js/jquery.floatThead.js"></script>
-    <script src="js/skydash.js"></script>
+    <script src="js/skydash.js?v=1"></script>
   </body>
 </html>
