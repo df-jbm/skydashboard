@@ -28,7 +28,6 @@ var TrendingPeriodTypeID = 0;
 var TrendingPeriod = 0;
 var TrendingPlatFormID = 0;
 var TrendingFilter = '';
-var delivered = false;
 var channelgroupid = 0;
 var navmodule = {
   /*
@@ -264,7 +263,7 @@ var navmodule = {
       console.log(PerformanceChannels)      
       var totalCell = false;
       var tdwidth = 100 / (Formname.length + 2)
-
+      var delivered = false;
       var GetChannelIDs = [];
       var GetPlatFormIDs = [];
       for(var i in PerformanceChannels){
@@ -1146,12 +1145,8 @@ $(function(){
     holdervisibility($(this).val())
     navmodule.ChannelPerformanceRequest()
   })
-  $('#channelgroup').on('change',function(){
-    if(channelgroupid != 1 && $(this).val() != 1){
-      delivered = false
-    }
-    navmodule.ChannelPerformanceRequest()
-    channelgroupid = $(this).val()    
+  $('#channelgroup').on('change',function(){    
+    navmodule.ChannelPerformanceRequest()      
   })
   /*
   ===== Bind trigger for period range
