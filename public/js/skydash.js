@@ -1145,7 +1145,9 @@ $(function(){
     holdervisibility($(this).val())
     navmodule.ChannelPerformanceRequest()
   })
-  $('#channelgroup').on('change',function(){    
+  $('#channelgroup').on('change',function(){
+    activeChannel = 0;
+    activePlatForm = 0;    
     navmodule.ChannelPerformanceRequest()      
   })
   /*
