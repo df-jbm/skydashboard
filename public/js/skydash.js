@@ -1147,7 +1147,7 @@ $(function(){
     navmodule.ChannelPerformanceRequest()
   })
   $('#channelgroup').on('change',function(){
-    if(channelgroupid == 1 || $(this).val() == 1){
+    if(channelgroupid != 1 || $(this).val() != 1){
       activeChannel = 0;
       activePlatForm = 0; 
     }   
