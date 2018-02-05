@@ -492,7 +492,9 @@ var navmodule = {
 
       var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'
       if(PFormID != 2 && PFormID != 3 && PFormID != 4){
-        headprogcount = '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>';
+        var headprogcount = '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>';
+      }else{
+        var headprogcount = '';
       }
       output += '<thead class="bg-white">'+
         '<tr>'+
@@ -510,7 +512,7 @@ var navmodule = {
       if(PFormID != 2 && PFormID != 3 && PFormID != 4){
         var programcount = '<td>'+data[i].CNT+'</td>';
       }else{
-        var programcount;
+        var programcount = '';
       }
       output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
           '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
