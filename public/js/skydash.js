@@ -1151,7 +1151,7 @@ $(function(){
       delivered = false
     }
     navmodule.ChannelPerformanceRequest()
-    channelgroupid = this.val()
+    channelgroupid = $(this).val()
     console.log(channelgroupid)
   })
   /*
