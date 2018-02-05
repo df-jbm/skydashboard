@@ -529,8 +529,7 @@ var navmodule = {
             $(this).addClass('active')
             var BMIFilter = $(this).attr('id')
             $('#filterbmi').val(BMIFilter)
-            filterexist = true;
-            activePlatForm = -1;
+            filterexist = true;            
             navmodule.ChannelPerformanceRequest()
           }
         })
