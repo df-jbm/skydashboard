@@ -1147,8 +1147,12 @@ $(function(){
     navmodule.ChannelPerformanceRequest()
   })
   $('#channelgroup').on('change',function(){
-    console.log(channelgroupid)
+    if(channelgroupid == 1){
+      delivered = false
+    }
     navmodule.ChannelPerformanceRequest()
+    channelgroupid = this.val()
+    console.log(channelgroupid)
   })
   /*
   ===== Bind trigger for period range
