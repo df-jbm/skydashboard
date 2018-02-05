@@ -259,7 +259,7 @@ var navmodule = {
 
       }
       console.log(PerformanceChannels)
-      //var delivered = false;
+      var delivered = false;
       var totalCell = false;
       var tdwidth = 100 / (Formname.length + 2)
 
