@@ -28,6 +28,7 @@ var TrendingPeriodTypeID = 0;
 var TrendingPeriod = 0;
 var TrendingPlatFormID = 0;
 var TrendingFilter = '';
+var delivered = false;
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -258,8 +259,7 @@ var navmodule = {
         })
 
       }
-      console.log(PerformanceChannels)
-      var delivered = false;
+      console.log(PerformanceChannels)      
       var totalCell = false;
       var tdwidth = 100 / (Formname.length + 2)
 
