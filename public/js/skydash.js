@@ -29,6 +29,7 @@ var TrendingPeriod = 0;
 var TrendingPlatFormID = 0;
 var TrendingFilter = '';
 var delivered = false;
+var channelgroupid = 0;
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -47,6 +48,7 @@ var navmodule = {
           channelgroup.push({ChannelGroupID : data[i].ChannelGroupID, ChannelGroupName : data[i].ChannelGroupName})
           selectBox.options.add(new Option(data[i].ChannelGroupName,  data[i].ChannelGroupID));
         }
+        channelgroupid = $('#channelgroup').val()
         $('#'+formID).val(1000)
         /*
         ===== Ajax request for period range
@@ -1145,6 +1147,7 @@ $(function(){
     navmodule.ChannelPerformanceRequest()
   })
   $('#channelgroup').on('change',function(){
+    console.log(channelgroupid)
     navmodule.ChannelPerformanceRequest()
   })
   /*
