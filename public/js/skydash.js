@@ -1346,6 +1346,8 @@ $(function(){
         })
       }else{
         filterexist = false;
+        activeChannel = 0;
+        activePlatForm = 0;
         navmodule.ChannelPerformanceRequest()
         $('.dropdown-content').hide();
         $('#list').html('')
@@ -1357,6 +1359,8 @@ $(function(){
   $('#emptyfilter').click(function(){
     $('#filterbmi').val('')
     filterexist = false;
+    activeChannel = 0;
+    activePlatForm = 0;
     navmodule.ChannelPerformanceRequest()
     $('.dropdown-content').hide();
     $('#list').html('')
