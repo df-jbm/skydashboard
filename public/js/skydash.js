@@ -491,6 +491,9 @@ var navmodule = {
       }
 
       var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'
+      if(PFormID != 2 && PFormID != 3 && PFormID != 4){
+        headprogcount = '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>';
+      }
       output += '<thead class="bg-white">'+
         '<tr>'+
           '<td colspan="5">'+ form +'&nbsp;&nbsp;&nbsp;&nbsp;<img height="30" src="logo/'+ cname.replace('+', '-') +'.png"></td>'+
@@ -498,7 +501,7 @@ var navmodule = {
         '<tr>'+
           '<td width="300"><small>Programme Title</small></td>'+
           '<td><small>Sky 360 BMI</small></td>'+
-          '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>'+
+          headprogcount +
           '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+
           '<td id="sort" value="ATV"><small>ATV</small>'+ sortATV +'</td>'+
         '</tr></thead><tbody>';
