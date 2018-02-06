@@ -121,15 +121,7 @@
       </div>
       <div id="exportcontainer" class="bg-info">
         <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="card border">
-              <div class="card-body">
-                <button class="btn btn-sm" id="exportchannel" value="hidden">Export Channel Performance</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button class="btn btn-sm" id="exportchannel" value="hidden">Export Channel Performance</button>
       </div>
     </main>
     <script src="js/jquery.min.js"></script>

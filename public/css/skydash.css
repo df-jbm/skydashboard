@@ -211,6 +211,9 @@ body main .row #performance-content .card .card-body .table-responsive{
   cursor: pointer;
   font-weight: bolder;
 }
+#btnshowhideEx{
+  padding: 10px;
+}
 #exportcontainer{
   position: fixed;
   width: 150px;
