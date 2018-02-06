@@ -31,6 +31,7 @@ var TrendingFilter = '';
 var channelgroupid = 0;
 var channelgroupid = 0;
 var trendinglegend = [];
+var exportrequest = []
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -175,8 +176,8 @@ var navmodule = {
     //console.log(newdate)
     return newdate
   },
-  exportchannel : function(request){    
-    console.log(request)    
+  exportchannel : function(req){    
+    console.log(req)    
     $.get(window.location.href + "channelperformance", request, function(data){
       console.log(data)
     });
@@ -203,6 +204,7 @@ var navmodule = {
       Filter : filter
     }
     console.log(request)
+    exportrequest = request;
     //loadingstate()
     $.get(window.location.href + "channelperformance", request, function(data){
       navmodule.init_ChannelPerformance(data,ChannelGroupID)
@@ -1432,7 +1434,7 @@ $(function(){
   */
   
   $('#exportchannel').click(function(){
-    navmodule.exportchannel(request);
+    navmodule.exportchannel(exportrequest);
   })
 
   $('#btnshowhideEx').click(function(){
