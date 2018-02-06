@@ -1439,6 +1439,15 @@ $(function(){
       bottom : '15px'      
     });
   })
+  $('#btnshowhideEx').click(function(){
+    $('#exportcontainer').removeClass('bg-light')
+    $('#exportcontainer').animate({
+      width : 'auto',
+      height : 'auto',
+      right : '0',
+      bottom : '0'      
+    });
+  })
   $('#channelview').on('change',function(){
     activeChannel = 0;
     activePlatForm = 0;

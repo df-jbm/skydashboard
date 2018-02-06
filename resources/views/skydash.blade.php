@@ -120,7 +120,7 @@
         </div>
       </div>
       <div id="exportcontainer">
-        <button class="btn btn-sm" id="export">Export Data</button>
+        <button class="btn btn-sm" id="btnshowhideEx">Show Export Module</button>
       </div>
     </main>
     <script src="js/jquery.min.js"></script>
