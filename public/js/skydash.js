@@ -1433,7 +1433,8 @@ $(function(){
   $('#exportcontainer').hover(function(){
     $(this).animate({
       width : '100px',
-      left : '100px'
+      height : '100px',
+      backgroundColor : '#d3d3d3'
     });
   })
   $('#channelview').on('change',function(){
