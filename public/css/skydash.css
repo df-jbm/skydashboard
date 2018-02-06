@@ -212,7 +212,7 @@ body main .row #performance-content .card .card-body .table-responsive{
   font-weight: bolder;
 }
 #btnshowhideEx{
-  padding: 10px 0 0 10px;
+  padding: 5px 0 0 10px;
 }
 #exportcontainer{
   position: fixed;
@@ -220,6 +220,8 @@ body main .row #performance-content .card .card-body .table-responsive{
   height: 35px;
   right: 0;
   bottom: 0;
+}
+#exportbody{
   padding-right: 15px;
   padding-left: 15px;
 }
