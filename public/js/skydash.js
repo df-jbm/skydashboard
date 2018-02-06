@@ -932,6 +932,11 @@ var navmodule = {
           }
         }
 
+        if(graphlegend.length == 1){
+          function selected(){
+            return { graphlegend : false }
+          }
+        }
 
 
         var echartBar = echarts.init(document.getElementById('bargraph'));
@@ -1011,6 +1016,7 @@ var navmodule = {
           },
           legend: {
               data: graphlegend,
+              selected : selected(),
               show : true,
           },
           grid: {
