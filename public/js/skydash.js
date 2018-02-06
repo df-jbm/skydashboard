@@ -1445,7 +1445,7 @@ $(function(){
       });
     }else{
       $(this).attr('value','hidden')
-      $('#exportcontainer').removeClass('bg-light')
+      //$('#exportcontainer').removeClass('bg-light')
       $('#exportcontainer').animate({
         width : minwidth,
         height : 'auto',
