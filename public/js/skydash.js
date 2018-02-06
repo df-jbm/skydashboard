@@ -1449,8 +1449,8 @@ $(function(){
       $('#exportcontainer').animate({
         width : minwidth,
         height : 'auto',
-        right : '15px',
-        bottom : '15px'
+        right : 0,
+        bottom : 0
       });
     }    
   })
