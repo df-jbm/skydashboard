@@ -952,12 +952,21 @@ var navmodule = {
           }else{
             excludelist.splice($.inArray(params.name, excludelist),1);
           }
-          console.log(excludelist)          
+          console.log(excludelist)
+          var platformlist = []          
           for(var i in trendinglegend){
-            if(trendinglegend[i].PlatFormName == params.name){
-
+            var inlist = false;
+            for(var x in excludelist){
+              if(excludelist[x] == trendinglegend[i].PlatFormName){
+                inlist = true;
+                break;
+              }
+            }
+            if(inlist == false){
+              platformlist.push(trendinglegend[i].PlatFormID)
             }
           }
+          console.log(platformlist)
           //trendinglegend.push({PlatFormID:data[i].PlatFormID,PlatFormName : data[i].PlatFormName})
           for(var i in axislabel){
             if(Number(i) < barnum){
