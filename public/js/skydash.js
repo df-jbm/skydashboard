@@ -941,12 +941,12 @@ var navmodule = {
         echartBar.on('magictypechanged', function(params) {
             magicType = params.currentType;
         });
+        var excludelist = []
         echartBar.on('legendselectchanged', function(params) {                
           var isSelected = params.selected[params.name];                
           var SelectUnselect = (isSelected ? 'select' : 'unselect');
           console.log(SelectUnselect)
-          console.log(params.name)
-          var excludelist = []
+          console.log(params.name)          
           if(SelectUnselect == 'unselect'){
             excludelist.push(params.name)
           }else{
