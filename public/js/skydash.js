@@ -1431,10 +1431,10 @@ $(function(){
   ===== Bind trigger for channelgroup
   */
   $('#exportcontainer').hover(function(){
+    $(this).addClass('bg-light')
     $(this).animate({
       width : '100px',
-      height : '100px',
-      backgroundColor : '#d3d3d3'
+      height : '100px',      
     });
   })
   $('#channelview').on('change',function(){
