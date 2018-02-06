@@ -52,7 +52,7 @@ class dbcontroller extends Controller
       fputcsv($file, [$row->ChannelID,$row->PlatFormID,$row->ChannelName,$row->PlatFormName,$row->Sum000,$row->SumATV]);
     }
     fclose($file);
-    return response('csv/channelperformance.csv');
+    return response('csv/channelperformance'. date("Y-m-d h:i:sa") .'.csv');
 
   }
   public function get_export(Request $r){
