@@ -942,6 +942,7 @@ var navmodule = {
           var isSelected = params.selected[params.name];                
           var SelectUnselect = (isSelected ? 'select' : 'unselect');
           console.log(SelectUnselect)
+          console.log(params.name)
         });
         echartBar.setOption({
           title: {
