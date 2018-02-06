@@ -935,8 +935,6 @@ var navmodule = {
         function selected(){
           if(graphlegend.length == 1){
             return true;
-          }else{
-            return true;
           }          
         }        
         var echartBar = echarts.init(document.getElementById('bargraph'));
