@@ -119,13 +119,11 @@
           </div>
         </div>
       </div>
-      <div id="exportcontainer">
+      <div class="row" id="exportcontainer">
         <button class="btn btn-sm" id="btnshowhideEx" value="hidden">Show Export Module</button>
-        <div class="row">
-          <div class="card border">
-            <div class="card-body">
-              <button class="btn btn-sm" id="exportchannel" value="hidden">Export Channel Performance</button>
-            </div>
+        <div class="card border">
+          <div class="card-body">
+            <button class="btn btn-sm" id="exportchannel" value="hidden">Export Channel Performance</button>
           </div>
         </div>
       </div>
