@@ -1435,18 +1435,12 @@ $(function(){
     var minwidth;
     if($(this).attr('value') == 'hidden'){
       $(this).attr('value','shown')
-      minwidth = $('#exportcontainer').width();
-      $('#exportcontainer').addClass('bg-light')
-      $('#exportcontainer').animate({
-        width : '400px',
-        height : '250px',              
-      });
+      $(this).addClass('show')
+      $(this).removeClass('hide')
     }else{
       $(this).attr('value','hidden')
-      $('#exportcontainer').removeClass('bg-light')
-      $('#exportcontainer').animate({
-        width : minwidth,        
-      });
+      $(this).removeClass('show')
+      $(this).addClass('hide')
     }    
   })
   $('#channelview').on('change',function(){

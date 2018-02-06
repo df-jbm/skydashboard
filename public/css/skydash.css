@@ -212,7 +212,23 @@ body main .row #performance-content .card .card-body .table-responsive{
   font-weight: bolder;
 }
 #exportcontainer{
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.hide{
   position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+}
+
+.show{
+  position: absolute;
+  width: 400px;
+  height: 100px;
   right: 0;
   bottom: 0;
 }
