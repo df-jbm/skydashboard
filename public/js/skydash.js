@@ -1433,8 +1433,8 @@ $(function(){
   $('#exportcontainer').hover(function(){
     $(this).addClass('bg-light')
     $(this).animate({
-      width : '100px',
-      height : '100px',
+      width : '400px',
+      height : '250px',
       right : '15px',
       bottom : '15px'      
     });
