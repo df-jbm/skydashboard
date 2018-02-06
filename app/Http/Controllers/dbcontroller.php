@@ -46,6 +46,7 @@ class dbcontroller extends Controller
     return response($this->ProgrammeTitles);
   }
   public function ExpotChannelPerformance(Request $r){
+    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
     return response($this->GetChannelPerformance);
   }
   public function get_export(Request $r){

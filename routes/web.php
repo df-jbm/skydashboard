@@ -25,7 +25,7 @@ Route::get('/periodrange','dbcontroller@GetPeriodRanges');
 
 Route::get('/channelperformance','dbcontroller@GetChannelPerformance');
 
-Route::get('/exportchannel','dbcontroller@GetChannelPerformance');
+Route::get('/exportchannel','dbcontroller@ExpotChannelPerformance');
 
 Route::get('/programmeperformance','dbcontroller@GetProgramePerformance');
 
