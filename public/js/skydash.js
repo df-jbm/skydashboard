@@ -1430,8 +1430,8 @@ $(function(){
   /*
   ===== Bind trigger for channelgroup
   */
-  $('#export').hover(function(){
-    $(this).animate({top: '250px'});
+  $('#exportcontainer').hover(function(){
+    $(this).animate({top: '100px',left : '100px'});
   })
   $('#channelview').on('change',function(){
     activeChannel = 0;

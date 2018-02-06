@@ -211,8 +211,9 @@ body main .row #performance-content .card .card-body .table-responsive{
   cursor: pointer;
   font-weight: bolder;
 }
-#export{
+#exportcontainer{
   position: fixed;
   right: 0;
   bottom: 0;
+  width: auto;
 }
