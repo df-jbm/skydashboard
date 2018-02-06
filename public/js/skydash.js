@@ -967,6 +967,7 @@ var navmodule = {
             }
           }
           console.log(platformlist)
+          console.log(data)
           //trendinglegend.push({PlatFormID:data[i].PlatFormID,PlatFormName : data[i].PlatFormName})
           for(var i in axislabel){
             if(Number(i) < barnum){
