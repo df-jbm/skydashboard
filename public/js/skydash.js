@@ -973,54 +973,56 @@ var navmodule = {
             if(Number(i) < barnum){
               var sum = 0;
               for(var x in data){
-                switch(num){
-                  case '1' :
-                    if(axislabel[i] == data[x].ProgDate){
-                      if($('#unit').val() == 1){
-                        sum += parseFloat(Number(data[x].Sum000).toFixed(2))
-                      }else{
-                        sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                if($.inArray( data[x].PlatFormID, platformlist ) != -1){
+                  switch(num){
+                    case '1' :
+                      if(axislabel[i] == data[x].ProgDate){
+                        if($('#unit').val() == 1){
+                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                        }else{
+                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                        }
                       }
-                    }
-                    break;
-                  case '2' :
-                    if(axislabel[i] == data[x].WeekNumber){
-                      console.log(axislabel[i] +"=="+ data[x].WeekNumber)
-                      if($('#unit').val() == 1){
-                        sum += parseFloat(Number(data[x].Sum000).toFixed(2))
-                      }else{
-                        sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                      break;
+                    case '2' :
+                      if(axislabel[i] == data[x].WeekNumber){
+                        console.log(axislabel[i] +"=="+ data[x].WeekNumber)
+                        if($('#unit').val() == 1){
+                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                        }else{
+                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                        }
                       }
-                    }
-                    break;
-                  case '3' :
-                    if(axislabel[i] == data[x].MonthNumber){
-                      if($('#unit').val() == 1){
-                        sum += parseFloat(Number(data[x].Sum000).toFixed(2))
-                      }else{
-                        sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                      break;
+                    case '3' :
+                      if(axislabel[i] == data[x].MonthNumber){
+                        if($('#unit').val() == 1){
+                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                        }else{
+                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                        }
                       }
-                    }
-                    break;
-                  case '4' :
-                    if(axislabel[i] == data[x].QuarterNumber){
-                      if($('#unit').val() == 1){
-                        sum += parseFloat(Number(data[x].Sum000).toFixed(2))
-                      }else{
-                        sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                      break;
+                    case '4' :
+                      if(axislabel[i] == data[x].QuarterNumber){
+                        if($('#unit').val() == 1){
+                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                        }else{
+                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                        }
                       }
-                    }
-                    break;
-                  case '5' :
-                    if(axislabel[i] == data[x].YearNumber){
-                      if($('#unit').val() == 1){
-                        sum += parseFloat(Number(data[x].Sum000).toFixed(2))
-                      }else{
-                        sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                      break;
+                    case '5' :
+                      if(axislabel[i] == data[x].YearNumber){
+                        if($('#unit').val() == 1){
+                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                        }else{
+                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                        }
                       }
-                    }
-                    break;
-                }
+                      break;
+                  }
+                }                
               }
               topxAxis.push(sum)
             }
