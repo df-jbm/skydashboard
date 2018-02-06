@@ -212,7 +212,7 @@ body main .row #performance-content .card .card-body .table-responsive{
   font-weight: bolder;
 }
 #exportcontainer{
-  position: absolute;
+  position: fixed;
   width: 150px;
   height: 35px;
   right: 0;
