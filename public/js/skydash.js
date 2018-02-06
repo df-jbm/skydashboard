@@ -1430,23 +1430,27 @@ $(function(){
   /*
   ===== Bind trigger for channelgroup
   */
-  $('#exportcontainer').click(function(){
-    $(this).addClass('bg-light')
-    $(this).animate({
-      width : '400px',
-      height : '250px',
-      right : '15px',
-      bottom : '15px'      
-    });
-  })
+  
   $('#btnshowhideEx').click(function(){
-    $('#exportcontainer').removeClass('bg-light')
-    $('#exportcontainer').animate({
-      width : $(this).height(),
-      height : $(this).width(),
-      right : '0',
-      bottom : '0'      
-    });
+    if($(this).attr('value') == 'hidden'){
+      $(this).attr('value','shown')
+      $('#exportcontainer').addClass('bg-light')
+      $('#exportcontainer').animate({
+        width : '400px',
+        height : '250px',
+        right : '15px',
+        bottom : '15px'      
+      });
+    }else{
+      $(this).attr('value','hidden')
+      $('#exportcontainer').removeClass('bg-light')
+      $('#exportcontainer').animate({
+        width : 'auto',
+        height : 'auto',
+        right : '0',
+        bottom : '0'      
+      });
+    }    
   })
   $('#channelview').on('change',function(){
     activeChannel = 0;
