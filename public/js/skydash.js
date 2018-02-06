@@ -795,6 +795,12 @@ var navmodule = {
           var topxAxis = average;
         }else{
           for(var i in PFormIDs){
+            for(var t in trendinglegend){
+              if(trendinglegend[t].PlatFormID == PFormIDs[i]){
+                var multilegend = trendinglegend[t].PlatFormName
+                break;
+              }
+            }
             var average = []
             for(var ii in axislabel){
               average.push(Number(0))
@@ -830,7 +836,7 @@ var navmodule = {
             }
             console.log(average)
             dataseries.push({
-              name: "Sample title",
+              name: multilegend,
               type: magicType,
               data: average,
               stack : 'stack',
