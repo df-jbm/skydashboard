@@ -932,13 +932,11 @@ var navmodule = {
           }
         }
 
-        if(graphlegend.length == 1){
-          function selected(){
-            return { graphlegend : false }
-          }
-        }
-
-
+        function selected(){
+          if(graphlegend.length == 1){
+            return true;
+          }          
+        }        
         var echartBar = echarts.init(document.getElementById('bargraph'));
         echartBar.on('magictypechanged', function(params) {
             magicType = params.currentType;
