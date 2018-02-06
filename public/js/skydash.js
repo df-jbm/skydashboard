@@ -180,7 +180,7 @@ var navmodule = {
     $.get(window.location.href + "exportchannel", request, function(data){
       console.log(data)
     });
-  }
+  },
   ChannelPerformanceRequest : function(){
     var ChannelGroupID = $('#channelgroup').val()
     var PeriodTypeID = $('#periodtype').val();
