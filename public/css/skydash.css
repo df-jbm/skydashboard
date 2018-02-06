@@ -215,5 +215,5 @@ body main .row #performance-content .card .card-body .table-responsive{
   position: fixed;
   right: 0;
   bottom: 0;
-  width: auto;
+  max-width: 100%;
 }
