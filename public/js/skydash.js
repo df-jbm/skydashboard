@@ -1442,8 +1442,8 @@ $(function(){
   $('#btnshowhideEx').click(function(){
     $('#exportcontainer').removeClass('bg-light')
     $('#exportcontainer').animate({
-      width : 'auto',
-      height : 'auto',
+      width : $(this).height(),
+      height : $(this).width(),
       right : '0',
       bottom : '0'      
     });
