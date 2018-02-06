@@ -178,7 +178,7 @@ var navmodule = {
   },
   exportchannel : function(req){    
     console.log(req)    
-    $.get(window.location.href + "channelperformance", request, function(data){
+    $.get(window.location.href + "channelperformance", req, function(data){
       console.log(data)
     });
   },
