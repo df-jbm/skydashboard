@@ -1436,7 +1436,7 @@ $(function(){
     if($(this).attr('value') == 'hidden'){
       $(this).attr('value','shown')
       $(this).html('Minimize Export Module')      
-      $('#exportcontainer').addClass('bg-light')
+      $('#exportcontainer').addClass('bg-info')
       $('#exportcontainer').animate({
         width : '400px',
         height : '250px',
@@ -1446,7 +1446,7 @@ $(function(){
     }else{
       $(this).attr('value','hidden')
       $(this).html('Show Export Module')      
-      $('#exportcontainer').removeClass('bg-light')
+      $('#exportcontainer').removeClass('bg-info')
       $('#exportcontainer').animate({
         width : '150px',
         height : '35px',
