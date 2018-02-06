@@ -119,6 +119,7 @@
           </div>
         </div>
       </div>
+      <button class="btn btn-sm" id="export">Export Data</button>
     </main>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
