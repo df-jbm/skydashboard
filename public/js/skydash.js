@@ -938,6 +938,11 @@ var navmodule = {
         echartBar.on('magictypechanged', function(params) {
             magicType = params.currentType;
         });
+        echartBar.on('legendselectchanged', function(params) {                
+          var isSelected = params.selected[params.name];                
+          var SelectUnselect = (isSelected ? 'select' : 'unselect');
+          console.log(SelectUnselect)
+        });
         echartBar.setOption({
           title: {
               text: TrendingTitle,
