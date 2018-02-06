@@ -1032,6 +1032,9 @@ var navmodule = {
           for(var i in legendtopxAxis){
             legendtopxAxis[i] = Number(legendtopxAxis[i]).toFixed(2)
           }
+          echartBar.on('magictypechanged', function(params) {
+            magicType = params.currentType;
+          });
           echartBar.setOption({
             title: {
                 text: TrendingTitle,
