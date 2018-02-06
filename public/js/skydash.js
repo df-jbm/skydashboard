@@ -1434,7 +1434,9 @@ $(function(){
     $(this).addClass('bg-light')
     $(this).animate({
       width : '100px',
-      height : '100px',      
+      height : '100px',
+      right : '15px',
+      bottom : '15px'      
     });
   })
   $('#channelview').on('change',function(){
