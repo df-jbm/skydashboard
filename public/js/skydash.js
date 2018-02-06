@@ -936,6 +936,138 @@ var navmodule = {
           if(graphlegend.length == 1){
             return true;
           }          
+        }
+        function chartoption(TrendingTitle,graphlegend,axislabel,topxAxis,dataseries){
+          var option = {
+            title: {
+                text: TrendingTitle,
+                textStyle: {
+                    fontSize: 20,
+                    //fontFamily: 'Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif',
+                    fontWeight: 'normal',
+                    extraCssText: 'left: 0px'
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross'
+                },
+                backgroundColor: 'rgba(245, 245, 245, 0.8)',
+                borderWidth: 1,
+                borderColor: '#ccc',
+                formatter: '{b}: {c}',
+                padding: 10,
+                textStyle: {
+                    color: '#000'
+                },
+                position: function(pos, params, el, elRect, size) {
+                   var obj = {top: 10};
+                    obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 30;
+                    return obj;
+                },
+                show : false,
+                extraCssText: 'width: 170px'
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    mark : {show: true},
+                    dataView: {
+                        show: false,
+                        title: "Text View",
+                        lang: [
+                            "Text View",
+                            "Close",
+                            "Refresh",
+                        ],
+                        readOnly: false
+                    },
+                    magicType: {
+                        show: true,
+                        type: ['line', 'bar'],
+                        title: {
+                            line: 'Line Chart',
+                            bar: 'Bar Chart',
+                            stack: 'Stacked Chart',
+                            tiled: 'Tiled Chart',
+                        }
+                    },
+                    restore: {
+                        show: false,
+                        title: "Restore"
+                    },
+                    saveAsImage: {
+                        show: true,
+                        title: "Save Image"
+                    },
+                }
+            },
+            legend: {
+                data: graphlegend,
+                selected : selected(),
+                show : true,
+            },
+            grid: {
+                left: '60',
+                right: '0%',
+                bottom: '40',
+                top: '20%',
+                containLabel: true
+            },
+            yAxis: {
+                type: 'value',
+                name: $("#unit option:selected").text(),
+                nameLocation: 'middle',
+                nameGap: 60,
+                nameTextStyle : {
+                  fontSize : 14,
+                },
+                scale: 3,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                }
+            },
+            xAxis: [{
+                    type: 'category',
+                    data: axislabel,
+                    name: $("#periodtype option:selected").text(),
+                    nameLocation: 'middle',
+                    nameGap: 40,
+                    nameTextStyle : {
+                      fontSize : 14,
+                    }
+                },
+                {
+                    type: 'category',
+                    position: 'top',
+                    onZero: true,
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    zAxisIndex: 1,
+                    scale: true,
+                    axisLabel: {
+                        show: true,
+                        /*formatter: '{value}' + PutPctg(),
+                        textStyle: {
+                            color: function(v) {
+                                if (v >= 0) {
+                                    return 'green'
+                                } else {
+                                    return 'red'
+                                }
+                            }
+                        },*/
+                    },
+                    data: topxAxis
+                }
+            ],
+           calculable : true,
+              series: dataseries
+          }
         }        
         var echartBar = echarts.init(document.getElementById('bargraph'));
         echartBar.on('magictypechanged', function(params) {
@@ -1060,136 +1192,7 @@ var navmodule = {
           ]
           })
         });
-        echartBar.setOption({
-          title: {
-              text: TrendingTitle,
-              textStyle: {
-                  fontSize: 20,
-                  //fontFamily: 'Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif',
-                  fontWeight: 'normal',
-                  extraCssText: 'left: 0px'
-              }
-          },
-          tooltip: {
-              trigger: 'axis',
-              axisPointer: {
-                  type: 'cross'
-              },
-              backgroundColor: 'rgba(245, 245, 245, 0.8)',
-              borderWidth: 1,
-              borderColor: '#ccc',
-              formatter: '{b}: {c}',
-              padding: 10,
-              textStyle: {
-                  color: '#000'
-              },
-              position: function(pos, params, el, elRect, size) {
-                 var obj = {top: 10};
-                  obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 30;
-                  return obj;
-              },
-              show : false,
-              extraCssText: 'width: 170px'
-          },
-          toolbox: {
-              show: true,
-              feature: {
-                  mark : {show: true},
-                  dataView: {
-                      show: false,
-                      title: "Text View",
-                      lang: [
-                          "Text View",
-                          "Close",
-                          "Refresh",
-                      ],
-                      readOnly: false
-                  },
-                  magicType: {
-                      show: true,
-                      type: ['line', 'bar'],
-                      title: {
-                          line: 'Line Chart',
-                          bar: 'Bar Chart',
-                          stack: 'Stacked Chart',
-                          tiled: 'Tiled Chart',
-                      }
-                  },
-                  restore: {
-                      show: false,
-                      title: "Restore"
-                  },
-                  saveAsImage: {
-                      show: true,
-                      title: "Save Image"
-                  },
-              }
-          },
-          legend: {
-              data: graphlegend,
-              selected : selected(),
-              show : true,
-          },
-          grid: {
-              left: '60',
-              right: '0%',
-              bottom: '40',
-              top: '20%',
-              containLabel: true
-          },
-          yAxis: {
-              type: 'value',
-              name: $("#unit option:selected").text(),
-              nameLocation: 'middle',
-              nameGap: 60,
-              nameTextStyle : {
-                fontSize : 14,
-              },
-              scale: 3,
-              label: {
-                  normal: {
-                      show: true,
-                      position: 'top'
-                  }
-              }
-          },
-          xAxis: [{
-                  type: 'category',
-                  data: axislabel,
-                  name: $("#periodtype option:selected").text(),
-                  nameLocation: 'middle',
-                  nameGap: 40,
-                  nameTextStyle : {
-                    fontSize : 14,
-                  }
-              },
-              {
-                  type: 'category',
-                  position: 'top',
-                  onZero: true,
-                  xAxisIndex: 1,
-                  yAxisIndex: 1,
-                  zAxisIndex: 1,
-                  scale: true,
-                  axisLabel: {
-                      show: true,
-                      /*formatter: '{value}' + PutPctg(),
-                      textStyle: {
-                          color: function(v) {
-                              if (v >= 0) {
-                                  return 'green'
-                              } else {
-                                  return 'red'
-                              }
-                          }
-                      },*/
-                  },
-                  data: topxAxis
-              }
-          ],
-         calculable : true,
-            series: dataseries
-      });
+        echartBar.setOption(chartoption());
       })
     }else{
       $('#bargraph').html('')
