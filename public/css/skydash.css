@@ -226,6 +226,6 @@ body main .row #performance-content .card .card-body .table-responsive{
   position: absolute;
   width: 400px;
   height: 100px;
-  right: 0;
+  right: 100px;
   bottom: 0;
 }
