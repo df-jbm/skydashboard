@@ -1435,8 +1435,7 @@ $(function(){
     var minwidth;
     if($(this).attr('value') == 'hidden'){
       $(this).attr('value','shown')
-      $(this).html('Minimize Export Module')      
-      $('#exportcontainer').addClass('bg-info')
+      $(this).html('Minimize Export Module')            
       $('#exportcontainer').animate({
         width : '400px',
         height : '250px',

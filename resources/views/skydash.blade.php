@@ -119,8 +119,8 @@
           </div>
         </div>
       </div>
-      <div id="exportcontainer">
-        <div class="card-title" id="btnshowhideEx" value="hidden">Show Export Module</div>
+      <div id="exportcontainer bg-info">
+        <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>
         <div class="row">
           <div class="col-sm-12">
             <div class="card border">
