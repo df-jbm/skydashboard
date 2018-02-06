@@ -47,7 +47,7 @@ class dbcontroller extends Controller
   }
   public function ExpotChannelPerformance(Request $r){
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    $file = fopen('csv/channelperformance.csv', 'w+');
+    $file = fopen('csv/channelperformance'. date("Y-m-d h:i:sa") .'.csv', 'w+');
     foreach ($this->GetChannelPerformance as $row) {
       fputcsv($file, [$row->ChannelID,$row->PlatFormID,$row->ChannelName,$row->PlatFormName,$row->Sum000,$row->SumATV]);
     }
