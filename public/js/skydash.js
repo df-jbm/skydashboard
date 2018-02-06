@@ -1032,6 +1032,33 @@ var navmodule = {
           for(var i in legendtopxAxis){
             legendtopxAxis[i] = Number(legendtopxAxis[i]).toFixed(2)
           }
+          echartBar.setOption({
+            xAxis: [
+            {
+                type: 'category',
+                position: 'top',
+                onZero: true,
+                xAxisIndex: 1,
+                yAxisIndex: 1,
+                zAxisIndex: 1,
+                scale: true,
+                axisLabel: {
+                    show: true,
+                    /*formatter: '{value}' + PutPctg(),
+                    textStyle: {
+                        color: function(v) {
+                            if (v >= 0) {
+                                return 'green'
+                            } else {
+                                return 'red'
+                            }
+                        }
+                    },*/
+                },
+                data: topxAxis
+            }
+          ]
+          })
         });
         echartBar.setOption({
           title: {
