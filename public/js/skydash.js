@@ -1447,7 +1447,7 @@ $(function(){
       $('#exportcontainer').animate({
         width : 'auto',
         height : 'auto',
-        right : '-385px',
+        right : "-"+Number(400-$('#exportcontainer').width())+"px",
         bottom : '-235px'      
       });
     }    
