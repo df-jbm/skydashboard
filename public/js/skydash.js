@@ -936,7 +936,131 @@ var navmodule = {
           if(graphlegend.length == 1){
             return true;
           }          
-        }
+        }             
+        var echartBar = echarts.init(document.getElementById('bargraph'));
+        echartBar.on('magictypechanged', function(params) {
+            magicType = params.currentType;
+        });
+        var excludelist = []
+        echartBar.on('legendselectchanged', function(params) {                
+          var isSelected = params.selected[params.name];                
+          var SelectUnselect = (isSelected ? 'select' : 'unselect');
+          console.log(SelectUnselect)
+          console.log(params.name)          
+          if(SelectUnselect == 'unselect'){
+            excludelist.push(params.name)
+          }else{
+            excludelist.splice($.inArray(params.name, excludelist),1);
+          }
+          console.log(excludelist)
+          var platformlist = []          
+          for(var i in trendinglegend){
+            var inlist = false;
+            for(var x in excludelist){
+              if(excludelist[x] == trendinglegend[i].PlatFormName){
+                inlist = true;
+                break;
+              }
+            }
+            if(inlist == false){
+              platformlist.push(trendinglegend[i].PlatFormID)
+            }
+          }
+          console.log(platformlist)
+          console.log(data)
+          var legendtopxAxis = [];
+          //trendinglegend.push({PlatFormID:data[i].PlatFormID,PlatFormName : data[i].PlatFormName})
+          for(var i in axislabel){
+            if(Number(i) < barnum){
+              var sum = 0;
+              for(var x in data){
+                if($.inArray( data[x].PlatFormID, platformlist ) != -1){
+                  switch(num){
+                    case '1' :
+                      if(axislabel[i] == data[x].ProgDate){
+                        if($('#unit').val() == 1){
+                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                        }else{
+                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                        }
+                      }
+                      break;
+                    case '2' :
+                      if(axislabel[i] == data[x].WeekNumber){
+                        console.log(axislabel[i] +"=="+ data[x].WeekNumber)
+                        if($('#unit').val() == 1){
+                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                        }else{
+                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                        }
+                      }
+                      break;
+                    case '3' :
+                      if(axislabel[i] == data[x].MonthNumber){
+                        if($('#unit').val() == 1){
+                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                        }else{
+                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                        }
+                      }
+                      break;
+                    case '4' :
+                      if(axislabel[i] == data[x].QuarterNumber){
+                        if($('#unit').val() == 1){
+                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                        }else{
+                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                        }
+                      }
+                      break;
+                    case '5' :
+                      if(axislabel[i] == data[x].YearNumber){
+                        if($('#unit').val() == 1){
+                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                        }else{
+                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                        }
+                      }
+                      break;
+                  }
+                }                
+              }
+              legendtopxAxis.push(sum)
+            }
+          }
+          console.log(legendtopxAxis)
+          for(var i in legendtopxAxis){
+            legendtopxAxis[i] = Number(legendtopxAxis[i]).toFixed(2)
+          }
+          echartBar.setOption({
+            xAxis: [
+            {
+                type: 'category',
+                position: 'top',
+                onZero: true,
+                xAxisIndex: 1,
+                yAxisIndex: 1,
+                zAxisIndex: 1,
+                scale: true,
+                axisLabel: {
+                    show: true,
+                    /*formatter: '{value}' + PutPctg(),
+                    textStyle: {
+                        color: function(v) {
+                            if (v >= 0) {
+                                return 'green'
+                            } else {
+                                return 'red'
+                            }
+                        }
+                    },*/
+                },
+                data: legendtopxAxis
+            }
+          ]
+          })
+        });
+        echartBar.setOption(chartoption());
         function chartoption(TrendingTitle,graphlegend,axislabel,topxAxis,dataseries){
           var option = {
             title: {
@@ -1069,131 +1193,7 @@ var navmodule = {
               series: dataseries
           }
           return option;
-        }        
-        var echartBar = echarts.init(document.getElementById('bargraph'));
-        echartBar.on('magictypechanged', function(params) {
-            magicType = params.currentType;
-        });
-        var excludelist = []
-        echartBar.on('legendselectchanged', function(params) {                
-          var isSelected = params.selected[params.name];                
-          var SelectUnselect = (isSelected ? 'select' : 'unselect');
-          console.log(SelectUnselect)
-          console.log(params.name)          
-          if(SelectUnselect == 'unselect'){
-            excludelist.push(params.name)
-          }else{
-            excludelist.splice($.inArray(params.name, excludelist),1);
-          }
-          console.log(excludelist)
-          var platformlist = []          
-          for(var i in trendinglegend){
-            var inlist = false;
-            for(var x in excludelist){
-              if(excludelist[x] == trendinglegend[i].PlatFormName){
-                inlist = true;
-                break;
-              }
-            }
-            if(inlist == false){
-              platformlist.push(trendinglegend[i].PlatFormID)
-            }
-          }
-          console.log(platformlist)
-          console.log(data)
-          var legendtopxAxis = [];
-          //trendinglegend.push({PlatFormID:data[i].PlatFormID,PlatFormName : data[i].PlatFormName})
-          for(var i in axislabel){
-            if(Number(i) < barnum){
-              var sum = 0;
-              for(var x in data){
-                if($.inArray( data[x].PlatFormID, platformlist ) != -1){
-                  switch(num){
-                    case '1' :
-                      if(axislabel[i] == data[x].ProgDate){
-                        if($('#unit').val() == 1){
-                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
-                        }else{
-                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
-                        }
-                      }
-                      break;
-                    case '2' :
-                      if(axislabel[i] == data[x].WeekNumber){
-                        console.log(axislabel[i] +"=="+ data[x].WeekNumber)
-                        if($('#unit').val() == 1){
-                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
-                        }else{
-                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
-                        }
-                      }
-                      break;
-                    case '3' :
-                      if(axislabel[i] == data[x].MonthNumber){
-                        if($('#unit').val() == 1){
-                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
-                        }else{
-                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
-                        }
-                      }
-                      break;
-                    case '4' :
-                      if(axislabel[i] == data[x].QuarterNumber){
-                        if($('#unit').val() == 1){
-                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
-                        }else{
-                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
-                        }
-                      }
-                      break;
-                    case '5' :
-                      if(axislabel[i] == data[x].YearNumber){
-                        if($('#unit').val() == 1){
-                          sum += parseFloat(Number(data[x].Sum000).toFixed(2))
-                        }else{
-                          sum += parseFloat(Number(data[x].SumATV).toFixed(2))
-                        }
-                      }
-                      break;
-                  }
-                }                
-              }
-              legendtopxAxis.push(sum)
-            }
-          }
-          console.log(legendtopxAxis)
-          for(var i in legendtopxAxis){
-            legendtopxAxis[i] = Number(legendtopxAxis[i]).toFixed(2)
-          }
-          echartBar.setOption({
-            xAxis: [
-            {
-                type: 'category',
-                position: 'top',
-                onZero: true,
-                xAxisIndex: 1,
-                yAxisIndex: 1,
-                zAxisIndex: 1,
-                scale: true,
-                axisLabel: {
-                    show: true,
-                    /*formatter: '{value}' + PutPctg(),
-                    textStyle: {
-                        color: function(v) {
-                            if (v >= 0) {
-                                return 'green'
-                            } else {
-                                return 'red'
-                            }
-                        }
-                    },*/
-                },
-                data: legendtopxAxis
-            }
-          ]
-          })
-        });
-        echartBar.setOption(chartoption());
+        }   
       })
     }else{
       $('#bargraph').html('')
