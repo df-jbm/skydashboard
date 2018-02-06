@@ -658,6 +658,15 @@ var navmodule = {
         }
 
         var PFormIDs = _.uniq(PlatFormIDnum)
+        var graphlegend = [];
+        for(var i in PFormIDs){
+          for(var x in trendinglegend){
+            if(trendinglegend[x].PlatFormID == PFormIDs[i]){
+              graphlegend.push(trendinglegend[x].PlatFormName)
+              break;
+            }
+          }
+        }
         var colorpick = ['#000','#a643c6','#ea5712','#110bc4']
         var colorpick1 = ['','#000','#a643c6','#ea5712','#110bc4']
         if(PFormIDs.length == 1){
@@ -988,8 +997,8 @@ var navmodule = {
               }
           },
           legend: {
-              data: ['Sample title'],
-              show : false,
+              data: graphlegend,
+              show : true,
           },
           grid: {
               left: '60',
