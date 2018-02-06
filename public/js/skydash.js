@@ -1098,8 +1098,7 @@ var navmodule = {
                 }
             },
             legend: {
-                data: graphlegend,
-                selected : selected(),
+                data: graphlegend,                
                 show : true,
             },
             grid: {
