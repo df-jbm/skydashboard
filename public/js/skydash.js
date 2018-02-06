@@ -517,7 +517,7 @@ var navmodule = {
           '<td><small>Sky 360 BMI</small></td>'+
           headprogcount +
           '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+
-          '<td id="sort" value="ATV"><small>ATV</small>'+ sortATV +'</td>'+
+          //'<td id="sort" value="ATV"><small>ATV</small>'+ sortATV +'</td>'+
         '</tr></thead><tbody>';
 
       for(var i in data){
@@ -531,7 +531,7 @@ var navmodule = {
           '<td>'+ data[i].BMICode +'</td>'+
           programcount +
           '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+
-          '<td>'+ Number(data[i].SumATV).toFixed(2) +'</td>'+
+          //'<td>'+ Number(data[i].SumATV).toFixed(2) +'</td>'+
         '</tr>';
       }
       output += '</tbody></table>'

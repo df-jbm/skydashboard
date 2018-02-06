@@ -33,7 +33,7 @@
             <label for="unit" class="small col-form-label  align-center">Unit</label>
             <select id="unit" class="form-control form-control-sm border-light  bg-light">
               <option value="1">000</option>
-              <option value="2">ATV</option>
+              <!-- <option value="2">ATV</option> -->
             </select>
           </li>
           <li class="nav-item" id="channelgroupholder">
