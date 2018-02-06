@@ -125,6 +125,14 @@
           <button class="btn btn-sm" id="exportchannel" value="hidden">Export Channel Performance</button>
           <a class="btn btn-sm" id="dlchannel" disable="true" download>download here</a>
         </div>
+        <div class="col-sm-12" id="exportbody">
+          <button class="btn btn-sm" id="exportprogramme" value="hidden">Export Programme Performance</button>
+          <a class="btn btn-sm" id="dlprog" disable="true" download>download here</a>
+        </div>
+        <div class="col-sm-12" id="exportbody">
+          <button class="btn btn-sm" id="exporttrending" value="hidden">Export Trending</button>
+          <a class="btn btn-sm" id="dltrend" disable="true" download>download here</a>
+        </div>
       </div>
     </main>
     <script src="js/jquery.min.js"></script>
