@@ -667,6 +667,7 @@ var navmodule = {
             }
           }
         }
+        console.log(graphlegend)
         var colorpick = ['#000','#a643c6','#ea5712','#110bc4']
         var colorpick1 = ['','#000','#a643c6','#ea5712','#110bc4']
         if(PFormIDs.length == 1){
