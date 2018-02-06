@@ -1430,7 +1430,7 @@ $(function(){
   /*
   ===== Bind trigger for channelgroup
   */
-  $('#exportcontainer').hover(function(){
+  $('#exportcontainer').click(function(){
     $(this).addClass('bg-light')
     $(this).animate({
       width : '400px',
