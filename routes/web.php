@@ -30,3 +30,5 @@ Route::get('/programmeperformance','dbcontroller@GetProgramePerformance');
 Route::get('/trending','dbcontroller@GetTrending');
 
 Route::get('/filtertitle','dbcontroller@BMITitles');
+
+Route::get('/ExpotChannelPerformance','dbcontroller@ExpotChannelPerformance');

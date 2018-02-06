@@ -45,5 +45,18 @@ class dbcontroller extends Controller
     $this->ProgrammeTitles = DB::select('EXEC QueryBMIProgramTitles ?',array($r->InputFilter));
     return response($this->ProgrammeTitles);
   }
+  public function ExpotChannelPerformance(Request $r){
+    return response($this->GetChannelPerformance);
+  }
+  public function get_export(Request $r){
+      ini_set('memory_limit','1024M');
+      $table = DB::select('EXEC GetSpots ?', array($r->CampaignID));
+      $file = fopen('csv/'. $r->Campaign .'.csv', 'w+');
+      foreach ($table as $row) {
+          fputcsv($file, [$row->ChannelName,$row->SpotDate,$row->FromTime,$row->Duration,$row->TRP,$row->TRP000]);
+      }
+      fclose($file);
+      return response('csv/'. $r->Campaign .'.csv');
+  }
 
 }

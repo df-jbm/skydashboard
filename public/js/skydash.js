@@ -314,10 +314,9 @@ var navmodule = {
         }
         for(var x in Formname){
 
-          var flag = false;
-          for(var p in PerformanceChannels[i].Channels){
-            if(PerformanceChannels[i].Channels[p].PlatFormName == Formname[x]){
-              var PFormID = PerformanceChannels[i].Channels[p].PlatFormID;
+          var flag = false; for(var p in PerformanceChannels[i].Channels){
+          if(PerformanceChannels[i].Channels[p].PlatFormName == Formname[x]){
+          var PFormID = PerformanceChannels[i].Channels[p].PlatFormID;
 
               flag = true;
               console.log(delivered + "=" + activeChannel + "&" + activePlatForm + "=" + $.inArray( activeChannel , GetChannelIDs ) + "&" + $.inArray( activePlatForm , GetPlatFormIDs ))
