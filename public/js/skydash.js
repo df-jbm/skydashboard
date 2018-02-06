@@ -1431,7 +1431,10 @@ $(function(){
   ===== Bind trigger for channelgroup
   */
   $('#exportcontainer').hover(function(){
-    $(this).animate({top: '100px',left : '100px'});
+    $(this).animate({
+      width : '100px',
+      left : '100px'
+    });
   })
   $('#channelview').on('change',function(){
     activeChannel = 0;
