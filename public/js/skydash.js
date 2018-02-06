@@ -1439,9 +1439,7 @@ $(function(){
       $('#exportcontainer').addClass('bg-light')
       $('#exportcontainer').animate({
         width : '400px',
-        height : '250px',
-        right : '15px',
-        bottom : '15px'      
+        height : '250px',              
       });
     }else{
       $(this).attr('value','hidden')
