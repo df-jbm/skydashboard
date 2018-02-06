@@ -760,7 +760,7 @@ var navmodule = {
             }
           }
           dataseries = [{
-            name: "Sample title",
+            name: graphlegend[0],
             type: magicType,
             data: average,
             stack : 'stack',
