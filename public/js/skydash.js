@@ -1055,7 +1055,7 @@ var navmodule = {
                         }
                     },*/
                 },
-                data: topxAxis
+                data: legendtopxAxis
             }
           ]
           })
