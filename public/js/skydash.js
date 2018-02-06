@@ -1447,10 +1447,7 @@ $(function(){
       $(this).attr('value','hidden')
       $('#exportcontainer').removeClass('bg-light')
       $('#exportcontainer').animate({
-        width : minwidth,
-        height : 'auto',
-        right : 0,
-        bottom : 0
+        width : minwidth,        
       });
     }    
   })
