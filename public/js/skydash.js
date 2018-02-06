@@ -410,8 +410,8 @@ var navmodule = {
           }else{
             var Prange = navmodule.externalProgdate($('#customperiod').val())
           }
-          navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
-          navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName + " - " +Formname[x])
+          navmodule.init_ProgrammePerformance(ChGroupID,ChID,-1,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
+          navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,-1,PerformanceChannels[i].ChannelName + " - " +Formname[x])
           delivered = true;
           var activeTotalCell = 'active rounded'
         }else{
