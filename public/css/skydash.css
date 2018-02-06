@@ -213,6 +213,8 @@ body main .row #performance-content .card .card-body .table-responsive{
 }
 #exportcontainer{
   position: absolute;
+  width: 150px;
+  height: 15px;
   right: 0;
   bottom: 0;
 }

@@ -1447,7 +1447,7 @@ $(function(){
       $(this).attr('value','hidden')
       //$('#exportcontainer').removeClass('bg-light')
       $('#exportcontainer').animate({
-        width : '50px',
+        width : '150px',
         height : '50px',
         right : 0,
         bottom : 0
