@@ -968,6 +968,7 @@ var navmodule = {
           }
           console.log(platformlist)
           console.log(data)
+          var legendtopxAxis = [];
           //trendinglegend.push({PlatFormID:data[i].PlatFormID,PlatFormName : data[i].PlatFormName})
           for(var i in axislabel){
             if(Number(i) < barnum){
@@ -1024,12 +1025,12 @@ var navmodule = {
                   }
                 }                
               }
-              topxAxis.push(sum)
+              legendtopxAxis.push(sum)
             }
           }
-          console.log(topxAxis)
-          for(var i in topxAxis){
-            topxAxis[i] = Number(topxAxis[i]).toFixed(2)
+          console.log(legendtopxAxis)
+          for(var i in legendtopxAxis){
+            legendtopxAxis[i] = Number(legendtopxAxis[i]).toFixed(2)
           }
         });
         echartBar.setOption({
