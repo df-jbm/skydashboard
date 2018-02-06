@@ -1445,14 +1445,14 @@ $(function(){
       });
     }else{
       $(this).attr('value','hidden')
-      $(this).html('Show Export Module')      
-      $('#exportcontainer').removeClass('bg-info')
+      $(this).html('Show Export Module')            
       $('#exportcontainer').animate({
         width : '150px',
         height : '35px',
         right : 0,
         bottom : 0
       });
+      $('#exportcontainer').removeClass('bg-info')
     }    
   })
   $('#channelview').on('change',function(){
