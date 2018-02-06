@@ -1432,8 +1432,10 @@ $(function(){
   */
   
   $('#btnshowhideEx').click(function(){
+    var minwidth;
     if($(this).attr('value') == 'hidden'){
       $(this).attr('value','shown')
+      minwidth = $('#exportcontainer').width();
       $('#exportcontainer').addClass('bg-light')
       $('#exportcontainer').animate({
         width : '400px',
@@ -1445,10 +1447,10 @@ $(function(){
       $(this).attr('value','hidden')
       $('#exportcontainer').removeClass('bg-light')
       $('#exportcontainer').animate({
-        width : 'auto',
+        width : minwidth,
         height : 'auto',
-        right : "-"+Number(400-$('#exportcontainer').width())+"px",
-        bottom : "-"+Number(230-$('#exportcontainer').height())+"px",
+        right : '15px',
+        bottom : '15px'
       });
     }    
   })
