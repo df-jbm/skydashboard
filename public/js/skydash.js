@@ -1435,12 +1435,12 @@ $(function(){
     var minwidth;
     if($(this).attr('value') == 'hidden'){
       $(this).attr('value','shown')
-      $(this).addClass('show')
-      $(this).removeClass('hide')
+      $('#btnshowhideEx').addClass('show')
+      
     }else{
       $(this).attr('value','hidden')
-      $(this).removeClass('show')
-      $(this).addClass('hide')
+      $('#btnshowhideEx').removeClass('show')
+      
     }    
   })
   $('#channelview').on('change',function(){
