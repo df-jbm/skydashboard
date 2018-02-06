@@ -30,6 +30,7 @@ var TrendingPlatFormID = 0;
 var TrendingFilter = '';
 var channelgroupid = 0;
 var channelgroupid = 0;
+var trendinglegend = [];
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -213,7 +214,18 @@ var navmodule = {
         var TempChannelID = ChannelGroupID != 2000 ? data[i].ChannelID : data[i].ChannelGroupID;
         ChannelID.push(TempChannelID)
         PlatformName.push(data[i].PlatFormName)
+        var legendvalue = false;
+        for (var x = 0; x < trendinglegend.length; x++) {
+          if (trendinglegend[x].PlatFormID == data[i].PlatFormID) {
+            legendvalue = true;            
+            break;                      
+          }
+        }
+        if(legendvalue == false){
+          trendinglegend.push({PlatFormID:data[i].PlatFormID,PlatFormName : data[i].PlatFormName})
+        }              
       }
+      console.log(trendinglegend)
       ChannelID = _.uniq(ChannelID);
       var Formname = _.uniq(PlatformName);
       var PerformanceChannels = []
