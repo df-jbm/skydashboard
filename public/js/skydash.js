@@ -946,6 +946,79 @@ var navmodule = {
           var SelectUnselect = (isSelected ? 'select' : 'unselect');
           console.log(SelectUnselect)
           console.log(params.name)
+          var excludelist = []
+          if(SelectUnselect == 'unselect'){
+            excludelist.push(params.name)
+          }else{
+            excludelist.splice($.inArray(params.name, excludelist),1);
+          }
+          console.log(excludelist)          
+          for(var i in trendinglegend){
+            if(trendinglegend[i].PlatFormName == params.name){
+
+            }
+          }
+          //trendinglegend.push({PlatFormID:data[i].PlatFormID,PlatFormName : data[i].PlatFormName})
+          for(var i in axislabel){
+            if(Number(i) < barnum){
+              var sum = 0;
+              for(var x in data){
+                switch(num){
+                  case '1' :
+                    if(axislabel[i] == data[x].ProgDate){
+                      if($('#unit').val() == 1){
+                        sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                      }else{
+                        sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                      }
+                    }
+                    break;
+                  case '2' :
+                    if(axislabel[i] == data[x].WeekNumber){
+                      console.log(axislabel[i] +"=="+ data[x].WeekNumber)
+                      if($('#unit').val() == 1){
+                        sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                      }else{
+                        sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                      }
+                    }
+                    break;
+                  case '3' :
+                    if(axislabel[i] == data[x].MonthNumber){
+                      if($('#unit').val() == 1){
+                        sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                      }else{
+                        sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                      }
+                    }
+                    break;
+                  case '4' :
+                    if(axislabel[i] == data[x].QuarterNumber){
+                      if($('#unit').val() == 1){
+                        sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                      }else{
+                        sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                      }
+                    }
+                    break;
+                  case '5' :
+                    if(axislabel[i] == data[x].YearNumber){
+                      if($('#unit').val() == 1){
+                        sum += parseFloat(Number(data[x].Sum000).toFixed(2))
+                      }else{
+                        sum += parseFloat(Number(data[x].SumATV).toFixed(2))
+                      }
+                    }
+                    break;
+                }
+              }
+              topxAxis.push(sum)
+            }
+          }
+          console.log(topxAxis)
+          for(var i in topxAxis){
+            topxAxis[i] = Number(topxAxis[i]).toFixed(2)
+          }
         });
         echartBar.setOption({
           title: {
