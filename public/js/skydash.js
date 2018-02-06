@@ -1435,12 +1435,23 @@ $(function(){
     var minwidth;
     if($(this).attr('value') == 'hidden'){
       $(this).attr('value','shown')
-      $('#btnshowhideEx').addClass('show')
-      
+      minwidth = $('#exportcontainer').width();
+      $('#exportcontainer').addClass('bg-light')
+      $('#exportcontainer').animate({
+        width : '400px',
+        height : '250px',
+        right : '15px',
+        bottom : '15px'      
+      });
     }else{
       $(this).attr('value','hidden')
-      $('#btnshowhideEx').removeClass('show')
-      
+      $('#exportcontainer').removeClass('bg-light')
+      $('#exportcontainer').animate({
+        width : minwidth,
+        height : 'auto',
+        right : 0,
+        bottom : 0
+      });
     }    
   })
   $('#channelview').on('change',function(){
