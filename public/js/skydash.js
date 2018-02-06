@@ -320,7 +320,7 @@ var navmodule = {
               var PFormID = PerformanceChannels[i].Channels[p].PlatFormID;
 
               flag = true;
-              console.log(delivered + "=" + activeChannel + "/" + activePlatForm + "=" + $.inArray( activeChannel , GetChannelIDs ) + "/" + $.inArray( activePlatForm , GetPlatFormIDs ))
+              console.log(delivered + "=" + activeChannel + "&" + activePlatForm + "=" + $.inArray( activeChannel , GetChannelIDs ) + "&" + $.inArray( activePlatForm , GetPlatFormIDs ))
               if(delivered == false && $.inArray( activeChannel , GetChannelIDs ) == -1 && $.inArray( activePlatForm , GetPlatFormIDs ) == -1){
                 if(ChannelGroupID != 2000){
                   var ChGroupID = -1;
@@ -392,7 +392,27 @@ var navmodule = {
           }
 
         }
-        if(activePlatForm == -1 && activeChannel == PerformanceChannels[i].ChannelID){
+        if(activePlatForm == -1 && activeChannel == PerformanceChannels[i].ChannelID){          
+          if(ChannelGroupID != 2000){
+            var ChGroupID = -1;
+            var ChID = PerformanceChannels[i].ChannelID
+            activeChannel = ChID
+          }else{
+            var ChGroupID = PerformanceChannels[i].ChannelID
+            var ChID = -1;
+            activeChannel = ChGroupID
+          }
+          activePlatForm = PFormID;
+          var PFormID = PFormID
+          var PtypeID = $('#periodtype').val()
+          if(WPeriod != ''){
+            var Prange = WPeriod
+          }else{
+            var Prange = navmodule.externalProgdate($('#customperiod').val())
+          }
+          navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
+          navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName + " - " +Formname[x])
+          delivered = true;
           var activeTotalCell = 'active rounded'
         }else{
           var activeTotalCell = ''
@@ -824,7 +844,7 @@ var navmodule = {
                     var tempDate = data[d].YearNumber
                     break;
                 }
-                console.log(PFormIDs[i] +'=='+ data[d].PlatFormID + '/' + axislabel[x] +"=="+tempDate)
+                //console.log(PFormIDs[i] +'=='+ data[d].PlatFormID + '/' + axislabel[x] +"=="+tempDate)
                 if(PFormIDs[i] == data[d].PlatFormID && axislabel[x] == tempDate){
                   if($('#unit').val() == 1){
                     average[x] = Number(data[d].Sum000).toFixed(2)
