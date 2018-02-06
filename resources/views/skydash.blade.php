@@ -123,7 +123,7 @@
         <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>
         <div class="col-sm-12" id="exportbody">
           <button class="btn btn-sm" id="exportchannel" value="hidden">Export Channel Performance</button>
-          <a class="btn btn-sm" disable="true" download>download</a>
+          <a class="btn btn-sm" id="dlchannel" disable="true" download>download here</a>
         </div>
       </div>
     </main>
