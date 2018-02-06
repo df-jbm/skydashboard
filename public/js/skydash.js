@@ -1431,6 +1431,10 @@ $(function(){
   ===== Bind trigger for channelgroup
   */
   
+  $('#exportchannel').click(function(){
+    navmodule.exportchannel(request);
+  })
+
   $('#btnshowhideEx').click(function(){
     var minwidth;
     if($(this).attr('value') == 'hidden'){
