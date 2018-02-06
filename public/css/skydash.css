@@ -213,6 +213,7 @@ body main .row #performance-content .card .card-body .table-responsive{
 }
 #btnshowhideEx{
   padding: 5px 0 0 10px;
+  cursor: pointer;
 }
 #exportcontainer{
   position: fixed;
