@@ -1448,7 +1448,7 @@ $(function(){
       //$('#exportcontainer').removeClass('bg-light')
       $('#exportcontainer').animate({
         width : '150px',
-        height : '50px',
+        height : '35px',
         right : 0,
         bottom : 0
       });
