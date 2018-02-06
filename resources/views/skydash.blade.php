@@ -120,7 +120,7 @@
         </div>
       </div>
       <div id="exportcontainer">
-        <button class="btn btn-sm" id="btnshowhideEx" value="hidden">Show Export Module</button>
+        <div class="card-title" id="btnshowhideEx" value="hidden">Show Export Module</div>
         <div class="row">
           <div class="col-sm-12">
             <div class="card border">
