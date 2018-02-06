@@ -119,7 +119,7 @@
           </div>
         </div>
       </div>
-      <div id="exportcontainer bg-info">
+      <div id="exportcontainer" class="bg-info">
         <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>
         <div class="row">
           <div class="col-sm-12">
