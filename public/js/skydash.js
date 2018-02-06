@@ -1068,6 +1068,7 @@ var navmodule = {
            calculable : true,
               series: dataseries
           }
+          return option;
         }        
         var echartBar = echarts.init(document.getElementById('bargraph'));
         echartBar.on('magictypechanged', function(params) {
