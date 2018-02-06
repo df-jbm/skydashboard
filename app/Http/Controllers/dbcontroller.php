@@ -47,7 +47,13 @@ class dbcontroller extends Controller
   }
   public function ExpotChannelPerformance(Request $r){
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    return response($this->GetChannelPerformance);
+    $file = fopen('csv/channelperformance.csv', 'w+');
+    foreach ($this->GetChannelPerformance as $row) {
+      fputcsv($file, [$row->ChannelID,$row->PlatFormID,$row->ChannelName,$row->PlatFormName,$row->Sum000,$row->SumATV]);
+    }
+    fclose($file);
+    return response('csv/channelperformance.csv');
+
   }
   public function get_export(Request $r){
       ini_set('memory_limit','1024M');
