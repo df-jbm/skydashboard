@@ -1451,8 +1451,7 @@ $(function(){
         height : '35px',
         right : 0,
         bottom : 0
-      });
-      $('#exportcontainer').removeClass('bg-info')
+      });      
     }    
   })
   $('#channelview').on('change',function(){
