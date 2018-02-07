@@ -49,6 +49,7 @@ class dbcontroller extends Controller
     $currentdatetime = date('Ymdhis');
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
     $file = fopen('csv/channelperformance'. $currentdatetime .'.csv', 'w+');
+    fputcsv($file, ["Channel ID","Platform ID","Channel name","platform name","Sum000","SumATV"]);
     foreach ($this->GetChannelPerformance as $row) {
       fputcsv($file, [$row->ChannelID,$row->PlatFormID,$row->ChannelName,$row->PlatFormName,$row->Sum000,$row->SumATV]);
     }
@@ -60,6 +61,7 @@ class dbcontroller extends Controller
     $currentdatetime = date('Ymdhis');
     $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter));
     $file = fopen('csv/programmeperfomance'. $currentdatetime .'.csv', 'w+');
+    fputcsv($file, ["BMI code","Programme title ID","Programme title","Count","Sum000","SumATV"]);
     foreach ($this->GetProgramePerformance as $row) {
       fputcsv($file, [$row->BMICode,$row->ProgrammeTitleID,$row->ProgrammeTitle,$row->CNT,$row->Sum000,$row->SumATV]);
     }
@@ -70,6 +72,7 @@ class dbcontroller extends Controller
     $currentdatetime = date('Ymdhis');
     $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
     $file = fopen('csv/trending'. $currentdatetime .'.csv', 'w+');
+    fputcsv($file, ["Prog date","Platform ID","Sum000","SumATV"]);
     foreach ($this->GetTrending as $row) {
       fputcsv($file, [$row->ProgDate,$row->PlatFormID,$row->Sum000,$row->SumATV]);
     }
