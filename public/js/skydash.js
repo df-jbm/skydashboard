@@ -31,7 +31,9 @@ var TrendingFilter = '';
 var channelgroupid = 0;
 var channelgroupid = 0;
 var trendinglegend = [];
-var exportrequest = []
+var channelreq = [];
+var programmereq = [];
+var trendingreq = [];
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -184,6 +186,11 @@ var navmodule = {
       $('#dlchannel').attr('disable', false)
     });
   },
+  exportprogramme : function(req){
+    $.get(window.location.href + "exportprogramme", req, function(data){
+      console.log(data)
+    })
+  },
   ChannelPerformanceRequest : function(){
     var ChannelGroupID = $('#channelgroup').val()
     var PeriodTypeID = $('#periodtype').val();
@@ -206,7 +213,7 @@ var navmodule = {
       Filter : filter
     }
     console.log(request)
-    exportrequest = request;
+    channelreq = request;
     //loadingstate()
     $.get(window.location.href + "channelperformance", request, function(data){
       navmodule.init_ChannelPerformance(data,ChannelGroupID)
@@ -499,8 +506,9 @@ var navmodule = {
       PeriodTypeID : PtypeID,
       Period : Prange,
       Filter : filter
-    }
+    }    
     console.log(request)
+    programmereq = request;
     $.get(window.location.href + "programmeperformance", request, function(data){
       if(SumSort == '000'){
         data.sort(function(a, b) {
@@ -1436,9 +1444,11 @@ $(function(){
   */
   
   $('#exportchannel').click(function(){
-    navmodule.exportchannel(exportrequest);
+    navmodule.exportchannel(channelreq);
   })
-
+  $('#exportprogramme').click(function(){
+    navmodule.exportprogramme(programmereq);
+  })
   $('#btnshowhideEx').click(function(){
     var minwidth;
     if($(this).attr('value') == 'hidden'){
