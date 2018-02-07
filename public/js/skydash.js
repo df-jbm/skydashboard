@@ -199,7 +199,7 @@ var navmodule = {
       //$('#dlprog').attr('href',data)
       //$('#dlprog').attr('disable', false)
     })
-  }
+  },
   ChannelPerformanceRequest : function(){
     var ChannelGroupID = $('#channelgroup').val()
     var PeriodTypeID = $('#periodtype').val();
