@@ -196,8 +196,8 @@ var navmodule = {
   exporttrending : function(req){
     $.get(window.location.href + "exporttrending", req, function(data){
       console.log(data)
-      //$('#dlprog').attr('href',data)
-      //$('#dlprog').attr('disable', false)
+      $('#dltrend').attr('href',data)
+      $('#dltrend').attr('disable', false)
     })
   },
   ChannelPerformanceRequest : function(){
