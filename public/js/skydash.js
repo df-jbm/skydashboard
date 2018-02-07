@@ -184,6 +184,7 @@ var navmodule = {
       console.log(data)
       $('#dlchannel').attr('href',data)
       $('#dlchannel').attr('disable', false)
+      $('#dlchannel').html("Download here")
     });
   },
   exportprogramme : function(req){
@@ -191,6 +192,7 @@ var navmodule = {
       console.log(data)
       $('#dlprog').attr('href',data)
       $('#dlprog').attr('disable', false)
+      $('#dlprog').html("Download here")
     })
   },
   exporttrending : function(req){
@@ -198,6 +200,7 @@ var navmodule = {
       console.log(data)
       $('#dltrend').attr('href',data)
       $('#dltrend').attr('disable', false)
+      $('#dltrend').html("Download here")
     })
   },
   ChannelPerformanceRequest : function(){
@@ -1461,6 +1464,15 @@ $(function(){
   $('#exporttrending').click(function(){
     navmodule.exporttrending(trendingreq);
   })
+  $('#dlchannel').click(function(){
+    $(this).html("download again")
+  })
+  $('#dlprog').click(function(){
+    $(this).html("download again")
+  })
+  $('#dltrend').click(function(){
+    $(this).html("download again")
+  })  
   $('#btnshowhideEx').click(function(){
     var minwidth;
     if($(this).attr('value') == 'hidden'){
