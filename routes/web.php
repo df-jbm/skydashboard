@@ -35,4 +35,4 @@ Route::get('/filtertitle','dbcontroller@BMITitles');
 
 Route::get('/ExpotChannelPerformance','dbcontroller@ExpotChannelPerformance');
 
-Route::get('/exportprogramme','dbcontroller@GetProgramePerformance');
+Route::get('/exportprogramme','dbcontroller@exportprogramme');

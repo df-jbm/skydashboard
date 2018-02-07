@@ -189,6 +189,8 @@ var navmodule = {
   exportprogramme : function(req){
     $.get(window.location.href + "exportprogramme", req, function(data){
       console.log(data)
+      $('#dlprog').attr('href',data)
+      $('#dlprog').attr('disable', false)
     })
   },
   ChannelPerformanceRequest : function(){

@@ -54,5 +54,16 @@ class dbcontroller extends Controller
     }
     fclose($file);
     return response('csv/channelperformance'. $currentdatetime .'.csv');
-  }  
+  }
+
+  public function exportprogramme(Request $r){
+    $currentdatetime = date('Ymdhis');
+    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
+    $file = fopen('csv/programmeperfomance'. $currentdatetime .'.csv', 'w+');
+    foreach ($this->GetProgramePerformance as $row) {
+      fputcsv($file, [$row->BMICode,$row->ProgrammeTitleID,$row->ProgrammeTitle,$row->CNT,$row->Sum000,$row->SumATV]);
+    }
+    fclose($file);
+    return response('csv/programmeperfomance'. $currentdatetime .'.csv');
+  }    
 }
