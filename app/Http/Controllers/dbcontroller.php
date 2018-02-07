@@ -65,5 +65,15 @@ class dbcontroller extends Controller
     }
     fclose($file);
     return response('csv/programmeperfomance'. $currentdatetime .'.csv');
+  }
+  public function exporttrending(Request $r){
+    $currentdatetime = date('Ymdhis');
+    $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$rPeriodTypeID,$r->Period,$r->Filter));
+    $file = fopen('csv/trending'. $currentdatetime .'.csv', 'w+');
+    foreach ($this->GetTrending as $row) {
+      fputcsv($file, [$row->BMICode,$row->ProgrammeTitleID,$row->ProgrammeTitle,$row->CNT,$row->Sum000,$row->SumATV]);
+    }
+    fclose($file);
+    return response('csv/trending'. $currentdatetime .'.csv');
   }    
 }

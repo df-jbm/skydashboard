@@ -193,6 +193,13 @@ var navmodule = {
       $('#dlprog').attr('disable', false)
     })
   },
+  exporttrending : function(req){
+    $.get(window.location.href + "exporttrending", req, function(data){
+      console.log(data)
+      //$('#dlprog').attr('href',data)
+      //$('#dlprog').attr('disable', false)
+    })
+  }
   ChannelPerformanceRequest : function(){
     var ChannelGroupID = $('#channelgroup').val()
     var PeriodTypeID = $('#periodtype').val();
@@ -632,7 +639,7 @@ var navmodule = {
         PlatFormID : PFormID,
         Filter : filter,
       }
-
+      trendingreq = request;
       if($('#barnum').val() != '' && $.isNumeric($('#barnum').val()) == true && $('#barnum').val() <= 13){
         var barnum = Number($('#barnum').val())
       }else{
@@ -1450,6 +1457,9 @@ $(function(){
   })
   $('#exportprogramme').click(function(){
     navmodule.exportprogramme(programmereq);
+  })
+  $('#exporttrending').click(function(){
+    navmodule.exporttrending(trendingreq);
   })
   $('#btnshowhideEx').click(function(){
     var minwidth;

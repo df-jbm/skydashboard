@@ -36,3 +36,5 @@ Route::get('/filtertitle','dbcontroller@BMITitles');
 Route::get('/ExpotChannelPerformance','dbcontroller@ExpotChannelPerformance');
 
 Route::get('/exportprogramme','dbcontroller@exportprogramme');
+
+Route::get('/exporttrending','dbcontroller@GetTrending');
