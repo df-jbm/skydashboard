@@ -46,24 +46,13 @@ class dbcontroller extends Controller
     return response($this->ProgrammeTitles);
   }
   public function ExpotChannelPerformance(Request $r){
+    $currentdatetime = new Date('Ymdhis');
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    $file = fopen('csv/channelperformance.csv', 'w+');
+    $file = fopen('csv/channelperformance'. $currentdatetime .'.csv', 'w+');
     foreach ($this->GetChannelPerformance as $row) {
       fputcsv($file, [$row->ChannelID,$row->PlatFormID,$row->ChannelName,$row->PlatFormName,$row->Sum000,$row->SumATV]);
     }
     fclose($file);
-    return response('csv/channelperformance.csv');
-
-  }
-  public function get_export(Request $r){
-      ini_set('memory_limit','1024M');
-      $table = DB::select('EXEC GetSpots ?', array($r->CampaignID));
-      $file = fopen('csv/'. $r->Campaign .'.csv', 'w+');
-      foreach ($table as $row) {
-          fputcsv($file, [$row->ChannelName,$row->SpotDate,$row->FromTime,$row->Duration,$row->TRP,$row->TRP000]);
-      }
-      fclose($file);
-      return response('csv/'. $r->Campaign .'.csv');
-  }
-
+    return response('csv/channelperformance'. $currentdatetime .'.csv');
+  }  
 }
