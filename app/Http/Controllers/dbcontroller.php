@@ -46,7 +46,7 @@ class dbcontroller extends Controller
     return response($this->ProgrammeTitles);
   }
   public function ExpotChannelPerformance(Request $r){
-    $currentdatetime = new Date('Ymdhis');
+    $currentdatetime = date('Ymdhis');
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
     $file = fopen('csv/channelperformance'. $currentdatetime .'.csv', 'w+');
     foreach ($this->GetChannelPerformance as $row) {
