@@ -1454,7 +1454,7 @@ $(function(){
       $(this).attr('value','hidden')
       $(this).html('Show Export Module')            
       $('#exportcontainer').animate({
-        width : '150px',
+        width : '180px',
         height : '35px',
         right : 0,
         bottom : 0
