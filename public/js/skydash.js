@@ -324,11 +324,14 @@ var navmodule = {
         output += '</tr></thead><tbody>';
         var globaltotal = 0;
       for(var i in PerformanceChannels){
+        /*--------------
         if(PerformanceChannels[i].ChannelName.indexOf('TNT Comedy HD') == -1){
           var logo = PerformanceChannels[i].ChannelName.replace('.', '-');
         }else{
           var logo = 'TNT Comedy';
         }
+        --------------*/
+        var logo = PerformanceChannels[i].ChannelName.replace('.', '-');
         if($('#channelgroup').val() == 1){
           var size = 30
         }else{
