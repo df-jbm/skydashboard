@@ -331,7 +331,7 @@ var navmodule = {
           var logo = 'TNT Comedy';
         }
         --------------*/
-        var logo = PerformanceChannels[i].ChannelName.replace('.', '-');
+        var logo = PerformanceChannels[i].ChannelName;
         if($('#channelgroup').val() == 1){
           var size = 30
         }else{
