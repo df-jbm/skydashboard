@@ -218,7 +218,7 @@ body main .row #performance-content .card .card-body .table-responsive{
 #exportcontainer{
   position: fixed;
   width: 180px;
-  height: 35px;
+  height: 30px;
   right: 0;
   bottom: 0;
 }

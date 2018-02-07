@@ -1465,7 +1465,7 @@ $(function(){
       $(this).html('Show Export Module')            
       $('#exportcontainer').animate({
         width : '180px',
-        height : '35px',
+        height : '30px',
         right : 0,
         bottom : 0
       });      
