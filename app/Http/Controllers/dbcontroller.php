@@ -49,10 +49,12 @@ class dbcontroller extends Controller
     $currentdatetime = date('Ymdhis');
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
     $file = fopen('csv/channelperformance'. $currentdatetime .'.csv', 'w+');
-    fputcsv($file, ["Channel ID","Platform ID","Channel name","platform name","Sum000"]);
+    fputcsv($file, ["Channel name","platform name","Sum000"]);
     foreach ($this->GetChannelPerformance as $row) {
       if($row->ChannelID != -1){
-        fputcsv($file, [$row->ChannelID,$row->PlatFormID,$row->ChannelName,$row->PlatFormName,$row->Sum000]);
+        fputcsv($file, [$row->ChannelName,$row->PlatFormName,$row->Sum000]);
+      }else{
+        fputcsv($file, ["TOTAL",$row->PlatFormName,$row->Sum000]);
       }      
     }
     fclose($file);
@@ -74,9 +76,9 @@ class dbcontroller extends Controller
     $currentdatetime = date('Ymdhis');
     $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
     $file = fopen('csv/trending'. $currentdatetime .'.csv', 'w+');
-    fputcsv($file, ["Prog date","Platform ID","Sum000","SumATV"]);
+    fputcsv($file, ["Prog date","Sum000"]);
     foreach ($this->GetTrending as $row) {
-      fputcsv($file, [$row->ProgDate,$row->PlatFormID,$row->Sum000,$row->SumATV]);
+      fputcsv($file, [$row->ProgDate,$row->Sum000]);
     }
     fclose($file);
     return response('csv/trending'. $currentdatetime .'.csv');
