@@ -736,6 +736,10 @@ var navmodule = {
                           itemStyle : {
                             color : data[i].ColorCode,
                             borderColor : data[i].ColorCode,
+                            emphasis : {
+                              color : data[i].ColorCode,
+                              borderColor : data[i].ColorCode,
+                            }
                           },
                         })
                       }else{
