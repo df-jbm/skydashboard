@@ -854,6 +854,9 @@ var navmodule = {
                     formatter : '{c}'
                 }
             },
+            itemStyle : {
+              show : false
+            },
             markPoint: {
                 clickable: true,
                 symbol: 'pin',
