@@ -731,7 +731,7 @@ var navmodule = {
                   if(axislabel[x] == data[i].ProgDate){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push({ name : graphlegend[0],value : Number(data[i].Sum000).toFixed(2), itemStyle : { normal : { color : data[i].ColorCode } } })
+                        average.push(Number(data[i].Sum000).toFixed(2))
                       }else{
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
@@ -739,6 +739,7 @@ var navmodule = {
                       break;
                     }
                   }
+                  var barcolor = data[i].ColorCode;
                 }
                 if(lableexist == false){
                   average.push(Number(0).toFixed(2));
@@ -821,7 +822,15 @@ var navmodule = {
                     position: 'top',
                     formatter : '{c}'
                 }
-            },            
+            },
+            itemStyle : {
+              normal : {
+                color : barcolor
+              },
+              emphasis : {
+                color : barcolor
+              }
+            }            
             data: average,
           }]
           var topxAxis = average;
