@@ -563,7 +563,7 @@ var navmodule = {
       if($('#periodtype').val() == 1){
         var FirstFromTimeHead = '<td>Start time</td>';
       }else{
-        var FirstFromTimeHead;
+        var FirstFromTimeHead = '';
       }      
       output += '<thead class="bg-white">'+
         '<tr>'+
@@ -587,7 +587,7 @@ var navmodule = {
       if($('#periodtype').val() == 1){
         var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
       }else{
-        var FirstFromTime;
+        var FirstFromTime = '';
       }
       output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
           '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
