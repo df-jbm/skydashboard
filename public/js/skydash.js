@@ -732,6 +732,7 @@ var navmodule = {
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
                         average.push({
+                          name : graphlegend,
                           value : Number(data[i].Sum000).toFixed(2),
                           itemStyle : {
                             color : data[i].ColorCode.toString(),
