@@ -731,7 +731,7 @@ var navmodule = {
                   if(axislabel[x] == data[i].ProgDate){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push([{ value : Number(data[i].Sum000).toFixed(2), itemStyle : { color : data[i].ColorCode.toString() } }])
+                        average.push({ value : Number(data[i].Sum000).toFixed(2), itemStyle : { color : data[i].ColorCode } })
                       }else{
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
@@ -809,25 +809,29 @@ var navmodule = {
                 break;
             }
           }
-          dataseries = [{
-            name: graphlegend[0],
-            type: magicType,            
-            stack : 'stack',
-            label: {
+          dataseries = [{            
+            type: magicType,                        
+            itemStyle: {
                 normal: {
-                    show: false,
-                    color : '#000',
-                    fontSize: 9,
-                    position: 'top',
-                    formatter : '{c}'
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 0, color: '#83bff6'},
+                            {offset: 0.5, color: '#188df0'},
+                            {offset: 1, color: '#188df0'}
+                        ]
+                    )
+                },
+                emphasis: {
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 0, color: '#2378f7'},
+                            {offset: 0.7, color: '#2378f7'},
+                            {offset: 1, color: '#83bff6'}
+                        ]
+                    )
                 }
-            },
-            markPoint: {
-                clickable: true,
-                symbol: 'pin',
-                symbolSize: 80,
-                symbolRotate: null,
-                large: false
             },
             data: average,
           }]
