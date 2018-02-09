@@ -830,7 +830,7 @@ var navmodule = {
               emphasis : {
                 color : barcolor
               }
-            }            
+            },            
             data: average,
           }]
           var topxAxis = average;
