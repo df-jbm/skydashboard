@@ -734,7 +734,7 @@ var navmodule = {
                         average.push({
                           value : Number(data[i].Sum000).toFixed(2),
                           itemStyle : {
-                            color : data[i].ColorCode,
+                            color : data[i].ColorCode.toString(),
                             borderColor : data[i].ColorCode,
                             emphasis : {
                               color : data[i].ColorCode,
