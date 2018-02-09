@@ -837,6 +837,7 @@ var navmodule = {
           }]
           var topxAxis = average;
         }else{
+          console.log(data)
           for(var i in PFormIDs){
             for(var t in trendinglegend){
               if(trendinglegend[t].PlatFormID == PFormIDs[i]){
