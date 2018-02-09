@@ -731,7 +731,7 @@ var navmodule = {
                   if(axislabel[x] == data[i].ProgDate){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push({ value : Number(data[i].Sum000).toFixed(2), itemStyle : { color : data[i].ColorCode } })
+                        average.push({ value : Number(data[i].Sum000).toFixed(2), itemStyle : { normal : { color : data[i].ColorCode } } })
                       }else{
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
@@ -750,7 +750,7 @@ var navmodule = {
                   if(axislabel[x] == data[i].WeekNumber){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push({ value : Number(data[i].Sum000).toFixed(2), itemStyle : { color : data[i].ColorCode.toString() } })
+                        average.push(Number(data[i].Sum000).toFixed(2))
                       }else{
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
@@ -770,7 +770,7 @@ var navmodule = {
                   if(axislabel[x] == data[i].MonthNumber){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push({ value : Number(data[i].Sum000).toFixed(2), itemStyle : { color : data[i].ColorCode.toString() } })
+                        average.push(Number(data[i].Sum000).toFixed(2))
                       }else{
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
@@ -809,34 +809,33 @@ var navmodule = {
                 break;
             }
           }
-          console.log(average)
-          dataseries = [{            
-            type: magicType,                        
-            itemStyle: {
+          dataseries = [{
+            name: graphlegend[0],
+            type: magicType,            
+            stack : 'stack',
+            label: {
                 normal: {
-                    color: new echarts.graphic.LinearGradient(
-                        0, 0, 0, 1,
-                        [
-                            {offset: 0, color: '#83bff6'},
-                            {offset: 0.5, color: '#188df0'},
-                            {offset: 1, color: '#188df0'}
-                        ]
-                    )
-                },
-                emphasis: {
-                    color: new echarts.graphic.LinearGradient(
-                        0, 0, 0, 1,
-                        [
-                            {offset: 0, color: '#2378f7'},
-                            {offset: 0.7, color: '#2378f7'},
-                            {offset: 1, color: '#83bff6'}
-                        ]
-                    )
+                    show: false,
+                    color : '#000',
+                    fontSize: 9,
+                    position: 'top',
+                    formatter : '{c}'
                 }
+            },
+            itemStyle : {
+              normal: {
+                  barBorderWidth: 0,
+                  barBorderColor: colorpick1[PFormIDs[0]],
+                  color: colorpick1[PFormIDs[0]]
+              },
+              emphasis: {
+                barBorderColor: colorpick1[PFormIDs[0]],
+                color: colorpick1[PFormIDs[0]]
+              }
             },
             data: average,
           }]
-          var topxAxis = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+          var topxAxis = average;
         }else{
           for(var i in PFormIDs){
             for(var t in trendinglegend){
@@ -881,8 +880,7 @@ var navmodule = {
             console.log(average)
             dataseries.push({
               name: multilegend,
-              type: magicType,
-              data: average,
+              type: magicType,              
               stack : 'stack',
               label: {
                   normal: {
@@ -903,14 +901,8 @@ var navmodule = {
                   barBorderColor: colorpick[i],
                   color: colorpick[i]
                 }
-              },
-              markPoint: {
-                  clickable: true,
-                  symbol: 'pin',
-                  symbolSize: 80,
-                  symbolRotate: null,
-                  large: false
-              }
+              },              
+              data: average,
             })
           }
           var topxAxis = []
@@ -1307,19 +1299,6 @@ var navmodule = {
                   data: axislabel,
                   name: $("#periodtype option:selected").text(),
                   nameLocation: 'middle',
-                  axisLabel: {
-                      inside: true,
-                      textStyle: {
-                          color: '#fff'
-                      }
-                  },
-                  axisTick: {
-                      show: false
-                  },
-                  axisLine: {
-                      show: false
-                  },
-                  z: 10,
                   nameGap: 40,
                   nameTextStyle : {
                     fontSize : 14,
@@ -1334,23 +1313,23 @@ var navmodule = {
                   zAxisIndex: 1,
                   scale: true,
                   axisLabel: {
-                      inside: true,
+                      show: true,
+                      /*formatter: '{value}' + PutPctg(),
                       textStyle: {
-                          color: '#fff'
-                      }
+                          color: function(v) {
+                              if (v >= 0) {
+                                  return 'green'
+                              } else {
+                                  return 'red'
+                              }
+                          }
+                      },*/
                   },
-                  axisTick: {
-                      show: false
-                  },
-                  axisLine: {
-                      show: false
-                  },
-                  z: 10,
                   data: topxAxis
               }
           ],
-         calculable : true,
-        series: dataseries
+          calculable : true,
+          series: dataseries
         });
       })
     }else{
