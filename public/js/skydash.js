@@ -809,6 +809,7 @@ var navmodule = {
                 break;
             }
           }
+          console.log(average)
           dataseries = [{            
             type: magicType,                        
             itemStyle: {
