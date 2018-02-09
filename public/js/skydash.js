@@ -836,7 +836,7 @@ var navmodule = {
             },
             data: average,
           }]
-          var topxAxis = average;
+          var topxAxis = [1,2,3,4,5,6,7,8,9,10,11,12,13];
         }else{
           for(var i in PFormIDs){
             for(var t in trendinglegend){
