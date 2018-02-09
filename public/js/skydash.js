@@ -821,18 +821,7 @@ var navmodule = {
                     position: 'top',
                     formatter : '{c}'
                 }
-            },
-            itemStyle : {
-              normal: {
-                  barBorderWidth: 0,
-                  barBorderColor: colorpick1[PFormIDs[0]],
-                  color: colorpick1[PFormIDs[0]]
-              },
-              emphasis: {
-                barBorderColor: colorpick1[PFormIDs[0]],
-                color: colorpick1[PFormIDs[0]]
-              }
-            },
+            },            
             data: average,
           }]
           var topxAxis = average;
