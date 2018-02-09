@@ -731,7 +731,13 @@ var navmodule = {
                   if(axislabel[x] == data[i].ProgDate){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push(Number(data[i].Sum000).toFixed(2))
+                        average.push({
+                          value : Number(data[i].Sum000).toFixed(2),
+                          itemStyle : {
+                            color : data[i].ColorCode,
+                            borderColor : data[i].ColorCode,
+                          },
+                        })
                       }else{
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
@@ -822,17 +828,6 @@ var navmodule = {
                     position: 'top',
                     formatter : '{c}'
                 }
-            },
-            itemStyle : {
-              normal: {
-                  barBorderWidth: 0,
-                  barBorderColor: colorpick1[PFormIDs[0]],
-                  color: colorpick1[PFormIDs[0]]
-              },
-              emphasis: {
-                barBorderColor: colorpick1[PFormIDs[0]],
-                color: colorpick1[PFormIDs[0]]
-              }
             },
             markPoint: {
                 clickable: true,
