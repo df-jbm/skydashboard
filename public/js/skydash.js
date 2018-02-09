@@ -875,7 +875,7 @@ var navmodule = {
                   }else{
                     average[x] = Number(data[d].SumATV).toFixed(2)
                   }
-                  var barcolor = data[i].ColorCode;
+                  var barcolor = data[x].ColorCode;
                 }
               }
             }
