@@ -1307,6 +1307,19 @@ var navmodule = {
                   data: axislabel,
                   name: $("#periodtype option:selected").text(),
                   nameLocation: 'middle',
+                  axisLabel: {
+                      inside: true,
+                      textStyle: {
+                          color: '#fff'
+                      }
+                  },
+                  axisTick: {
+                      show: false
+                  },
+                  axisLine: {
+                      show: false
+                  },
+                  z: 10,
                   nameGap: 40,
                   nameTextStyle : {
                     fontSize : 14,
@@ -1321,8 +1334,18 @@ var navmodule = {
                   zAxisIndex: 1,
                   scale: true,
                   axisLabel: {
-                      show: true,                      
+                      inside: true,
+                      textStyle: {
+                          color: '#fff'
+                      }
                   },
+                  axisTick: {
+                      show: false
+                  },
+                  axisLine: {
+                      show: false
+                  },
+                  z: 10,
                   data: topxAxis
               }
           ],
