@@ -735,10 +735,10 @@ var navmodule = {
                           value : Number(data[i].Sum000).toFixed(2),
                           itemStyle : {
                             color : data[i].ColorCode.toString(),
-                            borderColor : data[i].ColorCode,
+                            borderColor : data[i].ColorCode.toString(),
                             emphasis : {
-                              color : data[i].ColorCode,
-                              borderColor : data[i].ColorCode,
+                              color : data[i].ColorCode.toString(),
+                              borderColor : data[i].ColorCode.toString(),
                             }
                           },
                         })
