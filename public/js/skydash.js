@@ -1301,7 +1301,31 @@ var navmodule = {
                       position: 'top'
                   }
               }
-          },          
+          },
+          xAxis: [{
+                  type: 'category',
+                  data: axislabel,
+                  name: $("#periodtype option:selected").text(),
+                  nameLocation: 'middle',
+                  nameGap: 40,
+                  nameTextStyle : {
+                    fontSize : 14,
+                  }
+              },
+              {
+                  type: 'category',
+                  position: 'top',
+                  onZero: true,
+                  xAxisIndex: 1,
+                  yAxisIndex: 1,
+                  zAxisIndex: 1,
+                  scale: true,
+                  axisLabel: {
+                      show: true,                      
+                  },
+                  data: topxAxis
+              }
+          ],
          calculable : true,
         series: dataseries
         });
