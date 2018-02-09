@@ -731,12 +731,7 @@ var navmodule = {
                   if(axislabel[x] == data[i].ProgDate){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push({                          
-                          value : Number(data[i].Sum000).toFixed(2),
-                          itemStyle : {
-                            color : data[i].ColorCode.toString()                            
-                          }
-                        })
+                        average.push({ value : Number(data[i].Sum000).toFixed(2), itemStyle : { color : data[i].ColorCode.toString() } })
                       }else{
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
@@ -755,17 +750,7 @@ var navmodule = {
                   if(axislabel[x] == data[i].WeekNumber){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push({
-                          value : Number(data[i].Sum000).toFixed(2),
-                          itemStyle : {
-                            color : data[i].ColorCode,
-                            borderColor : data[i].ColorCode,
-                            emphasis : {
-                              color : data[i].ColorCode,
-                              borderColor : data[i].ColorCode,
-                            }
-                          },
-                        })
+                        average.push({ value : Number(data[i].Sum000).toFixed(2), itemStyle : { color : data[i].ColorCode.toString() } })
                       }else{
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
@@ -785,17 +770,7 @@ var navmodule = {
                   if(axislabel[x] == data[i].MonthNumber){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push({
-                          value : Number(data[i].Sum000).toFixed(2),
-                          itemStyle : {
-                            color : data[i].ColorCode,
-                            borderColor : data[i].ColorCode,
-                            emphasis : {
-                              color : data[i].ColorCode,
-                              borderColor : data[i].ColorCode,
-                            }
-                          },
-                        })
+                        average.push({ value : Number(data[i].Sum000).toFixed(2), itemStyle : { color : data[i].ColorCode.toString() } })
                       }else{
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
