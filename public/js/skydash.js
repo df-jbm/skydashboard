@@ -731,11 +731,10 @@ var navmodule = {
                   if(axislabel[x] == data[i].ProgDate){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push({
-                          name : graphlegend,
+                        average.push({                          
                           value : Number(data[i].Sum000).toFixed(2),
                           itemStyle : {
-                            color : data[i].ColorCode.toString(),
+                            color : '#000',
                             borderColor : data[i].ColorCode.toString(),
                             emphasis : {
                               color : data[i].ColorCode.toString(),
@@ -853,9 +852,6 @@ var navmodule = {
                     position: 'top',
                     formatter : '{c}'
                 }
-            },
-            itemStyle : {
-              show : false
             },
             markPoint: {
                 clickable: true,
