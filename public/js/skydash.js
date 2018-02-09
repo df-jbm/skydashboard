@@ -94,7 +94,7 @@ var navmodule = {
           monthrange.sort(function(a, b){return b-a});
           quarterrange.sort(function(a, b){return b-a});
           yearrange.sort(function(a, b){return b-a});
-          
+
           for(var i in daterange){
             daterange[i] = navmodule.convertProgdate(daterange[i],1)
           }
@@ -559,6 +559,12 @@ var navmodule = {
       }else{
         var headprogcount = '';
       }
+
+      if($('#periodtype').val() == 1){
+        var FirstFromTimeHead = '<td>Start time</td>';
+      }else{
+        var FirstFromTimeHead;
+      }      
       output += '<thead class="bg-white">'+
         '<tr>'+
           '<td colspan="5">'+ form +'&nbsp;&nbsp;&nbsp;&nbsp;<img height="30" src="logo/'+ cname.replace('+', '-') +'.png"></td>'+
@@ -566,9 +572,10 @@ var navmodule = {
         '<tr>'+
           '<td width="300"><small>Programme Title</small></td>'+
           '<td><small>Sky 360 BMI</small></td>'+
-          headprogcount +
+          headprogcount + 
           '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+
           //'<td id="sort" value="ATV"><small>ATV</small>'+ sortATV +'</td>'+
+          FirstFromTimeHead +
         '</tr></thead><tbody>';
 
       for(var i in data){
@@ -577,12 +584,18 @@ var navmodule = {
       }else{
         var programcount = '';
       }
+      if($('#periodtype').val() == 1){
+        var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+      }else{
+        var FirstFromTime;
+      }
       output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
           '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
           '<td>'+ data[i].BMICode +'</td>'+
           programcount +
           '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+
           //'<td>'+ Number(data[i].SumATV).toFixed(2) +'</td>'+
+          FirstFromTime
         '</tr>';
       }
       output += '</tbody></table>'
