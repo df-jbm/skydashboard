@@ -731,7 +731,7 @@ var navmodule = {
                   if(axislabel[x] == data[i].ProgDate){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push({ value : Number(data[i].Sum000).toFixed(2), itemStyle : { normal : { color : data[i].ColorCode } } })
+                        average.push({ name : graphlegend[0],value : Number(data[i].Sum000).toFixed(2), itemStyle : { normal : { color : data[i].ColorCode } } })
                       }else{
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
