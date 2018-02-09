@@ -731,7 +731,7 @@ var navmodule = {
                   if(axislabel[x] == data[i].ProgDate){
                     if(Number(x) < barnum){
                       if($('#unit').val() == 1){
-                        average.push({ value : Number(data[i].Sum000).toFixed(2), itemStyle : { color : '#000' } })
+                        average.push({ value : Number(data[i].Sum000).toFixed(2), itemStyle : { color : data[i].ColorCode.toString() } })
                       }else{
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
@@ -811,8 +811,7 @@ var navmodule = {
           }
           dataseries = [{
             name: graphlegend[0],
-            type: magicType,
-            data: average,
+            type: magicType,            
             stack : 'stack',
             label: {
                 normal: {
@@ -829,7 +828,8 @@ var navmodule = {
                 symbolSize: 80,
                 symbolRotate: null,
                 large: false
-            }
+            },
+            data: average,
           }]
           var topxAxis = average;
         }else{
