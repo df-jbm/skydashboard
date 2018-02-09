@@ -595,7 +595,7 @@ var navmodule = {
           programcount +
           '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+
           //'<td>'+ Number(data[i].SumATV).toFixed(2) +'</td>'+
-          FirstFromTime
+          FirstFromTime +
         '</tr>';
       }
       output += '</tbody></table>'
