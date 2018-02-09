@@ -759,6 +759,7 @@ var navmodule = {
                       break;
                     }
                   }
+                  var barcolor = data[i].ColorCode;
                 }
                 if(lableexist == false){
                   average.push(Number(0).toFixed(2));
@@ -779,6 +780,7 @@ var navmodule = {
                       break;
                     }
                   }
+                  var barcolor = data[i].ColorCode;
                 }
                 if(lableexist == false){
                   average.push(Number(0).toFixed(2));
@@ -872,6 +874,7 @@ var navmodule = {
                   }else{
                     average[x] = Number(data[d].SumATV).toFixed(2)
                   }
+                  var barcolor = data[i].ColorCode;
                 }
               }
             }
@@ -892,12 +895,12 @@ var navmodule = {
               itemStyle : {
                 normal: {
                     barBorderWidth: 0,
-                    barBorderColor: colorpick[i],
-                    color: colorpick[i]
+                    barBorderColor: barcolor,
+                    color: barcolor
                 },
                 emphasis: {
-                  barBorderColor: colorpick[i],
-                  color: colorpick[i]
+                  barBorderColor: barcolor,
+                  color: barcolor
                 }
               },              
               data: average,
