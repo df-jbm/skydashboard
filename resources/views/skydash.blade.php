@@ -119,7 +119,7 @@
           </div>
         </div>
       </div>
-      <div id="exportcontainer" class="bg-dark border">
+      <div id="exportcontainer" class="bg-light border">
         <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>
         <div class="col-sm-12" id="exportbody">
           <button class="btn btn-sm" id="exportchannel" value="hidden">Export Channel Performance</button>
