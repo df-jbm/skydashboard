@@ -239,7 +239,7 @@ var navmodule = {
     if(data.length > 0){
       console.log(data)
       var ChannelID = [];
-      var PlatformName = [];
+      var PlatformName = [], PlatformName1 = [];
       for(var i in data){
         var TempChannelID = ChannelGroupID != 2000 ? data[i].ChannelID : data[i].ChannelGroupID;
         ChannelID.push(TempChannelID)
