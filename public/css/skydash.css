@@ -235,7 +235,7 @@ body main .row #performance-content .card .card-body .table-responsive{
   padding-left: 15px;
 }
 .tooltip {
-    
+    position: relative;
 }
 
 .tooltip .tooltiptext {
