@@ -58,7 +58,7 @@ class dbcontroller extends Controller
       }      
     }
     fclose($file);
-    return response('csv/channelperformance'. $currentdatetime .'.csv');
+    return response('csv/channelperformance'. $currentdatetime .'.xlsx');
   }
 
   public function exportprogramme(Request $r){
