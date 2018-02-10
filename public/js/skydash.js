@@ -1687,7 +1687,7 @@ $(function(){
             var output = '';
             lilength = data.length
             for(var i in data){
-              output += '<li data-value="'+data[i].ProgrammeTitle+'"><div class="tooltip">'+ data[i].ProgrammeTitle +'<span class="tooltiptext">'+ data[i].ProgrammeTitle +'</span></div></li>'
+              output += '<li data-value="'+data[i].ProgrammeTitle+'">'+ data[i].ProgrammeTitle +'</li>'
             }
             $('#list').html(output)
             $('#list li').each(function(){
@@ -1712,11 +1712,6 @@ $(function(){
             })
             $('#list').scrollTop(0)
             $('.dropdown-content').show();
-            $('[data-toggle="tooltip"]').tooltip({
-              classes: {
-                "ui-tooltip": "highlight"
-              }
-            });
           }else{
             lilength = 0;
             $('.dropdown-content').hide();
