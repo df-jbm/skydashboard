@@ -262,7 +262,14 @@ var navmodule = {
       });
       console.log(PlatformName1)
       ChannelID = _.uniq(ChannelID);
-      var Formname = _.uniq(PlatformName);
+      //var Formname = _.uniq(PlatformName);
+      var Formname = [];
+      for(var i in PlatformName1){
+        if($.inArray(PlatformName1[i].PlatFormName, Formname) == -1){
+          Formname.push(PlatformName1[i].PlatFormName)
+        }
+      }
+      console.log(Formname)
       var PerformanceChannels = []
       var totalLinear = [];
       var PlatFormIDs = []
