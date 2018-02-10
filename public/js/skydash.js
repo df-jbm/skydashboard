@@ -351,7 +351,7 @@ var navmodule = {
         var totalAvgVal = 0;
         output += '<tr>';
         if(PerformanceChannels[i].ChannelName != ''){
-          output += '<td>'+ PerformanceChannels[i].ChannelName +'<img width="30" class="float-right" src="logo/'+ logo.replace('+', '-') +'.png" class="img-responsive"></td>';
+          output += '<td>'+ PerformanceChannels[i].ChannelName +'<img width="30" class="float-right pixelated" src="logo/'+ logo.replace('+', '-') +'.png" class="img-responsive"></td>';
         }else{
           output += '<td class="text-center bg-light"><img width="25" src="channel/globe.png" class="img-responsive">&nbsp;&nbsp;TOTAL</td>';
         }
