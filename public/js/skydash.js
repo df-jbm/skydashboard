@@ -1687,7 +1687,7 @@ $(function(){
             var output = '';
             lilength = data.length
             for(var i in data){
-              output += '<li data-value="'+data[i].ProgrammeTitle+'" data-toggle="tooltip" title="'+ data[i].ProgrammeTitle +'">'+ data[i].ProgrammeTitle +'</li>'
+              output += '<li data-value="'+data[i].ProgrammeTitle+'" class="tooltip">'+ data[i].ProgrammeTitle +'<span class="tooltiptext">'+ data[i].ProgrammeTitle +'</span></li>'
             }
             $('#list').html(output)
             $('#list li').each(function(){
