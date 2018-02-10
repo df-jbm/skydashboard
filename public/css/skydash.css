@@ -236,11 +236,7 @@ body main .row #performance-content .card .card-body .table-responsive{
   width: 180px;
   height: 30px;
   right: 0;
-  bottom: 0;  
-}
-#exportpanel{
-  overflow-y: auto;
-  overflow-x: hidden;
+  bottom: 0;
 }
 #exportbody{
   padding-right: 15px;
