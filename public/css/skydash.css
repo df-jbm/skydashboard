@@ -61,6 +61,7 @@
 
 #table-channelperformance tr td img{
   vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
 }
 
 #table-channelperformance tr td.active,#table-programmeperformance tr.active{
@@ -87,6 +88,7 @@
 }
 #table-programmeperformance thead tr:first-child td:first-child img:nth-child(2){
   max-width: 100px;
+  -ms-interpolation-mode: bicubic;
 }
 #table-programmeperformance thead tr:nth-child(2) td{
   padding-top: 0px;
