@@ -119,8 +119,14 @@
           </div>
         </div>
       </div>
-      <div id="exportcontainer" class="bg-info border">
+      <div id="exportcontainer" class="bg-dark border">
         <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>
+        <div class="col-sm-12">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+          </div>
+        </div>
         <div class="col-sm-12" id="exportbody">
           <button class="btn btn-sm" id="exportchannel" value="hidden">Export Channel Performance</button>
           <br/><a class="btn btn-sm" id="dlchannel" disable="true" download>No exported csv file</a>
