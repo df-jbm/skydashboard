@@ -524,6 +524,7 @@ var navmodule = {
     console.log(request)
     programmereq = request;
     $.get(window.location.href + "programmeperformance", request, function(data){
+      console.log(data)
       if(SumSort == '000'){
         data.sort(function(a, b) {
           return b.Sum000 - a.Sum000;
