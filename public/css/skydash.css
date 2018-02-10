@@ -175,7 +175,7 @@ body main .row #performance-content .card .card-body .table-responsive{
   display: none;
   position: absolute;
   min-width: calc(100% - 50px);
-  z-index: 2000;
+  z-index: 1400;
   margin-top: 2px;
 }
 #list{
