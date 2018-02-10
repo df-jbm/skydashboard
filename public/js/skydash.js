@@ -586,7 +586,7 @@ var navmodule = {
         var programcount = '';
       }
       if($('#periodtype').val() == 1){
-        if(PFormID == 1 && PFormID == -1){
+        if(PFormID == 1 || PFormID == -1){
           var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
         }else{
           var FirstFromTime = '<td>-</td>';
