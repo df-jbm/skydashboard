@@ -1,4 +1,11 @@
+body img{
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
 .pixelated{
+  image-rendering: auto;
+  image-rendering: crisp-edges;
   image-rendering: pixelated;
 }
 #barnum{
@@ -58,6 +65,9 @@
 
 #table-channelperformance tr td img{
   vertical-align: middle;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 
 #table-channelperformance tr td.active,#table-programmeperformance tr.active{
@@ -84,6 +94,9 @@
 }
 #table-programmeperformance thead tr:first-child td:first-child img:nth-child(2){
   max-width: 100px;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 #table-programmeperformance thead tr:nth-child(2) td{
   padding-top: 0px;
