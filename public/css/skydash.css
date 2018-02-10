@@ -235,5 +235,5 @@ body main .row #performance-content .card .card-body .table-responsive{
   padding-left: 15px;
 }
 .highlight{
-  z-index: 1500;
+  z-index: 2000;
 }
