@@ -236,6 +236,8 @@ body main .row #performance-content .card .card-body .table-responsive{
 }
 .tooltip {
     position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
