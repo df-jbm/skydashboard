@@ -121,9 +121,11 @@
       </div>
       <div id="exportcontainer" class="bg-info border">
         <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input border border-white" id="customCheck1">
-          <label class="custom-control-label" for="customCheck1">Xslx</label>
+        <div class="row">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input border border-white" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Xslx</label>
+          </div>
         </div>
         <div class="col-sm-12" id="exportbody">
           <button class="btn btn-sm" id="exportchannel" value="hidden">Export Channel Performance</button>
