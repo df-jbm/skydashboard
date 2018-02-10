@@ -122,7 +122,7 @@
       <div id="exportcontainer" class="bg-info border">
         <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="customCheck1">
+          <input type="checkbox" class="custom-control-input border border-white" id="customCheck1">
           <label class="custom-control-label" for="customCheck1">Xslx</label>
         </div>
         <div class="col-sm-12" id="exportbody">
