@@ -601,7 +601,7 @@ var navmodule = {
         if(PFormID == 1 || PFormID == -1){
           var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
         }else{
-          var FirstFromTime = '<td>-</td>';
+          var FirstFromTime = '<td class="text-center">-</td>';
         }        
       }else{
         var FirstFromTime = '';
