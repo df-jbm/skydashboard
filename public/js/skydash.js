@@ -1712,7 +1712,11 @@ $(function(){
             })
             $('#list').scrollTop(0)
             $('.dropdown-content').show();
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="tooltip"]').tooltip({
+              classes: {
+                "ui-tooltip": "highlight"
+              }
+            });
           }else{
             lilength = 0;
             $('.dropdown-content').hide();
