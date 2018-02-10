@@ -48,7 +48,7 @@ class dbcontroller extends Controller
   public function ExpotChannelPerformance(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    $file = fopen('csv/channelperformance'. $currentdatetime .'.csv', 'w+');
+    $file = fopen('csv/channelperformance'. $currentdatetime .'.xlsx', 'w+');
     fputcsv($file, ["Channel name","platform name","Sum000"]);
     foreach ($this->GetChannelPerformance as $row) {
       if($row->ChannelID != -1){
@@ -64,23 +64,23 @@ class dbcontroller extends Controller
   public function exportprogramme(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    $file = fopen('csv/programmeperfomance'. $currentdatetime .'.csv', 'w+');
+    $file = fopen('csv/programmeperfomance'. $currentdatetime .'.xlsx', 'w+');
     fputcsv($file, ["BMI code","Programme title","Count","Sum000"]);
     foreach ($this->GetProgramePerformance as $row) {
       fputcsv($file, [$row->BMICode,$row->ProgrammeTitle,$row->CNT,$row->Sum000]);
     }
     fclose($file);
-    return response('csv/programmeperfomance'. $currentdatetime .'.csv');
+    return response('csv/programmeperfomance'. $currentdatetime .'.xlsx');
   }
   public function exporttrending(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
-    $file = fopen('csv/trending'. $currentdatetime .'.csv', 'w+');
+    $file = fopen('csv/trending'. $currentdatetime .'.xlsx', 'w+');
     fputcsv($file, ["Prog date","Sum000"]);
     foreach ($this->GetTrending as $row) {
       fputcsv($file, [$row->ProgDate,$row->Sum000]);
     }
     fclose($file);
-    return response('csv/trending'. $currentdatetime .'.csv');
+    return response('csv/trending'. $currentdatetime .'.xlsx');
   }    
 }
