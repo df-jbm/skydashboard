@@ -656,7 +656,6 @@ var navmodule = {
         var filter = ''
       }
 
-
       TrendingProgTitleID = ProgTitleID;
       TrendingChannelGroupID = ChGroupID;
       TrendingChannelID = ChID;
@@ -1688,7 +1687,7 @@ $(function(){
             var output = '';
             lilength = data.length
             for(var i in data){
-              output += '<li data-value="'+data[i].ProgrammeTitle+'">'+ data[i].ProgrammeTitle +'</li>'
+              output += '<li data-value="'+data[i].ProgrammeTitle+'" data-toggle="tooltip" title="'+ data[i].ProgrammeTitle +'">'+ data[i].ProgrammeTitle +'</li>'
             }
             $('#list').html(output)
             $('#list li').each(function(){
@@ -1713,6 +1712,7 @@ $(function(){
             })
             $('#list').scrollTop(0)
             $('.dropdown-content').show();
+            $('[data-toggle="tooltip"]').tooltip();
           }else{
             lilength = 0;
             $('.dropdown-content').hide();
