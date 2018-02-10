@@ -123,15 +123,15 @@
         <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>
         <div class="col-sm-12" id="exportbody">
           <button class="btn btn-sm" id="exportchannel" value="hidden">Export Channel Performance</button>
-          <br/><a class="btn btn-sm" id="dlchannel" disable="true" download>No exported csv file</a>
+          <br/><a class="btn btn-sm" id="dlchannel" disable="true" download>No exported Xslx file</a>
         </div>        
         <div class="col-sm-12" id="exportbody">
           <button class="btn btn-sm" id="exportprogramme" value="hidden">Export Programme Performance</button>
-          <br/><a class="btn btn-sm" id="dlprog" disable="true" download>No exported csv file</a>
+          <br/><a class="btn btn-sm" id="dlprog" disable="true" download>No exported Xslx file</a>
         </div>        
         <div class="col-sm-12" id="exportbody">
           <button class="btn btn-sm" id="exporttrending" value="hidden">Export Trending</button>
-          <br/><a class="btn btn-sm" id="dltrend" disable="true" download>No exported csv file</a>
+          <br/><a class="btn btn-sm" id="dltrend" disable="true" download>No exported Xslx file</a>
         </div>
       </div>
     </main>
