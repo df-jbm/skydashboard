@@ -595,7 +595,7 @@ var navmodule = {
       if(PFormID != 2 && PFormID != 3 && PFormID != 4){
         var programcount = '<td>'+data[i].CNT+'</td>';
       }else{
-        var programcount = '<td>-</td>';
+        var programcount = '<td class="text-center">-</td>';
       }
       if($('#periodtype').val() == 1){
         if(PFormID == 1 || PFormID == -1){
