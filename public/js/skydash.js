@@ -570,13 +570,13 @@ var navmodule = {
       if(PFormID != 2 && PFormID != 3 && PFormID != 4){
         var headprogcount = '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>';
       }else{
-        var headprogcount = '';
+        var headprogcount;
       }
 
       if($('#periodtype').val() == 1){
         var FirstFromTimeHead = '<td>Start time</td>';
       }else{
-        var FirstFromTimeHead = '';
+        var FirstFromTimeHead;
       }      
       output += '<thead class="bg-white">'+
         '<tr>'+
@@ -594,7 +594,7 @@ var navmodule = {
       if(PFormID != 2 && PFormID != 3 && PFormID != 4){
         var programcount = '<td>'+data[i].CNT+'</td>';
       }else{
-        var programcount = '';
+        var programcount;
       }
       if($('#periodtype').val() == 1){
         if(PFormID == 1 || PFormID == -1){
@@ -603,7 +603,7 @@ var navmodule = {
           var FirstFromTime = '<td class="text-center">-</td>';
         }        
       }else{
-        var FirstFromTime = '';
+        var FirstFromTime;
       }
       output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
           '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
