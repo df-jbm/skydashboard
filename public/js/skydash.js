@@ -587,8 +587,7 @@ var navmodule = {
           FirstFromTimeHead +
           '<td><small>Sky 360 BMI</small></td>'+
           headprogcount + 
-          '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+
-          //'<td id="sort" value="ATV"><small>ATV</small>'+ sortATV +'</td>'+          
+          '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+      
         '</tr></thead><tbody>';
 
       for(var i in data){
@@ -599,7 +598,7 @@ var navmodule = {
       }
       if($('#periodtype').val() == 1){
         if(PFormID == 1 || PFormID == -1){
-          var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+          var FirstFromTime = '<td class="text-center">'+ data[i].FirstFromTime  +'</td>';
         }else{
           var FirstFromTime = '<td class="text-center">-</td>';
         }        
@@ -611,8 +610,7 @@ var navmodule = {
           FirstFromTime +
           '<td>'+ data[i].BMICode +'</td>'+
           programcount +
-          '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+
-          //'<td>'+ Number(data[i].SumATV).toFixed(2) +'</td>'+          
+          '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
         '</tr>';
       }
       output += '</tbody></table>'
