@@ -583,10 +583,8 @@ var navmodule = {
           '<td colspan="5">'+ form +'&nbsp;&nbsp;&nbsp;&nbsp;<img height="30" src="logo/'+ cname.replace('+', '-') +'.png"></td>'+
         '</tr>'+
         '<tr>'+
-          '<td width="300"><small>Programme Title</small></td>'+
-          FirstFromTimeHead +
-          '<td><small>Sky 360 BMI</small></td>'+
-          headprogcount + 
+          '<td width="300"><small>Programme Title</small></td>'+          
+          '<td><small>Sky 360 BMI</small></td>'+          
           '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+      
         '</tr></thead><tbody>';
 
@@ -607,9 +605,7 @@ var navmodule = {
       }
       output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
           '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
-          FirstFromTime +
           '<td>'+ data[i].BMICode +'</td>'+
-          programcount +
           '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
         '</tr>';
       }
