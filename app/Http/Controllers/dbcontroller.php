@@ -45,20 +45,37 @@ class dbcontroller extends Controller
     $this->ProgrammeTitles = DB::select('EXEC QueryBMIProgramTitles ?',array($r->InputFilter));
     return response($this->ProgrammeTitles);
   }
+
+  public function filterData(&$str)
+  {
+      $str = preg_replace("/\t/", "\\t", $str);
+      $str = preg_replace("/\r?\n/", "\\n", $str);
+      if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
+  }
+
   public function ExpotChannelPerformance(Request $r){
     $currentdatetime = date('Ymdhis');
-    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    $file = fopen('csv/channelperformance'. $currentdatetime .'.xlsx', 'w+');
-    fputcsv($file, ["Channel name","platform name","Sum000"]);
-    foreach ($this->GetChannelPerformance as $row) {
-      if($row->ChannelID != -1){
-        fputcsv($file, [$row->ChannelName,$row->PlatFormName,$row->Sum000]);
-      }else{
-        fputcsv($file, ["TOTAL",$row->PlatFormName,$row->Sum000]);
-      }      
+    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));    
+    
+    // file name for download
+    $fileName = "codexworld_export_data" . date('Ymd') . ".xls";
+    
+    // headers for download
+    header("Content-Disposition: attachment; filename=\"$fileName\"");
+    header("Content-Type: application/vnd.ms-excel");
+    
+    $flag = false;
+    foreach($this->GetChannelPerformance as $row) {
+        if(!$flag) {
+            // display column names as first row
+            echo implode("\t", array_keys($row)) . "\n";
+            $flag = true;
+        }
+        // filter data
+        array_walk($row, 'filterData');
+        echo implode("\t", array_values($row)) . "\n";
+
     }
-    fclose($file);
-    return response('csv/channelperformance'. $currentdatetime .'.xlsx');
   }
 
   public function exportprogramme(Request $r){
