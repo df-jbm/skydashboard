@@ -52,12 +52,7 @@ class dbcontroller extends Controller
       $str = preg_replace("/\r?\n/", "\\n", $str);
       if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
   }
-
-  public function filterData(&$str){
-    $str = preg_replace("/\t/", "\\t", $str);
-    $str = preg_replace("/\r?\n/", "\\n", $str);
-    if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
-  }
+  
   public function ExpotChannelPerformance(Request $r){
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));    
     
