@@ -380,7 +380,10 @@ var navmodule = {
                   var Prange = WPeriod
                 }else{
                   var Prange = navmodule.externalProgdate($('#customperiod').val())
-                }                
+                }               
+                if(PerformanceChannels[i].ChannelID == -1){
+                  alert("test")
+                } 
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName, Formname[x])
                 delivered = true;
