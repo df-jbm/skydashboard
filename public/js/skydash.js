@@ -451,7 +451,7 @@ var navmodule = {
           var activeTotalCell = 'active rounded'
           navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,channeliconname,formname,sort)
           navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,channeliconname + " - " +formname)  
-        }else if(activePlatForm != -1 && activeChannel == -1){
+        }else if(activePlatForm == Formname[x] && activeChannel == -1){
           activeChannel = -1;
           activePlatForm = Formname[x];
           var PFormID = -1
