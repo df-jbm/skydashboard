@@ -47,7 +47,8 @@ class dbcontroller extends Controller
   }
   public function ExpotChannelPerformance(Request $r){
     $currentdatetime = date('Ymdhis');
-    $this->GetChannelPerformance = Array (
+    $this->GetChannelPerformance=DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
+    $array = Array (
         0 => Array (
                 0 => "How was the Food?",
                 1 => 3,
@@ -59,8 +60,9 @@ class dbcontroller extends Controller
                 2 => 4,
                 3 => 0 
         ) 
-    );
-    header("Content-Disposition: attachment; filename=\"demo.xls\"");
+    ); 
+    return $array;
+    /*header("Content-Disposition: attachment; filename=\"demo.xls\"");
     header("Content-Type: application/vnd.ms-excel;");
     header("Pragma: no-cache");
     header("Expires: 0");
@@ -69,7 +71,7 @@ class dbcontroller extends Controller
     {
         fputcsv($out, $data,"\t");
     }
-    fclose($out);
+    fclose($out);*/
   }
 
   public function exportprogramme(Request $r){
