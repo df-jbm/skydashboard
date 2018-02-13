@@ -486,7 +486,7 @@ var navmodule = {
             })
             $(this).addClass('active')
 
-            if($(this).attr("id") == -1 && $(this).attr("id") == -1){
+            if($(this).attr("value") == -1 && $(this).attr("id") != -1){
 
               var ChGroupID = ChannelGroupID;
               var ChID = -1;
