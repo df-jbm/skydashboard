@@ -445,17 +445,31 @@ var navmodule = {
           }else{
             var Prange = navmodule.externalProgdate($('#customperiod').val())
           }
-          
           var channeliconname = 'Global';
-          var formaname = 'Total';
-
-          navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,channeliconname,formaname,sort)
-          navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,channeliconname + " - " +formaname)
+          var formname = 'Total';                    
+          delivered = true;
+          var activeTotalCell = 'active rounded'
+        }else if(activePlatForm != -1 && activeChannel == -1){
+          activeChannel = PerformanceChannels[i].ChannelID
+          activePlatForm = -1;
+          var PFormID = -1
+          var PtypeID = $('#periodtype').val()
+          if(WPeriod != ''){
+            var Prange = WPeriod
+          }else{
+            var Prange = navmodule.externalProgdate($('#customperiod').val())
+          }
+          var channeliconname = 'Global';
+          var formname = 'Total';                    
           delivered = true;
           var activeTotalCell = 'active rounded'
         }else{
           var activeTotalCell = ''
         }
+
+        navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,channeliconname,formname,sort)
+        navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,channeliconname + " - " +formname)
+        
         if(PerformanceChannels[i].ChannelName != ''){
           output += '<td class="'+ activeTotalCell +' bg-light" id="'+PerformanceChannels[i].ChannelID+'" value="-1" data-id="'+PerformanceChannels[i].ChannelName+'" data-value="Total">'+ Number(totalAvgVal).toFixed(2) +'</td>';
         }else{
