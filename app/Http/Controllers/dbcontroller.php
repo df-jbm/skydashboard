@@ -53,9 +53,9 @@ class dbcontroller extends Controller
     header("Pragma: no-cache");
     header("Expires: 0");
     $out = fopen("php://output", 'w');
-    foreach (response($this->GetChannelPerformance) as $data)
+    foreach ($this->GetChannelPerformance as $row)
     {
-        fputcsv($out, $data,"\t");
+        fputcsv($out, [$row->BMICode,$row->ProgrammeTitle,$row->CNT,$row->Sum000],"\t");
     }
     fclose($out);
   }
