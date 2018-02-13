@@ -47,23 +47,30 @@ class dbcontroller extends Controller
   }
   public function ExpotChannelPerformance(Request $r){
     $currentdatetime = date('Ymdhis');
-    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    $file = fopen('csv/channelperformance'. $currentdatetime .'.xls', 'w+');
+    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));    
         
-    header("Content-Disposition: attachment; filename=\"$file\"");
-    header("Content-Type: application/vnd.ms-excel");
-
-
-    fputcsv($file, ["Channel name","platform name","Sum000"]);
-    foreach ($this->GetChannelPerformance as $row) {
-      if($row->ChannelID != -1){
-        fputcsv($file, [$row->ChannelName,$row->PlatFormName,$row->Sum000]);
-      }else{
-        fputcsv($file, ["TOTAL",$row->PlatFormName,$row->Sum000]);
-      }      
+    function filterData(&$str)
+    {
+        $str = preg_replace("/\t/", "\\t", $str);
+        $str = preg_replace("/\r?\n/", "\\n", $str);
+        if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
     }
-    fclose($file);
-    return response('csv/channelperformance'. $currentdatetime .'.xls');
+        
+    $fileName = "channelperformance" . $currentdatetime . ".xls";
+        
+    header("Content-Disposition: attachment; filename=\"$fileName\"");
+    header("Content-Type: application/vnd.ms-excel");
+    
+    $flag = false;
+    foreach($this->GetChannelPerformance as $row) {
+        if(!$flag) {            
+            echo implode("\t", array_keys($row)) . "\n";
+            $flag = true;
+        }        
+        array_walk($row, 'filterData');
+        echo implode("\t", array_values($row)) . "\n";
+    }
+    exit;
   }
 
   public function exportprogramme(Request $r){
