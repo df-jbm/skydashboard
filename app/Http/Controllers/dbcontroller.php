@@ -46,10 +46,7 @@ class dbcontroller extends Controller
     return response($this->ProgrammeTitles);
   }
   public function ExpotChannelPerformance(Request $r){
-    $currentdatetime = date('Ymdhis');
-    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    Excel::create('Filename', function($this->GetChannelPerformance) { })->export('xls');
-
+    Excel::create('Filename');
   }
 
   public function exportprogramme(Request $r){
