@@ -49,6 +49,11 @@ class dbcontroller extends Controller
     $currentdatetime = date('Ymdhis');
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
     $file = fopen('csv/channelperformance'. $currentdatetime .'.xls', 'w+');
+        
+    header("Content-Disposition: attachment; filename=\"$file\"");
+    header("Content-Type: application/vnd.ms-excel");
+
+
     fputcsv($file, ["Channel name","platform name","Sum000"]);
     foreach ($this->GetChannelPerformance as $row) {
       if($row->ChannelID != -1){
