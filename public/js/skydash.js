@@ -436,8 +436,18 @@ var navmodule = {
           }
 
         }
-        if(activePlatForm == -1 && activeChannel == -1){          
-          
+
+        if(activePlatForm == -1 && activeChannel == PerformanceChannels[i].ChannelID){          
+          if(ChannelGroupID != 2000){
+            var ChGroupID = -1;
+            var ChID = PerformanceChannels[i].ChannelID
+            activeChannel = ChID
+          }else{
+            var ChGroupID = PerformanceChannels[i].ChannelID
+            var ChID = -1;
+            activeChannel = ChGroupID
+          }
+          activePlatForm = -1;
           var PFormID = -1
           var PtypeID = $('#periodtype').val()
           if(WPeriod != ''){
@@ -456,6 +466,7 @@ var navmodule = {
         }else{
           var activeTotalCell = ''
         }
+        
         if(PerformanceChannels[i].ChannelName != ''){
           output += '<td class="'+ activeTotalCell +' bg-light" id="'+PerformanceChannels[i].ChannelID+'" value="-1" data-id="'+PerformanceChannels[i].ChannelName+'" data-value="Total">'+ Number(totalAvgVal).toFixed(2) +'</td>';
         }else{
