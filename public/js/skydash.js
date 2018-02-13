@@ -543,15 +543,13 @@ var navmodule = {
     $.get(window.location.href + "programmeperformance", request, function(data){
       console.log(data)      
       if(SumSort == 'starttime'){
-        if(PFormID == 1){
-          data.sort(function(a, b) {
-            return b.FirstFromTime - a.FirstFromTime;
-          });
-          var starttime = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
-          var sort000 = '';
-          var sortCount = ''
-          var sortATV = ''
-        }        
+        data.sort(function(a, b) {
+          return b.FirstFromTime - a.FirstFromTime;
+        });
+        var starttime = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
+        var sort000 = '';
+        var sortCount = ''
+        var sortATV = ''
       }else if(SumSort == '000'){
         data.sort(function(a, b) {
           return b.Sum000 - a.Sum000;
@@ -561,15 +559,13 @@ var navmodule = {
         var sortCount = ''
         var sortATV = ''
       }else if(SumSort == 'Count'){
-        if(PFormID == 1){
-          data.sort(function(a, b) {
-            return b.CNT - a.CNT;
-          });
-          var starttime = '';
-          var sort000 = ''
-          var sortCount = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
-          var sortATV = ''
-        }        
+        data.sort(function(a, b) {
+          return b.CNT - a.CNT;
+        });
+        var starttime = '';
+        var sort000 = ''
+        var sortCount = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
+        var sortATV = ''
       }else{
         data.sort(function(a, b) {
           return b.SumATV - a.SumATV;
@@ -604,7 +600,7 @@ var navmodule = {
         '</tr>'+
         '<tr>'+
           '<td width="300"><small>Programme Title</small></td>'+
-          '<td>Start time<small>'+ starttime +'</small></td>' +
+          '<td id="sort" value="starttime" value>Start time<small>'+ starttime +'</small></td>' +
           '<td><small>Sky 360 BMI</small></td>'+
           '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>' + 
           '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+
@@ -639,7 +635,13 @@ var navmodule = {
       $('#programeperformance').html(output)
       $('#table-programmeperformance #sort').each(function(){
         $(this).click(function(){
-          sort = $(this).attr('value')
+          if( ( $(this).attr('value') == 'starttime' || $(this).attr('value') == 'Count' ) && PFormID == 1){
+            sort = $(this).attr('value')
+          }else if( ( $(this).attr('value') == 'starttime' || $(this).attr('value') == 'Count' ) && PFormID != 1){
+
+          }else{
+            sort = $(this).attr('value')
+          }          
           navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,ChannelName,FormName,$(this).attr('value'))
         })
       })
