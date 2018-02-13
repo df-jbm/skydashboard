@@ -53,7 +53,7 @@ class dbcontroller extends Controller
     header("Pragma: no-cache");
     header("Expires: 0");
     $out = fopen("php://output", 'w');
-    foreach (var_dump($this->GetChannelPerformance) as $data)
+    foreach ($this->GetChannelPerformance as $data)
     {
         fputcsv($out, $data,"\t");
     }
