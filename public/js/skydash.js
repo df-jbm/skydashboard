@@ -453,7 +453,7 @@ var navmodule = {
             var channeliconname = 'Global';
             var formaname = 'Total';
           }
-
+          console.log(channeliconname + "" + formaname)
           navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,channeliconname,formaname,sort)
           navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,channeliconname + " - " +formaname)
           delivered = true;
