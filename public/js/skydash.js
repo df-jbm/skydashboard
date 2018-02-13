@@ -448,14 +448,15 @@ var navmodule = {
           
           if(Formname[x] != ''){
             var channeliconname = 'Total';
-            var formaname = Formname[x];
+            var formname = Formname[x];
           }else{
             var channeliconname = 'Global';
-            var formaname = 'Total';
+            var formname = 'Total';
           }
-          console.log(channeliconname + "" + formaname)
-          navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,channeliconname,formaname,sort)
-          navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,channeliconname + " - " +formaname)
+          console.log(channeliconname)
+          console.log(formname)
+          navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,channeliconname,formname,sort)
+          navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,channeliconname + " - " +formname)
           delivered = true;
           var activeTotalCell = 'active rounded'
         }else{
