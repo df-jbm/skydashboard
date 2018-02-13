@@ -452,8 +452,8 @@ var navmodule = {
           navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,channeliconname,formname,sort)
           navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,channeliconname + " - " +formname)  
         }else if(activePlatForm != -1 && activeChannel == -1){
-          activeChannel = PerformanceChannels[i].ChannelID
-          activePlatForm = -1;
+          activeChannel = -1;
+          activePlatForm = Formname[x];
           var PFormID = -1
           var PtypeID = $('#periodtype').val()
           if(WPeriod != ''){
