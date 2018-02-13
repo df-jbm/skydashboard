@@ -622,8 +622,7 @@ var navmodule = {
         '</tr>'+
         '<tr>'+
           '<td width="300"><small>Programme Title</small></td>'+          
-          '<td><small>Sky 360 BMI</small></td>'+
-          '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>' + 
+          '<td><small>Sky 360 BMI</small></td>'+          
           '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+          
         '</tr></thead><tbody>';
       }      
