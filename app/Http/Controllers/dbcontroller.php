@@ -71,7 +71,7 @@ class dbcontroller extends Controller
             $flag = true;
         }
         // filter data
-        array_walk($row, $this->filterData;
+        array_walk($row, $this->filterData);
         echo implode("\t", array_values($row)) . "\n";
 
     }
