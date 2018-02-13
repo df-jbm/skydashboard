@@ -61,7 +61,7 @@ class dbcontroller extends Controller
                 3 => 0 
         ) 
     ); 
-    return $array;
+    return $this->GetChannelPerformance;
     /*header("Content-Disposition: attachment; filename=\"demo.xls\"");
     header("Content-Type: application/vnd.ms-excel;");
     header("Pragma: no-cache");
