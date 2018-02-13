@@ -407,8 +407,8 @@ var navmodule = {
                 if(PerformanceChannels[i].ChannelID == -1){
                   ChGroupID = $('#channelgroup').val();
                   ChID = -1;
-                  progchannelicon = Formname[x];
-                  prognameicon = 'Total'
+                  var progchannelicon = Formname[x];
+                  var prognameicon = 'Total'
                 }else{
                   var progchannelicon = PerformanceChannels[i].ChannelName;
                   var prognameicon = Formname[x];
