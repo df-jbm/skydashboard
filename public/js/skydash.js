@@ -181,7 +181,7 @@ var navmodule = {
   },
   exportchannel : function(req){    
     console.log(req)    
-    window.open(window.location.href + "exportchannel?"+ req, 'window name', 'width=200,height=100');    
+    window.open(window.location.href + "exportchannel?"+ req, 'window name', 'width=500,height=100');    
   },
   exportprogramme : function(req){
     $.get(window.location.href + "exportprogramme", req, function(data){
