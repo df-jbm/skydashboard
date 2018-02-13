@@ -461,7 +461,7 @@ var navmodule = {
           }else{
             var Prange = navmodule.externalProgdate($('#customperiod').val())
           }
-          var channeliconname = 'Global';
+          var channeliconname = PerformanceChannels[i].ChannelName;
           var formname = 'Total';                    
           delivered = true;
           var activeTotalCell = 'active rounded'
