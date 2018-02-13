@@ -182,7 +182,7 @@ var navmodule = {
   exportchannel : function(req){    
     console.log(req)    
     var myWindow = window.open(window.location.href + "exportchannel?"+ req, 'window name', 'width=500,height=100');    
-    myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");
+    myWindow.document.write("<a href="+window.location.href + "exportchannel?"+ req+">This is 'MsgWindow'. I am 200px wide and 100px tall!</a>");
   },
   exportprogramme : function(req){
     $.get(window.location.href + "exportprogramme", req, function(data){
