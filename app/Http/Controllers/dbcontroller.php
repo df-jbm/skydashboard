@@ -69,8 +69,7 @@ class dbcontroller extends Controller
         }        
         array_walk($row, 'filterData');
         echo implode("\t", array_values($row)) . "\n";
-    }
-    exit;
+    }    
   }
 
   public function exportprogramme(Request $r){
