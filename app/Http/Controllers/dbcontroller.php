@@ -46,13 +46,6 @@ class dbcontroller extends Controller
     return response($this->ProgrammeTitles);
   }
 
-  public function filterData(&$str)
-  {
-      $str = preg_replace("/\t/", "\\t", $str);
-      $str = preg_replace("/\r?\n/", "\\n", $str);
-      if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
-  }
-  
   public function ExpotChannelPerformance(Request $r){
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));    
     
@@ -71,11 +64,16 @@ class dbcontroller extends Controller
             $flag = true;
         }
         // filter data
-        array_walk($row, $this->filterData);
+        array_walk($row, 'filterData');
         echo implode("\t", array_values($row)) . "\n";
 
     }
-
+    function filterData(&$str)
+    {
+        $str = preg_replace("/\t/", "\\t", $str);
+        $str = preg_replace("/\r?\n/", "\\n", $str);
+        if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
+    }
     exit;
   }
 
