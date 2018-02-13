@@ -48,18 +48,16 @@ class dbcontroller extends Controller
   public function ExpotChannelPerformance(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetChannelPerformance=DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    var_dump(json_decode($this->GetChannelPerformance, true));
-    
-    /*header("Content-Disposition: attachment; filename=\"demo.xls\"");
+    header("Content-Disposition: attachment; filename=\"demo.xls\"");
     header("Content-Type: application/vnd.ms-excel;");
     header("Pragma: no-cache");
     header("Expires: 0");
     $out = fopen("php://output", 'w');
-    foreach ($this->GetChannelPerformance as $data)
+    foreach (dd($this->GetChannelPerformance) as $data)
     {
         fputcsv($out, $data,"\t");
     }
-    fclose($out);*/
+    fclose($out);
   }
 
   public function exportprogramme(Request $r){
