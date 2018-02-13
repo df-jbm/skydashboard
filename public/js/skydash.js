@@ -722,7 +722,13 @@ var navmodule = {
         PlatFormID : PFormID,
         Filter : filter,
       }
-      trendingreq = request;
+      trendingreq = 'ProgTitleID' +"="+ ProgTitleID+"&"+,
+        'ChannelGroupID' +"="+ ChGroupID+"&"+
+        'ChannelID' +"="+ ChID+"&"+
+        'PeriodTypeID' +"="+ PtypeID+"&"+
+        'Period' +"="+ Prange+"&"+
+        'PlatFormID' +"="+ PFormID+"&"+
+        'Filter' +"="+ filter;
       if($('#barnum').val() != '' && $.isNumeric($('#barnum').val()) == true && $('#barnum').val() <= 13){
         var barnum = Number($('#barnum').val())
       }else{
