@@ -48,7 +48,7 @@ class dbcontroller extends Controller
   public function ExpotChannelPerformance(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetChannelPerformance=DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    header("Content-Disposition: attachment; filename=\"demo.xls\"");
+    header("Content-Disposition: attachment; filename=\"GetChannelPerformance.xls\"");
     header("Content-Type: application/vnd.ms-excel;");
     header("Pragma: no-cache");
     header("Expires: 0");
@@ -62,14 +62,17 @@ class dbcontroller extends Controller
 
   public function exportprogramme(Request $r){
     $currentdatetime = date('Ymdhis');
-    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    $file = fopen('csv/programmeperfomance'. $currentdatetime .'.xlsx', 'w+');
-    fputcsv($file, ["BMI code","Programme title","Count","Sum000"]);
-    foreach ($this->GetProgramePerformance as $row) {
-      fputcsv($file, [$row->BMICode,$row->ProgrammeTitle,$row->CNT,$row->Sum000]);
+    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter));   
+    header("Content-Disposition: attachment; filename=\"programmeperfomance.xls\"");
+    header("Content-Type: application/vnd.ms-excel;");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+    $out = fopen("php://output", 'w');
+    foreach ($this->GetProgramePerformance as $row)
+    {
+        fputcsv($out, [$row->BMICode,$row->ProgrammeTitle,$row->CNT,$row->Sum000],"\t");
     }
-    fclose($file);
-    return response('csv/programmeperfomance'. $currentdatetime .'.xlsx');
+    fclose($out);
   }
   public function exporttrending(Request $r){
     $currentdatetime = date('Ymdhis');
