@@ -55,7 +55,7 @@ class dbcontroller extends Controller
     $out = fopen("php://output", 'w');
     foreach ($this->GetChannelPerformance as $row)
     {
-        fputcsv($out, [$row->BMICode,$row->ProgrammeTitle,$row->CNT,$row->Sum000],"\t");
+        fputcsv($out, [$row->ChannelName,$row->PlatFormName,$row->Sum000],"\t");
     }
     fclose($out);
   }
