@@ -48,17 +48,14 @@ class dbcontroller extends Controller
   public function ExpotChannelPerformance(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    $file = fopen('csv/channelperformance'. $currentdatetime .'.xlsx', 'w+');
-    fputcsv($file, ["Channel name","platform name","Sum000"]);
-    foreach ($this->GetChannelPerformance as $row) {
-      if($row->ChannelID != -1){
-        fputcsv($file, [$row->ChannelName,$row->PlatFormName,$row->Sum000]);
-      }else{
-        fputcsv($file, ["TOTAL",$row->PlatFormName,$row->Sum000]);
-      }      
-    }
-    fclose($file);
-    return response('csv/channelperformance'. $currentdatetime .'.xlsx');
+    $filename = "Webinfopen.xls"; // File Name
+    // Download file
+    header("Content-Disposition: attachment; filename=\"$filename\"");
+    header("Content-Type: application/vnd.ms-excel");
+    $flag = false;
+    foreach($this->GetChannelPerformance as $row)        
+        echo implode("\t", array_values($row)) . "\r\n";
+    }  
   }
 
   public function exportprogramme(Request $r){
