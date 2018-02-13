@@ -191,7 +191,7 @@ var navmodule = {
   },
   exporttrending : function(req){
     console.log(req)    
-    var myWindow = window.open(window.location.href + "exporttrending?"+ req, 'window name', 'width=500,height=150');    
+    var myWindow = window.open(window.location.href + "exporttrending?"+ req, 'trending', 'width=500,height=150');    
     myWindow.document.write("Download<a href="+window.location.href + "exporttrending?"+ req+"> here! </a>Thanks");
   },
   ChannelPerformanceRequest : function(){
