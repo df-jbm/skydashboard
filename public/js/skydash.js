@@ -722,7 +722,7 @@ var navmodule = {
         PlatFormID : PFormID,
         Filter : filter,
       }
-      trendingreq = 'ProgTitleID' +"="+ ProgTitleID+"&"+,
+      trendingreq = 'ProgTitleID' +"="+ ProgTitleID+"&"+
         'ChannelGroupID' +"="+ ChGroupID+"&"+
         'ChannelID' +"="+ ChID+"&"+
         'PeriodTypeID' +"="+ PtypeID+"&"+
