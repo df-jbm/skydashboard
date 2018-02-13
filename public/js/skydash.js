@@ -181,8 +181,7 @@ var navmodule = {
   },
   exportchannel : function(req){    
     console.log(req)    
-    $.get(window.location.href + "exportchannel", req, function(data){
-      console.log(data)
+    $.get(window.location.href + "exportchannel", req, function(data){      
       $('#dlchannel').attr('href',data)
       $('#dlchannel').attr('disable', false)
       $('#dlchannel').html("Download here")
