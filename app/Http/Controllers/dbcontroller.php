@@ -48,7 +48,7 @@ class dbcontroller extends Controller
   public function ExpotChannelPerformance(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetChannelPerformance=DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    header("Content-Disposition: attachment; filename=\"GetChannelPerformance.xls\"");
+    header("Content-Disposition: attachment; filename=\"GetChannelPerformance"+ $currentdatetime +".xls\"");
     header("Content-Type: application/vnd.ms-excel;");
     header("Pragma: no-cache");
     header("Expires: 0");
@@ -63,7 +63,7 @@ class dbcontroller extends Controller
   public function exportprogramme(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter));   
-    header("Content-Disposition: attachment; filename=\"programmeperfomance.xls\"");
+    header("Content-Disposition: attachment; filename=\"programmeperfomance"+ $currentdatetime +".xls\"");
     header("Content-Type: application/vnd.ms-excel;");
     header("Pragma: no-cache");
     header("Expires: 0");
