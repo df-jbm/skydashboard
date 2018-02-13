@@ -180,8 +180,10 @@ var navmodule = {
     return newdate
   },
   exportchannel : function(req){    
-    console.log(req)    
-    window.open(window.location.href + "exportchannel?"+ req, 'window name', 'window settings');    
+    console.log(req)        
+    var myWindow = window.open(window.location.href + "exportchannel?"+ req, "DownloadWindow", "width=200,height=100");
+    myWindow.document.write("<p>Dowloading...</p>");
+    
   },
   exportprogramme : function(req){
     $.get(window.location.href + "exportprogramme", req, function(data){
