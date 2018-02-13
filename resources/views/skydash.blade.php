@@ -84,7 +84,7 @@
           </li>
           <li class="nav-item dropdown">
             <label for="help" class="small col-form-label  align-center">&nbsp;</label><br/>
-            <img src="icon/question.png" id="help" height="25" alt="placeholder+image">           
+            <img src="icon/question.png" id="help" height="30" alt="placeholder+image">           
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
