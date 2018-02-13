@@ -53,9 +53,14 @@ class dbcontroller extends Controller
     header("Pragma: no-cache");
     header("Expires: 0");
     $out = fopen("php://output", 'w');
+    fputcsv($out, ['ChannelName','PlatFormName','Sum000'],"\t");
     foreach ($this->GetChannelPerformance as $row)
     {
-        fputcsv($out, [$row->ChannelName,$row->PlatFormName,$row->Sum000],"\t");
+        if($row->ChannelName != -1){
+          fputcsv($out, [$row->ChannelName,$row->PlatFormName,$row->Sum000],"\t");
+        }else{
+          fputcsv($out, ['Total',$row->PlatFormName,$row->Sum000],"\t");
+        }        
     }
     fclose($out);
   }
@@ -68,6 +73,7 @@ class dbcontroller extends Controller
     header("Pragma: no-cache");
     header("Expires: 0");
     $out = fopen("php://output", 'w');
+    fputcsv($out, ['BMICode','ProgrammeTitle','CNT','Sum000'],"\t");
     foreach ($this->GetProgramePerformance as $row)
     {
         fputcsv($out, [$row->BMICode,$row->ProgrammeTitle,$row->CNT,$row->Sum000],"\t");
@@ -82,6 +88,7 @@ class dbcontroller extends Controller
     header("Pragma: no-cache");
     header("Expires: 0");
     $out = fopen("php://output", 'w');
+    fputcsv($out, ['ProgDate','Sum000'],"\t");
     foreach ($this->GetTrending as $row)
     {
         fputcsv($out, [$row->ProgDate,$row->Sum000],"\t");
