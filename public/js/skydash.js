@@ -181,12 +181,12 @@ var navmodule = {
   },
   exportchannel : function(req){    
     console.log(req)    
-    var myWindow = window.open(window.location.href + "exportchannel?"+ req, 'window name', 'width=500,height=150');    
+    var myWindow = window.open(window.location.href + "exportchannel?"+ req, 'channel', 'width=500,height=150');    
     myWindow.document.write("Download<a href="+window.location.href + "exportchannel?"+ req+"> here! </a>Thanks");
   },
   exportprogramme : function(req){    
     console.log(req)    
-    var myWindow = window.open(window.location.href + "exportprogramme?"+ req, 'window name', 'width=500,height=150');    
+    var myWindow = window.open(window.location.href + "exportprogramme?"+ req, 'programme', 'width=500,height=150');    
     myWindow.document.write("Download<a href="+window.location.href + "exportprogramme?"+ req+"> here! </a>Thanks");
   },
   exporttrending : function(req){
