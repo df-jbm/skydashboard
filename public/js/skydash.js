@@ -485,13 +485,24 @@ var navmodule = {
               $(this).removeClass('active')
             })
             $(this).addClass('active')
-            if(ChannelGroupID != 2000){
-              var ChGroupID = -1;
-              var ChID = $(this).attr("id");
-            }else{
-              var ChGroupID = $(this).attr("id");
+
+            if($(this).attr("id") == -1 && $(this).attr("id") == -1){
+
+              var ChGroupID = ChannelGroupID;
               var ChID = -1;
-            }
+
+            }else{
+            
+              if(ChannelGroupID != 2000){
+                var ChGroupID = -1;
+                var ChID = $(this).attr("id");
+              }else{
+                var ChGroupID = $(this).attr("id");
+                var ChID = -1;
+              }
+            
+            }            
+
             var ProgTitleID = -1;
             var PFormID = $(this).attr("value")
             var PtypeID = $('#periodtype').val()
