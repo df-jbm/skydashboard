@@ -14,7 +14,7 @@ var activeChannel = 0;
 var activePlatForm = 0;
 var activeFlag = false;
 var clickedCell = 0;
-var sort = '000';
+var sort = 'starttime';
 var WPeriod = '';
 var wto;
 var filterexist = false;
@@ -380,12 +380,7 @@ var navmodule = {
                   var Prange = WPeriod
                 }else{
                   var Prange = navmodule.externalProgdate($('#customperiod').val())
-                }
-                if(PFormID == 1){
-                  sort = 'starttime'
-                }else{
-                  sort = '000'
-                }
+                }                
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName, Formname[x])
                 delivered = true;
@@ -542,6 +537,11 @@ var navmodule = {
     programmereq = request;
     $.get(window.location.href + "programmeperformance", request, function(data){
       console.log(data)
+      if(PFormID == 1){
+        sort = 'starttime'
+      }else{
+        sort = '000'
+      }
       if(SumSort == 'starttime'){
         data.sort(function(a, b) {
           return b.FirstFromTime - a.FirstFromTime;
