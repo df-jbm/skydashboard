@@ -408,13 +408,13 @@ var navmodule = {
                   ChGroupID = $('#channelgroup').val();
                   ChID = -1;
                   var progchannelicon = Formname[x];
-                  var prognameicon = 'Total'
+                  var formnameicon = 'Total'
                 }else{
                   var progchannelicon = PerformanceChannels[i].ChannelName;
-                  var prognameicon = Formname[x];
+                  var formnameicon = Formname[x];
                 }
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,progchannelicon,formnameicon,sort)
-                navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,progchannelicon + " - " +prognameicon)
+                navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,progchannelicon + " - " +formnameicon)
                 delivered = true;
                 var activecell = 'active rounded'
               }else{
