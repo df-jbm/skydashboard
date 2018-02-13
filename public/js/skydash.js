@@ -488,8 +488,7 @@ var navmodule = {
 
             if($(this).attr("id") == -1 && $(this).attr("value") != -1){
               var ChGroupID = ChannelGroupID;
-              var ChID = -1
-              alert('test CHID: ' + ChGroupID)
+              var ChID = -1              
             }else{
               if(ChannelGroupID != 2000){
                 var ChGroupID = -1;
@@ -589,7 +588,7 @@ var navmodule = {
       }else{
         var cname = 'TNT Comedy';
       }
-
+      console.log(cname)
       var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'
       if(PFormID != 2 && PFormID != 3 && PFormID != 4){
         var headprogcount = '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>';
