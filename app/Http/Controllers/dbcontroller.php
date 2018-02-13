@@ -45,16 +45,14 @@ class dbcontroller extends Controller
     $this->ProgrammeTitles = DB::select('EXEC QueryBMIProgramTitles ?',array($r->InputFilter));
     return response($this->ProgrammeTitles);
   }
+  public function filterData(&$str){
+      $str = preg_replace("/\t/", "\\t", $str);
+      $str = preg_replace("/\r?\n/", "\\n", $str);
+      if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
+  }
   public function ExpotChannelPerformance(Request $r){
     $currentdatetime = date('Ymdhis');
-    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));    
-        
-    function filterData(&$str)
-    {
-        $str = preg_replace("/\t/", "\\t", $str);
-        $str = preg_replace("/\r?\n/", "\\n", $str);
-        if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
-    }
+    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));                
         
     $fileName = "channelperformance" . $currentdatetime . ".xls";
         
