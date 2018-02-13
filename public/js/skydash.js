@@ -435,15 +435,8 @@ var navmodule = {
 
         }
         if(activePlatForm == -1 && activeChannel == PerformanceChannels[i].ChannelID){          
-          if(ChannelGroupID != 2000){
-            var ChGroupID = -1;
-            var ChID = PerformanceChannels[i].ChannelID
-            activeChannel = ChID
-          }else{
-            var ChGroupID = PerformanceChannels[i].ChannelID
-            var ChID = -1;
-            activeChannel = ChGroupID
-          }
+          
+          activeChannel = PerformanceChannels[i].ChannelID
           activePlatForm = -1;
           var PFormID = -1
           var PtypeID = $('#periodtype').val()
@@ -452,8 +445,8 @@ var navmodule = {
           }else{
             var Prange = navmodule.externalProgdate($('#customperiod').val())
           }
-          navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
-          navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName + " - " +Formname[x])
+          navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
+          navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName + " - " +Formname[x])
           delivered = true;
           var activeTotalCell = 'active rounded'
         }else{
