@@ -181,11 +181,7 @@ var navmodule = {
   },
   exportchannel : function(req){    
     console.log(req)    
-    $.get(window.location.href + "exportchannel", req, function(data){      
-      $('#dlchannel').attr('href',data)
-      $('#dlchannel').attr('disable', false)
-      $('#dlchannel').html("Download here")
-    });
+    window.open(window.location.href + "exportchannel?"+req, 'window name', 'window settings');    
   },
   exportprogramme : function(req){
     $.get(window.location.href + "exportprogramme", req, function(data){
