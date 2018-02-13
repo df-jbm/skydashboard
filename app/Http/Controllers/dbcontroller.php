@@ -53,7 +53,7 @@ class dbcontroller extends Controller
     header("Content-Disposition: attachment; filename=\"$filename\"");
     header("Content-Type: application/vnd.ms-excel");
     $flag = false;
-    foreach($this->GetChannelPerformance as $row)        
+    foreach($this->GetChannelPerformance as $row){        
         echo implode("\t", array_values($row)) . "\r\n";
     }  
   }
