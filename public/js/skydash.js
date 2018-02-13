@@ -381,6 +381,11 @@ var navmodule = {
                 }else{
                   var Prange = navmodule.externalProgdate($('#customperiod').val())
                 }
+                if(PFormID == 1){
+                  sort = 'starttime'
+                }else{
+                  sort = '000'
+                }
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName, Formname[x])
                 delivered = true;
@@ -537,10 +542,19 @@ var navmodule = {
     programmereq = request;
     $.get(window.location.href + "programmeperformance", request, function(data){
       console.log(data)
-      if(SumSort == '000'){
+      if(SumSort == 'starttime'){
+        data.sort(function(a, b) {
+          return b.FirstFromTime - a.FirstFromTime;
+        });
+        var starttime = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
+        var sort000 = '';
+        var sortCount = ''
+        var sortATV = ''
+      }else if(SumSort == '000'){
         data.sort(function(a, b) {
           return b.Sum000 - a.Sum000;
         });
+        var starttime = '';
         var sort000 = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
         var sortCount = ''
         var sortATV = ''
@@ -548,6 +562,7 @@ var navmodule = {
         data.sort(function(a, b) {
           return b.CNT - a.CNT;
         });
+        var starttime = '';
         var sort000 = ''
         var sortCount = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
         var sortATV = ''
@@ -555,6 +570,7 @@ var navmodule = {
         data.sort(function(a, b) {
           return b.SumATV - a.SumATV;
         });
+        var starttime = '';
         var sort000 ='';
         var sortCount = ''
         var sortATV = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
@@ -584,7 +600,7 @@ var navmodule = {
         '</tr>'+
         '<tr>'+
           '<td width="300"><small>Programme Title</small></td>'+
-          '<td>Start time</td>' +
+          '<td>Start time<small>'+ starttime +'</small></td>' +
           '<td><small>Sky 360 BMI</small></td>'+
           '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>' + 
           '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+
