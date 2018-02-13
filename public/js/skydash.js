@@ -380,10 +380,7 @@ var navmodule = {
                   var Prange = WPeriod
                 }else{
                   var Prange = navmodule.externalProgdate($('#customperiod').val())
-                }               
-                if(PerformanceChannels[i].ChannelID != -1){
-                  alert("test")
-                } 
+                }                               
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName, Formname[x])
                 delivered = true;
@@ -406,11 +403,18 @@ var navmodule = {
                 }else{
                   var Prange = navmodule.externalProgdate($('#customperiod').val())
                 }
+                
                 if(PerformanceChannels[i].ChannelID == -1){
-                  alert("test")
+                  ChGroupID = $('#channelgroup').val();
+                  ChID = -1;
+                  progchannelicon = Formname[x];
+                  prognameicon = 'Total'
+                }else{
+                  var progchannelicon = PerformanceChannels[i].ChannelName;
+                  var prognameicon = Formname[x];
                 }
-                navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
-                navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName + " - " +Formname[x])
+                navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,progchannelicon,formnameicon,sort)
+                navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,progchannelicon + " - " +prognameicon)
                 delivered = true;
                 var activecell = 'active rounded'
               }else{
