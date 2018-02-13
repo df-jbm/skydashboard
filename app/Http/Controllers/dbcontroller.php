@@ -53,14 +53,13 @@ class dbcontroller extends Controller
       if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
   }
 
+  public function filterData(&$str){
+    $str = preg_replace("/\t/", "\\t", $str);
+    $str = preg_replace("/\r?\n/", "\\n", $str);
+    if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
+  }
   public function ExpotChannelPerformance(Request $r){
-    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    function filterData(&$str)
-    {
-        $str = preg_replace("/\t/", "\\t", $str);
-        $str = preg_replace("/\r?\n/", "\\n", $str);
-        if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
-    }
+    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));    
     
     // file name for download
     $fileName = "codexworld_export_data" . date('Ymd') . ".xls";
@@ -81,6 +80,8 @@ class dbcontroller extends Controller
         echo implode("\t", array_values($row)) . "\n";
 
     }
+
+    exit;
   }
 
   public function exportprogramme(Request $r){
