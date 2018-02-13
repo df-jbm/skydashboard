@@ -54,7 +54,7 @@ class dbcontroller extends Controller
     header("Pragma: no-cache");
     header("Expires: 0");
     
-    foreach ($array as $data)
+    foreach ($this->GetChannelPerformance as $data)
     {
         fputcsv($file, $data,"\t");
     }
