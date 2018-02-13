@@ -380,9 +380,16 @@ var navmodule = {
                   var Prange = WPeriod
                 }else{
                   var Prange = navmodule.externalProgdate($('#customperiod').val())
-                }                
-                navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
-                navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName, Formname[x])
+                }   
+
+                if(PerformanceChannels[i].ChannelID != -1){
+                  navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
+                  navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName, Formname[x])
+                }else{
+                  alert("test")
+                }
+
+                
                 delivered = true;
                 var activecell = 'active'
               }else if(activeChannel == PerformanceChannels[i].ChannelID && activePlatForm == PFormID){
@@ -449,8 +456,8 @@ var navmodule = {
           var channeliconname = 'Global';
           var formaname = 'Total';
 
-          navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,channeliconname,formaname,sort)
-          navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,channeliconname + " - " +formaname)
+          navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
+          navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
           delivered = true;
           var activeTotalCell = 'active rounded'
         }else{
