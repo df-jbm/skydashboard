@@ -446,9 +446,9 @@ var navmodule = {
             var Prange = navmodule.externalProgdate($('#customperiod').val())
           }
           
-          if(PerformanceChannels[i].ChannelName != '' && Formname[x] != ''){
+          if(Formname[x] != ''){
             var channeliconname = 'Total';
-            var formaname = PerformanceChannels[i].ChannelName;
+            var formaname = Formname[x];
           }else{
             var channeliconname = 'Global';
             var formaname = 'Total';
