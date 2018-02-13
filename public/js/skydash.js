@@ -438,8 +438,6 @@ var navmodule = {
         }
         if(activePlatForm == -1 && activeChannel == -1){          
           
-          activeChannel = -1;
-          activePlatForm = -1;
           var PFormID = -1
           var PtypeID = $('#periodtype').val()
           if(WPeriod != ''){
