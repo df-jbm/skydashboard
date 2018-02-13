@@ -486,17 +486,19 @@ var navmodule = {
             })
             $(this).addClass('active')
 
-            alert($(this).attr("id") + "/" + $(this).attr("value"))
-
-            if(ChannelGroupID != 2000){
-              var ChGroupID = -1;
-              var ChID = $(this).attr("id");
+            if($(this).attr("id") == -1 && $(this).attr("value") != -1){
+              var ChGroupID = ChannelGroupID;
+              var ChID = -1
+              alert('test CHID: ' + ChGroupID)
             }else{
-              var ChGroupID = $(this).attr("id");
-              var ChID = -1;
-            }
-
-
+              if(ChannelGroupID != 2000){
+                var ChGroupID = -1;
+                var ChID = $(this).attr("id");
+              }else{
+                var ChGroupID = $(this).attr("id");
+                var ChID = -1;
+              }
+            }            
 
             var ProgTitleID = -1;
             var PFormID = $(this).attr("value")
