@@ -55,7 +55,32 @@ class dbcontroller extends Controller
 
   public function ExpotChannelPerformance(Request $r){
     $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    return response($this->GetChannelPerformance);
+    function filterData(&$str)
+    {
+        $str = preg_replace("/\t/", "\\t", $str);
+        $str = preg_replace("/\r?\n/", "\\n", $str);
+        if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
+    }
+    
+    // file name for download
+    $fileName = "codexworld_export_data" . date('Ymd') . ".xls";
+    
+    // headers for download
+    header("Content-Disposition: attachment; filename=\"$fileName\"");
+    header("Content-Type: application/vnd.ms-excel");
+    
+    $flag = false;
+    foreach($this->GetChannelPerformance as $row) {
+        if(!$flag) {
+            // display column names as first row
+            echo implode("\t", array_keys($row)) . "\n";
+            $flag = true;
+        }
+        // filter data
+        array_walk($row, 'filterData');
+        echo implode("\t", array_values($row)) . "\n";
+
+    }
   }
 
   public function exportprogramme(Request $r){
