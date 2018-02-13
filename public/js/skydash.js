@@ -613,56 +613,52 @@ var navmodule = {
           '<td id="sort" value="starttime" value>Start time<small>'+ starttime +'</small></td>' +
           '<td><small>Sky 360 BMI</small></td>'+
           '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>' + 
-          '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+
-          //'<td id="sort" value="ATV"><small>ATV</small>'+ sortATV +'</td>'+          
+          '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+          
         '</tr></thead><tbody>';
       }else{
         output += '<thead class="bg-white">'+
         '<tr>'+
-          '<td colspan="5">'+ form +'&nbsp;&nbsp;&nbsp;&nbsp;<img height="30" src="logo/'+ cname.replace('+', '-') +'.png"></td>'+
+          '<td colspan="3">'+ form +'&nbsp;&nbsp;&nbsp;&nbsp;<img height="30" src="logo/'+ cname.replace('+', '-') +'.png"></td>'+
         '</tr>'+
         '<tr>'+
           '<td width="300"><small>Programme Title</small></td>'+          
           '<td><small>Sky 360 BMI</small></td>'+
           '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>' + 
-          '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+
-          //'<td id="sort" value="ATV"><small>ATV</small>'+ sortATV +'</td>'+          
+          '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+          
         '</tr></thead><tbody>';
       }      
       
 
-      for(var i in data){        
-      if(PFormID != 2 && PFormID != 3 && PFormID != 4){
-        var programcount = '<td>'+data[i].CNT+'</td>';
-      }else{
-        var programcount = '<td class="text-center">-</td>';
-      }
-      if($('#periodtype').val() == 1){
-        if(PFormID == 1 || PFormID == -1){
-          var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+      for(var i in data){
+        if(PFormID != 2 && PFormID != 3 && PFormID != 4){
+          var programcount = '<td>'+data[i].CNT+'</td>';
+        }else{
+          var programcount = '<td class="text-center">-</td>';
+        }
+        if($('#periodtype').val() == 1){
+          if(PFormID == 1 || PFormID == -1){
+            var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+          }else{
+            var FirstFromTime = '<td class="text-center">-</td>';
+          }        
         }else{
           var FirstFromTime = '<td class="text-center">-</td>';
+        }
+        if($('#periodtype').val() == 1){
+          output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+            '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
+            FirstFromTime +
+            '<td>'+ data[i].BMICode +'</td>'+
+            programcount +
+            '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+          '</tr>';
+        }else{
+          output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+            '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+            
+            '<td>'+ data[i].BMICode +'</td>'+            
+            '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+          '</tr>';
         }        
-      }else{
-        var FirstFromTime = '<td class="text-center">-</td>';
-      }
-      if($('#periodtype').val() == 1){
-        output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
-          '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
-          FirstFromTime +
-          '<td>'+ data[i].BMICode +'</td>'+
-          programcount +
-          '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
-        '</tr>';
-      }else{
-        output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
-          '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+          
-          '<td>'+ data[i].BMICode +'</td>'+
-          programcount +
-          '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
-        '</tr>';
-      }
-      
       }
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
