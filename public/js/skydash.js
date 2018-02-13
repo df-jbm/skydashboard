@@ -446,14 +446,16 @@ var navmodule = {
             var Prange = navmodule.externalProgdate($('#customperiod').val())
           }
           
-          if(PerformanceChannels[i].ChannelName != ''){
+          if(PerformanceChannels[i].ChannelName != '' && Formname[x] != ''){
             var channeliconname = PerformanceChannels[i].ChannelName;
+            var formaname = Formname[x];
           }else{
-            var channeliconname = 'Total';
+            var channeliconname = 'Global';
+            var formaname = 'Total';
           }
 
-          navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,channeliconname,Formname[x],sort)
-          navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,channeliconname + " - " +Formname[x])
+          navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,channeliconname,formaname,sort)
+          navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,channeliconname + " - " +formaname)
           delivered = true;
           var activeTotalCell = 'active rounded'
         }else{
