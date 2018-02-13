@@ -181,24 +181,18 @@ var navmodule = {
   },
   exportchannel : function(req){    
     console.log(req)    
-    var myWindow = window.open(window.location.href + "exportchannel?"+ req, 'window name', 'width=500,height=100');    
+    var myWindow = window.open(window.location.href + "exportchannel?"+ req, 'window name', 'width=500,height=150');    
     myWindow.document.write("Download<a href="+window.location.href + "exportchannel?"+ req+"> here! </a>Thanks");
   },
-  exportprogramme : function(req){
-    $.get(window.location.href + "exportprogramme", req, function(data){
-      console.log(data)
-      $('#dlprog').attr('href',data)
-      $('#dlprog').attr('disable', false)
-      $('#dlprog').html("Download here")
-    })
+  exportprogramme : function(req){    
+    console.log(req)    
+    var myWindow = window.open(window.location.href + "exportprogramme?"+ req, 'window name', 'width=500,height=150');    
+    myWindow.document.write("Download<a href="+window.location.href + "exportprogramme?"+ req+"> here! </a>Thanks");
   },
   exporttrending : function(req){
-    $.get(window.location.href + "exporttrending", req, function(data){
-      console.log(data)
-      $('#dltrend').attr('href',data)
-      $('#dltrend').attr('disable', false)
-      $('#dltrend').html("Download here")
-    })
+    console.log(req)    
+    var myWindow = window.open(window.location.href + "exporttrending?"+ req, 'window name', 'width=500,height=150');    
+    myWindow.document.write("Download<a href="+window.location.href + "exporttrending?"+ req+"> here! </a>Thanks");
   },
   ChannelPerformanceRequest : function(){
     var ChannelGroupID = $('#channelgroup').val()
@@ -551,7 +545,12 @@ var navmodule = {
       Filter : filter
     }    
     console.log(request)
-    programmereq = request;
+    programmereq = 'ChannelGroupID' +"="+ ChGroupID + "&" +
+      'ChannelID' +"="+ ChID + "&" +
+      'PlatFormID' +"="+ PFormID + "&" +
+      'PeriodTypeID' +"="+ PtypeID + "&" +
+      'Period' +"="+ Prange + "&" +
+      'Filter' +"="+ filter;
     $.get(window.location.href + "programmeperformance", request, function(data){
       console.log(data)      
       if(SumSort == 'starttime'){
