@@ -381,7 +381,7 @@ var navmodule = {
                 }else{
                   var Prange = navmodule.externalProgdate($('#customperiod').val())
                 }               
-                if(PerformanceChannels[i].ChannelID == -1){
+                if(PerformanceChannels[i].ChannelID != -1){
                   alert("test")
                 } 
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
