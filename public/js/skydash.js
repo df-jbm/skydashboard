@@ -181,7 +181,7 @@ var navmodule = {
   },
   exportchannel : function(req){    
     console.log(req)    
-    window.open(window.location.href + "exportchannel?"+req, 'window name', 'window settings');    
+    window.open(window.location.href + "exportchannel?"+ req, 'window name', 'window settings');    
   },
   exportprogramme : function(req){
     $.get(window.location.href + "exportprogramme", req, function(data){
@@ -221,7 +221,9 @@ var navmodule = {
       Filter : filter
     }
     console.log(request)
-    channelreq = request;
+    channelreq = ChannelGroupID + "=" + 
+                  ChannelGroupID + "&" + PeriodTypeID + "=" + 
+                  PeriodTypeID + "&" + Period + "=" + Period + "&" + ChannelGroupID + "=" + ChannelGroupID + "&" + Filter + "=" + filter;
     //loadingstate()
     $.get(window.location.href + "channelperformance", request, function(data){
       navmodule.init_ChannelPerformance(data,ChannelGroupID)
