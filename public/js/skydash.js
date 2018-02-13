@@ -637,12 +637,14 @@ var navmodule = {
         $(this).click(function(){
           if( ( $(this).attr('value') == 'starttime' || $(this).attr('value') == 'Count' ) && PFormID == 1){
             sort = $(this).attr('value')
+            navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,ChannelName,FormName,$(this).attr('value'))
           }else if( ( $(this).attr('value') == 'starttime' || $(this).attr('value') == 'Count' ) && PFormID != 1){
 
           }else{
             sort = $(this).attr('value')
+            navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,ChannelName,FormName,$(this).attr('value'))
           }          
-          navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,ChannelName,FormName,$(this).attr('value'))
+          
         })
       })
       $('#table-programmeperformance tr').each(function(){
