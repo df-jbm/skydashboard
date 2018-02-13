@@ -448,7 +448,7 @@ var navmodule = {
           
           if(PerformanceChannels[i].ChannelName != '' && Formname[x] != ''){
             var channeliconname = PerformanceChannels[i].ChannelName;
-            var formaname = 'Total';
+            var formaname = Formname[x];
           }else{
             var channeliconname = 'Global';
             var formaname = 'Total';
