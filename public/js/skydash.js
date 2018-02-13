@@ -543,13 +543,15 @@ var navmodule = {
     $.get(window.location.href + "programmeperformance", request, function(data){
       console.log(data)      
       if(SumSort == 'starttime'){
-        data.sort(function(a, b) {
-          return b.FirstFromTime - a.FirstFromTime;
-        });
-        var starttime = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
-        var sort000 = '';
-        var sortCount = ''
-        var sortATV = ''
+        if(PFormID == 1){
+          data.sort(function(a, b) {
+            return b.FirstFromTime - a.FirstFromTime;
+          });
+          var starttime = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
+          var sort000 = '';
+          var sortCount = ''
+          var sortATV = ''
+        }        
       }else if(SumSort == '000'){
         data.sort(function(a, b) {
           return b.Sum000 - a.Sum000;
@@ -559,13 +561,15 @@ var navmodule = {
         var sortCount = ''
         var sortATV = ''
       }else if(SumSort == 'Count'){
-        data.sort(function(a, b) {
-          return b.CNT - a.CNT;
-        });
-        var starttime = '';
-        var sort000 = ''
-        var sortCount = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
-        var sortATV = ''
+        if(PFormID == 1){
+          data.sort(function(a, b) {
+            return b.CNT - a.CNT;
+          });
+          var starttime = '';
+          var sort000 = ''
+          var sortCount = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
+          var sortATV = ''
+        }        
       }else{
         data.sort(function(a, b) {
           return b.SumATV - a.SumATV;
