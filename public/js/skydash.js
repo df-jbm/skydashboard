@@ -503,6 +503,11 @@ var navmodule = {
 
             activeChannel = $(this).attr("id");
             activePlatForm = $(this).attr("value")
+            if(PFormID == 1){
+              sort = 'starttime'
+            }else{
+              sort = '000'
+            }
             navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,$(this).data('id'),$(this).data('value'),sort)
             navmodule.init_trending(ProgTitleID,ChGroupID,ChID,PtypeID,Prange,PFormID,$(this).data('id') + ' - ' + $(this).data('value'))
 
@@ -536,12 +541,7 @@ var navmodule = {
     console.log(request)
     programmereq = request;
     $.get(window.location.href + "programmeperformance", request, function(data){
-      console.log(data)
-      if(PFormID == 1){
-        sort = 'starttime'
-      }else{
-        sort = '000'
-      }
+      console.log(data)      
       if(SumSort == 'starttime'){
         data.sort(function(a, b) {
           return b.FirstFromTime - a.FirstFromTime;
