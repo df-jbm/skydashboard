@@ -604,11 +604,7 @@ var navmodule = {
       }
 
       if($('#periodtype').val() == 1){
-        var FirstFromTimeHead = '<td>Start time</td>';
-      }else{
-        var FirstFromTimeHead = '';
-      }      
-      output += '<thead class="bg-white">'+
+        output += '<thead class="bg-white">'+
         '<tr>'+
           '<td colspan="5">'+ form +'&nbsp;&nbsp;&nbsp;&nbsp;<img height="30" src="logo/'+ cname.replace('+', '-') +'.png"></td>'+
         '</tr>'+
@@ -620,8 +616,22 @@ var navmodule = {
           '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+
           //'<td id="sort" value="ATV"><small>ATV</small>'+ sortATV +'</td>'+          
         '</tr></thead><tbody>';
+      }else{
+        output += '<thead class="bg-white">'+
+        '<tr>'+
+          '<td colspan="5">'+ form +'&nbsp;&nbsp;&nbsp;&nbsp;<img height="30" src="logo/'+ cname.replace('+', '-') +'.png"></td>'+
+        '</tr>'+
+        '<tr>'+
+          '<td width="300"><small>Programme Title</small></td>'+          
+          '<td><small>Sky 360 BMI</small></td>'+
+          '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>' + 
+          '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+
+          //'<td id="sort" value="ATV"><small>ATV</small>'+ sortATV +'</td>'+          
+        '</tr></thead><tbody>';
+      }      
+      
 
-      for(var i in data){
+      for(var i in data){        
       if(PFormID != 2 && PFormID != 3 && PFormID != 4){
         var programcount = '<td>'+data[i].CNT+'</td>';
       }else{
@@ -636,13 +646,23 @@ var navmodule = {
       }else{
         var FirstFromTime = '<td class="text-center">-</td>';
       }
-      output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+      if($('#periodtype').val() == 1){
+        output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
           '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
           FirstFromTime +
           '<td>'+ data[i].BMICode +'</td>'+
           programcount +
           '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
         '</tr>';
+      }else{
+        output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+          '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+          
+          '<td>'+ data[i].BMICode +'</td>'+
+          programcount +
+          '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+        '</tr>';
+      }
+      
       }
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
