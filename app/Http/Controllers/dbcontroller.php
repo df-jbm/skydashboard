@@ -48,8 +48,8 @@ class dbcontroller extends Controller
   public function ExpotChannelPerformance(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetChannelPerformance=DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    $array = var_dump(json_decode($this->GetChannelPerformance, true));
-    return $array;
+    var_dump(json_decode($this->GetChannelPerformance, true));
+    
     /*header("Content-Disposition: attachment; filename=\"demo.xls\"");
     header("Content-Type: application/vnd.ms-excel;");
     header("Pragma: no-cache");
