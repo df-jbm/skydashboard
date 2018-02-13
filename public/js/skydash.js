@@ -446,13 +446,8 @@ var navmodule = {
             var Prange = navmodule.externalProgdate($('#customperiod').val())
           }
           
-          if(Formname[x] != ''){
-            var channeliconname = PerformanceChannels[i].ChannelName;
-            var formaname = 'Total';
-          }else{
-            var channeliconname = 'Global';
-            var formaname = 'Total';
-          }
+          var channeliconname = 'Global';
+          var formaname = 'Total';
 
           navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,PFormID,PtypeID,Prange,channeliconname,formaname,sort)
           navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,PFormID,channeliconname + " - " +formaname)
