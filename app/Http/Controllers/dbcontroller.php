@@ -46,7 +46,19 @@ class dbcontroller extends Controller
     return response($this->ProgrammeTitles);
   }
   public function ExpotChannelPerformance(Request $r){
-    Excel::create('Filename');
+    $currentdatetime = date('Ymdhis');
+    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
+    $file = fopen('csv/channelperformance'. $currentdatetime .'.xlsx', 'w+');
+    fputcsv($file, ["Channel name","platform name","Sum000"]);
+    foreach ($this->GetChannelPerformance as $row) {
+      if($row->ChannelID != -1){
+        fputcsv($file, [$row->ChannelName,$row->PlatFormName,$row->Sum000]);
+      }else{
+        fputcsv($file, ["TOTAL",$row->PlatFormName,$row->Sum000]);
+      }      
+    }
+    fclose($file);
+    return response('csv/channelperformance'. $currentdatetime .'.xlsx');
   }
 
   public function exportprogramme(Request $r){
