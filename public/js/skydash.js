@@ -35,9 +35,6 @@ var channelreq = [];
 var programmereq = [];
 var trendingreq = [];
 var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
-if(isIE11 == true){
-  
-}
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -601,7 +598,7 @@ var navmodule = {
       console.log(data)      
       if(SumSort == 'starttime'){
         data.sort(function(a, b) {
-          return +a.FirstFromTime - +b.FirstFromTime;
+          return +a.FirstFromTime.timestamp - +b.FirstFromTime.timestamp;
         });
         var starttime = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
         var sort000 = '';
