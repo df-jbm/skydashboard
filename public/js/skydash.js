@@ -510,12 +510,18 @@ var navmodule = {
       output += '</tr>'
       output += '</tbody></table>';
       $('#channelperformance').scrollTop(0)
-      $('#channelperformance').html(output)     
-      $("table#table-channelperformance").floatThead({scrollingTop:0});
+      $('#channelperformance').html(output)
+      var $table = $('table#table-channelperformance');
+      $table.floatThead();      
       var channeltable = ($('#channelperformance').width() - 280) / Formname.length
       $('#channelperformance td:not(:first-child)').css({
         width : channeltable+'px',
-      })      
+      })
+
+      $(window).resize(function(){
+        $('#channelperformance').scrollTop(0)
+      })
+
       $('#table-channelperformance td:not(:first-child)').each(function(){
         $(this).click(function(){
           if($(this).attr("id")!= undefined){
