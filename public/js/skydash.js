@@ -1577,7 +1577,7 @@ $(function(){
     clearTimeout(wto);
     wto = setTimeout(function() {
       $('#channelperformance').scrollTop(channelscroll)
-      $('#programeperformance').scrollTop(programmescroll)
+      $('#channelperformance').scrollTop(programmescroll)
     },1000);
   })
   $('#exportchannel').click(function(){
