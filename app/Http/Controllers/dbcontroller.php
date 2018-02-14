@@ -45,24 +45,9 @@ class dbcontroller extends Controller
     $this->ProgrammeTitles = DB::select('EXEC QueryBMIProgramTitles ?',array($r->InputFilter));
     return response($this->ProgrammeTitles);
   }
-  public function ExpotChannelPerformance(Request $r){
-    $currentdatetime = date('Ymdhis');
-    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    $file = fopen('csv/channelperformance'. $currentdatetime .'.xlsx', 'w+');
-    header("Content-Disposition: attachment; filename=$file");
-    header("Content-Type: application/vnd.ms-excel;");
-    header("Pragma: no-cache");
-    header("Expires: 0");
-    fputcsv($file, ["Channel name","platform name","Sum000"]);
-    foreach ($this->GetChannelPerformance as $row) {
-      if($row->ChannelID != -1){
-        fputcsv($file, [$row->ChannelName,$row->PlatFormName,$row->Sum000]);
-      }else{
-        fputcsv($file, ["TOTAL",$row->PlatFormName,$row->Sum000]);
-      }      
-    }
-    fclose($file);
-    return response('csv/channelperformance'. $currentdatetime .'.xlsx');
+  public function ExpotChannelPerformance(Request $r){    
+    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));    
+    return response($this->GetChannelPerformance);
   }
 
   public function exportprogramme(Request $r){
