@@ -34,6 +34,8 @@ var trendinglegend = [];
 var channelreq = [];
 var programmereq = [];
 var trendingreq = [];
+var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+alert(isIE11);
 var navmodule = {
   /*
   ===== Initialize navigation
