@@ -1576,8 +1576,8 @@ $(function(){
     $('#channelperformance,#programeperformance').scrollTop(0)
     clearTimeout(wto);
     wto = setTimeout(function() {
-      $('#channelperformance').scrollTop(channelscroll)
-      $('#programeperformance').scrollTop(programmescroll)
+      $('#channelperformance').scrollTop(Number(channelscroll+20))
+      $('#programeperformance').scrollTop(Number(programmescroll+20))
     },10);
   })
   $('#exportchannel').click(function(){
