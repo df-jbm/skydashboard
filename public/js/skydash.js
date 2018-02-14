@@ -596,7 +596,7 @@ var navmodule = {
       console.log(data)      
       if(SumSort == 'starttime'){
         data.sort(function(a, b) {
-          return +b.FirstFromTime - +a.FirstFromTime;
+          return +a.FirstFromTime - +b.FirstFromTime;
         });
         var starttime = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
         var sort000 = '';
