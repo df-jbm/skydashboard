@@ -6,9 +6,8 @@
   #navbarsExample10{
     float: left;
   }
-  #navbarsExample10, #navbarsExample10 ul{
-    border: 1px solid #000;
-    padding-right: 0px;    
+  #navbarsExample10, #navbarsExample09, #navbarsExample10 ul{
+    border: 1px solid #000;    
   }
 }
 #barnum{
