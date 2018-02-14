@@ -9,7 +9,7 @@
   #navbarsExample10{
     width: calc(100% - 300px);
   }
-  #navbarsExample10, #navbarsExample09, #navbarsExample10 ul{
+  #navbarsExample10{
     border: 1px solid #000;    
   }
 }
