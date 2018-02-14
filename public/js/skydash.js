@@ -36,9 +36,7 @@ var programmereq = [];
 var trendingreq = [];
 var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
 if(isIE11 == true){
-  $('#navbarsExample10').css({
-    width : $(this).width() - 200,
-  })
+  $('#navbarsExample10').widh(Number($('#navbarsExample10').width() - 200))
 }
 var navmodule = {
   /*
