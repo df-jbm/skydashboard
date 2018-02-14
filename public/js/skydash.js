@@ -183,11 +183,11 @@ var navmodule = {
     console.log(req)    
     $.get(window.location.href + "exportchannel", req, function(data){
       console.log(data)
-      /*var expotRows = [];
+      var expotRows = [];
       for (var i in data) {
-          expotRows.push([ data[i].AreaName, data[i].CountryCode, data[i].ChannelBrandName, data[i].TargetCode, data[i].CurrentValue, data[i].ReferenceValue]);
+          expotRows.push([data[i].ChannelName,data[i].PlatFormName,data[i].Sum000]);
       }
-      alasql("SELECT * INTO " + filetype + "('RatingsPerformance." + filetype + "',{headers:false}) FROM ? ", [expotRows]);*/
+      alasql("SELECT * INTO xlsx ('ChannelPerformance.xlsx',{headers:false}) FROM ? ", [expotRows]);*
     });
   },
   exportprogramme : function(req){
