@@ -209,7 +209,7 @@ var navmodule = {
       for (var i in data) {
         expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,data[i].Sum000]);
       }
-      alasql("SELECT * INTO xlsx ('ProgrammePerformance"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);      
+      alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ProgrammePerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
       $('#dlprog').html("Toogle button to download again.")  
     })
   },
@@ -223,7 +223,7 @@ var navmodule = {
       for (var i in data) {
         expotRows.push([data[i].ProgDate,data[i].Sum000]);
       }
-      alasql("SELECT * INTO xlsx ('Trending"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);      
+      alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('Trending"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
       $('#dltrend').html("Toogle button to download again.")  
     })
   },
