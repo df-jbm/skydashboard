@@ -212,9 +212,15 @@ var navmodule = {
   exporttrending : function(req){
     $.get(window.location.href + "exporttrending", req, function(data){
       console.log(data)
-      $('#dltrend').attr('href',data)
-      $('#dltrend').attr('disable', false)
-      $('#dltrend').html("Download here")
+      var expotRows = [];
+      var dt = new Date();
+      var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
+      expotRows.push(["BMICode","ProgrammeTitle","Count","Sum000"]);
+      expotRows.push(["ProgDate","Sum000"]);
+      for (var i in data) {
+        expotRows.push([data[i].ProgDate,data[i].Sum000]);
+      }
+      alasql("SELECT * INTO xlsx ('Trending"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);
     })
   },
   ChannelPerformanceRequest : function(){
