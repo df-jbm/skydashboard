@@ -184,10 +184,15 @@ var navmodule = {
     $.get(window.location.href + "exportchannel", req, function(data){
       console.log(data)
       var expotRows = [];
+      var d = new Date($.now());
       for (var i in data) {
-          expotRows.push([data[i].ChannelName,data[i].PlatFormName,data[i].Sum000]);
+          if(data[i].ChannelID != -1){
+            expotRows.push([data[i].ChannelName,data[i].PlatFormName,data[i].Sum000]);
+          }else{
+            expotRows.push(["Total",data[i].PlatFormName,data[i].Sum000]);
+          }          
       }
-      alasql("SELECT * INTO xlsx ('ChannelPerformance.xlsx',{headers:false}) FROM ? ", [expotRows]);
+      alasql("SELECT * INTO xlsx ('ChannelPerformance"+ d +".xlsx',{headers:false}) FROM ? ", [expotRows]);
     });
   },
   exportprogramme : function(req){
