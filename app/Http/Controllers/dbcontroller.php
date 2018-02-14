@@ -53,13 +53,7 @@ class dbcontroller extends Controller
   public function exportprogramme(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter));
-    $file = fopen('csv/programmeperfomance'. $currentdatetime .'.xlsx', 'w+');
-    fputcsv($file, ["BMI code","Programme title","Count","Sum000"]);
-    foreach ($this->GetProgramePerformance as $row) {
-      fputcsv($file, [$row->BMICode,$row->ProgrammeTitle,$row->CNT,$row->Sum000]);
-    }
-    fclose($file);
-    return response('csv/programmeperfomance'. $currentdatetime .'.xlsx');
+    return response($this->GetProgramePerformance);
   }
   public function exporttrending(Request $r){
     $currentdatetime = date('Ymdhis');

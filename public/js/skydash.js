@@ -198,10 +198,15 @@ var navmodule = {
   },
   exportprogramme : function(req){
     $.get(window.location.href + "exportprogramme", req, function(data){
-      console.log(data)
-      $('#dlprog').attr('href',data)
-      $('#dlprog').attr('disable', false)
-      $('#dlprog').html("Download here")
+      console.log(data)      
+      var expotRows = [];
+      var dt = new Date();
+      var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
+      expotRows.push(["BMICode","ProgrammeTitle","Count","Sum000"]);
+      for (var i in data) {
+        expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,data[i].Sum000]);
+      }
+      alasql("SELECT * INTO xlsx ('ProgrammePerformance"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);
     })
   },
   exporttrending : function(req){
