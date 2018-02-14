@@ -194,6 +194,7 @@ var navmodule = {
           }          
       }
       alasql("SELECT * INTO xlsx ('ChannelPerformance"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);
+      $('#dlchannel').html("")
     });
   },
   exportprogramme : function(req){
@@ -206,7 +207,8 @@ var navmodule = {
       for (var i in data) {
         expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,data[i].Sum000]);
       }
-      alasql("SELECT * INTO xlsx ('ProgrammePerformance"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);
+      alasql("SELECT * INTO xlsx ('ProgrammePerformance"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);      
+      $('#dlprog').html("")  
     })
   },
   exporttrending : function(req){
@@ -219,7 +221,8 @@ var navmodule = {
       for (var i in data) {
         expotRows.push([data[i].ProgDate,data[i].Sum000]);
       }
-      alasql("SELECT * INTO xlsx ('Trending"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);
+      alasql("SELECT * INTO xlsx ('Trending"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);      
+      $('#dltrend').html("")  
     })
   },
   ChannelPerformanceRequest : function(){
