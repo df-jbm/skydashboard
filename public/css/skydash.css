@@ -3,7 +3,13 @@
   img{
     -ms-interpolation-mode: bicubic;
   }
-   #navbarsExample10, #navbarsExample10 ul{
+  #navbarsExample09{
+    width: 150px;
+  }  
+  #navbarsExample10{
+    width: auto;
+  }
+  #navbarsExample10, #navbarsExample10 ul{
     border: 1px solid #000;
     padding-right: 0px;    
   }
