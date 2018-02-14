@@ -97,7 +97,7 @@
         </ul>
       </div>
     </nav>
-    <div class="container-fluid">
+    <main role="main" class="container-fluid">
       <div class="row">
         <div class="col-sm-12 col-md-7" id="performance-content">
           <div class="card border">
@@ -138,7 +138,7 @@
           <br/><a class="btn btn-sm" id="dltrend" disable="true" download>No exported Xslx file</a>
         </div>
       </div>
-    </div>
+    </main>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
