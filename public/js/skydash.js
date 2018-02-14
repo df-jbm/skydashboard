@@ -195,7 +195,7 @@ var navmodule = {
             expotRows.push(["Total",data[i].PlatFormName,data[i].Sum000]);
           }          
       }
-      alasql("SELECT * INTO xlsx ('ChannelPerformance"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);
+      alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ChannelPerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);
       $('#dlchannel').html("Toogle button to download again.")
     });
   },
