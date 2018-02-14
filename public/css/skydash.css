@@ -4,11 +4,10 @@
     -ms-interpolation-mode: bicubic;
   }  
   #navbarsExample10{
-    padding-left: 0;
+    padding-left: 0px;
   }
   #navbarsExample10, #navbarsExample10 ul{
-    border: 1px solid #000;
-    padding-right: 0px;    
+    border: 1px solid #000;    
   }
 }
 #barnum{
