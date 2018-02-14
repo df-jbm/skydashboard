@@ -650,7 +650,7 @@ var navmodule = {
         '</tr>'+
         '<tr>'+
           '<td width="300"><small>Programme Title</small></td>'+
-          '<td id="sort" value="starttime" value>Start time<small>'+ starttime +'</small></td>' +
+          '<td id="sort" value="starttime" value><small>Start time'+ starttime +'</small></td>' +
           '<td><small>Sky 360 BMI</small></td>'+
           '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>' + 
           '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+          
