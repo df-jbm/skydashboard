@@ -6,6 +6,9 @@
   #navbarsExample09{
     max-width: 200px;
   }
+  #navbarsExample10{
+    max-width: 1000px;
+  }
   #navbarsExample10, #navbarsExample09, #navbarsExample10 ul{
     border: 1px solid #000;    
   }
