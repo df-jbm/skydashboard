@@ -598,7 +598,7 @@ var navmodule = {
       console.log(data)      
       if(SumSort == 'starttime'){
         data.sort(function(a, b) {
-          return new Date('1970/01/01 ' + b.FirstFromTime) - new Date('1970/01/01 ' + a.FirstFromTime);          
+          return new Date('1970/01/01 ' + a.FirstFromTime) - new Date('1970/01/01 ' + b.FirstFromTime);          
         });
         var starttime = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
         var sort000 = '';
