@@ -3,8 +3,8 @@
   img{
     -ms-interpolation-mode: bicubic;
   }
-  #navbarsExample10{
-    
+  #rightlogo{
+    margin-right: 100px;
   }
   #navbarsExample10, #navbarsExample10 ul{
     border: 1px solid #000;
