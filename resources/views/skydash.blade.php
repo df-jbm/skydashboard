@@ -127,7 +127,7 @@
         <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>        
         <div class="col-sm-12" id="exportbody">
           <div class="checkbox">
-            <label><input type="checkbox" value="csv">CSV</label>
+            <label><input type="checkbox" value="csv">csv</label>
           </div>
         </div>
         <div class="col-sm-12" id="exportbody">
