@@ -87,7 +87,7 @@
             <a href="http://grouptechedge.com/" target="_blank"><img src="icon/question.png" id="help" height="30" alt="placeholder+image"></a>            
           </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto" id="rightlogo">
           <li class="nav-item navlogo navright">
             <img class="dblogo" height="40" src="brand/db.ico" alt="logo">
           </li>
