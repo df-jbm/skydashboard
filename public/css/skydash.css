@@ -3,9 +3,12 @@
   img{
     -ms-interpolation-mode: bicubic;
   }
+  #navbarsExample10{
+    max-width: 500px;
+  }
   #navbarsExample10, #navbarsExample10 ul{
     border: 1px solid #000;
-    padding-right: 0px;
+    padding-right: 0px;    
   }
 }
 #barnum{
