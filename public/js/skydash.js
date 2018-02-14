@@ -516,11 +516,7 @@ var navmodule = {
       var channeltable = ($('#channelperformance').width() - 280) / Formname.length
       $('#channelperformance td:not(:first-child)').css({
         width : channeltable+'px',
-      })
-
-      $(window).resize(function(){
-        $('#channelperformance').scrollTop(0)
-      })
+      })      
 
       $('#table-channelperformance td:not(:first-child)').each(function(){
         $(this).click(function(){
@@ -1573,7 +1569,9 @@ $(function(){
   /*
   ===== Bind trigger for channelgroup
   */
-  
+  $(window).resize(function(){
+    $('#channelperformance,#programeperformance').scrollTop(0)
+  })
   $('#exportchannel').click(function(){
     navmodule.exportchannel(channelreq);
   })
