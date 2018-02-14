@@ -1578,7 +1578,7 @@ $(function(){
     wto = setTimeout(function() {
       $('#channelperformance').scrollTop(channelscroll)
       $('#programeperformance').scrollTop(programmescroll)
-    },1000);
+    },10);
   })
   $('#exportchannel').click(function(){
     navmodule.exportchannel(channelreq);
