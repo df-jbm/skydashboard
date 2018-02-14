@@ -58,6 +58,6 @@ class dbcontroller extends Controller
   public function exporttrending(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
-    return response($this->GetProgramePerformance);
+    return response($this->GetTrending);
   }    
 }
