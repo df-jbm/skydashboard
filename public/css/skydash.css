@@ -3,6 +3,9 @@
   img{
     -ms-interpolation-mode: bicubic;
   }
+  #navbarsExample10{
+    border: 1px solid #000;
+  }
 }
 #barnum{
   width :60px;
