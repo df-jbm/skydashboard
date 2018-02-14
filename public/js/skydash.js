@@ -181,18 +181,28 @@ var navmodule = {
   },
   exportchannel : function(req){    
     console.log(req)    
-    var myWindow = window.open(window.location.href + "exportchannel?"+ req, 'channel', 'width=500,height=150');    
-    myWindow.document.write("Download<a href="+window.location.href + "exportchannel?"+ req+"> here! </a>Thanks");
+    $.get(window.location.href + "exportchannel", req, function(data){
+      console.log(data)
+      $('#dlchannel').attr('href',data)
+      $('#dlchannel').attr('disable', false)
+      $('#dlchannel').html("Download here")
+    });
   },
-  exportprogramme : function(req){    
-    console.log(req)    
-    var myWindow = window.open(window.location.href + "exportprogramme?"+ req, 'programme', 'width=500,height=150');    
-    myWindow.document.write("Download<a href="+window.location.href + "exportprogramme?"+ req+"> here! </a>Thanks");
+  exportprogramme : function(req){
+    $.get(window.location.href + "exportprogramme", req, function(data){
+      console.log(data)
+      $('#dlprog').attr('href',data)
+      $('#dlprog').attr('disable', false)
+      $('#dlprog').html("Download here")
+    })
   },
   exporttrending : function(req){
-    console.log(req)    
-    var myWindow = window.open(window.location.href + "exporttrending?"+ req, 'trending', 'width=500,height=150');    
-    myWindow.document.write("Download<a href="+window.location.href + "exporttrending?"+ req+"> here! </a>Thanks");
+    $.get(window.location.href + "exporttrending", req, function(data){
+      console.log(data)
+      $('#dltrend').attr('href',data)
+      $('#dltrend').attr('disable', false)
+      $('#dltrend').html("Download here")
+    })
   },
   ChannelPerformanceRequest : function(){
     var ChannelGroupID = $('#channelgroup').val()
