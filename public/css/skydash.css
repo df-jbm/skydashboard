@@ -7,7 +7,7 @@
     max-width: 200px;
   }
   #navbarsExample10{
-    max-width: 1000px;
+    width : calc( 100% - 200px );
   }
   #navbarsExample10, #navbarsExample09, #navbarsExample10 ul{
     border: 1px solid #000;    
