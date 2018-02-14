@@ -125,6 +125,9 @@
       </div>
       <div id="exportcontainer" class="bg-info border">
         <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="csv">CSV</label>
+        </div>
         <div class="col-sm-12" id="exportbody">
           <button class="btn btn-sm" id="exportchannel" value="hidden">Export Channel Performance</button>
           <br/><a class="btn btn-sm" id="dlchannel" disable="true" download>No exported Xslx file</a>
