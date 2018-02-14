@@ -3,8 +3,8 @@
   img{
     -ms-interpolation-mode: bicubic;
   }
-  #navbarsExample10{
-    float: left;
+  #navbarsExample09{
+    max-width: 200px;
   }
   #navbarsExample10, #navbarsExample09, #navbarsExample10 ul{
     border: 1px solid #000;    
