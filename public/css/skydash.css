@@ -232,6 +232,7 @@ body main .row #performance-content .card .card-body .table-responsive{
      /* IE10+ CSS styles go here */
   img{
     -ms-transform: translateZ(0);
+    filter: blur(12px);
   }  
   #navbarsExample10{
     padding-left: 0px;
