@@ -8,6 +8,7 @@
   }
   #navbarsExample10, #navbarsExample10 ul{
     border: 1px solid #000;    
+    padding-right: 200px;
   }
 }
 #barnum{
