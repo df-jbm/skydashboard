@@ -110,34 +110,34 @@
 }
 html,
 body,
-body .container-fluid{
+body main{
   height: calc(100% - 30px);
 }
-body .container-fluid .row:first-child{
+body main .row:first-child{
   height: 60%;
 }
-body .container-fluid .row+.row{
+body main .row+.row{
   height: 40%;
 }
-body .container-fluid .row #performance-content,
-body .container-fluid .row #performance-content .card,
-body .container-fluid .row #performance-content .card .card-body,
-body .container-fluid .row #performance-content .card .card-body .table-responsive,
-body .container-fluid .row #performance-content .card #programeperformance{
+body main .row #performance-content,
+body main .row #performance-content .card,
+body main .row #performance-content .card .card-body,
+body main .row #performance-content .card .card-body .table-responsive,
+body main .row #performance-content .card #programeperformance{
   height: 99%;
 }
 
-body .container-fluid .row #trending-content,
-body .container-fluid .row #trending-content .card,
-body .container-fluid .row #trending-content .card-body{
+body main .row #trending-content,
+body main .row #trending-content .card,
+body main .row #trending-content .card-body{
   height: 100%;
 }
 
-body .container-fluid .row #performance-content .card .card-body{
+body main .row #performance-content .card .card-body{
   padding:10px 10px 10px 10px;
 }
 
-body .container-fluid .row #performance-content .card .card-body .table-responsive{
+body main .row #performance-content .card .card-body .table-responsive{
   overflow-x: hidden;
   overflow-y: auto;
   padding: 0;
