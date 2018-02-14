@@ -2,12 +2,9 @@
      /* IE10+ CSS styles go here */
   img{
     -ms-interpolation-mode: bicubic;
-  }
-  #navbarsExample09{
-    width: 150px;
   }  
   #navbarsExample10{
-    width: auto;
+    padding-left: 0;
   }
   #navbarsExample10, #navbarsExample10 ul{
     border: 1px solid #000;
