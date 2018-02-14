@@ -1,13 +1,3 @@
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-     /* IE10+ CSS styles go here */
-  img{
-    -ms-interpolation-mode: bicubic;
-  }  
-  #navbarsExample10{
-    padding-left: 0px;
-    padding-right: 90px;
-  }
-}
 #barnum{
   width :60px;
 }
@@ -237,4 +227,14 @@ body main .row #performance-content .card .card-body .table-responsive{
 #exportbody{
   padding-right: 15px;
   padding-left: 15px;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+  img{
+    -ms-interpolation-mode: bicubic;
+  }  
+  #navbarsExample10{
+    padding-left: 0px;
+    padding-right: 90px;
+  }
 }
