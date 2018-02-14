@@ -194,7 +194,7 @@ var navmodule = {
           }          
       }
       alasql("SELECT * INTO xlsx ('ChannelPerformance"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);
-      $('#dlchannel').html("Toogle button to download ChannelPerformance again!")
+      $('#dlchannel').html("Toogle button to download again.")
     });
   },
   exportprogramme : function(req){
@@ -208,7 +208,7 @@ var navmodule = {
         expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,data[i].Sum000]);
       }
       alasql("SELECT * INTO xlsx ('ProgrammePerformance"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);      
-      $('#dlprog').html("Toogle button to download Programme again!")  
+      $('#dlprog').html("Toogle button to download again.")  
     })
   },
   exporttrending : function(req){
@@ -222,7 +222,7 @@ var navmodule = {
         expotRows.push([data[i].ProgDate,data[i].Sum000]);
       }
       alasql("SELECT * INTO xlsx ('Trending"+ datetime +".xlsx',{headers:false}) FROM ? ", [expotRows]);      
-      $('#dltrend').html("Toogle button to download Trending again!")  
+      $('#dltrend').html("Toogle button to download again.")  
     })
   },
   ChannelPerformanceRequest : function(){
@@ -555,7 +555,8 @@ var navmodule = {
               sort = '000'
             }
             navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,$(this).data('id'),$(this).data('value'),sort)
-            navmodule.init_trending(ProgTitleID,ChGroupID,ChID,PtypeID,Prange,PFormID,$(this).data('id') + ' - ' + $(this).data('value'))            
+            navmodule.init_trending(ProgTitleID,ChGroupID,ChID,PtypeID,Prange,PFormID,$(this).data('id') + ' - ' + $(this).data('value'))
+
           }
         })
       })
