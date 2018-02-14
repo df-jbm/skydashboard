@@ -512,13 +512,13 @@ var navmodule = {
       output += '</tbody></table>';
       $('#channelperformance').scrollTop(0)
       $('#channelperformance').html(output)
+      var $table = $('table#table-channelperformance');
+      $table.floatThead();      
       var channeltable = ($('#channelperformance').width() - 280) / Formname.length
       $('#channelperformance td:not(:first-child)').css({
         width : channeltable+'px',
-      })
-      var $table = $('table#table-channelperformance');
-      $table.floatThead();
-      
+      })      
+
       $('#table-channelperformance td:not(:first-child)').each(function(){
         $(this).click(function(){
           if($(this).attr("id")!= undefined){
@@ -1571,10 +1571,7 @@ $(function(){
   ===== Bind trigger for channelgroup
   */
   $(window).resize(function(){
-    var channelscroll = $('##channelperformance').scrollTop()
-    var programmescroll = $('##programeperformance').scrollTop()
     $('#channelperformance,#programeperformance').scrollTop(0)
-    
   })
   $('#exportchannel').click(function(){
     navmodule.exportchannel(channelreq);
