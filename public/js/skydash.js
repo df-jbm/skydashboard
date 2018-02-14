@@ -1571,7 +1571,14 @@ $(function(){
   ===== Bind trigger for channelgroup
   */
   $(window).resize(function(){
+    var channelscroll = $('#channelperformance').scrollTop()
+    var programmescroll = $('#programeperformance').scrollTop()
     $('#channelperformance,#programeperformance').scrollTop(0)
+    clearTimeout(wto);
+    wto = setTimeout(function() {
+      $('#channelperformance').scrollTop(channelscroll)
+      $('#programeperformance').scrollTop(programmescroll)
+    },1000);
   })
   $('#exportchannel').click(function(){
     navmodule.exportchannel(channelreq);
