@@ -1580,11 +1580,7 @@ $(function(){
     var channelscroll = $('##channelperformance').scrollTop()
     var programmescroll = $('##programeperformance').scrollTop()
     $('#channelperformance,#programeperformance').scrollTop(0)
-    clearTimeout(wto);
-    wto = setTimeout(function() {
-      $('#channelperformance').scrollTop(channelscroll)
-      $('#channelperformance').scrollTop(programmescroll)
-    },1000);
+    
   })
   $('#exportchannel').click(function(){
     navmodule.exportchannel(channelreq);
