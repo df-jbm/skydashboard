@@ -82,7 +82,7 @@
               <ul id="list"><ul>
             </div>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
             <label for="help" class="small col-form-label  align-center">&nbsp;</label><br/>
             <a href="http://grouptechedge.com/" target="_blank"><img src="icon/question.png" id="help" height="30" alt="placeholder+image"></a>            
           </li>
