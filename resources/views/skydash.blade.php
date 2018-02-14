@@ -127,7 +127,7 @@
         <div class="card-title bg-light" id="btnshowhideEx" value="hidden">Show Export Module</div>        
         <div class="col-sm-12" id="exportbody">
           <div class="checkbox">
-            <label><input type="radio" name="format" value="xslx">Xslx Format</label>
+            <label><input type="radio" name="format" value="xslx" checked="true">Xslx Format</label>
             <label><input type="radio" name="format" value="csv">CSV Format</label>            
           </div>
         </div>
