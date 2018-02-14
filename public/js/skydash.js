@@ -510,9 +510,8 @@ var navmodule = {
       output += '</tr>'
       output += '</tbody></table>';
       $('#channelperformance').scrollTop(0)
-      $('#channelperformance').html(output)
-      var $table = $('table#table-channelperformance');
-      $table.floatThead();
+      $('#channelperformance').html(output)     
+      $("table#table-channelperformance").floatThead({scrollingTop:0});
       var channeltable = ($('#channelperformance').width() - 280) / Formname.length
       $('#channelperformance td:not(:first-child)').css({
         width : channeltable+'px',
