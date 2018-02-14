@@ -187,7 +187,7 @@ var navmodule = {
       for (var i in data) {
           expotRows.push([data[i].ChannelName,data[i].PlatFormName,data[i].Sum000]);
       }
-      alasql("SELECT * INTO xlsx ('ChannelPerformance.xlsx',{headers:false}) FROM ? ", [expotRows]);*
+      alasql("SELECT * INTO xlsx ('ChannelPerformance.xlsx',{headers:false}) FROM ? ", [expotRows]);
     });
   },
   exportprogramme : function(req){
