@@ -3,16 +3,7 @@
   img{
     -ms-interpolation-mode: bicubic;
   }
-  #navbarsExample09{
-    max-width: 200px;
-  }
-  #navbarsExample10{
-    width : 100%;
-    width : calc(100% - 200px);
-  }
-  #navbarsExample10, #navbarsExample09, #navbarsExample10 ul{
-    border: 1px solid #000;    
-  }
+  
 }
 #barnum{
   width :60px;
