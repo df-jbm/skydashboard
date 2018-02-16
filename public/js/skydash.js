@@ -691,14 +691,14 @@ var navmodule = {
             '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
             FirstFromTime +
             '<td>'+ data[i].BMICode +'</td>'+
-            '<td>'+data[i].CNT+'</td>'
+            '<td>'+data[i].CNT+'</td>' + 
             '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
           '</tr>';
         }else{
           output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
             '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+            
             '<td>'+ data[i].BMICode +'</td>'+ 
-            '<td>'+data[i].CNT+'</td>'           
+            '<td>'+data[i].CNT+'</td>' +            
             '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
           '</tr>';
         }        
