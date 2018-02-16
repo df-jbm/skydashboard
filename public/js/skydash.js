@@ -46,6 +46,7 @@ var navmodule = {
       ===== Ajax req for channel group
       */
       var promise = $.get(window.location.href + "channelgroup", request).then(function(data){
+        console.log(data)
         $('#'+formID).find('option').remove();
         var selectBox = document.getElementById(formID);
 
