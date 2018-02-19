@@ -406,7 +406,12 @@ var navmodule = {
                   var Prange = WPeriod
                 }else{
                   var Prange = navmodule.externalProgdate($('#customperiod').val())
-                }                               
+                }              
+                if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
+                  sort = 'starttime'
+                }else{
+                  sort = '000'
+                }                 
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName, Formname[x])
                 delivered = true;
