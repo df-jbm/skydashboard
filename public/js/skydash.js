@@ -580,6 +580,10 @@ var navmodule = {
       var filter = ''
     }
 
+    if(PFormID != 1){
+      SumSort = '000';
+    }
+
     request = {
       ChannelGroupID : ChGroupID,
       ChannelID : ChID,
@@ -587,14 +591,17 @@ var navmodule = {
       PeriodTypeID : PtypeID,
       Period : Prange,
       Filter : filter
-    }    
+    }
+
     console.log(request)
+    
     programmereq = 'ChannelGroupID' +"="+ ChGroupID + "&" +
       'ChannelID' +"="+ ChID + "&" +
       'PlatFormID' +"="+ PFormID + "&" +
       'PeriodTypeID' +"="+ PtypeID + "&" +
       'Period' +"="+ Prange + "&" +
       'Filter' +"="+ filter;
+
     $.get(window.location.href + "programmeperformance", request, function(data){
       console.log(data)      
       if(SumSort == 'starttime'){
@@ -644,7 +651,7 @@ var navmodule = {
         var headprogcount = '';
       }
 
-      if($('#periodtype').val() == 1){
+      if($('#periodtype').val() == 1 && ChGroupID == -1){
         if(PFormID == 1){
           var colspan = 5
           var headstarttime = '<td id="sort" value="starttime" value><small>Start time'+ starttime +'</small></td>';
@@ -678,7 +685,7 @@ var navmodule = {
       
 
       for(var i in data){        
-        if($('#periodtype').val() == 1){
+        if($('#periodtype').val() == 1 && ChGroupID == -1){
           if(PFormID == 1){
             var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
           }else{
@@ -687,7 +694,7 @@ var navmodule = {
         }else{
           var FirstFromTime = '';
         }
-        if($('#periodtype').val() == 1){
+        if($('#periodtype').val() == 1 && ChGroupID == -1){
           output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
             '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
             FirstFromTime +
