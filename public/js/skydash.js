@@ -646,7 +646,7 @@ var navmodule = {
       console.log(cname)
       var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'      
             
-      if($('#periodtype').val() == 1 && ChGroupID == -1 && ChannelID != -1){
+      if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
         if(PFormID == 1){
           var colspan = 5
           var headstarttime = '<td id="sort" value="starttime" value><small>Start time'+ starttime +'</small></td>';
@@ -680,7 +680,7 @@ var navmodule = {
       
 
       for(var i in data){        
-        if($('#periodtype').val() == 1 && ChGroupID == -1){
+        if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
           if(PFormID == 1){
             var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
           }else{
