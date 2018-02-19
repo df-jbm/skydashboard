@@ -553,11 +553,11 @@ var navmodule = {
 
             activeChannel = $(this).attr("id");
             activePlatForm = $(this).attr("value")
-            if(PFormID == 1){
+            if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
               sort = 'starttime'
             }else{
               sort = '000'
-            }
+            }            
             navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,$(this).data('id'),$(this).data('value'),sort)
             navmodule.init_trending(ProgTitleID,ChGroupID,ChID,PtypeID,Prange,PFormID,$(this).data('id') + ' - ' + $(this).data('value'))
 
@@ -578,11 +578,7 @@ var navmodule = {
       var filter = $('#filterbmi').val()
     }else{
       var filter = ''
-    }
-
-    if(PFormID != 1 && SumSort == 'starttime'){
-      SumSort = '000';
-    }
+    }  
 
     request = {
       ChannelGroupID : ChGroupID,
@@ -645,7 +641,7 @@ var navmodule = {
       }
       console.log(cname)
       var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'      
-            
+
       if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
         if(PFormID == 1){
           var colspan = 5
