@@ -582,6 +582,8 @@ var navmodule = {
 
     if(PFormID != 1){
       SumSort = '000';
+    }else{
+      SumSort = 'starttime';
     }
 
     request = {
