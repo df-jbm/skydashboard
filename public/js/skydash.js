@@ -644,14 +644,9 @@ var navmodule = {
         var cname = 'TNT Comedy';
       }
       console.log(cname)
-      var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'
-      if(PFormID != 2 && PFormID != 3 && PFormID != 4){
-        var headprogcount = '<td id="sort" value="Count"><small>Count</small>'+ sortCount +'</td>';
-      }else{
-        var headprogcount = '';
-      }
-
-      if($('#periodtype').val() == 1 && ChGroupID == -1){
+      var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'      
+            
+      if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
         if(PFormID == 1){
           var colspan = 5
           var headstarttime = '<td id="sort" value="starttime" value><small>Start time'+ starttime +'</small></td>';
