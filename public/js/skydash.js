@@ -580,10 +580,8 @@ var navmodule = {
       var filter = ''
     }
 
-    if(PFormID != 1){
+    if(PFormID != 1 && starttime == 'starttime'){
       SumSort = '000';
-    }else{
-      SumSort = 'starttime';
     }
 
     request = {
