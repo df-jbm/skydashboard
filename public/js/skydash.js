@@ -439,6 +439,13 @@ var navmodule = {
                   var progchannelicon = PerformanceChannels[i].ChannelName;
                   var formnameicon = Formname[x];
                 }
+
+
+                if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
+                  sort = 'starttime'
+                }else{
+                  sort = '000'
+                }
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,progchannelicon,formnameicon,sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,progchannelicon + " - " +formnameicon)
                 delivered = true;
@@ -492,7 +499,11 @@ var navmodule = {
           
           var channeliconname = 'Global';
           var formaname = 'Total';
-
+          if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
+            sort = 'starttime'
+          }else{
+            sort = '000'
+          }
           navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
           navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
           delivered = true;
