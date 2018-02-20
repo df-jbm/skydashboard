@@ -408,9 +408,9 @@ var navmodule = {
                   var Prange = navmodule.externalProgdate($('#customperiod').val())
                 }              
                 if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
-                  sort = 'starttime'
+                  sort = 1
                 }else{
-                  sort = '000'
+                  sort = 3
                 }                 
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName, Formname[x])
@@ -447,9 +447,9 @@ var navmodule = {
 
 
                 if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
-                  sort = 'starttime'
+                  sort = 1;
                 }else{
-                  sort = '000'
+                  sort = 3;
                 }
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,progchannelicon,formnameicon,sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,progchannelicon + " - " +formnameicon)
@@ -570,9 +570,9 @@ var navmodule = {
             activeChannel = $(this).attr("id");
             activePlatForm = $(this).attr("value")
             if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
-              sort = 'starttime'
+              sort = 1
             }else{
-              sort = '000'
+              sort = 3
             }            
             navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,$(this).data('id'),$(this).data('value'),sort)
             navmodule.init_trending(ProgTitleID,ChGroupID,ChID,PtypeID,Prange,PFormID,$(this).data('id') + ' - ' + $(this).data('value'))
@@ -602,7 +602,8 @@ var navmodule = {
       PlatFormID : PFormID,
       PeriodTypeID : PtypeID,
       Period : Prange,
-      Filter : filter
+      Filter : filter,
+      InputSortID : SumSort,
     }
 
     console.log(request)
@@ -615,53 +616,13 @@ var navmodule = {
       'Filter' +"="+ filter;
 
     $.get(window.location.href + "programmeperformance", request, function(data){
-      console.log(data)      
-      if(SumSort == 'starttime'){
-        data.sort(function(a, b) {
-          return new Date('1970/01/01 ' + a.FirstFromTime) - new Date('1970/01/01 ' + b.FirstFromTime);          
-        });
-        var starttime = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
-        var sort000 = '';
-        var sortCount = ''
-        var sortATV = ''
-      }else if(SumSort == '000'){
-        data.sort(function(a, b) {
-          return b.Sum000 - a.Sum000;
-        });
-        var starttime = '';
-        var sort000 = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
-        var sortCount = ''
-        var sortATV = ''
-      }else if(SumSort == 'Count'){
-        data.sort(function(a, b) {
-          return b.CNT - a.CNT;
-        });
-        var starttime = '';
-        var sort000 = ''
-        var sortCount = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
-        var sortATV = ''
-      }else{
-        data.sort(function(a, b) {
-          return b.SumATV - a.SumATV;
-        });
-        var starttime = '';
-        var sort000 ='';
-        var sortCount = ''
-        var sortATV = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
-      }
-      var output = '<table class="table table-bordered" id="table-programmeperformance" width="100%">';
-      if(ChannelName.indexOf('TNT Comedy HD') == -1){
-        var cname = ChannelName.replace('.', '-');
-      }else{
-        var cname = 'TNT Comedy';
-      }
-      console.log(cname)
+      
       var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'      
 
       if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
         if(PFormID == 1){
           var colspan = 5
-          var headstarttime = '<td id="sort" value="starttime" value><small>Start time'+ starttime +'</small></td>';
+          var headstarttime = '<td id="sort" value="1" value><small>Start time'+ starttime +'</small></td>';
         }else{
           var colspan = 4
           var headstarttime = '';
@@ -674,8 +635,8 @@ var navmodule = {
           '<td width="300"><small>Programme Title</small></td>'+
           headstarttime +
           '<td><small>Sky 360 BMI</small></td>'+
-          '<td id="sort" value="Count"><small># linear runs</small>'+ sortCount +'</td>' + 
-          '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+          
+          '<td id="sort" value="1"><small># linear runs</small>'+ sortCount +'</td>' + 
+          '<td id="sort" value="3"><small>000</small>'+ sort000 +'</td>'+          
         '</tr></thead><tbody>';
       }else{
         output += '<thead class="bg-white">'+
@@ -685,8 +646,8 @@ var navmodule = {
         '<tr>'+
           '<td width="300"><small>Programme Title</small></td>'+          
           '<td><small>Sky 360 BMI</small></td>'+          
-          '<td id="sort" value="Count"><small># linear runs</small>'+ sortCount +'</td>' + 
-          '<td id="sort" value="000"><small>000</small>'+ sort000 +'</td>'+          
+          '<td id="sort" value="2"><small># linear runs</small>'+ sortCount +'</td>' + 
+          '<td id="sort" value="3"><small>000</small>'+ sort000 +'</td>'+          
         '</tr></thead><tbody>';
       }      
       
