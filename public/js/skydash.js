@@ -686,20 +686,22 @@ var navmodule = {
           Count : data[i].CNT,
           Sum000 : Number(data[i].Sum000).toFixed(2),
         })
-        if(Number(i) <= spotlastrow){
-          if(ShowFromTime){
-            var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
-          }else{
-            var FirstFromTime = '';
+        if(i<=programmedata.length){
+          if(Number(i) <= spotlastrow){
+            if(ShowFromTime){
+              var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+            }else{
+              var FirstFromTime = '';
+            }
+            output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+              '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
+              FirstFromTime +
+              '<td>'+ data[i].BMICode +'</td>'+
+              '<td>'+ data[i].CNT +'</td>' + 
+              '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+            '</tr>';
           }
-          output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
-            '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
-            FirstFromTime +
-            '<td>'+ data[i].BMICode +'</td>'+
-            '<td>'+ data[i].CNT +'</td>' + 
-            '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
-          '</tr>';
-        }                   
+        }                          
       }      
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
@@ -711,6 +713,7 @@ var navmodule = {
             var rowBegin = spotlastrow - 98;
             var appendoutput = '';
             for(var i=rowBegin; i<=spotlastrow;i++){
+              if(i<=programmedata.length){
                 if(ShowFromTime){
                   var FirstFromTime = '<td>'+ programmedata[i].FirstFromTime  +'</td>';
                 }else{
@@ -723,6 +726,9 @@ var navmodule = {
                   '<td>'+ programmedata[i].Count +'</td>' + 
                   '<td>'+ programmedata[i].Sum000 +'</td>'+              
                 '</tr>';
+              }else{
+                break;
+              }                
             }
             $('#programeperformance tbody').append(appendoutput)
             spotlastrow = spotlastrow + rowstoadd;           
