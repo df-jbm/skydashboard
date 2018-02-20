@@ -658,7 +658,7 @@ var navmodule = {
           '<td width="300"><small>Programme Title</small></td>'+
           headstarttime +
           '<td><small>Sky 360 BMI</small></td>'+
-          '<td id="sort" value="1"><small># linear runs</small>'+ sortCount +'</td>' + 
+          '<td id="sort" value="2"><small># linear runs</small>'+ sortCount +'</td>' + 
           '<td id="sort" value="3"><small>000</small>'+ sort000 +'</td>'+          
         '</tr></thead><tbody>';
       }else{
