@@ -52,7 +52,7 @@ class dbcontroller extends Controller
 
   public function exportprogramme(Request $r){
     $currentdatetime = date('Ymdhis');
-    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter));
+    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter,$r->InputSortID));
     return response($this->GetProgramePerformance);
   }
   public function exporttrending(Request $r){
