@@ -750,14 +750,14 @@ var navmodule = {
                       FirstFromTime +
                       '<td>'+ programmedata[i].BMICode +'</td>'+
                       '<td>'+ programmedata[i].CNT +'</td>' + 
-                      '<td>'+ Number(programmedata[i].Sum000).toFixed(2) +'</td>'+              
+                      '<td>'+ programmedata[i].Sum000 +'</td>'+              
                     '</tr>';
                   }else{
                     appendoutput += '<tr id="'+ programmedata[i].BMICode +'" value="'+ programmedata[i].ProgrammeTitle +'">'+
                       '<td><span>'+ programmedata[i].ProgrammeTitle+'</span></td>'+            
                       '<td>'+ programmedata[i].BMICode +'</td>'+ 
                       '<td>'+ programmedata[i].CNT +'</td>' +            
-                      '<td>'+ Number(programmedata[i].Sum000).toFixed(2) +'</td>'+              
+                      '<td>'+ programmedata[i].Sum000 +'</td>'+              
                     '</tr>';
                   }
                 }
