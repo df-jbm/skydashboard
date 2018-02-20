@@ -1614,7 +1614,7 @@ $(function(){
       $(this).html('Minimize Export Module')            
       $('#exportcontainer').animate({
         width : '700px',
-        height : '350px',
+        height : '300px',
         right : '15px',
         bottom : '15px'      
       });
