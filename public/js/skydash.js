@@ -631,7 +631,8 @@ var navmodule = {
       'PlatFormID' +"="+ PFormID + "&" +
       'PeriodTypeID' +"="+ PtypeID + "&" +
       'Period' +"="+ Prange + "&" +
-      'Filter' +"="+ filter;
+      'Filter' +"="+ filter + 
+      'InputSortID' +"="+ SumSort;
 
     $.get(window.location.href + "programmeperformance", request, function(data){
       
