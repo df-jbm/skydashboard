@@ -636,7 +636,7 @@ var navmodule = {
     $.get(window.location.href + "programmeperformance", request, function(data){
       
       var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'      
-
+      var output = '<table class="table table-bordered" id="table-programmeperformance" width="100%">';
       if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
         if(PFormID == 1){
           var colspan = 5
