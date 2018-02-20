@@ -731,7 +731,7 @@ var navmodule = {
       
       $('#programeperformance').bind('scroll', function(){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){
-            var rowBegin = spotlastrow - 100;
+            var rowBegin = spotlastrow - 99;
             var appendoutput = '';
             for(var i in programmedata){
                 if(i >= rowBegin && i <= spotlastrow){
