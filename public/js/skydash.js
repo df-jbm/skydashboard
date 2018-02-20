@@ -234,9 +234,7 @@ var navmodule = {
       var link = document.createElement('a');          
           link.src = img;
           document.body.appendChild(link);
-          link.click();     
-       });
-      })
+          link.click();            
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('Trending"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
       $('#dltrend').html("Toogle button to download again.")  
     })
