@@ -711,14 +711,7 @@ var navmodule = {
               '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
             '</tr>';
           }
-        } 
-        programmedata.push({ 
-          ProgrammeTitle : data[i].ProgrammeTitle, 
-          FirstFromTime : data[i].FirstFromTime,
-          BMICode : data[i].BMICode,
-          Count : data[i].CNT,
-          Sum000 : Number(data[i].Sum000).toFixed(2),
-        })             
+        }                   
       }      
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
