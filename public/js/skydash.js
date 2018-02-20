@@ -686,7 +686,7 @@ var navmodule = {
           Count : data[i].CNT,
           Sum000 : Number(data[i].Sum000).toFixed(2),
         })
-        if(i<=programmedata.length){
+        if(i<programmedata.length){
           if(Number(i) <= spotlastrow){
             if(ShowFromTime){
               var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
@@ -713,7 +713,7 @@ var navmodule = {
             var rowBegin = spotlastrow - 98;
             var appendoutput = '';
             for(var i=rowBegin; i<=spotlastrow;i++){
-              if(i<=programmedata.length){
+              if(i<programmedata.length){
                 if(ShowFromTime){
                   var FirstFromTime = '<td>'+ programmedata[i].FirstFromTime  +'</td>';
                 }else{
