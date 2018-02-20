@@ -34,6 +34,7 @@ var trendinglegend = [];
 var channelreq = [];
 var programmereq = [];
 var trendingreq = [];
+var startloading = 0;
 var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
 var navmodule = {
   /*
@@ -651,37 +652,72 @@ var navmodule = {
         '</tr></thead><tbody>';
       }      
       
-
-      for(var i in data){        
-        if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
-          if(PFormID == 1){
-            var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+      var programmedata = [];
+      for(var i in data){
+        programmedata.push({ 
+          ProgrammeTitle : data[i].ProgrammeTitle, 
+          FirstFromTime : data[i].FirstFromTime,
+          BMICode : data[i].BMICode,
+          Count : data[i].CNT,
+          Sum000 : Number(data[i].Sum000).toFixed(2),
+        })
+        if(Number(i) < 99){
+          if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
+            if(PFormID == 1){
+              var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+            }else{
+              var FirstFromTime = '';  
+            }        
           }else{
-            var FirstFromTime = '';  
-          }        
-        }else{
-          var FirstFromTime = '';
-        }
-        if($('#periodtype').val() == 1 && ChGroupID == -1){
-          output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
-            '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
-            FirstFromTime +
-            '<td>'+ data[i].BMICode +'</td>'+
-            '<td>'+data[i].CNT+'</td>' + 
-            '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
-          '</tr>';
-        }else{
-          output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
-            '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+            
-            '<td>'+ data[i].BMICode +'</td>'+ 
-            '<td>'+data[i].CNT+'</td>' +            
-            '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
-          '</tr>';
-        }        
-      }
+            var FirstFromTime = '';
+          }
+          if($('#periodtype').val() == 1 && ChGroupID == -1){
+            output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+              '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
+              FirstFromTime +
+              '<td>'+ data[i].BMICode +'</td>'+
+              '<td>'+ data[i].CNT +'</td>' + 
+              '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+            '</tr>';
+          }else{
+            output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+              '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+            
+              '<td>'+ data[i].BMICode +'</td>'+ 
+              '<td>'+ data[i].CNT +'</td>' +            
+              '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+            '</tr>';
+          }
+        }              
+      }      
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
       $('#programeperformance').html(output)
+
+      programmedata.push({ 
+        ProgrammeTitle : data[i].ProgrammeTitle, 
+        FirstFromTime : data[i].FirstFromTime,
+        BMICode : data[i].BMICode,
+        Count : data[i].CNT,
+        Sum000 : Number(data[i].Sum000).toFixed(2),
+      })
+
+      //ProgrammeTitle
+      //FirstFromTime
+      //BMICode
+      //Count
+      //Sum000
+      
+      if(data.length >= 100){
+        startloading = 100;
+      }
+      
+      $('#table-programmeperformance tbody').bind('scroll', function(){
+          if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){
+              alert($(this).scrollTop())
+          }
+      })
+
+
       $('#table-programmeperformance #sort').each(function(){
         $(this).click(function(){
           if( ( $(this).attr('value') == 'starttime' || $(this).attr('value') == 'Count' ) && PFormID == 1){
