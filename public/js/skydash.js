@@ -699,7 +699,7 @@ var navmodule = {
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){
             var rowBegin = spotlastrow - 98;
             var appendoutput = '';
-            for(var i=rowBegin; i<Min(spotlastrow, programmedata.length);i++){
+            for(var i=rowBegin; i<=Min(spotlastrow, Number(programmedata.length - 1));i++){
               if(ShowFromTime){
                 var FirstFromTime = '<td>'+ programmedata[i].FirstFromTime  +'</td>';
               }else{
