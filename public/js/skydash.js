@@ -36,6 +36,7 @@ var programmereq = [];
 var trendingreq = [];
 var startloading = 0;
 var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+var echartBar = echarts.init(document.getElementById('bargraph'));
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -224,9 +225,7 @@ var navmodule = {
       expotRows.push(["Prog Date","000"]);
       for (var i in data) {
         expotRows.push([data[i].ProgDate,data[i].Sum000]);
-      }
-      
-      var echartBar = echarts.init(document.getElementById('bargraph'));
+      }          
       var img = new Image();
       img.src = echartBar.getDataURL({
           pixelRatio: 2,
@@ -1118,8 +1117,7 @@ var navmodule = {
           if(graphlegend.length == 1){
             return true;
           }          
-        }        
-        var echartBar = echarts.init(document.getElementById('bargraph'));
+        }                
         echartBar.on('magictypechanged', function(params) {
             magicType = params.currentType;
         });
