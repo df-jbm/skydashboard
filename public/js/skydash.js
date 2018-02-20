@@ -225,6 +225,14 @@ var navmodule = {
       for (var i in data) {
         expotRows.push([data[i].ProgDate,data[i].Sum000]);
       }
+      
+      var echartBar = echarts.init(document.getElementById('bargraph'));
+      var img = new Image();
+      img.src = echartBar.getDataURL({
+          pixelRatio: 2,
+          backgroundColor: '#fff'
+      });
+
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('Trending"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
       $('#dltrend').html("Toogle button to download again.")  
     })
