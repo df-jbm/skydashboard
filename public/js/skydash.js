@@ -762,7 +762,7 @@ var navmodule = {
                   }
                 }
             }
-            $('#programeperformance').append(appendoutput)
+            $('#programeperformance tbody').append(appendoutput)
             spotlastrow = spotlastrow + rowstoadd;           
           }
       })
