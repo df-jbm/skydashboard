@@ -677,6 +677,7 @@ var navmodule = {
       var programmedata = [];
       var spotlastrow = 99;
       var rowstoadd = 99;
+      var ShowFromTime =$('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1;
       for(var i in data){
         programmedata.push({ 
           ProgrammeTitle : data[i].ProgrammeTitle, 
@@ -686,7 +687,7 @@ var navmodule = {
           Sum000 : Number(data[i].Sum000).toFixed(2),
         })
         if(Number(i) <= spotlastrow){
-          if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
+          if(ShowFromTime){
             var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
           }else{
             var FirstFromTime = '';
@@ -711,7 +712,7 @@ var navmodule = {
             var appendoutput = '';
             for(var i in programmedata){
                 if(i >= rowBegin && i <= spotlastrow){
-                  if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
+                  if(ShowFromTime){
                     var FirstFromTime = '<td>'+ programmedata[i].FirstFromTime  +'</td>';
                   }else{
                     var FirstFromTime = '';
