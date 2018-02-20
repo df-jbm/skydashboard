@@ -606,6 +606,23 @@ var navmodule = {
       Filter : filter,
       InputSortID : SumSort,
     }
+    
+    if(SumSort == 1){
+      var starttime = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
+      var sort000 = '';
+      var sortCount = ''
+      var sortATV = ''
+    }else if(SumSort == 3){
+      var starttime = '';
+      var sort000 = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
+      var sortCount = ''
+      var sortATV = ''
+    }else if(SumSort == 2){
+      var starttime = '';
+      var sort000 = ''
+      var sortCount = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
+      var sortATV = ''
+    }
 
     console.log(request)
     
