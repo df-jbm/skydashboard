@@ -675,6 +675,8 @@ var navmodule = {
       }      
       
       var programmedata = [];
+      var spotlastrow = 99;
+      var rowstoadd = 99;
       for(var i in data){
         programmedata.push({ 
           ProgrammeTitle : data[i].ProgrammeTitle, 
@@ -683,7 +685,7 @@ var navmodule = {
           Count : data[i].CNT,
           Sum000 : Number(data[i].Sum000).toFixed(2),
         })
-        if(Number(i) < 99){
+        if(Number(i) <= spotlastrow){
           if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
             if(PFormID == 1){
               var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
@@ -709,19 +711,19 @@ var navmodule = {
               '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
             '</tr>';
           }
-        }              
+        } 
+        programmedata.push({ 
+          ProgrammeTitle : data[i].ProgrammeTitle, 
+          FirstFromTime : data[i].FirstFromTime,
+          BMICode : data[i].BMICode,
+          Count : data[i].CNT,
+          Sum000 : Number(data[i].Sum000).toFixed(2),
+        })             
       }      
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
       $('#programeperformance').html(output)
-
-      programmedata.push({ 
-        ProgrammeTitle : data[i].ProgrammeTitle, 
-        FirstFromTime : data[i].FirstFromTime,
-        BMICode : data[i].BMICode,
-        Count : data[i].CNT,
-        Sum000 : Number(data[i].Sum000).toFixed(2),
-      })
+      spotslastrow = spotslastrow + rowstoadd;       
 
       //ProgrammeTitle
       //FirstFromTime
@@ -731,11 +733,44 @@ var navmodule = {
       
       if(data.length >= 100){
         startloading = 100;
+        endloading = startloading + 100;
       }
       
       $('#programeperformance').bind('scroll', function(){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){
-              alert($(this).scrollTop())
+            var rowBegin = spotslastrow - 100;
+            var output = '';
+            for(var i in GetSpotsData){
+                if(i >= rowBegin && i <= spotslastrow){
+                  if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
+                    if(PFormID == 1){
+                      var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+                    }else{
+                      var FirstFromTime = '';  
+                    }        
+                  }else{
+                    var FirstFromTime = '';
+                  }
+                  if($('#periodtype').val() == 1 && ChGroupID == -1){
+                    output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+                      '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
+                      FirstFromTime +
+                      '<td>'+ data[i].BMICode +'</td>'+
+                      '<td>'+ data[i].CNT +'</td>' + 
+                      '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+                    '</tr>';
+                  }else{
+                    output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+                      '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+            
+                      '<td>'+ data[i].BMICode +'</td>'+ 
+                      '<td>'+ data[i].CNT +'</td>' +            
+                      '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+                    '</tr>';
+                  }
+                }
+            }
+            $('#programeperformance').append(output)
+            spotslastrow = spotslastrow + rowstoadd;           
           }
       })
 
