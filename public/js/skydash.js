@@ -733,7 +733,7 @@ var navmodule = {
         startloading = 100;
       }
       
-      $('#table-programmeperformance tbody').bind('scroll', function(){
+      $('#table-programmeperformance').bind('scroll', function(){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){
               alert($(this).scrollTop())
           }
