@@ -677,14 +677,7 @@ var navmodule = {
       var programmedata = [];
       var spotlastrow = 99;
       var rowstoadd = 99;
-      for(var i in data){
-        programmedata.push({ 
-          ProgrammeTitle : data[i].ProgrammeTitle, 
-          FirstFromTime : data[i].FirstFromTime,
-          BMICode : data[i].BMICode,
-          Count : data[i].CNT,
-          Sum000 : Number(data[i].Sum000).toFixed(2),
-        })
+      for(var i in data){        
         if(Number(i) <= spotlastrow){
           if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
             if(PFormID == 1){
@@ -717,27 +710,16 @@ var navmodule = {
       $('#programeperformance').scrollTop(0)
       $('#programeperformance').html(output)
       spotlastrow = spotlastrow + rowstoadd;       
-
-      //ProgrammeTitle
-      //FirstFromTime
-      //BMICode
-      //Count
-      //Sum000
-      
-      if(data.length >= 100){
-        startloading = 100;
-        endloading = startloading + 100;
-      }
-      
+     
       $('#programeperformance').bind('scroll', function(){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){
             var rowBegin = spotlastrow - 98;
             var appendoutput = '';
-            for(var i in programmedata){
+            for(var i in data){
                 if(i >= rowBegin && i <= spotlastrow){
                   if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
                     if(PFormID == 1){
-                      var FirstFromTime = '<td>'+ programmedata[i].FirstFromTime  +'</td>';
+                      var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
                     }else{
                       var FirstFromTime = '';  
                     }        
@@ -745,19 +727,19 @@ var navmodule = {
                     var FirstFromTime = '';
                   }
                   if($('#periodtype').val() == 1 && ChGroupID == -1){
-                    appendoutput += '<tr id="'+ programmedata[i].BMICode +'" value="'+ programmedata[i].ProgrammeTitle +'">'+
-                      '<td><span>'+ programmedata[i].ProgrammeTitle+'</span></td>'+
+                    appendoutput += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+                      '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
                       FirstFromTime +
-                      '<td>'+ programmedata[i].BMICode +'</td>'+
-                      '<td>'+ programmedata[i].Count +'</td>' + 
-                      '<td>'+ programmedata[i].Sum000 +'</td>'+              
+                      '<td>'+ data[i].BMICode +'</td>'+
+                      '<td>'+ data[i].CNT +'</td>' + 
+                      '<td>'+ data[i].Sum000 +'</td>'+              
                     '</tr>';
                   }else{
-                    appendoutput += '<tr id="'+ programmedata[i].BMICode +'" value="'+ programmedata[i].ProgrammeTitle +'">'+
-                      '<td><span>'+ programmedata[i].ProgrammeTitle+'</span></td>'+            
-                      '<td>'+ programmedata[i].BMICode +'</td>'+ 
-                      '<td>'+ programmedata[i].Count +'</td>' +            
-                      '<td>'+ programmedata[i].Sum000 +'</td>'+              
+                    appendoutput += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+                      '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+            
+                      '<td>'+ data[i].BMICode +'</td>'+ 
+                      '<td>'+ data[i].CNT +'</td>' +            
+                      '<td>'+ data[i].Sum000 +'</td>'+              
                     '</tr>';
                   }
                 }
