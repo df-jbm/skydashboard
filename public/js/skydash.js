@@ -733,11 +733,11 @@ var navmodule = {
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){
             var rowBegin = spotlastrow - 100;
             var appendoutput = '';
-            for(var i in GetSpotsData){
+            for(var i in programmedata){
                 if(i >= rowBegin && i <= spotlastrow){
                   if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
                     if(PFormID == 1){
-                      var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+                      var FirstFromTime = '<td>'+ programmedata[i].FirstFromTime  +'</td>';
                     }else{
                       var FirstFromTime = '';  
                     }        
@@ -745,19 +745,19 @@ var navmodule = {
                     var FirstFromTime = '';
                   }
                   if($('#periodtype').val() == 1 && ChGroupID == -1){
-                    appendoutput += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
-                      '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
+                    appendoutput += '<tr id="'+ programmedata[i].BMICode +'" value="'+ programmedata[i].ProgrammeTitle +'">'+
+                      '<td><span>'+ programmedata[i].ProgrammeTitle+'</span></td>'+
                       FirstFromTime +
-                      '<td>'+ data[i].BMICode +'</td>'+
-                      '<td>'+ data[i].CNT +'</td>' + 
-                      '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+                      '<td>'+ programmedata[i].BMICode +'</td>'+
+                      '<td>'+ programmedata[i].CNT +'</td>' + 
+                      '<td>'+ Number(programmedata[i].Sum000).toFixed(2) +'</td>'+              
                     '</tr>';
                   }else{
-                    appendoutput += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
-                      '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+            
-                      '<td>'+ data[i].BMICode +'</td>'+ 
-                      '<td>'+ data[i].CNT +'</td>' +            
-                      '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+                    appendoutput += '<tr id="'+ programmedata[i].BMICode +'" value="'+ programmedata[i].ProgrammeTitle +'">'+
+                      '<td><span>'+ programmedata[i].ProgrammeTitle+'</span></td>'+            
+                      '<td>'+ programmedata[i].BMICode +'</td>'+ 
+                      '<td>'+ programmedata[i].CNT +'</td>' +            
+                      '<td>'+ Number(programmedata[i].Sum000).toFixed(2) +'</td>'+              
                     '</tr>';
                   }
                 }
