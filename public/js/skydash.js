@@ -677,6 +677,7 @@ var navmodule = {
       var programmedata = [];
       var spotlastrow = 99;
       var rowstoadd = 99;
+      var ShowFromTime =$('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1;
       for(var i in data){
         programmedata.push({ 
           ProgrammeTitle : data[i].ProgrammeTitle, 
@@ -685,13 +686,13 @@ var navmodule = {
           Count : data[i].CNT,
           Sum000 : Number(data[i].Sum000).toFixed(2),
         })
-        if(Number(i) <= spotlastrow){
-          if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
-            var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
-          }else{
-            var FirstFromTime = '';
-          }
-          if($('#periodtype').val() == 1 && ChGroupID == -1){
+        if(i<=programmedata.length){
+          if(Number(i) <= spotlastrow){
+            if(ShowFromTime){
+              var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+            }else{
+              var FirstFromTime = '';
+            }
             output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
               '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
               FirstFromTime +
@@ -699,15 +700,8 @@ var navmodule = {
               '<td>'+ data[i].CNT +'</td>' + 
               '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
             '</tr>';
-          }else{
-            output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
-              '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+            
-              '<td>'+ data[i].BMICode +'</td>'+ 
-              '<td>'+ data[i].CNT +'</td>' +            
-              '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
-            '</tr>';
           }
-        }                   
+        }                          
       }      
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
@@ -718,21 +712,23 @@ var navmodule = {
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){
             var rowBegin = spotlastrow - 98;
             var appendoutput = '';
-            for(var i in programmedata){
-                if(i >= rowBegin && i <= spotlastrow){
-                  if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
-                    var FirstFromTime = '<td>'+ programmedata[i].FirstFromTime  +'</td>';
-                  }else{
-                    var FirstFromTime = '';
-                  }
-                  appendoutput += '<tr id="'+ programmedata[i].BMICode +'" value="'+ programmedata[i].ProgrammeTitle +'">'+
-                    '<td><span>'+ programmedata[i].ProgrammeTitle+'</span></td>'+
-                    FirstFromTime +
-                    '<td>'+ programmedata[i].BMICode +'</td>'+
-                    '<td>'+ programmedata[i].Count +'</td>' + 
-                    '<td>'+ programmedata[i].Sum000 +'</td>'+              
-                  '</tr>';
+            for(var i=rowBegin; i<=spotlastrow;i++){
+              if(i<=programmedata.length){
+                if(ShowFromTime){
+                  var FirstFromTime = '<td>'+ programmedata[i].FirstFromTime  +'</td>';
+                }else{
+                  var FirstFromTime = '';
                 }
+                appendoutput += '<tr id="'+ programmedata[i].BMICode +'" value="'+ programmedata[i].ProgrammeTitle +'">'+
+                  '<td><span>'+ programmedata[i].ProgrammeTitle+'</span></td>'+
+                  FirstFromTime +
+                  '<td>'+ programmedata[i].BMICode +'</td>'+
+                  '<td>'+ programmedata[i].Count +'</td>' + 
+                  '<td>'+ programmedata[i].Sum000 +'</td>'+              
+                '</tr>';
+              }else{
+                break;
+              }                
             }
             $('#programeperformance tbody').append(appendoutput)
             spotlastrow = spotlastrow + rowstoadd;           
