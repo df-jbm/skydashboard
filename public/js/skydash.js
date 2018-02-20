@@ -732,7 +732,7 @@ var navmodule = {
       $('#programeperformance').bind('scroll', function(){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){
             var rowBegin = spotslastrow - 100;
-            var output = '';
+            var appendoutput = '';
             for(var i in GetSpotsData){
                 if(i >= rowBegin && i <= spotslastrow){
                   if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
@@ -745,7 +745,7 @@ var navmodule = {
                     var FirstFromTime = '';
                   }
                   if($('#periodtype').val() == 1 && ChGroupID == -1){
-                    output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+                    appendoutput += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
                       '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
                       FirstFromTime +
                       '<td>'+ data[i].BMICode +'</td>'+
@@ -753,7 +753,7 @@ var navmodule = {
                       '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
                     '</tr>';
                   }else{
-                    output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+                    appendoutput += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
                       '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+            
                       '<td>'+ data[i].BMICode +'</td>'+ 
                       '<td>'+ data[i].CNT +'</td>' +            
@@ -762,7 +762,7 @@ var navmodule = {
                   }
                 }
             }
-            $('#programeperformance').append(output)
+            $('#programeperformance').append(appendoutput)
             spotslastrow = spotslastrow + rowstoadd;           
           }
       })
