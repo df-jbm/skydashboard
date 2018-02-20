@@ -506,9 +506,9 @@ var navmodule = {
           var channeliconname = 'Global';
           var formaname = 'Total';
           if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
-            sort = 'starttime'
+            sort = 1
           }else{
-            sort = '000'
+            sort = 3
           }
           navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
           navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
