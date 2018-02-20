@@ -642,14 +642,12 @@ var navmodule = {
       }else{
         var cname = 'TNT Comedy';
       }
-      if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
-        if(PFormID == 1){
-          var colspan = 5
-          var headstarttime = '<td id="sort" value="1" value><small>Start time'+ starttime +'</small></td>';
-        }else{
-          var colspan = 4
-          var headstarttime = '';
-        }        
+      if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
+        var colspan = 5
+        var headstarttime = '<td id="sort" value="1" value><small>Start time'+ starttime +'</small></td>';                        
+      }else{
+        var colspan = 4
+        var headstarttime = '';
       }   
       output += '<thead class="bg-white">'+
       '<tr>'+
@@ -662,7 +660,7 @@ var navmodule = {
         '<td id="sort" value="2"><small># linear runs</small>'+ sortCount +'</td>' + 
         '<td id="sort" value="3"><small>000</small>'+ sort000 +'</td>'+          
       '</tr></thead><tbody>';
-      
+
       var programmedata = [];
       var spotlastrow = 99;
       var rowstoadd = 99;
