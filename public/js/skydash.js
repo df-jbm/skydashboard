@@ -1613,8 +1613,8 @@ $(function(){
       $(this).attr('value','shown')
       $(this).html('Minimize Export Module')            
       $('#exportcontainer').animate({
-        width : '400px',
-        height : '250px',
+        width : '700px',
+        height : '350px',
         right : '15px',
         bottom : '15px'      
       });
