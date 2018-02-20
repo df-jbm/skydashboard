@@ -716,7 +716,7 @@ var navmodule = {
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
       $('#programeperformance').html(output)
-      spotslastrow = spotslastrow + rowstoadd;       
+      spotlastrow = spotlastrow + rowstoadd;       
 
       //ProgrammeTitle
       //FirstFromTime
@@ -731,10 +731,10 @@ var navmodule = {
       
       $('#programeperformance').bind('scroll', function(){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){
-            var rowBegin = spotslastrow - 100;
+            var rowBegin = spotlastrow - 100;
             var appendoutput = '';
             for(var i in GetSpotsData){
-                if(i >= rowBegin && i <= spotslastrow){
+                if(i >= rowBegin && i <= spotlastrow){
                   if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1){
                     if(PFormID == 1){
                       var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
@@ -763,7 +763,7 @@ var navmodule = {
                 }
             }
             $('#programeperformance').append(appendoutput)
-            spotslastrow = spotslastrow + rowstoadd;           
+            spotlastrow = spotlastrow + rowstoadd;           
           }
       })
 
