@@ -231,10 +231,15 @@ var navmodule = {
           pixelRatio: 2,
           backgroundColor: '#fff'
       });
-      alert(img.src)
+      console.log(img)
       expotRows.push([img])
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('Trending"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
       $('#dltrend').html("Toogle button to download again.")  
+
+      $.get(window.location.href + "export_items_to_excel", { image : img.src }, function(data){
+        console.log(img.src)
+      })
+
     })
   },
   ChannelPerformanceRequest : function(){
