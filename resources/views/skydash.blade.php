@@ -146,7 +146,7 @@
               <br/><a class="btn btn-sm" id="dltrend" disable="true" download>No exported Xslx file</a>
             </div>
           </div>
-          <div class="col-sm-6">test</div>
+          <div class="col-sm-6"></div>
         </div>
       </div>
     </main>
