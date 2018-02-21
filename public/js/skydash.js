@@ -231,7 +231,7 @@ var navmodule = {
           pixelRatio: 2,
           backgroundColor: '#fff'
       });
-      alert(img)
+      alert(img.src)
       expotRows.push([img])
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('Trending"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
       $('#dltrend').html("Toogle button to download again.")  
