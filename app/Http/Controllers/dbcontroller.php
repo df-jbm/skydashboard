@@ -70,7 +70,7 @@ class dbcontroller extends Controller
     return response($this->GetTrending);
   }
   public function export_items_to_excel(Request $r){
-    $output .= "<tr>
+    $output = "<tr>
       <td style='text-align:center;'>1</td>
       <td style='text-align:center;'>2</td>
       <td style='text-align:center;'>3</td>
