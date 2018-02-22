@@ -609,7 +609,7 @@ var navmodule = {
     }else{
       var filter = ''
     }  
-
+    lastrow = 1;
     request = {
       ChannelGroupID : ChGroupID,
       ChannelID : ChID,
@@ -618,7 +618,7 @@ var navmodule = {
       Period : Prange,
       Filter : filter,
       InputSortID : SumSort,
-      lastrow : 2,
+      lastrow : lastrow,
     }
     
     if(SumSort == 1){
@@ -676,9 +676,7 @@ var navmodule = {
         '<td id="sort" value="3"><small>000</small>'+ sort000 +'</td>'+          
       '</tr></thead><tbody>';
       
-      var spotlastrow = 0;
-      var rowstoadd = 999;
-      var ShowFromTime =$('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1;
+      var ShowFromTime =$('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1;      
       for(var i in data.data.data){
         if(ShowFromTime){
           var FirstFromTime = '<td>'+ data.data.data[i].FirstFromTime  +'</td>';
@@ -696,8 +694,8 @@ var navmodule = {
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
       $('#programeperformance').html(output)
-      spotlastrow = spotlastrow + rowstoadd;       
-     
+      
+      lastrow++;
       $('#programeperformance').bind('scroll', function(){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){            
             var scrollrequest = {
@@ -708,9 +706,13 @@ var navmodule = {
               Period : Prange,
               Filter : filter,
               InputSortID : SumSort,
-              lastrow : spotlastrow,
+              lastrow : lastrow,
             }           
-            spotlastrow = spotlastrow + rowstoadd;           
+            $.get(window.location.href + "programmeperformance", scrollrequest, function(data){
+              console.log(data)
+            }).done(function() {
+              lastrow++;
+            })       
           }
       })
 
