@@ -38,7 +38,7 @@ class dbcontroller extends Controller
     return response($this->GetProgramePerformance);      
 
     $page = Input::get('page', 1);
-    $paginate = 1000;
+    $paginate = 10;
 
     $offSet = ($page * $paginate) - $paginate;
     $itemsForCurrentPage = array_slice($data, $offSet, $paginate, true);
