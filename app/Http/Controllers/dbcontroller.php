@@ -79,7 +79,7 @@ class dbcontroller extends Controller
       <td style='text-align:center;'>6</td>
       <td style='text-align:center;'>7</td>
       <td style='text-align:center;'>8</td>
-      <td style='text-align:center;width:220px !important;height:220px !important;'><img src='".$r->image."assets/uploads/".$item->item_picture."' style='width:200px !important;height:152px !important;'> </td>
+      <td style='text-align:center;width:220px !important;height:220px !important;'><img src='".$r->image."' style='width:200px !important;height:152px !important;'> </td>
     </tr>";
     header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
     header("Content-Disposition: attachment; filename=items.xls");
