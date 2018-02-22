@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use DB;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 
 class dbcontroller extends Controller
