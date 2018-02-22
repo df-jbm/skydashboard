@@ -649,7 +649,7 @@ var navmodule = {
       'InputSortID' +"="+ SumSort;
 
     $.get(window.location.href + "programmeperformance", request, function(data){
-      
+      console.log(data)
       var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'      
       var output = '<table class="table table-bordered" id="table-programmeperformance" width="100%">';
       if(ChannelName.indexOf('TNT Comedy HD') == -1){
