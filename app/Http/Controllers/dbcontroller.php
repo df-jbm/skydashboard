@@ -39,10 +39,10 @@ class dbcontroller extends Controller
 
     $page = Input::get('page', 1);
     $paginate = 10;
-
+    $data = $this->GetProgramePerformance;
     $offSet = ($page * $paginate) - $paginate;
-    $itemsForCurrentPage = array_slice($this->GetProgramePerformance, $offSet, $paginate, true);
-    $this->GetProgramePerformance = new \Illuminate\Pagination\LengthAwarePaginator($itemsForCurrentPage, count($this->GetProgramePerformance), $paginate, $page);
+    $itemsForCurrentPage = array_slice($data, $offSet, $paginate, true);
+    $data = new \Illuminate\Pagination\LengthAwarePaginator($itemsForCurrentPage, count($data), $paginate, $page);
 
     return response(compact('data'));
   }
