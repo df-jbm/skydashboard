@@ -34,7 +34,7 @@ class dbcontroller extends Controller
 
   public function GetProgramePerformance(Request $r){
     $this->numbersToTake = $r->lastrow + 999;
-    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter,$r->InputSortID))->skip($r->lastrow)->take($this->numbersToTake)->get();
+    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter,$r->InputSortID))->skip(1)->take($this->numbersToTake)->get();
     return response($this->GetProgramePerformance);
   }
 
