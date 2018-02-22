@@ -710,14 +710,15 @@ var navmodule = {
               InputSortID : SumSort,
               lastrow : lastrow,
             }           
-            $.get(window.location.href + "programmeperformance", scrollrequest, function(result){
+            $.get(window.location.href + "programmeperformance", scrollrequest, function(result){              
+              var appendoutput = '';
               for(var i in result.data.data){
                 if(ShowFromTime){
                   var FirstFromTime = '<td>'+ result.data.data[i].FirstFromTime  +'</td>';
                 }else{
                   var FirstFromTime = '';
                 }
-                var appendoutput = '<tr id="'+ result.data.data[i].BMICode +'" value="'+ result.data.data[i].ProgrammeTitle +'">'+
+                appendoutput += '<tr id="'+ result.data.data[i].BMICode +'" value="'+ result.data.data[i].ProgrammeTitle +'">'+
                   '<td><span>'+ result.data.data[i].ProgrammeTitle+'</span></td>'+
                   FirstFromTime +
                   '<td>'+ result.data.data[i].BMICode +'</td>'+
