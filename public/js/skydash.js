@@ -686,7 +686,7 @@ var navmodule = {
           var FirstFromTime = '';
         }
         output += '<tr id="'+ data.data[i].BMICode +'" value="'+ data.data[i].ProgrammeTitle +'">'+
-          '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
+          '<td><span>'+ data.data[i].ProgrammeTitle+'</span></td>'+
           FirstFromTime +
           '<td>'+ data.data[i].BMICode +'</td>'+
           '<td>'+ data.data[i].CNT +'</td>' + 
