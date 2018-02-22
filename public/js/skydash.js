@@ -609,7 +609,7 @@ var navmodule = {
     }else{
       var filter = ''
     }  
-    lastrow = 1;
+    page = 1;
     request = {
       ChannelGroupID : ChGroupID,
       ChannelID : ChID,
@@ -618,7 +618,7 @@ var navmodule = {
       Period : Prange,
       Filter : filter,
       InputSortID : SumSort,
-      lastrow : lastrow,
+      page : page,
     }
     
     if(SumSort == 1){
@@ -696,9 +696,9 @@ var navmodule = {
       $('#programeperformance').html(output)
       var last_page = data.data.last_page;
       console.log(last_page)
-      lastrow++;
+      page++;
       $('#programeperformance').bind('scroll', function(){
-        if(lastrow <= last_page){
+        if(page <= last_page){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){            
             var scrollrequest = {
               ChannelGroupID : ChGroupID,
@@ -708,7 +708,7 @@ var navmodule = {
               Period : Prange,
               Filter : filter,
               InputSortID : SumSort,
-              lastrow : lastrow,
+              page : page,
             }           
             $.get(window.location.href + "programmeperformance", scrollrequest, function(result){              
               var appendoutput = '';
@@ -728,7 +728,7 @@ var navmodule = {
               }
               $('#programeperformance tbody').append(appendoutput)
             }).done(function() {
-              lastrow++;
+              page++;
             })       
           }
         }          
