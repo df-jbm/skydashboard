@@ -710,19 +710,19 @@ var navmodule = {
               InputSortID : SumSort,
               lastrow : lastrow,
             }           
-            $.get(window.location.href + "programmeperformance", scrollrequest, function(data){
-              for(var i in data.data.data){
+            $.get(window.location.href + "programmeperformance", scrollrequest, function(result){
+              for(var i in result.data.data){
                 if(ShowFromTime){
-                  var FirstFromTime = '<td>'+ data.data.data[i].FirstFromTime  +'</td>';
+                  var FirstFromTime = '<td>'+ result.data.data[i].FirstFromTime  +'</td>';
                 }else{
                   var FirstFromTime = '';
                 }
-                var appendoutput = '<tr id="'+ data.data.data[i].BMICode +'" value="'+ data.data.data[i].ProgrammeTitle +'">'+
-                  '<td><span>'+ data.data.data[i].ProgrammeTitle+'</span></td>'+
+                var appendoutput = '<tr id="'+ result.data.data[i].BMICode +'" value="'+ result.data.data[i].ProgrammeTitle +'">'+
+                  '<td><span>'+ result.data.data[i].ProgrammeTitle+'</span></td>'+
                   FirstFromTime +
-                  '<td>'+ data.data.data[i].BMICode +'</td>'+
-                  '<td>'+ data.data.data[i].CNT +'</td>' + 
-                  '<td>'+ Number(data.data.data[i].Sum000).toFixed(2) +'</td>'+              
+                  '<td>'+ result.data.data[i].BMICode +'</td>'+
+                  '<td>'+ result.data.data[i].CNT +'</td>' + 
+                  '<td>'+ Number(result.data.data[i].Sum000).toFixed(2) +'</td>'+              
                 '</tr>';                
               }
               $('#programeperformance tbody').append(appendoutput)
