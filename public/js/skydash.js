@@ -711,7 +711,21 @@ var navmodule = {
               lastrow : lastrow,
             }           
             $.get(window.location.href + "programmeperformance", scrollrequest, function(data){
-              console.log(data)
+              for(var i in data.data.data){
+                if(ShowFromTime){
+                  var FirstFromTime = '<td>'+ data.data.data[i].FirstFromTime  +'</td>';
+                }else{
+                  var FirstFromTime = '';
+                }
+                var appendoutput = '<tr id="'+ data.data.data[i].BMICode +'" value="'+ data.data.data[i].ProgrammeTitle +'">'+
+                  '<td><span>'+ data.data.data[i].ProgrammeTitle+'</span></td>'+
+                  FirstFromTime +
+                  '<td>'+ data.data.data[i].BMICode +'</td>'+
+                  '<td>'+ data.data.data[i].CNT +'</td>' + 
+                  '<td>'+ Number(data.data.data[i].Sum000).toFixed(2) +'</td>'+              
+                '</tr>';                
+              }
+              $('#programeperformance').html(appendoutput)
             }).done(function() {
               lastrow++;
             })       
