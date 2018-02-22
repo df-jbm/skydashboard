@@ -681,7 +681,7 @@ var navmodule = {
       var ShowFromTime =$('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1;
       for(var i in data.data){
         if(ShowFromTime){
-          var FirstFromTime = '<td>'+ data.data[i].FirstFromTime  +'</td>';
+          var FirstFromTime = '<td>1</td>';
         }else{
           var FirstFromTime = '';
         }
