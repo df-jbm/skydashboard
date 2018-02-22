@@ -725,7 +725,7 @@ var navmodule = {
                   '<td>'+ Number(data.data.data[i].Sum000).toFixed(2) +'</td>'+              
                 '</tr>';                
               }
-              $('#programeperformance').html(appendoutput)
+              $('#programeperformance tbody').html(appendoutput)
             }).done(function() {
               lastrow++;
             })       
