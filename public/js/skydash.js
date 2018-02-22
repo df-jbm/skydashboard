@@ -618,7 +618,7 @@ var navmodule = {
       Period : Prange,
       Filter : filter,
       InputSortID : SumSort,
-      lastrow : 0,
+      lastrow : 1,
     }
     
     if(SumSort == 1){

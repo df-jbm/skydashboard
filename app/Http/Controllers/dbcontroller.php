@@ -33,10 +33,9 @@ class dbcontroller extends Controller
     return response($this->GetChannelPerformance);
   }
 
-  public function GetProgramePerformance(Request $r){
-    $this->numbersToTake = $r->lastrow + 999;
+  public function GetProgramePerformance(Request $r){    
     $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter,$r->InputSortID));        
-    $page = Input::get('page', 1);
+    $page = Input::get('page', $r->lastrow);
     $paginate = 10;
     $data = $this->GetProgramePerformance;
     $offSet = ($page * $paginate) - $paginate;
