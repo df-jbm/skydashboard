@@ -37,7 +37,7 @@ class dbcontroller extends Controller
     $this->numbersToTake = $r->lastrow + 999;
     $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter,$r->InputSortID));        
     $page = Input::get('page', 1);
-    $paginate = 20;
+    $paginate = 10;
     $data = $this->GetProgramePerformance;
     $offSet = ($page * $paginate) - $paginate;
     $itemsForCurrentPage = array_slice($data, $offSet, $paginate, true);
