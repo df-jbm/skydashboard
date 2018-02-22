@@ -679,7 +679,7 @@ var navmodule = {
       var spotlastrow = 0;
       var rowstoadd = 999;
       var ShowFromTime =$('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1;
-      for(var i in data.data){
+      for(var i in data){
         if(ShowFromTime){
           var FirstFromTime = '<td>'+ data.data[i].FirstFromTime  +'</td>';
         }else{
