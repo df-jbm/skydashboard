@@ -35,7 +35,16 @@ class dbcontroller extends Controller
   public function GetProgramePerformance(Request $r){
     $this->numbersToTake = $r->lastrow + 999;
     $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter,$r->InputSortID))->offset(1)->limit(1)->get();
-    return response($this->GetProgramePerformance);
+    return response($this->GetProgramePerformance);      
+
+    $page = Input::get('page', 1);
+    $paginate = 1000;
+
+    $offSet = ($page * $paginate) - $paginate;
+    $itemsForCurrentPage = array_slice($data, $offSet, $paginate, true);
+    $data = new \Illuminate\Pagination\LengthAwarePaginator($itemsForCurrentPage, count($data), $paginate, $page);
+
+    return response(compact('data'));
   }
 
   public function GetTrending(Request $r){
