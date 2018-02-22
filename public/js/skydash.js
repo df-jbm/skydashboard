@@ -698,6 +698,7 @@ var navmodule = {
       console.log(last_page)
       lastrow++;
       $('#programeperformance').bind('scroll', function(){
+        if(lastrow <= last_page){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){            
             var scrollrequest = {
               ChannelGroupID : ChGroupID,
@@ -715,6 +716,7 @@ var navmodule = {
               lastrow++;
             })       
           }
+        }          
       })
 
 
