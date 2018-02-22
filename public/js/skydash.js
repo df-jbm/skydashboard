@@ -679,18 +679,18 @@ var navmodule = {
       var spotlastrow = 0;
       var rowstoadd = 999;
       var ShowFromTime =$('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1;
-      for(var i in data){
+      for(var i in data.data){
         if(ShowFromTime){
-          var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+          var FirstFromTime = '<td>'+ data.data[i].FirstFromTime  +'</td>';
         }else{
           var FirstFromTime = '';
         }
-        output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+        output += '<tr id="'+ data.data[i].BMICode +'" value="'+ data.data[i].ProgrammeTitle +'">'+
           '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
           FirstFromTime +
-          '<td>'+ data[i].BMICode +'</td>'+
-          '<td>'+ data[i].CNT +'</td>' + 
-          '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+          '<td>'+ data.data[i].BMICode +'</td>'+
+          '<td>'+ data.data[i].CNT +'</td>' + 
+          '<td>'+ Number(data.data[i].Sum000).toFixed(2) +'</td>'+              
         '</tr>';                      
       }      
       output += '</tbody></table>'
