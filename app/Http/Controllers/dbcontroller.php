@@ -41,8 +41,8 @@ class dbcontroller extends Controller
     $paginate = 10;
 
     $offSet = ($page * $paginate) - $paginate;
-    $itemsForCurrentPage = array_slice($data, $offSet, $paginate, true);
-    $data = new \Illuminate\Pagination\LengthAwarePaginator($itemsForCurrentPage, count($data), $paginate, $page);
+    $itemsForCurrentPage = array_slice($this->GetProgramePerformance, $offSet, $paginate, true);
+    $this->GetProgramePerformance = new \Illuminate\Pagination\LengthAwarePaginator($itemsForCurrentPage, count($this->GetProgramePerformance), $paginate, $page);
 
     return response(compact('data'));
   }
