@@ -43,7 +43,7 @@ class dbcontroller extends Controller
     $itemsForCurrentPage = array_slice($data, $offSet, $paginate, true);
     $data = new \Illuminate\Pagination\LengthAwarePaginator($itemsForCurrentPage, count($data), $paginate, $page);
 
-    return response(compact('data'));
+    return compact('data');
   }
 
   public function GetTrending(Request $r){
