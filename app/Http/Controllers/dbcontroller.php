@@ -12,6 +12,7 @@ class dbcontroller extends Controller
   protected $GetProgramePerformance = array();
   protected $GetTrending = array();
   protected $ProgrammeTitles = array();
+  protected $numbersToTake = 0;
 
   public function __construct(){
     $this->GetChannelGroups = DB::select('EXEC GetChannelGroups');
@@ -32,7 +33,8 @@ class dbcontroller extends Controller
   }
 
   public function GetProgramePerformance(Request $r){
-    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter,$r->InputSortID));
+    $this->numbersToTake = $r->lastrow + 999;
+    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter,$r->InputSortID))->skip($r->lastrow)->take($this->numbersToTake)->get();
     return response($this->GetProgramePerformance);
   }
 
