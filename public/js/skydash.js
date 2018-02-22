@@ -236,9 +236,9 @@ var navmodule = {
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('Trending"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
       $('#dltrend').html("Toogle button to download again.")  
 
-      $.get(window.location.href + "export_items_to_excel", { image : img.src }, function(data){
+      /*$.get(window.location.href + "export_items_to_excel", { image : img.src }, function(data){
         console.log(img.src)
-      })
+      })*/
 
     })
   },
@@ -618,6 +618,7 @@ var navmodule = {
       Period : Prange,
       Filter : filter,
       InputSortID : SumSort,
+      lastrow : 0,
     }
     
     if(SumSort == 1){
@@ -674,35 +675,23 @@ var navmodule = {
         '<td id="sort" value="2"><small># linear runs</small>'+ sortCount +'</td>' + 
         '<td id="sort" value="3"><small>000</small>'+ sort000 +'</td>'+          
       '</tr></thead><tbody>';
-
-      var programmedata = [];
-      var spotlastrow = 99;
-      var rowstoadd = 99;
+      
+      var spotlastrow = 0;
+      var rowstoadd = 999;
       var ShowFromTime =$('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1;
       for(var i in data){
-        programmedata.push({ 
-          ProgrammeTitle : data[i].ProgrammeTitle, 
-          FirstFromTime : data[i].FirstFromTime,
-          BMICode : data[i].BMICode,
-          Count : data[i].CNT,
-          Sum000 : Number(data[i].Sum000).toFixed(2),
-        })
-        if(i<programmedata.length){
-          if(i <= spotlastrow){
-            if(ShowFromTime){
-              var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
-            }else{
-              var FirstFromTime = '';
-            }
-            output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
-              '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
-              FirstFromTime +
-              '<td>'+ data[i].BMICode +'</td>'+
-              '<td>'+ data[i].CNT +'</td>' + 
-              '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
-            '</tr>';
-          }
-        }                          
+        if(ShowFromTime){
+          var FirstFromTime = '<td>'+ data[i].FirstFromTime  +'</td>';
+        }else{
+          var FirstFromTime = '';
+        }
+        output += '<tr id="'+ data[i].BMICode +'" value="'+ data[i].ProgrammeTitle +'">'+
+          '<td><span>'+ data[i].ProgrammeTitle+'</span></td>'+
+          FirstFromTime +
+          '<td>'+ data[i].BMICode +'</td>'+
+          '<td>'+ data[i].CNT +'</td>' + 
+          '<td>'+ Number(data[i].Sum000).toFixed(2) +'</td>'+              
+        '</tr>';                      
       }      
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
@@ -710,24 +699,17 @@ var navmodule = {
       spotlastrow = spotlastrow + rowstoadd;       
      
       $('#programeperformance').bind('scroll', function(){
-          if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){
-            var rowBegin = spotlastrow - 98;
-            var appendoutput = '';
-            for(var i=rowBegin; i<=Math.min(spotlastrow, programmedata.length - 1);i++){
-              if(ShowFromTime){
-                var FirstFromTime = '<td>'+ programmedata[i].FirstFromTime  +'</td>';
-              }else{
-                var FirstFromTime = '';
-              }
-              appendoutput += '<tr id="'+ programmedata[i].BMICode +'" value="'+ programmedata[i].ProgrammeTitle +'">'+
-                '<td><span>'+ programmedata[i].ProgrammeTitle+'</span></td>'+
-                FirstFromTime +
-                '<td>'+ programmedata[i].BMICode +'</td>'+
-                '<td>'+ programmedata[i].Count +'</td>' + 
-                '<td>'+ programmedata[i].Sum000 +'</td>'+              
-              '</tr>';              
-            }
-            $('#programeperformance tbody').append(appendoutput)
+          if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){            
+            var scrollrequest = {
+              ChannelGroupID : ChGroupID,
+              ChannelID : ChID,
+              PlatFormID : PFormID,
+              PeriodTypeID : PtypeID,
+              Period : Prange,
+              Filter : filter,
+              InputSortID : SumSort,
+              lastrow : spotlastrow,
+            }           
             spotlastrow = spotlastrow + rowstoadd;           
           }
       })
