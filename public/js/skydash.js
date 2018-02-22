@@ -694,7 +694,8 @@ var navmodule = {
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
       $('#programeperformance').html(output)
-      
+      var last_page = data.data.last_page;
+      console.log(last_page)
       lastrow++;
       $('#programeperformance').bind('scroll', function(){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){            
