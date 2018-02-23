@@ -67,6 +67,10 @@ class dbcontroller extends Controller
   public function exporttrending(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
+
+    header('Content-Type: application/xls');
+    header('Content-Disposition: attachment; filename=trending.xls');
+    echo $this->GetTrending;
     return response($r->filename);
   }
   public function uploadimg(Request $r){
