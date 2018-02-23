@@ -86,11 +86,10 @@ class dbcontroller extends Controller
     }
     $trenddata .=
         "<tr>
-          <td colspan='10'><img src='public/". $r->filename ."'></td>          
+          <td colspan='10'><img src='". $r->filename ."'></td>          
         </tr>
       </table>";
-    echo $trenddata;
-    return response($r->filename);
+    echo $trenddata;    
   }
   public function uploadimg(Request $r){
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
