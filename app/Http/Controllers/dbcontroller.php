@@ -79,7 +79,13 @@ class dbcontroller extends Controller
     file_put_contents('chart/image.png', $data);
   }
   public function export_items_to_excel(Request $r){
-        
+    $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
+
+    list($type, $data) = explode(';', $data);
+    list(, $data)      = explode(',', $data);
+    $data = base64_decode($data);
+
+    file_put_contents('chart/image.png', $data);    
     return response($r->img);
   }    
 }
