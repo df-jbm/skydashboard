@@ -70,7 +70,13 @@ class dbcontroller extends Controller
     return response($this->GetTrending);
   }
   public function uploadimg(){
-    return "asdsad";
+    $data = 'data:image/png;base64,AAAFBfj42Pj4';
+
+    list($type, $data) = explode(';', $data);
+    list(, $data)      = explode(',', $data);
+    $data = base64_decode($data);
+
+    file_put_contents('public/chart/image.png', $data);
   }
   public function export_items_to_excel(Request $r){
         
