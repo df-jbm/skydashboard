@@ -217,6 +217,12 @@ var navmodule = {
     })
   },
   exporttrending : function(req){
+    var img = new Image();
+    img.src = echartBar.getDataURL({
+        pixelRatio: 2,
+        backgroundColor: '#fff'
+    });
+    console.log(img)
     $.ajax({
       type: "POST",
       url: window.location.href + "export_items_to_excel",
