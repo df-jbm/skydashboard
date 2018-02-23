@@ -238,9 +238,7 @@ var navmodule = {
 
       $.post(window.location.href + "export_items_to_excel", { image : img.src }, function(data){
         console.log(img.src)
-      })
-
-      window.open('data:application/vnd.ms-excel,' + encodeURIComponent( $('div[id$=bargraph]').html()));
+      })      
     })
   },
   ChannelPerformanceRequest : function(){
@@ -1612,6 +1610,7 @@ $(function(){
   })
   $('#exporttrending').click(function(){
     navmodule.exporttrending(trendingreq);
+    window.open('data:application/vnd.ms-excel,' + encodeURIComponent( $('#trending-content').html()));
   })
   $('#dlchannel').click(function(){
     $(this).html("download again")
