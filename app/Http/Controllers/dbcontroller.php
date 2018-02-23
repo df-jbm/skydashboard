@@ -69,7 +69,7 @@ class dbcontroller extends Controller
     $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
     
     header("Content-type: application/vnd-ms-excel");
-    header("Content-Disposition: attachment; filename=Subscribers.xls");
+    header("Content-Disposition: attachment; filename=trending.xls");
     $trenddata = "";
     $trenddata .=
       "<table>
@@ -97,17 +97,17 @@ class dbcontroller extends Controller
     list($type, $data) = explode(';', $data);
     list(, $data)      = explode(',', $data);
     $data = base64_decode($data);
-
-    file_put_contents('chart/image.png', $data);
+    $filename 'chart/image.png'.$datetimetoday
+    file_put_contents($filename, $data);
   }
   public function export_items_to_excel(Request $r){
     $data = $r->img;
-
+    $datetimetoday = date('Ymdhris');
     list($type, $data) = explode(';', $data);
     list(, $data)      = explode(',', $data);
     $data = base64_decode($data);
-
-    file_put_contents('chart/image.png', $data);    
-    return response('chart/image.png');
+    $filename = 'chart/image.png'. $datetimetoday;
+    file_put_contents($filename, $data);    
+    return response($filename);
   }    
 }
