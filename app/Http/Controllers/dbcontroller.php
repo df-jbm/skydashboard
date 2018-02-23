@@ -108,7 +108,7 @@ class dbcontroller extends Controller
     list($type, $data) = explode(';', $data);
     list(, $data)      = explode(',', $data);
     $data = base64_decode($data);
-    $filename = "chart/image.png". $datetimetoday;
+    $filename = "chart/image". $datetimetoday .".png";
     file_put_contents($filename, $data);    
     return response($filename);
   }    
