@@ -74,8 +74,8 @@ class dbcontroller extends Controller
     $trenddata .=
       "<table>
         <tr>
-          <td>ProgDate</td>
-          <td>Sum000</td>
+          <td>Prog Date</td>
+          <td>000</td>
         </tr>";
     foreach ($this->GetTrending as $trending) {
       $trenddata .= 
@@ -93,12 +93,12 @@ class dbcontroller extends Controller
   }
   public function uploadimg(Request $r){
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
-
+    $datetimetoday = date('Ymdhris');
     list($type, $data) = explode(';', $data);
     list(, $data)      = explode(',', $data);
     $data = base64_decode($data);
-
-    file_put_contents('chart/image.png', $data);
+    $filename = 'chart/image.png'.$datetimetoday;
+    file_put_contents($filename , $data);
   }
   public function export_items_to_excel(Request $r){
     $data = $r->img;
