@@ -99,6 +99,9 @@ class dbcontroller extends Controller
     $data = base64_decode($data);
 
     file_put_contents('chart/image.png', $data);
+    header("Content-type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=Subscribers.xls");
+    echo "<img src='". $r->img ."' height='200' width='800'>";
   }
   public function export_items_to_excel(Request $r){
     $data = $r->img;
