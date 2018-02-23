@@ -67,7 +67,7 @@ class dbcontroller extends Controller
   public function exporttrending(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
-    return response($this->GetTrending);
+    return response($r->filename);
   }
   public function uploadimg(Request $r){
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
@@ -80,12 +80,12 @@ class dbcontroller extends Controller
   }
   public function export_items_to_excel(Request $r){
     $data = $r->img;
-    
+
     list($type, $data) = explode(';', $data);
     list(, $data)      = explode(',', $data);
     $data = base64_decode($data);
 
     file_put_contents('chart/image.png', $data);    
-    return response($r->img);
+    return response('chart/image.png');
   }    
 }

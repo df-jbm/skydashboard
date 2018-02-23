@@ -217,40 +217,17 @@ var navmodule = {
     })
   },
   exporttrending : function(req){
-    $.get(window.location.href + "exporttrending", req, function(data){
-      console.log(data)
-      var expotRows = [];
-      var dt = new Date();
-      var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();      
-      expotRows.push(["Prog Date","000"]);
-      for (var i in data) {
-        expotRows.push([data[i].ProgDate,data[i].Sum000]);
-      }          
-      var img = new Image();
-      img.src = echartBar.getDataURL({
-          pixelRatio: 2,
-          backgroundColor: '#fff'
-      });
-      console.log(img)
-      expotRows.push([img])
-      alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('Trending"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
-      $('#dltrend').html("Toogle button to download again.")  
-
-      /*$.post(window.location.href + "export_items_to_excel", { image : img.src }, function(data){
-        console.log(img.src)
-      })*/
-
-      $.ajax({
-        type: "POST",
-        url: window.location.href + "export_items_to_excel",
-        data: {img: img.src},
-        contentType: "application/x-www-form-urlencoded;charset=UTF-8",
-        success: function(data){
-            console.log(data)
-        }
-      })
-
-    })
+    $.ajax({
+      type: "POST",
+      url: window.location.href + "export_items_to_excel",
+      data: {img: img.src},
+      contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+      success: function(filename){
+        $.get(window.location.href + "exporttrending", req + "&filename=" + filename, function(data){
+          console.log(data)                
+        })
+      }
+    })    
   },
   ChannelPerformanceRequest : function(){
     var ChannelGroupID = $('#channelgroup').val()
