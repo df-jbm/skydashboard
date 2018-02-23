@@ -65,27 +65,7 @@ class dbcontroller extends Controller
     return response($this->GetProgramePerformance);
   }
   public function exporttrending(Request $r){
-    $currentdatetime = date('Ymdhis');
-    $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
-    $trenddata = "";
-    $trenddata .= 
-      "<table>
-        <tr>
-          <td>ProgDate</td>
-          <td>Sum000</td>
-        </tr>";
-    foreach ($this->GetTrending as $trending) {
-      $trenddata .= 
-        "<tr>
-          <td>".$trending->ProgDate."</td>
-          <td>".$trending->Sum000."</td>
-        </tr>";
-    }
-    $trenddata .=
-        "<tr>
-          <td colspan='10'>". $r->filename . "</td>          
-        </tr>
-      </table>";
+
     header('Content-Type: application/xls');
     header('Content-Disposition: attachment; filename=trending.xls');
     echo "dummy"; 
