@@ -70,15 +70,13 @@ class dbcontroller extends Controller
         
     
     header("Content-type: application/vnd-ms-excel");
-    header("Content-Disposition: attachment; filename=Subscribers.xls");
+    header("Content-Disposition: attachment; filename=trending.xls");
     $xlsRow = 1;
     foreach ($this->GetTrending as $trending) {
       xlsWriteLabel($xlsRow,0,$trending->ProgDate); 
       xlsWriteLabel($xlsRow,0,$trending->Sum000);
       $xlsRow++; 
-    }
-    xlsEOF(); 
-    exit();
+    }    
   }
   public function uploadimg(Request $r){
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
