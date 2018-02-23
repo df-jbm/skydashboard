@@ -86,9 +86,8 @@ class dbcontroller extends Controller
           <td colspan='10'>". $r->filename . "</td>          
         </tr>
       </table>";
-    header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-    header("Content-Disposition: attachment;filename=\"filename.xlsx\"");
-    header("Cache-Control: max-age=0");
+    header("Content-Disposition: attachment; filename=trending.xls");
+    header("Content-Type: application/vnd.ms-excel");
     echo "dummy"; 
   }
   public function uploadimg(Request $r){
