@@ -67,14 +67,29 @@ class dbcontroller extends Controller
   public function exporttrending(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
-        
     
     header("Content-type: application/vnd-ms-excel");
-    header("Content-Disposition: attachment; filename=trending.xls");
-    $xlsRow = 1;
+    header("Content-Disposition: attachment; filename=Subscribers.xls");
+    $trenddata = "";
+    $trenddata .=
+      "<table>
+        <tr>
+          <td>ProgDate</td>
+          <td>Sum000</td>
+        </tr>";
     foreach ($this->GetTrending as $trending) {
-      echo $trending->ProgDate;
-    }    
+      $trenddata .= 
+        "<tr>
+          <td>".$trending->ProgDate."</td>
+          <td>".$trending->Sum000."</td>
+        </tr>";
+    }
+    $trenddata .=
+        "<tr>
+          <td colspan='10'>". $r->filename . "</td>          
+        </tr>
+      </table>";
+    echo $trenddata; 
   }
   public function uploadimg(Request $r){
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
