@@ -236,9 +236,20 @@ var navmodule = {
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('Trending"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
       $('#dltrend').html("Toogle button to download again.")  
 
-      $.post(window.location.href + "export_items_to_excel", { image : img.src }, function(data){
+      /*$.post(window.location.href + "export_items_to_excel", { image : img.src }, function(data){
         console.log(img.src)
-      })      
+      })*/
+
+      $.ajax({
+        type: "POST",
+        url: window.location.href + "export_items_to_excel",
+        data: {img: encodeURIComponent(img.src)},
+        contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+        success: function(data){
+            console.log(data)
+        }
+      })
+            
     })
   },
   ChannelPerformanceRequest : function(){

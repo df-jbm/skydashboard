@@ -70,20 +70,6 @@ class dbcontroller extends Controller
     return response($this->GetTrending);
   }
   public function export_items_to_excel(Request $r){
-    $output = "<tr>
-      <td style='text-align:center;'>1</td>
-      <td style='text-align:center;'>2</td>
-      <td style='text-align:center;'>3</td>
-      <td style='text-align:center;'>4</td>
-      <td style='text-align:center;'>5</td>
-      <td style='text-align:center;'>6</td>
-      <td style='text-align:center;'>7</td>
-      <td style='text-align:center;'>8</td>
-      <td style='text-align:center;width:220px !important;height:220px !important;'><img src='".$r->image."' style='width:200px !important;height:152px !important;'> </td>
-    </tr>";
-    header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-    header("Content-Disposition: attachment; filename=items.xls");
-    header("Cache-Control: max-age=0");
-    echo $output;
+    return response($r->img);
   }    
 }
