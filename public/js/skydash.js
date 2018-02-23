@@ -37,6 +37,11 @@ var trendingreq = [];
 var startloading = 0;
 var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
 var echartBar = echarts.init(document.getElementById('bargraph'));
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -249,7 +254,7 @@ var navmodule = {
             console.log(data)
         }
       })
-            
+
     })
   },
   ChannelPerformanceRequest : function(){
