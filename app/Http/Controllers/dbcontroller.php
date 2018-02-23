@@ -88,7 +88,7 @@ class dbcontroller extends Controller
       </table>";
     header('Content-Type: application/xls');
     header('Content-Disposition: attachment; filename=trending.xls');
-    echo $trenddata;    
+    echo "dummy"; 
   }
   public function uploadimg(Request $r){
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
