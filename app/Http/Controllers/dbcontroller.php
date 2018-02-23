@@ -70,7 +70,7 @@ class dbcontroller extends Controller
     return response($this->GetTrending);
   }
   public function uploadimg(Request $r){
-    $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
+    $data = $r->img;
 
     list($type, $data) = explode(';', $data);
     list(, $data)      = explode(',', $data);
