@@ -70,7 +70,7 @@ class dbcontroller extends Controller
 
     /*header('Content-Type: application/xls');
     header('Content-Disposition: attachment; filename=trending.xls');*/
-    echo $this->GetTrending;
+    
     return response($r->filename);
   }
   public function uploadimg(Request $r){
