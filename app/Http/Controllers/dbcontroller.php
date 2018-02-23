@@ -86,7 +86,7 @@ class dbcontroller extends Controller
     }
     $trenddata .=
         "<tr>
-          <td colspan='10'><img src='". $r->image ."' height='200' width='800'></td>          
+          <td colspan='10'><img src='". $r->filename ."' height='200' width='800'></td>          
         </tr>
       </table>";
     echo $trenddata;        
