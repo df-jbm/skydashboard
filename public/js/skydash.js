@@ -37,11 +37,6 @@ var trendingreq = [];
 var startloading = 0;
 var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
 var echartBar = echarts.init(document.getElementById('bargraph'));
-$.ajaxSetup({
-  headers: {
-    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  }
-});
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -1603,7 +1598,11 @@ function loadingstate(){
   });
 }
 $(function(){
-
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
   navmodule.initnav($('#channelgroup').val(),'channelgroup',$('#periodtype').val())
   /*
   ===== Bind trigger for channelgroup
