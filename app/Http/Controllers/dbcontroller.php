@@ -104,11 +104,11 @@ class dbcontroller extends Controller
   }
   public function export_items_to_excel(Request $r){
     $data = $r->img;
-    $datetimetoday = date("Ymdhris");
+    //$datetimetoday = date("Ymdhris");
     list($type, $data) = explode(';', $data);
     list(, $data)      = explode(',', $data);
     $data = base64_decode($data);    
-    file_put_contents("chart/image". $datetimetoday .".png", $data);    
-    return response("chart/image". $datetimetoday .".png");
+    file_put_contents("chart/image.png", $data);    
+    return response("chart/image.png");
   }    
 }
