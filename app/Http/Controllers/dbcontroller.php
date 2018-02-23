@@ -67,25 +67,29 @@ class dbcontroller extends Controller
   public function exporttrending(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
-
-    $fileType = 'Excel2007';
-    $fileName = 'test.xlsx';
-    // Load the workbook
-    $objPHPExcelReader = PHPExcel_IOFactory::createReader($fileType);
-    $objPHPExcel = $objPHPExcelReader->load($fileName);
-
-    // Add an image to the worksheet
-    $objDrawing = new PHPExcel_Worksheet_Drawing();
-    $objDrawing->setName('My Image');
-    $objDrawing->setDescription('The Image that I am inserting');
-    $objDrawing->setPath('./images/myImage.png');
-    $objDrawing->setCoordinates('B2');
-    $objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
-
-    // Save the workbook
-    $objPHPExcelWriter = PHPExcel_IOFactory::createWriter($objPHPExcel,$fileType);
-    $objPHPExcelWriter->save($fileName); 
-        
+    
+    header("Content-type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=Subscribers.xls");
+    $trenddata = "";
+    $trenddata .=
+      "<table>
+        <tr>
+          <td>ProgDate</td>
+          <td>Sum000</td>
+        </tr>";
+    foreach ($this->GetTrending as $trending) {
+      $trenddata .= 
+        "<tr>
+          <td>".$trending->ProgDate."</td>
+          <td>".$trending->Sum000."</td>
+        </tr>";
+    }
+    $trenddata .=
+        "<tr>
+          <td colspan='10'><img src='http://techedgedashboard.grouptechedge.com/skydashboard/public/chart/image.png' height='200' width='800'></td>          
+        </tr>
+      </table>";
+    echo $trenddata;        
   }
   public function uploadimg(Request $r){
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
