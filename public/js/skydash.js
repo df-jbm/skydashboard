@@ -240,6 +240,7 @@ var navmodule = {
         console.log(img.src)
       })
 
+      window.open('data:application/vnd.ms-excel,' + encodeURIComponent( $('div[id$=bargraph]').html()));
     })
   },
   ChannelPerformanceRequest : function(){
