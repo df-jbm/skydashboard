@@ -241,7 +241,7 @@ var navmodule = {
       })*/
 
       $.ajax({
-        type: "GET",
+        type: "POST",
         url: window.location.href + "uploadimg",
         data: {img: img.src},
         contentType: "application/x-www-form-urlencoded;charset=UTF-8",
