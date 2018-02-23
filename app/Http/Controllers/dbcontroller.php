@@ -73,7 +73,7 @@ class dbcontroller extends Controller
     header("Content-Disposition: attachment; filename=trending.xls");
     $xlsRow = 1;
     foreach ($this->GetTrending as $trending) {
-      echo $trending->ProgDate."\n". $trending->Sum000;
+      echo $trending->ProgDate;
     }    
   }
   public function uploadimg(Request $r){
