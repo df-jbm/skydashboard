@@ -73,7 +73,7 @@ class dbcontroller extends Controller
         <tr>
           <td>ProgDate</td>
           <td>Sum000</td>
-        </tr>"
+        </tr>";
     foreach ($this->GetTrending as $trending) {
       $trenddata .= 
         "<tr>
