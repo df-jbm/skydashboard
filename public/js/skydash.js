@@ -1610,7 +1610,6 @@ $(function(){
   })
   $('#exporttrending').click(function(){
     navmodule.exporttrending(trendingreq);
-    window.open('data:application/vnd.ms-excel,' + encodeURIComponent( $('#trending-content').html()));
   })
   $('#dlchannel').click(function(){
     $(this).html("download again")
