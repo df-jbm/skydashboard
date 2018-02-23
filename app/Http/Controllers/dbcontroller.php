@@ -95,7 +95,7 @@ class dbcontroller extends Controller
   }
   public function uploadimg(Request $r){
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
-    $datetimetoday = date('Ymdhris');
+    $datetimetoday = date('Ymdhis');
     list($type, $data) = explode(';', $data);
     list(, $data)      = explode(',', $data);
     $data = base64_decode($data);
