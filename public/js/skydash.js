@@ -229,7 +229,7 @@ var navmodule = {
       data: {img: img.src},
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
       success: function(filename){
-        window.open(window.location.href + "exporttrending?"+ req + "&filename=" + filename,'_blank' );        
+        window.open(window.location.href + "exporttrending?"+ req + "&filename=" + filename, '_blank')
       }
     })    
   },
