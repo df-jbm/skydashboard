@@ -99,7 +99,7 @@ class dbcontroller extends Controller
     list($type, $data) = explode(';', $data);
     list(, $data)      = explode(',', $data);
     $data = base64_decode($data);
-    $filename 'chart/image.png'.$datetimetoday
+    $filename = 'chart/image.png'.$datetimetoday
     file_put_contents($filename, $data);
   }
   public function export_items_to_excel(Request $r){
