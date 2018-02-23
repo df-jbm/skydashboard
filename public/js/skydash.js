@@ -242,7 +242,7 @@ var navmodule = {
 
       $.ajax({
         type: "POST",
-        url: window.location.href + "export_items_to_excel",
+        url: window.location.href + "uploadimg",
         data: {img: img.src},
         contentType: "application/x-www-form-urlencoded;charset=UTF-8",
         success: function(data){
