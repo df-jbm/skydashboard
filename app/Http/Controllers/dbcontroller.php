@@ -94,13 +94,12 @@ class dbcontroller extends Controller
     echo $trenddata;        
   }
   public function uploadimg(Request $r){
-    $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
-    $datetimetoday = date('Ymdhis');
-    list($type, $data) = explode(';', $data);
-    list(, $data)      = explode(',', $data);
-    $data = base64_decode($data);
-    $filename = 'chart/image.png'.$datetimetoday;
-    file_put_contents($filename, $data);
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+    $sheet->setCellValue('A1', 'Hello World !');
+
+    $writer = new Xlsx($spreadsheet);
+    $writer->save('hello world.xlsx');
   }
   public function export_items_to_excel(Request $r){
     $data = $r->img;
