@@ -71,14 +71,7 @@ class dbcontroller extends Controller
   }
   public function export_items_to_excel(Request $r){
     
-    $data = $r->img;
-    $datetoday = date("Ymd H:i:s");
-    $filename = 'chart.png'. $datetoday;
-    list($type, $data) = explode(';', $data);
-    list(, $data)      = explode(',', $data);
-    $data = base64_decode($data);
-
-    file_put_contents('public/chart/'.$filename, $data);
-    return response($filename);
+    
+    return response($r->img);
   }    
 }
