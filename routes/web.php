@@ -39,4 +39,4 @@ Route::get('/exportprogramme','dbcontroller@exportprogramme');
 
 Route::get('/exporttrending','dbcontroller@exporttrending');
 
-Route::get('/export_items_to_excel','dbcontroller@export_items_to_excel');
+Route::post('/export_items_to_excel','dbcontroller@export_items_to_excel');
