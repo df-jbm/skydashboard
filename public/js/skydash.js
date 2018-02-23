@@ -229,9 +229,7 @@ var navmodule = {
       data: {img: img.src},
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
       success: function(filename){
-        $.get(window.location.href + "exporttrending", req + "&filename=" + filename, function(data){
-          console.log(data)                
-        })
+        $.get(window.location.href + "exporttrending", req + "&filename=" + filename)
       }
     })    
   },
