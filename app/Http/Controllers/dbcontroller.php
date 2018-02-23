@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class dbcontroller extends Controller
