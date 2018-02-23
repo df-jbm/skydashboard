@@ -107,9 +107,8 @@ class dbcontroller extends Controller
     $datetimetoday = date("Ymdhris");
     list($type, $data) = explode(';', $data);
     list(, $data)      = explode(',', $data);
-    $data = base64_decode($data);
-    $filename = "chart/image". $datetimetoday .".png";
-    file_put_contents($filename, $data);    
-    return response($filename);
+    $data = base64_decode($data);    
+    file_put_contents("chart/image". $datetimetoday .".png", $data);    
+    return response("chart/image". $datetimetoday .".png");
   }    
 }
