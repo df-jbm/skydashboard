@@ -69,7 +69,7 @@ class dbcontroller extends Controller
     $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
     return response($this->GetTrending);
   }
-  public function uploadimg(){
+  public function uploadimg(Request $r){
     $data = 'data:image/png;base64,AAAFBfj42Pj4';
 
     list($type, $data) = explode(';', $data);
