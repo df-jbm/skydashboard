@@ -89,8 +89,7 @@ class dbcontroller extends Controller
           <td colspan='10'><img src='chart/image.png' height='200' width='800'></td>          
         </tr>
       </table>";
-    echo $trenddata;
-    echo "<img src='chart/image.png' height='200' width='800'>";    
+    echo $trenddata;        
   }
   public function uploadimg(Request $r){
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
