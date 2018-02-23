@@ -90,7 +90,7 @@ class dbcontroller extends Controller
     
     header("Content-type: application/vnd-ms-excel");
     header("Content-Disposition: attachment; filename=Subscribers.xls");
-    echo "dummy"; 
+    echo $trenddata; 
   }
   public function uploadimg(Request $r){
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
