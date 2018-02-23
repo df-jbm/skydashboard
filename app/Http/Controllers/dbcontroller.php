@@ -67,8 +67,9 @@ class dbcontroller extends Controller
   public function exporttrending(Request $r){
     $currentdatetime = date('Ymdhis');
     $this->GetTrending = DB::select('EXEC GetTrending ?, ?, ?, ?, ?, ?, ?',array($r->ProgTitleID,$r->ChannelGroupID,$r->ChannelID,$r->PeriodTypeID,$r->Period,$r->PlatFormID,$r->Filter));
+    
     $trenddata = "";
-    $trenddata .= 
+    $trenddata .=
       "<table>
         <tr>
           <td>ProgDate</td>
@@ -86,8 +87,9 @@ class dbcontroller extends Controller
           <td colspan='10'>". $r->filename . "</td>          
         </tr>
       </table>";
-    header("Content-Disposition: attachment; filename=trending.xls");
-    header("Content-Type: application/vnd.ms-excel");
+    
+    header("Content-type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=Subscribers.xls");
     echo "dummy"; 
   }
   public function uploadimg(Request $r){
