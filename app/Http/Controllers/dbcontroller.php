@@ -70,8 +70,8 @@ class dbcontroller extends Controller
     return response($this->GetTrending);
   }
   public function export_items_to_excel(Request $r){
-    
-    $data = $r->img;
+        
+    $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
     $datetoday = date("Ymd H:i:s");
     $filename = 'chart.png'. $datetoday;
     list($type, $data) = explode(';', $data);
