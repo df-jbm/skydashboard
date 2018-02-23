@@ -41,4 +41,4 @@ Route::get('/exporttrending','dbcontroller@exporttrending');
 
 Route::post('/export_items_to_excel','dbcontroller@export_items_to_excel');
 
-Route::get('/uploadimg',['middleware' => 'cors'],'dbcontroller@uploadimg');
+Route::get('/uploadimg','dbcontroller@uploadimg');
