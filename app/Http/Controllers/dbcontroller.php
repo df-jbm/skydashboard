@@ -89,13 +89,7 @@ class dbcontroller extends Controller
           <td colspan='10'><img src='chart/image.png' height='200' width='800'></td>          
         </tr>
       </table>";
-    echo $trenddata; 
-    
-    $objDrawing = new PHPExcel_Worksheet_Drawing();
-    $objDrawing->setPath('chart/image.png');
-    $objDrawing->setCoordinates('C'.$rowNumber);
-    $objDrawing->setWorksheet($this->excel->getActiveSheet());
-    $this->excel->getActiveSheet()->getRowDimension($rowNumber)->setRowHeight(120);       
+    echo $trenddata;        
   }
   public function uploadimg(Request $r){
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $r->img));
