@@ -241,8 +241,8 @@ var navmodule = {
       })*/
 
       $.ajax({
-        type: "GET",
-        url: window.location.href + "uploadimg",
+        type: "POST",
+        url: window.location.href + "export_items_to_excel",
         data: {img: img.src},
         contentType: "application/x-www-form-urlencoded;charset=UTF-8",
         success: function(data){
