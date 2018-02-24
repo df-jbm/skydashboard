@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
-
-require 'vendor/autoload.php';
-
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
