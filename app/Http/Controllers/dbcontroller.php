@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-require 'spreadsheet/vendor/autoload.php';
 use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
