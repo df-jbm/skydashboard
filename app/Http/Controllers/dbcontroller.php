@@ -1,6 +1,6 @@
 <?php
-require 'vendor/autoload.php';
 namespace App\Http\Controllers;
+require 'vendor/autoload.php';
 use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
