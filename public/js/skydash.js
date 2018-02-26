@@ -205,7 +205,7 @@ var navmodule = {
   exportprogramme : function(req){
     html2canvas($('#channelperformance').get(0)).then( function (canvas) {
         var myImage = canvas.toDataURL("img/png");
-        window.open(myImage);
+        console.log(myImage);
     });
     $.get(window.location.href + "exportprogramme", req, function(data){
       console.log(data)      
