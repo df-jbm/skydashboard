@@ -236,10 +236,11 @@ var navmodule = {
       success: function(result){
         console.log(result)
         if(result == 'done'){
-          console.log('test')
-          $('#dltrend').attr('href','/spreadsheet/trending.xlsx')
+          window.open('/spreadsheet/trending.xlsx','_blank');
+          /*$('#dltrend').attr('href','/spreadsheet/trending.xlsx')
           $('#dltrend').html("Click here to download")
-          $('#dltrend').attr('disable',false)
+          $('#dltrend').attr('disable',false)*/
+          $('#dltrend').html("Toogle button to download again.")  
         }
       }
     })    
