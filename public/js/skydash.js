@@ -36,6 +36,7 @@ var programmereq = [];
 var trendingreq = [];
 var startloading = 0;
 var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+var base64 = '';
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -215,19 +216,18 @@ var navmodule = {
       $('#dlprog').html("Toogle button to download again.")  
     })
   },
-  exporttrending : function(req){
-    $.get(window.location.href + "exporttrending", req, function(data){
-      console.log(data)
-      var expotRows = [];
-      var dt = new Date();
-      var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();      
-      expotRows.push(["Prog Date","000"]);
-      for (var i in data) {
-        expotRows.push([data[i].ProgDate,data[i].Sum000]);
+  exporttrending : function(req){    
+    console.log(img)    
+    $.ajax({
+      type: "POST",
+      url: "/spreadsheet/basic.php?"+ req,
+      data: {img: base64.src},
+      contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+      success: function(result){
+        console.log(result)
+        //window.open(window.location.href + "exporttrending?"+ req + "&filename=" + window.location.href + filename, '_blank')
       }
-      alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('Trending"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
-      $('#dltrend').html("Toogle button to download again.")  
-    })
+    })    
   },
   ChannelPerformanceRequest : function(){
     var ChannelGroupID = $('#channelgroup').val()
@@ -636,7 +636,7 @@ var navmodule = {
       'InputSortID' +"="+ SumSort;
 
     $.get(window.location.href + "programmeperformance", request, function(data){
-      
+      console.log(data)
       var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'      
       var output = '<table class="table table-bordered" id="table-programmeperformance" width="100%">';
       if(ChannelName.indexOf('TNT Comedy HD') == -1){
@@ -752,8 +752,7 @@ var navmodule = {
   },
   init_trending : function(ProgTitleID,ChGroupID,ChID,PtypeID,Prange,PFormID,TrendingTitle){
 
-    //if($('#periodtype').val() != 4 && $('#periodtype').val() != 5){
-      if($('#periodtype').val() != 5){
+    if($('#periodtype').val() != 4 && $('#periodtype').val() != 5){
       if(filterexist == true){
         var filter = $('#filterbmi').val()
       }else{
@@ -789,7 +788,7 @@ var navmodule = {
       }else{
         var barnum = 13;
       }
-     
+      console.log(request)
       $.get(window.location.href + "trending", request, function(data){
         console.log(data)
 
@@ -801,7 +800,6 @@ var navmodule = {
         for(var i in data){
           PlatFormIDnum.push(data[i].PlatFormID)
         }
-
         switch(num){
           case '1' :
               for(var i=scrollNum; i< Number(barnum + scrollNum); i++){
@@ -829,7 +827,11 @@ var navmodule = {
                 if(Number(i) < quarterrange.length){
                   label.push(navmodule.externalProgdate(quarterrange[i],4))
                 }
-              }            
+              }
+
+              for(var i=scrollNum; i< Number(barnum + scrollNum); i++){
+                label.push(navmodule.externalProgdate(quarterrange[i],4))
+              }
             break;
           case '5' :
 
@@ -937,7 +939,6 @@ var navmodule = {
                       break;
                     }
                   }
-          var barcolor = data[i].ColorCode;
                 }
                 if(lableexist == false){
                   average.push(Number(0).toFixed(2));
@@ -1111,8 +1112,7 @@ var navmodule = {
           if(graphlegend.length == 1){
             return true;
           }          
-        }        
-        var echartBar = echarts.init(document.getElementById('bargraph'));
+        }                
         echartBar.on('magictypechanged', function(params) {
             magicType = params.currentType;
         });
@@ -1470,6 +1470,11 @@ var navmodule = {
           calculable : true,
           series: dataseries
         });
+        var base64 = new Image();
+        base64.src = echartBar.getDataURL({
+            pixelRatio: 2,
+            backgroundColor: '#fff'
+        });
       })
     }else{
       $('#bargraph').html('')
@@ -1575,7 +1580,11 @@ function loadingstate(){
   });
 }
 $(function(){
-
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
   navmodule.initnav($('#channelgroup').val(),'channelgroup',$('#periodtype').val())
   /*
   ===== Bind trigger for channelgroup
@@ -1614,8 +1623,8 @@ $(function(){
       $(this).attr('value','shown')
       $(this).html('Minimize Export Module')            
       $('#exportcontainer').animate({
-        width : '400px',
-        height : '250px',
+        width : '700px',
+        height : '300px',
         right : '15px',
         bottom : '15px'      
       });
