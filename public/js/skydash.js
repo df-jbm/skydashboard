@@ -203,6 +203,12 @@ var navmodule = {
     });
   },
   exportprogramme : function(req){
+    html2canvas($("#channelperformance"), {
+      onrendered: function(canvas) {
+        var myImage = canvas.toDataURL("img/png");
+        window.open(myImage);
+      }
+    });
     $.get(window.location.href + "exportprogramme", req, function(data){
       console.log(data)      
       var expotRows = [];
