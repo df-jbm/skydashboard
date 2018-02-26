@@ -227,7 +227,7 @@ var navmodule = {
         console.log(result)
         if(result == 'done'){
           console.log('test')
-          $('#dltrend').attr('href',window.location.hostname+'/spreadsheet/treding.xlsx')
+          $('#dltrend').attr('href',window.location.hostname+'/spreadsheet/trending.xlsx')
           $('#dltrend').attr('disable',false)
         }
       }
