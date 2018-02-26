@@ -228,7 +228,7 @@ var navmodule = {
         if(result == 'done'){
           console.log('test')
           $('#dltrend').attr('href','../spreadsheet/treding.xlsx')
-          $('#dltrend').attr('disabled',false)
+          $('#dltrend').attr('disable',false)
         }
       }
     })    
