@@ -38,7 +38,7 @@
             </select>
           </li>
           <li class="nav-item" id="channelgroupholder">
-            <label for="channelgroup" class="small col-form-label  align-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <label class="small col-form-label  align-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
           </li>
           <li class="nav-item">
             <label for="periodtype" class="small col-form-label  align-center">Period</label>

@@ -190,6 +190,7 @@ var navmodule = {
       var expotRows = [];
       var dt = new Date();
       var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
+      expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#period option:selected').text(),"Search, "+ $('#filterbmi').val(),""]);
       expotRows.push(["Channel Name","Platform Name","000"]);
       for (var i in data) {
           if(data[i].ChannelID != -1){
@@ -212,7 +213,8 @@ var navmodule = {
       var expotRows = [];
       var dt = new Date();
       var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
-      expotRows.push(["BMICode","ProgrammeTitle","Count","000"]);
+      expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#period option:selected').text(),"Search, "+ $('#filterbmi').val(),""]);
+      expotRows.push(["BMICode","ProgrammeTitle","# Linear runs","000"]);
       for (var i in data) {
         expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,data[i].Sum000]);
       }
