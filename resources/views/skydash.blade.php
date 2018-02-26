@@ -25,7 +25,7 @@
         </ul>
       </div>
       <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" id="navbase64">
           <li class="nav-item" id="channelgroupholder">
             <label for="channelgroup" class="small col-form-label  align-center">Channel List</label>
             <select id="channelgroup" class="form-control form-control-sm border-light bg-light"></select>
