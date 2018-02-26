@@ -204,7 +204,7 @@ var navmodule = {
   },
   exportprogramme : function(req){
     html2canvas($('#channelperformance').get(0)).then( function (canvas) {
-    console.log(canvas);
+    console.log(canvas.src);
     });
     $.get(window.location.href + "exportprogramme", req, function(data){
       console.log(data)      
