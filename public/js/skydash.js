@@ -225,7 +225,9 @@ var navmodule = {
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
       success: function(result){
         console.log(result)
-        //window.open(window.location.href + "exporttrending?"+ req + "&filename=" + window.location.href + filename, '_blank')
+        if(result == 'done'){
+          console.log('test')
+        }
       }
     })    
   },
