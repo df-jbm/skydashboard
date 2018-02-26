@@ -226,7 +226,7 @@ var navmodule = {
     $.ajax({
       type: "POST",
       url: "/spreadsheet/basic.php?"+req+"&img="+img.src,      
-      contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+      contentType: "application/json",
       success: function(result){
         console.log(result)
         //window.open(window.location.href + "exporttrending?"+ req + "&filename=" + window.location.href + filename, '_blank')
