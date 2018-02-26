@@ -204,11 +204,7 @@ var navmodule = {
       $('#dlchannel').html("Toogle button to download again.")
     });
   },
-  exportprogramme : function(req){
-    html2canvas($('#navbase64').get(0)).then( function (canvas) {
-        var myImage = canvas.toDataURL("img/png");
-        console.log(myImage);
-    });
+  exportprogramme : function(req){    
     $.get(window.location.href + "exportprogramme", req, function(data){
       console.log(data)      
       var expotRows = [];
