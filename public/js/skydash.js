@@ -214,7 +214,7 @@ var navmodule = {
       var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
       var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
             
-      expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text(),"Search, "+ filterval,""]);
+      expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text() + ": " + $('#customperiod').val(),"Search, "+ filterval,""]);
       expotRows.push(["Channel name: "+ exportchannelname,"Platform name: " + exportplatform,"",""]);
       expotRows.push(["BMICode","ProgrammeTitle","# Linear runs","000"]);
       
