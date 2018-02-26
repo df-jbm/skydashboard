@@ -197,9 +197,9 @@ var navmodule = {
       expotRows.push(["Channel Name","Platform Name","000"]);
       for (var i in data) {
           if(data[i].ChannelID != -1){
-            expotRows.push([data[i].ChannelName,data[i].PlatFormName,data[i].Sum000]);
+            expotRows.push([data[i].ChannelName,data[i].PlatFormName,Number(data[i].Sum000).toFixed(2)]);
           }else{
-            expotRows.push(["Total",data[i].PlatFormName,data[i].Sum000]);
+            expotRows.push(["Total",data[i].PlatFormName,Number(data[i].Sum000).toFixed(2)]);
           }          
       }
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ChannelPerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);
@@ -219,7 +219,7 @@ var navmodule = {
       expotRows.push(["BMICode","ProgrammeTitle","# Linear runs","000"]);
       
       for (var i in data) {
-        expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,data[i].Sum000]);
+        expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,Number(data[i].Sum000).toFixed(2)]);
       }
       
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ProgrammePerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
