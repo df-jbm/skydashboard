@@ -217,7 +217,7 @@ var navmodule = {
     })
   },
   exporttrending : function(req){    
-    console.log(img)    
+    console.log(base64.src)    
     $.ajax({
       type: "POST",
       url: "/spreadsheet/basic.php?"+ req,
