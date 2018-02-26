@@ -225,11 +225,12 @@ var navmodule = {
     console.log(img)
     $.ajax({
       type: "POST",
-      url: window.location.href + "export_items_to_excel",
+      url: window.location.hostname + "spreadsheet/basic.php",
       data: {img: img.src},
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
-      success: function(filename){
-        window.open(window.location.href + "exporttrending?"+ req + "&filename=" + window.location.href + filename, '_blank')
+      success: function(result){
+        console.log(result)
+        //window.open(window.location.href + "exporttrending?"+ req + "&filename=" + window.location.href + filename, '_blank')
       }
     })    
   },

@@ -22,6 +22,15 @@ class dbcontroller extends Controller
     $this->GetPeriodRanges = DB::select('EXEC GetPeriodRanges');
   }
 
+  public function uploadimg(Request $r){
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+    $sheet->setCellValue('A1', 'Hello World !');
+
+    $writer = new Xlsx($spreadsheet);
+    $writer->save('hello world.xlsx');
+  }
+
   public function GetChannelGroups(){
     return response($this->GetChannelGroups);
   }
@@ -92,15 +101,7 @@ class dbcontroller extends Controller
         </tr>
       </table>";
     echo $trenddata;        
-  }
-  public function uploadimg(Request $r){
-    $spreadsheet = new Spreadsheet();
-    $sheet = $spreadsheet->getActiveSheet();
-    $sheet->setCellValue('A1', 'Hello World !');
-
-    $writer = new Xlsx($spreadsheet);
-    $writer->save('hello world.xlsx');
-  }
+  }  
   public function export_items_to_excel(Request $r){
     $data = $r->img;
     //$datetimetoday = date("Ymdhris");
