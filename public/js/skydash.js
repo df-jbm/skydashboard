@@ -37,6 +37,8 @@ var trendingreq = [];
 var startloading = 0;
 var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
 var base64 = '';
+var exportchannelname = '';
+var exportplatform = ''; 
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -204,22 +206,22 @@ var navmodule = {
       $('#dlchannel').html("Toogle button to download again.")
     });
   },
-  exportprogramme : function(req){
-    html2canvas($('#navbase64').get(0)).then( function (canvas) {
-        var myImage = canvas.toDataURL("img/png");
-        console.log(myImage);
-    });
+  exportprogramme : function(req){    
     $.get(window.location.href + "exportprogramme", req, function(data){
       console.log(data)      
       var expotRows = [];
       var dt = new Date();
       var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
       var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
+            
       expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text(),"Search, "+ filterval,""]);
+      expotRows.push(["Channel name: "+ exportchannelname,"Platform name: " + exportplatform,"",""]);
       expotRows.push(["BMICode","ProgrammeTitle","# Linear runs","000"]);
+      
       for (var i in data) {
         expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,data[i].Sum000]);
       }
+      
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ProgrammePerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
       $('#dlprog').html("Toogle button to download again.")  
     })
@@ -587,7 +589,9 @@ var navmodule = {
               sort = 1
             }else{
               sort = 3
-            }            
+            }
+            exportchannelname = $(this).data('id');
+            exportplatform = $(this).data('value');             
             navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,$(this).data('id'),$(this).data('value'),sort)
             navmodule.init_trending(ProgTitleID,ChGroupID,ChID,PtypeID,Prange,PFormID,$(this).data('id') + ' - ' + $(this).data('value'))
 
