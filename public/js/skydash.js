@@ -203,7 +203,7 @@ var navmodule = {
     });
   },
   exportprogramme : function(req){
-    html2canvas($('#channelperformance').get(0)).then( function (canvas) {
+    html2canvas($('#navbase64').get(0)).then( function (canvas) {
         var myImage = canvas.toDataURL("img/png");
         console.log(myImage);
     });
