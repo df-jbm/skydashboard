@@ -159,6 +159,7 @@
     <script src="js/echarts3.js"></script>
     <script src="js/jquery.floatThead.js"></script>
     <script src="js/alasql.min.js"></script>
+    <script src="js/html2canvas.min.js"></script>
     <script src="js/xlsx.core.min.js"></script>
     <script src="js/skydash.js?v=1"></script>
   </body>
