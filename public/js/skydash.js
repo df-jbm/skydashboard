@@ -225,7 +225,7 @@ var navmodule = {
     console.log(img)
     $.ajax({
       type: "POST",
-      url: window.location.hostname + "/spreadsheet/basic.php",
+      url: "/spreadsheet/basic.php",
       data: {img: img.src},
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
       success: function(result){
