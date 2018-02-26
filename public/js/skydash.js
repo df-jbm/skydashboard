@@ -228,6 +228,7 @@ var navmodule = {
         if(result == 'done'){
           console.log('test')
           $('#dltrend').attr('href','/spreadsheet/trending.xlsx')
+          $('#dltrend').html("Click here to download")
           $('#dltrend').attr('disable',false)
         }
       }
