@@ -223,6 +223,7 @@ var navmodule = {
         backgroundColor: '#fff'
     });
     console.log(img)
+    alert(window.location.hostname + "spreadsheet/basic.php")
     $.ajax({
       type: "POST",
       url: window.location.hostname + "spreadsheet/basic.php",
