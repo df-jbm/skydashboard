@@ -427,7 +427,9 @@ var navmodule = {
                   sort = 1
                 }else{
                   sort = 3
-                }                 
+                }            
+                exportchannelname = PerformanceChannels[i].ChannelName;
+                exportplatform = Formname[x];                  
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName, Formname[x])
                 delivered = true;
@@ -455,7 +457,9 @@ var navmodule = {
                   ChGroupID = $('#channelgroup').val();
                   ChID = -1;
                   var progchannelicon = Formname[x];
-                  var formnameicon = 'Total'
+                  var formnameicon = 'Total';
+                  exportchannelname = 'Global';
+                  exportplatform = Formname[x];
                 }else{
                   var progchannelicon = PerformanceChannels[i].ChannelName;
                   var formnameicon = Formname[x];
@@ -525,6 +529,8 @@ var navmodule = {
           }else{
             sort = 3
           }
+          exportchannelname = 'Global'
+          exportplatform = 'Total'
           navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
           navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
           delivered = true;
