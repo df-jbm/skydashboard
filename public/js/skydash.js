@@ -139,6 +139,7 @@ var navmodule = {
             for(var i in platforms){
               channelplatforms.push({'PlatFormID':platforms[i].PlatFormID,'PlatFormName':platforms[i].PlatFormName})
             }
+            console.log(platforms)
           });
           navmodule.scrollproperty()
           return $.get(window.location.href + "channelperformance", request);
@@ -324,7 +325,8 @@ var navmodule = {
       ChannelID = _.uniq(ChannelID);
       //var Formname = _.uniq(PlatformName);
       var Formname = [];
-      exportrendingplatform = [];      
+      exportrendingplatform = [];
+      //channelplatforms.push({'PlatFormID':platforms[i].PlatFormID,'PlatFormName':platforms[i].PlatFormName,})
       for(var i in channelplatforms){
         Formname.push(channelplatforms[i].PlatFormName)
         exportrendingplatform.push({'id': channelplatforms[i].PlatFormID, 'name': channelplatforms[i].PlatFormName})
