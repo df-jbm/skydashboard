@@ -44,10 +44,10 @@
             <label for="periodtype" class="small col-form-label  align-center">Period</label>
             <select id="periodtype" class="form-control form-control-sm border-light  bg-light">
               <option value="1">Date</option>
-              <option value="2">Week</option>
+              <!--<option value="2">Week</option>
               <option value="3">Month</option>
               <option value="4">Quarter</option>
-              <option value="5">Year</option>
+              <option value="5">Year</option>-->
             </select>
           </li>
           <li class="nav-item">
