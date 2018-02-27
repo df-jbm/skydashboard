@@ -16,10 +16,12 @@ class dbcontroller extends Controller
   protected $GetTrending = array();
   protected $ProgrammeTitles = array();
   protected $numbersToTake = 0;
+  protected $platforms = array();
 
   public function __construct(){
     $this->GetChannelGroups = DB::select('EXEC GetChannelGroups');
     $this->GetPeriodRanges = DB::select('EXEC GetPeriodRanges');
+    $this->platforms = DB::select('EXEC GetPlatforms');
   }
 
   public function uploadimg(Request $r){
