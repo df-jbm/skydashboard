@@ -303,7 +303,8 @@ var navmodule = {
       var PlatformName = [];
       for(var i in data){
         var TempChannelID = ChannelGroupID != 2000 ? data[i].ChannelID : data[i].ChannelGroupID;
-        ChannelID.push(TempChannelID)        
+        ChannelID.push(TempChannelID)
+        PlatformName1.push({id : data[i].PlatFormID, PlatFormName : data[i].PlatFormName})
         PlatformName.push(data[i].PlatFormName)
         var legendvalue = false;                     
       }
@@ -829,9 +830,8 @@ var navmodule = {
         var dataseries = []
         var PlatFormIDnum = [];
         var num = $('#periodtype').val()
-
-        for(var i in channelplatforms){
-          PlatFormIDnum.push(channelplatforms[i].PlatFormID)
+        for(var i in data){
+          PlatFormIDnum.push(data[i].PlatFormID)
         }
         switch(num){
           case '1' :
@@ -879,25 +879,16 @@ var navmodule = {
           axislabel.push(uniqLabel[i])
         }
 
-        var PFormIDs = PlatFormIDnum;
+        var PFormIDs = _.uniq(PlatFormIDnum)
         var graphlegend = [];
-        if(PFormID == -1){
-          for(var i in PFormIDs){
-            for(var x in trendinglegend){            
-              if(trendinglegend[x].PlatFormID == PFormIDs[i]){
-                graphlegend.push(trendinglegend[x].PlatFormName)
-                break;
-              }
-            }
-          }
-        }else{
-          for(var x in trendinglegend){            
-            if(trendinglegend[x].PlatFormID == PFormID){
+        for(var i in PFormIDs){
+          for(var x in trendinglegend){
+            if(trendinglegend[x].PlatFormID == PFormIDs[i]){
               graphlegend.push(trendinglegend[x].PlatFormName)
               break;
             }
           }
-        }        
+        }
         console.log(graphlegend)
 
         if(PFormIDs.length == 1){
