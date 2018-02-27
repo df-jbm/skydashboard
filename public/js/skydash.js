@@ -320,7 +320,7 @@ var navmodule = {
       for(var i in PlatformName1){
         if($.inArray(PlatformName1[i].PlatFormName, Formname) == -1){
           Formname.push(PlatformName1[i].PlatFormName)
-          exportrendingplatform.push({'id': PlatformName1[i].PlatFormID, 'name': PlatformName1[i].PlatFormName})
+          exportrendingplatform.push({'id': PlatformName1[i].id, 'name': PlatformName1[i].PlatFormName})
         }
       }
       console.log(Formname)
