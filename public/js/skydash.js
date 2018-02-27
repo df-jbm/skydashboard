@@ -304,7 +304,7 @@ var navmodule = {
       for(var i in data){
         var TempChannelID = ChannelGroupID != 2000 ? data[i].ChannelID : data[i].ChannelGroupID;
         ChannelID.push(TempChannelID)
-        PlatformName1.push({id : data[i].PlatFormID, PlatFormName : data[i].PlatFormName})
+        //PlatformName1.push({id : data[i].PlatFormID, PlatFormName : data[i].PlatFormName})
         PlatformName.push(data[i].PlatFormName)
         var legendvalue = false;                     
       }
