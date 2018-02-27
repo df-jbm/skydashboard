@@ -38,7 +38,8 @@ var startloading = 0;
 var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
 var base64 = '';
 var exportchannelname = '';
-var exportplatform = ''; 
+var exportplatform = '';
+var exportrendingplatform = []; 
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -238,6 +239,7 @@ var navmodule = {
         PeriodType : $('#periodtype option:selected').text(),
         Periodnum : $('#customperiod').val(),
         filterval : filterval,
+        formname : exportrendingplatform,
       },
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
       success: function(result){
@@ -289,7 +291,7 @@ var navmodule = {
     if(data.length > 0){
       console.log(data)
       var ChannelID = [];
-      var PlatformName = [], PlatformName1 = [];
+      var PlatformName = [];
       for(var i in data){
         var TempChannelID = ChannelGroupID != 2000 ? data[i].ChannelID : data[i].ChannelGroupID;
         ChannelID.push(TempChannelID)
@@ -314,9 +316,11 @@ var navmodule = {
       ChannelID = _.uniq(ChannelID);
       //var Formname = _.uniq(PlatformName);
       var Formname = [];
+      exportrendingplatform = [];
       for(var i in PlatformName1){
         if($.inArray(PlatformName1[i].PlatFormName, Formname) == -1){
           Formname.push(PlatformName1[i].PlatFormName)
+          exportrendingplatform.push({'id': PlatformName1[i].PlatFormID, 'name': PlatformName1[i].PlatFormName})
         }
       }
       console.log(Formname)
