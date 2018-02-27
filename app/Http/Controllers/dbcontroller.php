@@ -23,7 +23,9 @@ class dbcontroller extends Controller
     $this->GetPeriodRanges = DB::select('EXEC GetPeriodRanges');
     $this->platforms = DB::select('EXEC GetPlatforms');
   }
-
+  public function GetPlatforms(){
+    return response($this->platforms);
+  }
   public function uploadimg(Request $r){
     $spreadsheet = new Spreadsheet();
     $sheet = $spreadsheet->getActiveSheet();
