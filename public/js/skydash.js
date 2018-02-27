@@ -228,10 +228,17 @@ var navmodule = {
   },
   exporttrending : function(req){    
     console.log(base64.src)    
+    
     $.ajax({
       type: "POST",
-      url: "/spreadsheet/basic.php?"+ req,
-      data: {img: base64.src},
+      url: "/spreadsheet/basic.php?"+ req +"&Channel="+exportchannelname+"&Platform="+exportplatform,
+      data: {
+        img: base64.src,
+        Channellist : $('#channelgroup option:selected').text(),
+        PeriodType : $('#periodtype option:selected').text(),
+        Period : $('#customperiod').val(),
+        filterval : filterval,
+      },
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
       success: function(result){
         console.log(result)
