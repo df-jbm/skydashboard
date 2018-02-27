@@ -37,6 +37,7 @@ var channelreq = [];
 var programmereq = [];
 var trendingreq = [];
 var startloading = 0;
+var channelplatforms = [];
 var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
 var base64 = '';
 var exportchannelname = '';
@@ -134,6 +135,11 @@ var navmodule = {
           }
 
           console.log(request)
+          $.get(window.location.href + "platforms",{}, function(platforms){
+            for(var i in platforms){
+              channelplatforms.push({'PlatFormID':platforms[i].PlatFormID,'PlatFormName':platforms[i].PlatFormName})
+            }
+          });
           navmodule.scrollproperty()
           return $.get(window.location.href + "channelperformance", request);
 
@@ -318,12 +324,10 @@ var navmodule = {
       ChannelID = _.uniq(ChannelID);
       //var Formname = _.uniq(PlatformName);
       var Formname = [];
-      exportrendingplatform = [];
-      for(var i in PlatformName1){
-        if($.inArray(PlatformName1[i].PlatFormName, Formname) == -1){
-          Formname.push(PlatformName1[i].PlatFormName)
-          exportrendingplatform.push({'id': PlatformName1[i].id, 'name': PlatformName1[i].PlatFormName})
-        }
+      exportrendingplatform = [];      
+      for(var i in channelplatforms){
+        Formname.push(channelplatforms[i].PlatFormName)
+        exportrendingplatform.push({'id': channelplatforms[i].PlatFormID, 'name': channelplatforms[i].PlatFormName})
       }
       console.log(Formname)
       var PerformanceChannels = []
