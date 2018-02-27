@@ -236,7 +236,7 @@ var navmodule = {
         img: base64.src,
         Channellist : $('#channelgroup option:selected').text(),
         PeriodType : $('#periodtype option:selected').text(),
-        Period : $('#customperiod').val(),
+        Periodnum : $('#customperiod').val(),
         filterval : filterval,
       },
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
