@@ -228,7 +228,7 @@ var navmodule = {
     })
   },
   exporttrending : function(req){    
-    console.log(base64.src)    
+    console.log(exportrendingplatform)    
     var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
     $.ajax({
       type: "POST",
