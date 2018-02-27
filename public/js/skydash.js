@@ -193,7 +193,7 @@ var navmodule = {
       var dt = new Date();
       var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
       var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
-      expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text(),"Search, "+ filterval,""]);
+      expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text()+ ": " + $('#customperiod').val(),"Search, "+ filterval,""]);
       expotRows.push(["Channel Name","Platform Name","000"]);
       for (var i in data) {
           if(data[i].ChannelID != -1){
