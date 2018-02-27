@@ -300,28 +300,15 @@ var navmodule = {
     if(data.length > 0){
       console.log(data)
       var ChannelID = [];
-      var PlatformName = [],PlatformName1 = [];
+      var PlatformName = [];
       for(var i in data){
         var TempChannelID = ChannelGroupID != 2000 ? data[i].ChannelID : data[i].ChannelGroupID;
         ChannelID.push(TempChannelID)
         PlatformName1.push({id : data[i].PlatFormID, PlatFormName : data[i].PlatFormName})
         PlatformName.push(data[i].PlatFormName)
-        var legendvalue = false;
-        for (var x = 0; x < trendinglegend.length; x++) {
-          if (trendinglegend[x].PlatFormID == data[i].PlatFormID) {
-            legendvalue = true;            
-            break;                      
-          }
-        }
-        if(legendvalue == false){
-          trendinglegend.push({PlatFormID:data[i].PlatFormID,PlatFormName : data[i].PlatFormName})
-        }              
+        var legendvalue = false;                     
       }
       console.log(trendinglegend)
-      PlatformName1.sort(function(a, b) {
-          return a.id - b.id;
-      });
-      console.log(PlatformName1)
       ChannelID = _.uniq(ChannelID);
       //var Formname = _.uniq(PlatformName);
       var Formname = [];
@@ -330,6 +317,7 @@ var navmodule = {
       for(var i in channelplatforms){
         Formname.push(channelplatforms[i].PlatFormName)
         exportrendingplatform.push({'id': channelplatforms[i].PlatFormID, 'name': channelplatforms[i].PlatFormName})
+        trendinglegend.push({PlatFormID:channelplatforms[i].PlatFormID,PlatFormName : channelplatforms[i].PlatFormName})
       }
       console.log(Formname)
       var PerformanceChannels = []
