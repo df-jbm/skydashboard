@@ -830,8 +830,9 @@ var navmodule = {
         var dataseries = []
         var PlatFormIDnum = [];
         var num = $('#periodtype').val()
-        for(var i in data){
-          PlatFormIDnum.push(data[i].PlatFormID)
+
+        for(var i in channelplatforms){
+          PlatFormIDnum.push(channelplatforms[i].PlatFormID)
         }
         switch(num){
           case '1' :
@@ -879,7 +880,7 @@ var navmodule = {
           axislabel.push(uniqLabel[i])
         }
 
-        var PFormIDs = _.uniq(PlatFormIDnum)
+        var PFormIDs = PlatFormIDnum;
         var graphlegend = [];
         for(var i in PFormIDs){
           for(var x in trendinglegend){
