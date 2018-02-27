@@ -695,7 +695,7 @@ var navmodule = {
         '<td colspan="'+ colspan +'">'+ form +'&nbsp;&nbsp;&nbsp;&nbsp;<img height="30" src="logo/'+ cname.replace('+', '-') +'.png"></td>'+
       '</tr>'+
       '<tr>'+
-        '<td width="300"><small>Programme Title</small></td>'+
+        '<td width="200"><small>Programme Title</small></td>'+
         headstarttime +
         '<td><small>Sky 360 BMI</small></td>'+
         '<td id="sort" value="2"><small># linear runs</small>'+ sortCount +'</td>' + 
