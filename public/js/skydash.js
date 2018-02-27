@@ -881,14 +881,23 @@ var navmodule = {
 
         var PFormIDs = PlatFormIDnum;
         var graphlegend = [];
-        for(var i in PFormIDs){
-          for(var x in trendinglegend){
-            if(trendinglegend[x].PlatFormID == PFormIDs[i]){
+        if(PFormID == -1){
+          for(var i in PFormIDs){
+            for(var x in trendinglegend){            
+              if(trendinglegend[x].PlatFormID == PFormIDs[i]){
+                graphlegend.push(trendinglegend[x].PlatFormName)
+                break;
+              }
+            }
+          }
+        }else{
+          for(var x in trendinglegend){            
+            if(trendinglegend[x].PlatFormID == PFormID){
               graphlegend.push(trendinglegend[x].PlatFormName)
               break;
             }
           }
-        }
+        }        
         console.log(graphlegend)
 
         if(PFormIDs.length == 1){
