@@ -31,6 +31,8 @@ var TrendingFilter = '';
 var channelgroupid = 0;
 var channelgroupid = 0;
 var trendinglegend = [];
+var filteractivechannel = 0;
+var filteractiveplatform = 0;
 var channelreq = [];
 var programmereq = [];
 var trendingreq = [];
@@ -603,6 +605,8 @@ var navmodule = {
 
             activeChannel = $(this).attr("id");
             activePlatForm = $(this).attr("value")
+            filteractivechannel = activeChannel;
+            filteractiveplatform = activePlatForm;
             if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
               sort = 1
             }else{
@@ -1881,8 +1885,8 @@ $(function(){
         })
       }else{
         filterexist = false;
-        activeChannel = 0;
-        activePlatForm = 0;
+        activeChannel = filteractivechannel;
+        activePlatForm = filteractiveplatform;
         navmodule.ChannelPerformanceRequest()
         $('.dropdown-content').hide();
         $('#list').html('')
@@ -1894,8 +1898,8 @@ $(function(){
   $('#emptyfilter').click(function(){
     $('#filterbmi').val('')
     filterexist = false;
-    activeChannel = 0;
-    activePlatForm = 0;
+    activeChannel = filteractivechannel;
+    activePlatForm = filteractiveplatform;
     navmodule.ChannelPerformanceRequest()
     $('.dropdown-content').hide();
     $('#list').html('')
