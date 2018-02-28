@@ -232,7 +232,7 @@ body main .row #performance-content .card .card-body .table-responsive{
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
      /* IE10+ CSS styles go here */
-  img, table img, table tr th img{
+  img, table img, table tr th img, table tr td img{
     -webkit-filter: blur(3px);
     filter: blur(3px);
     -ms-interpolation-mode: bicubic;
