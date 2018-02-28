@@ -234,7 +234,8 @@ var navmodule = {
       expotRows.push(["BMICode","ProgrammeTitle","# Linear runs","000"]);
       
       for (var i in data) {
-        expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,Number(data[i].Sum000).toFixed(2)]);
+        var sum000val = Number(data[i].Sum000).toFixed(2).replace(/\./g, ',');
+        expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,sum000val]);
       }
       
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ProgrammePerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
