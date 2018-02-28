@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarsExample09">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item navleft">
-            <img class="dblogo" height="50" src="brand/sky.png" alt="logo">
+            <img class="dblogo" height="50" src="brand/sky.jpg" alt="logo">
           </li>
         </ul>
       </div>
