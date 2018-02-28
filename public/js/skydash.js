@@ -243,7 +243,7 @@ var navmodule = {
     })
   },
   exporttrending : function(req){    
-    console.log(exportrendingplatform)    
+    console.log(req)    
     var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
     $.ajax({
       type: "POST",
