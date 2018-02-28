@@ -880,6 +880,7 @@ var navmodule = {
         }
 
         var PFormIDs = _.uniq(PlatFormIDnum)
+        PlatFormIDnum.sort(function(a, b){return a-b});
         var graphlegend = [];
         for(var i in PFormIDs){
           for(var x in trendinglegend){

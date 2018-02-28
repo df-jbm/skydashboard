@@ -235,6 +235,7 @@ body main .row #performance-content .card .card-body .table-responsive{
   img{
     -webkit-filter: blur(3px);
     filter: blur(3px);
+    -ms-interpolation-mode: bicubic;
   }  
   #navbarsExample10{
     padding-left: 0px;
