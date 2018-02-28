@@ -1664,7 +1664,7 @@ $(function(){
       $(this).attr('value','shown')
       $(this).html('Minimize Export Module')            
       $('#exportcontainer').animate({
-        width : '700px',
+        width : '300px',
         height : '300px',
         right : '15px',
         bottom : '15px'      
