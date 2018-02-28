@@ -63,7 +63,7 @@ var navmodule = {
           selectBox.options.add(new Option(data[i].ChannelGroupName,  data[i].ChannelGroupID));
         }
         channelgroupid = $('#channelgroup').val()
-        $('#'+formID).val(1000)
+        $('#'+formID).val(2000)
         /*
         ===== Ajax request for period range
         ===== initialize period range after the request
