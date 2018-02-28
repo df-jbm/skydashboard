@@ -66,7 +66,7 @@
             <label for="channelgroup" class="small col-form-label  align-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
           </li>
           <li class="nav-item">
-            <label for="barnum" class="small col-form-label  align-center">Graph: # of Points</label>
+            <label for="barnum" class="small col-form-label  align-center">Graph: # of Points (Maximum 13)</label>
             <input type="text" id="barnum" class="form-control form-control-sm" value="13">
           </li>
           <li class="nav-item">
