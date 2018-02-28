@@ -208,7 +208,11 @@ var navmodule = {
       for (var i in data) {
           var sum000val = Number(data[i].Sum000).toFixed(2).replace(/\./g, ',');
           if(data[i].ChannelID != -1){
-            expotRows.push([data[i].ChannelName,data[i].PlatFormName,sum000val]);
+            if($('#channelgroup').val() != 2000){
+              expotRows.push([data[i].ChannelName,data[i].PlatFormName,sum000val]);  
+            }else{              
+              expotRows.push([data[i].ChannelGroupName,data[i].PlatFormName,sum000val]);  
+            }
           }else{
             expotRows.push(["Total",data[i].PlatFormName,sum000val]);
           }          
