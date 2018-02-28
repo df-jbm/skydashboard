@@ -206,10 +206,11 @@ var navmodule = {
       expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text()+ ": " + $('#customperiod').val(),"Search, "+ filterval,""]);
       expotRows.push(["Channel Name","Platform Name","000"]);
       for (var i in data) {
+          var sum000val = Number(data[i].Sum000).toFixed(2).replace(/\./g, ',');
           if(data[i].ChannelID != -1){
-            expotRows.push([data[i].ChannelName,data[i].PlatFormName,Number(data[i].Sum000).toFixed(2)]);
+            expotRows.push([data[i].ChannelName,data[i].PlatFormName,sum000val]);
           }else{
-            expotRows.push(["Total",data[i].PlatFormName,Number(data[i].Sum000).toFixed(2)]);
+            expotRows.push(["Total",data[i].PlatFormName,sum000val]);
           }          
       }
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ChannelPerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);
