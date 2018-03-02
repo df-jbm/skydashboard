@@ -1632,7 +1632,7 @@ $(function(){
       buttonImageOnly: true,
       buttonText: "Select date",
       dateFormat: "ddmmy",
-      weekStart : 1,
+      firstDay : 1,
       onSelect: function(dateText) {
         var char = $('#customperiod').val()
         clearTimeout(wto);
