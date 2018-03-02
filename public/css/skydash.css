@@ -163,6 +163,7 @@ body main .row #performance-content .card .card-body .table-responsive{
 .ui-datepicker-trigger{
   height: 20px;
   width: auto;
+  float: left;
 }
 #bargraph{
   height: 100%;
