@@ -52,7 +52,7 @@
             </select>
           </li>
           <li class="nav-item row" id="periodwrapper">
-            <label for="customperiod" class="small col-form-label  align-center">&nbsp;</label>
+            <label for="customperiod" class="small col-form-label  align-center">&nbsp;</label><br/>
             <input type="text" id="customperiod" class="form-control form-control-sm">
           </li>          
           <li class="nav-item">
