@@ -155,6 +155,8 @@ body main .row #performance-content .card .card-body .table-responsive{
 
 #customperiod{
   width : 100px;
+  position: relative;
+  z-index: 100000;
 }
 #bargraph{
   height: 100%;
