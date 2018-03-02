@@ -1626,7 +1626,12 @@ $(function(){
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  $( "#customperiod" ).datepicker();
+  $("#customperiod").datepicker({
+      showOn: "button",
+      buttonImage: "/images/favicon.ico",
+      buttonImageOnly: true,
+      buttonText: "Select date"
+  });
   navmodule.initnav($('#channelgroup').val(),'channelgroup',$('#periodtype').val())
   /*
   ===== Bind trigger for channelgroup
