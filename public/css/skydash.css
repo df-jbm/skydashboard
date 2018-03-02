@@ -155,10 +155,6 @@ body main .row #performance-content .card .card-body .table-responsive{
 #periodwrapper{  
   width: 150px;
 }
-#periodwrapper.row{
-  height: 30px;
-  padding-left: 5px;
-}
 #periodwrapper.row.form-group{
   padding-bottom: 0px;
 }
