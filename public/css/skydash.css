@@ -161,7 +161,7 @@ body main .row #performance-content .card .card-body .table-responsive{
   z-index: 100000;
 }
 .ui-datepicker-trigger{
-  height: 80px;
+  height: 20px;
   width: auto;
 }
 #bargraph{
