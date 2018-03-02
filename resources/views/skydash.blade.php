@@ -51,9 +51,11 @@
               <option value="5">Year</option>-->
             </select>
           </li>
-          <li class="nav-item row" id="periodwrapper">
-            <label for="customperiod" class="small col-form-label  align-center">&nbsp;</label><br/>
-            <input type="text" id="customperiod" class="form-control form-control-sm">
+          <li class="nav-item" id="periodwrapper">
+            <label for="customperiod" class="small col-form-label  align-center">&nbsp;</label>
+            <div class="row">
+              <input type="text" id="customperiod" class="form-control form-control-sm">
+            </div>                      
           </li>          
           <li class="nav-item">
             <label for="prev" class="small col-form-label  align-center">&nbsp;</label><br/>
