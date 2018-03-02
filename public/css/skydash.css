@@ -168,6 +168,12 @@ body main .row #performance-content .card .card-body .table-responsive{
   height: 30px;
   width: auto;  
 }
+.ui-widget-content .ui-icon {
+background-image: url(../icon/ui-10.png);
+}
+.ui-widget-header .ui-icon {
+background-image: url(images/ui-icons_222222_256x240.png);
+}
 #bargraph{
   height: 100%;
   width: 98%;
