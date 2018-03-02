@@ -159,6 +159,7 @@ body main .row #performance-content .card .card-body .table-responsive{
   padding-bottom: 0px;
 }
 #customperiod{
+  margin-left: 10px;
   width : 100px;
   position: relative;
   z-index: 100000;
