@@ -1633,7 +1633,7 @@ $(function(){
       buttonText: "Select date",
       dateFormat: "ddmmy",
       onSelect: function(dateText) {
-        display("Selected date: " + dateText + "; input's current value: " + this.value);
+        alert("Selected date: " + dateText + "; input's current value: " + this.value);
       }
   });
   navmodule.initnav($('#channelgroup').val(),'channelgroup',$('#periodtype').val())
