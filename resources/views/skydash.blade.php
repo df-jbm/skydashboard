@@ -9,6 +9,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/jquery-ui.css" rel="stylesheet">
     <!-- <link href="css/style.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/skydash.css">
   </head>
