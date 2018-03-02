@@ -1626,6 +1626,7 @@ $(function(){
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
+  $( "#customperiod" ).datepicker();
   navmodule.initnav($('#channelgroup').val(),'channelgroup',$('#periodtype').val())
   /*
   ===== Bind trigger for channelgroup
