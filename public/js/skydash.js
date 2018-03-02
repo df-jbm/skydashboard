@@ -1628,7 +1628,7 @@ $(function(){
   });
   $("#customperiod").datepicker({
       showOn: "button",
-      buttonImage: "/images/datepicker.png",
+      buttonImage: "/icon/datepicker.png",
       buttonImageOnly: true,
       buttonText: "Select date",
       format: "ddmmyy"
