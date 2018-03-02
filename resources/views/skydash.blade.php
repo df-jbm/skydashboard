@@ -53,7 +53,9 @@
           </li>
           <li class="nav-item" id="periodwrapper">
             <label for="customperiod" class="small col-form-label  align-center">&nbsp;</label>
-            <input type="text" id="customperiod" class="form-control form-control-sm">            
+            <div class="row form-group">
+              <input type="text" id="customperiod" class="form-control form-control-sm">
+            </div>                      
           </li>          
           <li class="nav-item">
             <label for="prev" class="small col-form-label  align-center">&nbsp;</label><br/>
