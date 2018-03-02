@@ -152,9 +152,6 @@ body main .row #performance-content .card .card-body .table-responsive{
 
   background-color: #888;
 }
-#periodwrapper{
-  width: 200px;
-}
 #customperiod{
   width : 100px;
   position: relative;
@@ -162,8 +159,7 @@ body main .row #performance-content .card .card-body .table-responsive{
 }
 .ui-datepicker-trigger{
   height: 20px;
-  width: auto;
-  float: left;
+  width: auto;  
 }
 #bargraph{
   height: 100%;
