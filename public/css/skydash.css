@@ -152,6 +152,9 @@ body main .row #performance-content .card .card-body .table-responsive{
 
   background-color: #888;
 }
+#periodwrapper{
+  width: 150px;
+}
 #periodwrapper.row{
   height: 30px;
 }
