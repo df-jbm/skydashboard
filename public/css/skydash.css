@@ -158,6 +158,9 @@ body main .row #performance-content .card .card-body .table-responsive{
 #periodwrapper.row{
   height: 30px;
 }
+#periodwrapper.row.form-group{
+  padding-bottom: 0px;
+}
 #customperiod{
   width : 100px;
   position: relative;
