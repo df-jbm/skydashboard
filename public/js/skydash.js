@@ -1631,7 +1631,7 @@ $(function(){
       buttonImage: "icon/datepicker.png",
       buttonImageOnly: true,
       buttonText: "Select date",
-      dateFormat: "ddmmyy"
+      dateFormat: "ddmmy"
   });
   navmodule.initnav($('#channelgroup').val(),'channelgroup',$('#periodtype').val())
   /*
