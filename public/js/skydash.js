@@ -739,7 +739,7 @@ var navmodule = {
             $.get(window.location.href + "programmeperformance", scrollrequest, function(result){              
               var appendoutput = '';
               for(var i in result.data.data){
-                if(ShowFromTime){
+                if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
                   var FirstFromTime = '<td>'+ result.data.data[i].FirstFromTime  +'</td>';
                 }else{
                   var FirstFromTime = '';
