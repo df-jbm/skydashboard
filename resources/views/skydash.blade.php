@@ -66,7 +66,7 @@
             <button class="btn btn-light btn-sm" id="next"><i class="icon-arrow-right"></i></button>
           </li>
           <li class="nav-item" id="channelgroupholder">
-            <label for="channelgroup" class="small col-form-label  align-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <label for="channelgroup" class="small col-form-label  align-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
           </li>
           <li class="nav-item">
             <label for="barnum" class="small col-form-label  align-center">Graph: # of Points (Maximum 13)</label>
