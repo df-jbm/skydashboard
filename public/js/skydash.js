@@ -635,7 +635,7 @@ var navmodule = {
     }else{
       var filter = ''
     }  
-    page = 1;
+    var page = 1;
     request = {
       ChannelGroupID : ChGroupID,
       ChannelID : ChID,
@@ -721,8 +721,7 @@ var navmodule = {
       $('#programeperformance').scrollTop(0)
       $('#programeperformance').html(output)
       var last_page = data.data.last_page;
-      console.log(last_page)
-      var page = 1;
+      console.log(last_page)      
       page++;
       $('#programeperformance').bind('scroll', function(){
         if(page <= last_page){
