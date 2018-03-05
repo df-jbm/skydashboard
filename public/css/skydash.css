@@ -249,6 +249,7 @@ body main .row #performance-content .card .card-body .table-responsive{
     -webkit-filter: blur(3px);
     filter: blur(3px);
     -ms-interpolation-mode: bicubic;
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
   }  
   #navbarsExample10{
     padding-left: 0px;
