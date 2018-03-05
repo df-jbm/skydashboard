@@ -635,7 +635,7 @@ var navmodule = {
     }else{
       var filter = ''
     }  
-    page = 1;
+    var page = 1;
     request = {
       ChannelGroupID : ChGroupID,
       ChannelID : ChID,
