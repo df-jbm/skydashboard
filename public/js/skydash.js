@@ -739,7 +739,7 @@ var navmodule = {
             }           
             $.get(window.location.href + "programmeperformance", scrollrequest, function(result){              
               appendoutput = '';
-              console.log(scrollrequest)
+              console.log(result.data.data)
               for(var i in result.data.data){
                 if(ShowFromTime){
                   var FirstFromTime = '<td>'+ result.data.data[i].FirstFromTime  +'</td>';
