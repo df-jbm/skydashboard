@@ -723,7 +723,7 @@ var navmodule = {
       var last_page = data.data.last_page;
       console.log(last_page)
       page++;
-      $('#programeperformance').bind('scroll', function(){
+      $('#programeperformance').scroll(function(){
         if(page <= last_page){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){            
             var scrollrequest = {
