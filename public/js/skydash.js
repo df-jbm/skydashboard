@@ -547,7 +547,12 @@ var navmodule = {
           }
           exportchannelname = 'Global'
           exportplatform = 'Total'          
-          alert("3: CG"+ChGroupID+ " / CH" + ChID)          
+          alert("3: CG"+ChGroupID+ " / CH" + ChID)
+          if(ChGroupID == -1 && ChID == -1){
+            var ch = $('#channelgroup').val();
+          }else{
+            var ch = ChGroupID
+          }  
           navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
           navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
           delivered = true;
