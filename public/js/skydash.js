@@ -740,13 +740,14 @@ var navmodule = {
               var appendoutput = '';
               for(var i in result.data.data){
                 if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
-                  var FirstFromTime = '<td>'+ result.data.data[i].FirstFromTime  +'</td>';
+                  var FromTime = '<td>'+ result.data.data[i].FirstFromTime  +'</td>';
                 }else{
-                  var FirstFromTime = '';
+                  var FromTime = '';
                 }
+                console.log(FromTime)
                 appendoutput += '<tr id="'+ result.data.data[i].BMICode +'" value="'+ result.data.data[i].ProgrammeTitle +'">'+
                   '<td><span>'+ result.data.data[i].ProgrammeTitle+'</span></td>'+
-                  FirstFromTime +
+                  FromTime +
                   '<td>'+ result.data.data[i].BMICode +'</td>'+
                   '<td>'+ result.data.data[i].CNT +'</td>' + 
                   '<td>'+ Number(result.data.data[i].Sum000).toFixed(2) +'</td>'+              
