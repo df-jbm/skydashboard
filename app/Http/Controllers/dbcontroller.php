@@ -51,7 +51,7 @@ class dbcontroller extends Controller
   public function GetProgramePerformance(Request $r){    
     $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter,$r->InputSortID));        
     $page = Input::get('page', $r->page);
-    $paginate = 10;
+    $paginate = 100;
     $data = $this->GetProgramePerformance;
     $offSet = ($page * $paginate) - $paginate;
     $itemsForCurrentPage = array_slice($data, $offSet, $paginate, true);
