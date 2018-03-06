@@ -443,8 +443,7 @@ var navmodule = {
                   sort = 3
                 }            
                 exportchannelname = PerformanceChannels[i].ChannelName;
-                exportplatform = Formname[x];  
-                alert("1")                
+                exportplatform = Formname[x];                               
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName, Formname[x])
                 delivered = true;
@@ -485,8 +484,7 @@ var navmodule = {
                   sort = 1;
                 }else{
                   sort = 3;
-                }
-                alert("2")                
+                }                            
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,progchannelicon,formnameicon,sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,progchannelicon + " - " +formnameicon)
                 delivered = true;
@@ -546,15 +544,16 @@ var navmodule = {
             sort = 3
           }
           exportchannelname = 'Global'
-          exportplatform = 'Total'          
-          alert("3: CG"+ChGroupID+ " / CH" + ChID)
-          if(ChGroupID == -1 && ChID == -1){            
-            navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
-            navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
+          exportplatform = 'Total'                    
+          if(ChGroupID == -1 && ChID == -1){              
+            var cg =  $('#channelgroup').val();
+            var ch = -1;                
           }else{
-            navmodule.init_ProgrammePerformance(ChGroupID,ChID,-1,PtypeID,Prange,channeliconname,formaname,sort)
-            navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,-1,channeliconname + " - " +formaname)
+            var cg =  ChGroupID
+            var ch = ChID            
           }            
+          navmodule.init_ProgrammePerformance(cg,ch,-1,PtypeID,Prange,channeliconname,formaname,sort)
+          navmodule.init_trending(-1,cg,ch,PtypeID,Prange,-1,channeliconname + " - " +formaname)
           delivered = true;
           var activeTotalCell = 'active rounded'
         }else{
