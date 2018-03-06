@@ -555,8 +555,8 @@ var navmodule = {
             var cg =  $('#channelgroup').val();
             var ch = -1;                
           }else{
-            channeliconname = 'Global';
-            formaname = Formname[x];  
+            var channeliconname = PerformanceChannels[i].ChannelName;
+            var formaname = 'Total';  
             var cg =  ChGroupID
             var ch = ChID            
           }            
