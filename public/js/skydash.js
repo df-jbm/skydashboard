@@ -17,6 +17,9 @@ var clickedCell = 0;
 var sort = 'starttime';
 var WPeriod = '';
 var wto;
+var page = 0;
+var last_page = 0;
+var scrollrequest = {};
 var filterexist = false;
 var box = '';
 var listnum = 0;
@@ -642,7 +645,7 @@ var navmodule = {
     }else{
       var filter = ''
     }  
-    var page = 1;
+    page = 1;
     request = {
       ChannelGroupID : ChGroupID,
       ChannelID : ChID,
@@ -727,51 +730,19 @@ var navmodule = {
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
       $('#programeperformance').html(output)
-      var last_page = data.data.last_page;
+      last_page = data.data.last_page;
       console.log(last_page)
       page++;
-      var appendoutput = '';
-      var canRun = true;
-      $('#programeperformance').scroll(function(){
-        if(page <= last_page){
-          if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight && canRun == true){   
-            canRun = false;
-            var scrollrequest = {
-              ChannelGroupID : ChGroupID,
-              ChannelID : ChID,
-              PlatFormID : PFormID,
-              PeriodTypeID : PtypeID,
-              Period : Prange,
-              Filter : filter,
-              InputSortID : SumSort,
-              page : page,
-            }           
-            $.get(window.location.href + "programmeperformance", scrollrequest, function(result){              
-              appendoutput = '';
-              console.log(result.data.data)
-              for(var i in result.data.data){
-                if(ShowFromTime){
-                  var FirstFromTime = '<td>'+ result.data.data[i].FirstFromTime  +'</td>';
-                }else{
-                  var FirstFromTime = '';
-                }
-                appendoutput += '<tr id="'+ result.data.data[i].BMICode +'" value="'+ result.data.data[i].ProgrammeTitle +'">'+
-                  '<td><span>'+ result.data.data[i].ProgrammeTitle+'</span></td>'+
-                  FirstFromTime +
-                  '<td>'+ result.data.data[i].BMICode +'</td>'+
-                  '<td>'+ result.data.data[i].CNT +'</td>' + 
-                  '<td>'+ Number(result.data.data[i].Sum000).toFixed(2) +'</td>'+              
-                '</tr>';                
-              }
-              $('#programeperformance tbody').append(appendoutput)
-              appendoutput = '';
-              page++;
-            }); 
-            canRun = true      
-          }
-        }          
-      })
-
+      scrollrequest = {
+        ChannelGroupID : ChGroupID,
+        ChannelID : ChID,
+        PlatFormID : PFormID,
+        PeriodTypeID : PtypeID,
+        Period : Prange,
+        Filter : filter,
+        InputSortID : SumSort,
+        page : page,
+      }                             
 
       $('#table-programmeperformance #sort').each(function(){
         $(this).click(function(){
@@ -1638,6 +1609,33 @@ $(function(){
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
+  $('#programeperformance').scroll(function(){
+    var appendoutput = '';
+    if(page <= last_page){
+      if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){                           
+        $.get(window.location.href + "programmeperformance", scrollrequest, function(result){                            
+          console.log(result.data.data)
+          for(var i in result.data.data){
+            if(ShowFromTime){
+              var FirstFromTime = '<td>'+ result.data.data[i].FirstFromTime  +'</td>';
+            }else{
+              var FirstFromTime = '';
+            }
+            appendoutput += '<tr id="'+ result.data.data[i].BMICode +'" value="'+ result.data.data[i].ProgrammeTitle +'">'+
+              '<td><span>'+ result.data.data[i].ProgrammeTitle+'</span></td>'+
+              FirstFromTime +
+              '<td>'+ result.data.data[i].BMICode +'</td>'+
+              '<td>'+ result.data.data[i].CNT +'</td>' + 
+              '<td>'+ Number(result.data.data[i].Sum000).toFixed(2) +'</td>'+              
+            '</tr>';                
+          }
+          $('#programeperformance tbody').append(appendoutput)
+          appendoutput = '';
+          page++;
+        });             
+      }
+    }          
+  })
   $("#customperiod").datepicker({
       showOn: "button",
       buttonImage: "icon/datepicker.png",
