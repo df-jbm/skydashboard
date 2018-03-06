@@ -548,8 +548,8 @@ var navmodule = {
           exportchannelname = 'Global'
           exportplatform = 'Total'
           alert("3")                
-          navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
-          navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
+          navmodule.init_ProgrammePerformance(ChannelGroupID,-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
+          navmodule.init_trending(-1,ChannelGroupID,-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
           delivered = true;
           var activeTotalCell = 'active rounded'
         }else{
