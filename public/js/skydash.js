@@ -443,7 +443,8 @@ var navmodule = {
                   sort = 3
                 }            
                 exportchannelname = PerformanceChannels[i].ChannelName;
-                exportplatform = Formname[x];                  
+                exportplatform = Formname[x];  
+                alert("1")                
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,PerformanceChannels[i].ChannelName,Formname[x],sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,PerformanceChannels[i].ChannelName, Formname[x])
                 delivered = true;
@@ -485,6 +486,7 @@ var navmodule = {
                 }else{
                   sort = 3;
                 }
+                alert("2")                
                 navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,progchannelicon,formnameicon,sort)
                 navmodule.init_trending(-1,ChGroupID,ChID,PtypeID,Prange,PFormID,progchannelicon + " - " +formnameicon)
                 delivered = true;
@@ -545,6 +547,7 @@ var navmodule = {
           }
           exportchannelname = 'Global'
           exportplatform = 'Total'
+          alert("3")                
           navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
           navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
           delivered = true;
@@ -769,7 +772,7 @@ var navmodule = {
         })
       })
       $('#table-programmeperformance tr').each(function(){
-        var ChannelGroupID = ChGroupID;
+        var ChannelGroupID = $('#channelgroup').val();
         $(this).click(function(){
           if($(this).attr("id")!= undefined){
             $('#table-programmeperformance tr').each(function(){
