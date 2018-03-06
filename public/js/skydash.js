@@ -481,8 +481,6 @@ var navmodule = {
                   exportchannelname = 'Global';
                   exportplatform = Formname[x];
                 }else{
-                  exportchannelname = PerformanceChannels[i].ChannelName;
-                  exportplatform = Formname[x]; 
                   var progchannelicon = PerformanceChannels[i].ChannelName;
                   var formnameicon = Formname[x];
                 }
@@ -558,6 +556,8 @@ var navmodule = {
             var cg =  $('#channelgroup').val();
             var ch = -1;                
           }else{
+            exportchannelname = PerformanceChannels[i].ChannelName;
+            exportplatform = Formname[x];  
             var cg =  ChGroupID
             var ch = ChID            
           }            
