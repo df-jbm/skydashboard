@@ -764,6 +764,7 @@ var navmodule = {
                 '</tr>';                
               }
               $('#programeperformance tbody').append(appendoutput)
+              appendoutput = '';
             }).done(function() {
               page++;
             })       
