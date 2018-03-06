@@ -553,8 +553,8 @@ var navmodule = {
           }else{
             var ch = ChGroupID
           }  
-          navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
-          navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
+          navmodule.init_ProgrammePerformance(ch,-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
+          navmodule.init_trending(-1,ch,-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
           delivered = true;
           var activeTotalCell = 'active rounded'
         }else{
