@@ -732,6 +732,9 @@ var navmodule = {
       page++;
       var appendoutput = '';
       $('#programeperformance').scroll(function(){
+        if ($(window).data('ajax_in_progress') === true)
+            return;
+          
         if(page <= last_page){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){            
             var scrollrequest = {
