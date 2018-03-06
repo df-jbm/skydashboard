@@ -1967,9 +1967,7 @@ $(function(){
   })
   $('#emptyfilter').click(function(){
     $('#filterbmi').val('')
-    filterexist = false;
-    activeChannel = filteractivechannel;
-    activePlatForm = filteractiveplatform;
+    filterexist = false;    
     navmodule.ChannelPerformanceRequest()
     $('.dropdown-content').hide();
     $('#list').html('')
