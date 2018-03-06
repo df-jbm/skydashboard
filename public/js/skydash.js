@@ -731,12 +731,11 @@ var navmodule = {
       console.log(last_page)
       page++;
       var appendoutput = '';
+      var canRun = true;
       $('#programeperformance').scroll(function(){
-        if ($(window).data('ajax_in_progress') === true)
-            return;
-          
         if(page <= last_page){
-          if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){            
+          if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight && canRun == true){   
+            canRun = false;
             var scrollrequest = {
               ChannelGroupID : ChGroupID,
               ChannelID : ChID,
