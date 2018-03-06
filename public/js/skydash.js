@@ -542,8 +542,7 @@ var navmodule = {
             var Prange = navmodule.externalProgdate($('#customperiod').val())
           }
           
-          var channeliconname = 'Global';
-          var formaname = 'Total';
+          
           if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
             sort = 1
           }else{
@@ -551,13 +550,13 @@ var navmodule = {
           }
                              
           if(ChGroupID == -1 && ChID == -1){  
-            exportchannelname = 'Global'
-            exportplatform = 'Total'             
+            var channeliconname = 'Global';
+            var formaname = 'Total';             
             var cg =  $('#channelgroup').val();
             var ch = -1;                
           }else{
-            exportchannelname = PerformanceChannels[i].ChannelName;
-            exportplatform = Formname[x];  
+            channeliconname = PerformanceChannels[i].ChannelName;
+            formaname = Formname[x];  
             var cg =  ChGroupID
             var ch = ChID            
           }            
