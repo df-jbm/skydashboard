@@ -769,7 +769,7 @@ var navmodule = {
         })
       })
       $('#table-programmeperformance tr').each(function(){
-        var ChannelGroupID = $('#channelgroup').val();
+        var ChannelGroupID = ChGroupID;
         $(this).click(function(){
           if($(this).attr("id")!= undefined){
             $('#table-programmeperformance tr').each(function(){
@@ -1967,7 +1967,9 @@ $(function(){
   })
   $('#emptyfilter').click(function(){
     $('#filterbmi').val('')
-    filterexist = false;    
+    filterexist = false;
+    activeChannel = filteractivechannel;
+    activePlatForm = filteractiveplatform;
     navmodule.ChannelPerformanceRequest()
     $('.dropdown-content').hide();
     $('#list').html('')
