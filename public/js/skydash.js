@@ -723,6 +723,7 @@ var navmodule = {
       var last_page = data.data.last_page;
       console.log(last_page)
       page++;
+      var appendoutput = '';
       $('#programeperformance').scroll(function(){
         if(page <= last_page){
           if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){            
@@ -737,7 +738,7 @@ var navmodule = {
               page : page,
             }           
             $.get(window.location.href + "programmeperformance", scrollrequest, function(result){              
-              var appendoutput = '';
+              appendoutput = '';
               console.log(scrollrequest)
               for(var i in result.data.data){
                 if(ShowFromTime){
