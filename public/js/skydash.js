@@ -765,10 +765,9 @@ var navmodule = {
               }
               $('#programeperformance tbody').append(appendoutput)
               appendoutput = '';
-            }).done(function() {
               page++;
-            }) 
-            canRun = true;      
+            }); 
+            canRun = true      
           }
         }          
       })
