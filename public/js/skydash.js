@@ -1621,7 +1621,7 @@ $(function(){
       if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){                           
         $.get(window.location.href + "programmeperformance", scrollrequest, function(result){                            
           console.log(result.data.data)
-          var ShowFromTime =$('#periodtype').val() == 1 && scg == -1 && sch != -1 && scp == 1;     ]   
+          var ShowFromTime =$('#periodtype').val() == 1 && scg == -1 && sch != -1 && scp == 1;      
           for(var i in result.data.data){
             if(ShowFromTime){
               var FirstFromTime = '<td>'+ result.data.data[i].FirstFromTime  +'</td>';
