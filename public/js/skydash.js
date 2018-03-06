@@ -46,6 +46,9 @@ var base64 = '';
 var exportchannelname = '';
 var exportplatform = '';
 var exportrendingplatform = []; 
+var scg = "";
+var sch = ""; 
+var scp = "";
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -712,7 +715,10 @@ var navmodule = {
         '<td id="sort" value="3"><small>000</small>'+ sort000 +'</td>'+          
       '</tr></thead><tbody>';
       
-      var ShowFromTime =$('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1;      
+      var ShowFromTime =$('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1; 
+      scg = ChGroupID;
+      sch = ChID;
+      scp =PFormID;     
       for(var i in data.data.data){
         if(ShowFromTime){
           var FirstFromTime = '<td>'+ data.data.data[i].FirstFromTime  +'</td>';
@@ -1615,6 +1621,7 @@ $(function(){
       if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){                           
         $.get(window.location.href + "programmeperformance", scrollrequest, function(result){                            
           console.log(result.data.data)
+          var ShowFromTime =$('#periodtype').val() == 1 && scg == -1 && sch != -1 && scp == 1;     ]   
           for(var i in result.data.data){
             if(ShowFromTime){
               var FirstFromTime = '<td>'+ result.data.data[i].FirstFromTime  +'</td>';
