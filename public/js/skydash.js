@@ -546,8 +546,8 @@ var navmodule = {
             sort = 3
           }
           exportchannelname = 'Global'
-          exportplatform = 'Total'
-          alert("3")                
+          exportplatform = 'Total'          
+          alert("3: "+ChGroupID)  
           navmodule.init_ProgrammePerformance($('#channelgroup').val(),-1,-1,PtypeID,Prange,channeliconname,formaname,sort)
           navmodule.init_trending(-1,$('#channelgroup').val(),-1,PtypeID,Prange,-1,channeliconname + " - " +formaname)
           delivered = true;
