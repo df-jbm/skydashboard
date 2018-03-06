@@ -767,7 +767,8 @@ var navmodule = {
               appendoutput = '';
             }).done(function() {
               page++;
-            })       
+            }) 
+            canRun = true;      
           }
         }          
       })
