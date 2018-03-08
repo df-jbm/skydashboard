@@ -219,7 +219,7 @@ var navmodule = {
               expotRows.push([data[i].ChannelName,data[i].PlatFormName,sum000val]);
               
               if($.inArray(data[i].ChannelName, totalchannels) == -1){
-                totalchannels.push({ channel : data[i].ChannelName })
+                totalchannels.push(data[i].ChannelName)
               }  
             
             }else{              
@@ -227,16 +227,15 @@ var navmodule = {
               expotRows.push([data[i].ChannelGroupName,data[i].PlatFormName,sum000val]);
 
               if($.inArray(data[i].ChannelGroupName, totalchannels) == -1){
-              totalchannels.push({ channel : data[i].ChannelGroupName })
+                totalchannels.push(data[i].ChannelGroupName)
               }   
             }
           }else{
             expotRows.push(["Total",data[i].PlatFormName,sum000val]);
-          }
-                    
+          }                  
       }
       for(var i in totalchannels){
-        expotRows.push([totalchannels[i].channel,"Total"]);
+        expotRows.push([totalchannels[i],"Total"]);
       }
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ChannelPerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);
       $('#dlchannel').html("Toogle button to download again.")
