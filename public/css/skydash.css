@@ -136,6 +136,7 @@ body main .row #performance-content .card .card-body{
 body main .row #performance-content .card .card-body .table-responsive{
   overflow-x: hidden;
   overflow-y: auto;
+  z-index: 10000;
   padding: 0;
 }
 .table-responsive::-webkit-scrollbar-track
