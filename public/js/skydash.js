@@ -237,7 +237,7 @@ var navmodule = {
       for(var i in totalchannels){
         var totalfigure = 0;
         for(var d in data){         
-          if(data[i].ChannelID != -1){
+          if(data[d].ChannelID != -1){
             if(totalchannels[i] == data[d].ChannelName){
               totalfigure += parseFloat(data[d].Sum000)
               console.log(data[d].Sum000)
