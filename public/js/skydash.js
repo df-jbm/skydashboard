@@ -236,15 +236,14 @@ var navmodule = {
       }
       for(var i in totalchannels){
         var totalfigure = 0;
-        for(var d in data){
-          var sum000val = Number(data[i].Sum000).toFixed(2).replace(/\./g, ',');
+        for(var d in data){         
           if(data[i].ChannelID != -1){
             if(totalchannels[i] == data[d].ChannelName){
-              totalfigure = totalfigure + sum000val;
+              totalfigure = Number(totalfigure + data[i].Sum000).toFixed(2).replace(/\./g, ',');
             }
           }else{
             if(totalchannels[i] == data[d].ChannelGroupName){
-              totalfigure = totalfigure + sum000val;
+              totalfigure = Number(totalfigure + data[i].Sum000).toFixed(2).replace(/\./g, ',');
             }
           }
         }
