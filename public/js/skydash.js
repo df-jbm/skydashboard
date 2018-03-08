@@ -240,14 +240,15 @@ var navmodule = {
           if(data[i].ChannelID != -1){
             if(totalchannels[i] == data[d].ChannelName){
               totalfigure += parseFloat(data[d].Sum000)
+              console.log(data[d].Sum000)
             }
           }else{
             if(totalchannels[i] == data[d].ChannelGroupName){
               totalfigure += parseFloat(data[d].Sum000)
-
+              console.log(data[d].Sum000)
             }
           }
-          console.log(totalfigure)
+          //console.log(totalfigure)
         }
         expotRows.push([totalchannels[i],"Total",totalfigure]);
       }
