@@ -211,7 +211,7 @@ var navmodule = {
       var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
       expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text()+ ": " + $('#customperiod').val(),"Search, "+ filterval,""]);
       expotRows.push(["Channel Name","Platform Name","000"]);
-      if(data[i].ChannelID != -1){
+      if(data[0].ChannelID != -1){
         var totalchannel = data[0].ChannelName;  
       }else{
         var totalchannel = data[0].ChannelGroupName; 
