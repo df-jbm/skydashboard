@@ -211,7 +211,12 @@ var navmodule = {
       var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
       expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text()+ ": " + $('#customperiod').val(),"Search, "+ filterval,""]);
       expotRows.push(["Channel Name","Platform Name","000"]);
-      var totalchannel = data[0].ChannelName;
+      if(data[i].ChannelID != -1){
+        var totalchannel = data[0].ChannelName;  
+      }else{
+        var totalchannel = data[0].ChannelGroupName; 
+      }
+      
       var totalchannelfigure = 0;
       var totalchannelobj = []
       for (var i in data) {
@@ -229,7 +234,15 @@ var navmodule = {
               }
 
             }else{              
-              expotRows.push([data[i].ChannelGroupName,data[i].PlatFormName,sum000val]);  
+              expotRows.push([data[i].ChannelGroupName,data[i].PlatFormName,sum000val]); 
+
+              if(totalchannel == data[i].ChannelGroupName){
+                totalchannelfigure += sum000val;
+              }else{
+                totalchannelobj.push({channel : totalchannel, label : "Total", figure : totalchannelfigure});
+                totalchannel = data[i].ChannelGroupName;
+                totalchannelfigure = 0;
+              } 
             }
           }else{
             expotRows.push(["Total",data[i].PlatFormName,sum000val]);
