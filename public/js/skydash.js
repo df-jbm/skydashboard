@@ -266,17 +266,11 @@ var navmodule = {
       var totaltotalfigure = 0;
       for(var d in data){         
         if(data[d].ChannelID != -1){
-          if(data[d].ChannelName == ""){
-            totaltotalfigure += parseFloat(data[d].Sum000)
-            console.log(data[d].Sum000)
-          }
+          totaltotalfigure += parseFloat(data[d].Sum000)
         }
 
         if(data[d].ChannelGroupID != -1){
-          if(data[d].ChannelGroupName == ""){
-            totaltotalfigure += parseFloat(data[d].Sum000)
-            console.log(data[d].Sum000)
-          }
+          totaltotalfigure += parseFloat(data[d].Sum000)           
         }
       }
       expotRows.push(["Total","Total",totaltotalfigure.toFixed(2).replace(/\./g, ',')]);
