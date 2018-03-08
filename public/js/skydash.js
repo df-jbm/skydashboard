@@ -216,15 +216,22 @@ var navmodule = {
           var sum000val = Number(data[i].Sum000).toFixed(2).replace(/\./g, ',');
           if(data[i].ChannelID != -1){
             if($('#channelgroup').val() != 2000){
-              expotRows.push([data[i].ChannelName,data[i].PlatFormName,sum000val]);
               
+              if(data[i].ChannelName != ""){
+                expotRows.push([data[i].ChannelName,data[i].PlatFormName,sum000val]);
+              }else{
+                expotRows.push(["Total",data[i].PlatFormName,sum000val]);
+              }
               if($.inArray(data[i].ChannelName, totalchannels) == -1){
                 totalchannels.push(data[i].ChannelName)
               }  
             
             }else{              
-              
-              expotRows.push([data[i].ChannelGroupName,data[i].PlatFormName,sum000val]);
+              if(data[i].ChannelGroupName != ""){
+                expotRows.push([data[i].ChannelGroupName,data[i].PlatFormName,sum000val]);
+              }else{
+                expotRows.push(["Total",data[i].PlatFormName,sum000val]);
+              }              
 
               if($.inArray(data[i].ChannelGroupName, totalchannels) == -1){
                 totalchannels.push(data[i].ChannelGroupName)
