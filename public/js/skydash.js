@@ -242,14 +242,14 @@ var navmodule = {
               totalfigure += parseFloat(data[d].Sum000)
               console.log(data[d].Sum000)
             }
-          }else{
+          }
+
+          if(data[d].ChannelGroupID != -1){
             if(totalchannels[i] == data[d].ChannelGroupName){
               totalfigure += parseFloat(data[d].Sum000)
               console.log(data[d].Sum000)
             }
-            console.log(data[d].Sum000)
           }
-
           //console.log(totalfigure)
         }
         expotRows.push([totalchannels[i],"Total",totalfigure]);
