@@ -239,11 +239,11 @@ var navmodule = {
         for(var d in data){         
           if(data[i].ChannelID != -1){
             if(totalchannels[i] == data[d].ChannelName){
-              totalfigure = totalfigure + Number(data[d].Sum000).toFixed(2);
+              totalfigure = totalfigure + data[d].Sum000
             }
           }else{
             if(totalchannels[i] == data[d].ChannelGroupName){
-              totalfigure = totalfigure + Number(data[d].Sum000).toFixed(2); 
+              totalfigure = totalfigure + data[d].Sum000
             }
           }
           console.log(data[d].Sum000)
