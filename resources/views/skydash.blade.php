@@ -110,7 +110,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-5" id="performance-content">
+        <div class="col-sm-12 col-md-5" id="performance-content prog">
           <div class="card border">
             <div class="card-body">
               <div class="table-responsive" id="programeperformance"></div>
