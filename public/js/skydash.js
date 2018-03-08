@@ -239,14 +239,14 @@ var navmodule = {
         for(var d in data){         
           if(data[d].ChannelID != -1){
             if(totalchannels[i] == data[d].ChannelName){
-              totalfigure = Number(totalfigure) + Number(data[d].Sum000).toFixed(2).replace(/\./g, ',');
+              totalfigure += parseFloat(data[d].Sum000)
               console.log(data[d].Sum000)
             }
           }
 
           if(data[d].ChannelGroupID != -1){
             if(totalchannels[i] == data[d].ChannelGroupName){
-              totalfigure = Number(totalfigure) + Number(data[d].Sum000).toFixed(2).replace(/\./g, ',');
+              totalfigure += parseFloat(data[d].Sum000)
               console.log(data[d].Sum000)
             }
           }
