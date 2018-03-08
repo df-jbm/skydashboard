@@ -121,6 +121,7 @@ body main .row #performance-content .card #programeperformance{
   max-height: 99%;
 }
 body main .row #performance-content .card .card-body .table-responsive{
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   padding: 0;
