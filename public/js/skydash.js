@@ -265,11 +265,11 @@ var navmodule = {
       }
       var totaltotalfigure = 0;
       for(var d in data){         
-        if(data[d].ChannelID != -1){
+        if(data[d].ChannelID == -1){
           totaltotalfigure += parseFloat(data[d].Sum000)
         }
 
-        if(data[d].ChannelGroupID != -1){
+        if(data[d].ChannelGroupID == -1){
           totaltotalfigure += parseFloat(data[d].Sum000)           
         }
       }
