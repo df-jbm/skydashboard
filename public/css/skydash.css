@@ -241,7 +241,7 @@ body main .row #performance-content .card .card-body .table-responsive{
   bottom: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 1301;
+  z-index: 1351;
 }
 #exportbody{
   padding-right: 15px;
