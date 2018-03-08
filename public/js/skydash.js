@@ -235,7 +235,20 @@ var navmodule = {
           }                  
       }
       for(var i in totalchannels){
-        expotRows.push([totalchannels[i],"Total"]);
+        var totalfigure = 0;
+        for(var d in data){
+          var sum000val = Number(data[i].Sum000).toFixed(2).replace(/\./g, ',');
+          if(data[i].ChannelID != -1){
+            if(totalchannels[i] == data[d].ChannelName){
+              totalfigure = totalfigure + sum000val;
+            }
+          }else{
+            if(totalchannels[i] == data[d].ChannelGroupName){
+              totalfigure = totalfigure + sum000val;
+            }
+          }
+        }
+        expotRows.push([totalchannels[i],"Total",totalfigure]);
       }
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ChannelPerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);
       $('#dlchannel').html("Toogle button to download again.")
