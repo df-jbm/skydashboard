@@ -243,7 +243,7 @@ var navmodule = {
             }
           }else{
             if(totalchannels[i] == data[d].ChannelGroupName){
-              totalfigure = Number(totalfigure + data[d].Sum000);
+              totalfigure += Number(data[d].Sum000).toFixed(2); 
             }
           }
           console.log(data[d].Sum000)
