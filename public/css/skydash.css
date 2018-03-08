@@ -118,14 +118,9 @@ body main .row #performance-content .card,
 body main .row #performance-content .card .card-body,
 body main .row #performance-content .card .card-body .table-responsive,
 body main .row #performance-content .card #programeperformance{
-  max-height: 99%;
+  height: 99%;
 }
-body main .row #performance-content .card .card-body .table-responsive{
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 0;
-}
+
 body main .row #trending-content,
 body main .row #trending-content .card,
 body main .row #trending-content .card-body{
@@ -134,6 +129,12 @@ body main .row #trending-content .card-body{
 
 body main .row #performance-content .card .card-body{
   padding:10px 10px 10px 10px;
+}
+
+body main .row #performance-content .card .card-body .table-responsive{
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
 }
 .table-responsive::-webkit-scrollbar-track
 {
