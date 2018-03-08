@@ -118,7 +118,7 @@ body main .row #performance-content .card,
 body main .row #performance-content .card .card-body,
 body main .row #performance-content .card .card-body .table-responsive,
 body main .row #performance-content .card #programeperformance{
-  height: 99%;
+  max-height: 99%;
 }
 
 body main .row #trending-content,
