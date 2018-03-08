@@ -252,7 +252,12 @@ var navmodule = {
           }
           //console.log(totalfigure)
         }
-        expotRows.push([totalchannels[i],"Total",totalfigure.toFixed(2).replace(/\./g, ',')]);
+        if(data[d].ChannelID != -1 || data[d].ChannelGroupID != -1){
+          expotRows.push([totalchannels[i],"Total",totalfigure.toFixed(2).replace(/\./g, ',')]);
+        }else{
+          expotRows.push(["Total","Total",totalfigure.toFixed(2).replace(/\./g, ',')]);
+        }
+        
       }
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ChannelPerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);
       $('#dlchannel').html("Toogle button to download again.")
