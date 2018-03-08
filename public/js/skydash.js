@@ -236,23 +236,33 @@ var navmodule = {
       }
       for(var i in totalchannels){
         var totalfigure = 0;
+        var totaltotalfigure = 0;
+        var notTotal = true;
         for(var d in data){         
           if(data[d].ChannelID != -1){
             if(totalchannels[i] == data[d].ChannelName){
-              totalfigure += parseFloat(data[d].Sum000)
-              console.log(data[d].Sum000)
+              totalfigure += parseFloat(data[d].Sum000)              
             }
           }
 
           if(data[d].ChannelGroupID != -1){
             if(totalchannels[i] == data[d].ChannelGroupName){
-              totalfigure += parseFloat(data[d].Sum000)
-              console.log(data[d].Sum000)
+              totalfigure += parseFloat(data[d].Sum000)              
             }
+          }else{
+            if(totalchannels[i] == data[d].ChannelGroupName){
+              totaltotalfigure += parseFloat(data[d].Sum000)              
+            }
+            notTotal = false;
           }
           //console.log(totalfigure)
         }
-        expotRows.push([totalchannels[i],"Total",totalfigure.toFixed(2).replace(/\./g, ',')]);
+        if(notTotal == true){
+          expotRows.push([totalchannels[i],"Total",totalfigure.toFixed(2).replace(/\./g, ',')]);
+        }else{
+          expotRows.push(["Total","Total",totaltotalfigure.toFixed(2).replace(/\./g, ',')]);
+        }
+        
       }
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ChannelPerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);
       $('#dlchannel').html("Toogle button to download again.")
