@@ -105,8 +105,8 @@
       <div class="row">
         <div class="col-sm-12 col-md-7" id="performance-content">
           <div class="card">
-            <div class="card-body bg-light">
-              <div class="table-responsive" id="channelperformance"></div>
+            <div class="section-body bg-light">
+              <div class="table-responsive bg-white" id="channelperformance"></div>
             </div>
           </div>
         </div>
