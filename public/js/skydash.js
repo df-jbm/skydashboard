@@ -246,6 +246,7 @@ var navmodule = {
               totalfigure = Number(totalfigure + data[d].Sum000);
             }
           }
+          console.log(data[d].Sum000)
         }
         expotRows.push([totalchannels[i],"Total",totalfigure]);
       }
