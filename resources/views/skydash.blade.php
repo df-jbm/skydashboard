@@ -106,7 +106,7 @@
         <div class="col-sm-12 col-md-7" id="performance-content">
           <div class="card border">
             <div class="card-body">
-              <div class="table-responsive" id="channelperformance"></div>
+              <div class="table-responsive bg-info" id="channelperformance"></div>
             </div>
           </div>
         </div>
