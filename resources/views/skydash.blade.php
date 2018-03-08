@@ -104,9 +104,9 @@
     <main role="main" class="container-fluid">
       <div class="row">
         <div class="col-sm-12 col-md-7" id="performance-content">
-          <div class="card">
-            <div class="section-body bg-light">
-              <div class="table-responsive bg-white" id="channelperformance"></div>
+          <div class="card border">
+            <div class="card-body">
+              <div class="table-responsive" id="channelperformance"></div>
             </div>
           </div>
         </div>
