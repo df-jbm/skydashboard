@@ -233,9 +233,10 @@ var navmodule = {
           }else{
             expotRows.push(["Total",data[i].PlatFormName,sum000val]);
           }
-          for(var i in totalchannels){
-            expotRows.push([totalchannels[i].channel,"Total"]);
-          }          
+                    
+      }
+      for(var i in totalchannels){
+        expotRows.push([totalchannels[i].channel,"Total"]);
       }
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ChannelPerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);
       $('#dlchannel').html("Toogle button to download again.")
