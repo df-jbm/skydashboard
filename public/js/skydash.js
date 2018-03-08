@@ -243,10 +243,11 @@ var navmodule = {
             }
           }else{
             if(totalchannels[i] == data[d].ChannelGroupName){
-              totalfigure = totalfigure + data[d].Sum000
+              totalfigure = Number(totalfigure + data[d].Sum000)
+
             }
           }
-          console.log(data[d].Sum000)
+          console.log(totalfigure)
         }
         expotRows.push([totalchannels[i],"Total",totalfigure]);
       }
