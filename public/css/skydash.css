@@ -133,8 +133,7 @@ body main .row #performance-content .card .card-body{
 
 body main .row #performance-content .card .card-body .table-responsive{
   overflow-x: hidden;
-  overflow-y: auto;
-  z-index: 1300;
+  overflow-y: auto;  
   padding: 0;
 }
 .table-responsive::-webkit-scrollbar-track
