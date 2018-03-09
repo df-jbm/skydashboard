@@ -1,0 +1,108 @@
+"Channel name","platform name",Sum000
+"13th Street (Com.)",Linear,327.07458040000012
+"A&E (Com.)",Linear,34.363947140000001
+"Beate-Uhse TV (Com.)",Linear,62.285247499999997
+"Boomerang (Com.)",Linear,395.11470191999985
+"Cartoon Network (Com.)",Linear,87.28804606000007
+"Classica (Com.)",Linear,0.10919662999999999
+"Discovery Channel (Com.)",Linear,179.37272526999999
+"Disney Cinemagic (Com.)",Linear,111.19050408
+"Disney Junior (Com.)",Linear,603.90228139999999
+"Disney XD (Com.)",Linear,135.19482308999994
+"E! Entertainment HD (Com.)",Linear,17.099192649999999
+"FOX Serie (Com.)",Linear,264.93668112999995
+"Heimatkanal (Com.)",Linear,132.38154790999999
+"History Channel (Com.)",Linear,129.52667953
+"Jukebox (Com.)",Linear,9.3637864600000018
+"Junior (Com.)",Linear,95.577604999999977
+"Kinowelt (Com.)",Linear,27.067633170000001
+"Motorvision TV (Com.)",Linear,24.954124559999997
+"NatGeo Wild (Com.)",Linear,146.57581800000003
+"National Geographic (Com.)",Linear,201.21421172999999
+"Passion (Com.)",Linear,337.56091413999997
+"Romance TV (Com.)",Linear,266.69923604000002
+"RTL Crime (Com.)",Linear,249.30748413999999
+"RTL Living (Com.)",Linear,53.18417479
+"Sky Action (Com.)",Linear,55.10526869000001
+"Sky Arts HD",Linear,3.9985968200000004
+"Sky Atlantic (Com.)",Linear,43.2503423
+"Sky Bundesliga 1 (Com.)",Linear,14.182270249999998
+"Sky Cinema (Com.)",Linear,74.931338059999987
+"Sky Cinema Family HD (Com.)",Linear,38.286100060000003
+"Sky Krimi (Com.)",Linear,266.87222711999999
+"Sky Sport 1 (Com.)",Linear,12.38157679
+"Sky Sport 2 (Com.)",Linear,6.24508302
+"Sky Sport News (Com.)",Linear,1319.1362205500002
+"Spiegel Geschichte (Com.)",Linear,108.56600145999998
+"SyFy (Com.)",Linear,207.65648380000002
+"TNT Comedy HD (Com.)",Linear,243.91900563999999
+"TNT Film (Com.)",Linear,13.579627820000001
+"TNT Serie (Com.)",Linear,131.38734297999997
+"Universal Channel HD (Com.)",Linear,161.65446866000002
+"Boomerang (Com.)",OnDemand,0.87166342000000008
+"Cartoon Network (Com.)",OnDemand,2.0580533599999997
+"Discovery Channel (Com.)",OnDemand,0.31108406999999999
+"Disney Junior (Com.)",OnDemand,3.2282468799999995
+"Disney XD (Com.)",OnDemand,1.38988018
+"FOX Serie (Com.)",OnDemand,0.67380861999999997
+"Heimatkanal (Com.)",OnDemand,0.01212909
+"History Channel (Com.)",OnDemand,0.12504298
+"Junior (Com.)",OnDemand,0.46783702999999999
+"Kinowelt (Com.)",OnDemand,0.30252311000000004
+"Passion (Com.)",OnDemand,0.21519049000000001
+"Romance TV (Com.)",OnDemand,8.2799899999999992E-3
+"RTL Living (Com.)",OnDemand,0.24998347999999998
+"Sky Action (Com.)",OnDemand,1.7422900800000001
+"Sky Arts HD",OnDemand,2.3115230000000004E-2
+"Sky Atlantic (Com.)",OnDemand,1.1633587900000002
+"Sky Cinema (Com.)",OnDemand,4.1808292899999993
+"Sky Cinema Family HD (Com.)",OnDemand,0.92360167999999987
+"Sky Krimi (Com.)",OnDemand,0.06330674
+"TNT Comedy HD (Com.)",OnDemand,2.8887486199999999
+"TNT Film (Com.)",OnDemand,7.6309050000000003E-2
+"Boomerang (Com.)","SKY Go",7.6663259999999983E-2
+"Cartoon Network (Com.)","SKY Go",0.16143150000000001
+"Discovery Channel (Com.)","SKY Go",0.13344905000000001
+"Disney Junior (Com.)","SKY Go",0.46243239000000003
+"Disney XD (Com.)","SKY Go",0.59574304
+"FOX Serie (Com.)","SKY Go",0.18604872
+"Heimatkanal (Com.)","SKY Go",0.00315299
+"History Channel (Com.)","SKY Go",0.08397969999999999
+"Junior (Com.)","SKY Go",2.5199969999999999E-2
+"Kinowelt (Com.)","SKY Go",6.6269889999999998E-2
+"Passion (Com.)","SKY Go",7.6674779999999998E-2
+"Romance TV (Com.)","SKY Go",9.7880799999999994E-3
+"RTL Living (Com.)","SKY Go",7.9488210000000004E-2
+"Sky Action (Com.)","SKY Go",0.46963469999999996
+"Sky Arts HD","SKY Go",8.4142399999999999E-3
+"Sky Atlantic (Com.)","SKY Go",0.52499880999999993
+"Sky Bundesliga 1 (Com.)","SKY Go",8.4272220000000009E-2
+"Sky Cinema (Com.)","SKY Go",3.0367092100000006
+"Sky Cinema Family HD (Com.)","SKY Go",0.31951628999999998
+"Sky Krimi (Com.)","SKY Go",0.01254927
+"Sky Sport 1 (Com.)","SKY Go",0.19623535000000003
+"Sky Sport 2 (Com.)","SKY Go",0.09264551
+"TNT Comedy HD (Com.)","SKY Go",0.73537543999999999
+"TNT Film (Com.)","SKY Go",2.3628139999999999E-2
+"Disney Cinemagic (Com.)","SKY Ticket",3.7914300000000001E-3
+"Disney Junior (Com.)","SKY Ticket",2.3299069999999998E-2
+"Disney XD (Com.)","SKY Ticket",9.0050679999999994E-2
+"FOX Serie (Com.)","SKY Ticket",0.16534968999999999
+"National Geographic (Com.)","SKY Ticket",3.1160540000000004E-2
+"RTL Crime (Com.)","SKY Ticket",0.04081224
+"Sky Action (Com.)","SKY Ticket",0.11136242
+"Sky Arts HD","SKY Ticket",2.4370999999999998E-4
+"Sky Atlantic (Com.)","SKY Ticket",0.10002464000000003
+"Sky Bundesliga 1 (Com.)","SKY Ticket",5.6620899999999998E-3
+"Sky Cinema (Com.)","SKY Ticket",0.30292312000000005
+"Sky Cinema Family HD (Com.)","SKY Ticket",0.03411778
+"Sky Krimi (Com.)","SKY Ticket",3.5100999999999999E-3
+"Sky Sport 1 (Com.)","SKY Ticket",0.01166708
+"Sky Sport 2 (Com.)","SKY Ticket",5.1538899999999995E-3
+"Spiegel Geschichte (Com.)","SKY Ticket",1.1445669999999998E-2
+"TNT Comedy HD (Com.)","SKY Ticket",0.19349086000000007
+"TNT Serie (Com.)","SKY Ticket",4.6735780000000011E-2
+TOTAL,Linear,6592.4970967600075
+TOTAL,OnDemand,540.9993654099967
+TOTAL,"SKY Go",165.15242979999988
+TOTAL,"SKY Ticket",33.49441100000012
