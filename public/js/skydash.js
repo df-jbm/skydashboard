@@ -286,13 +286,13 @@ var navmodule = {
       var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
       var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
             
-      expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text() + ": " + $('#customperiod').val(),"Search, "+ filterval,""]);
+      expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text() + ": " + $('#customperiod').val(),"Search, "+ filterval,"",""]);
       expotRows.push(["Channel name: "+ exportchannelname,"Platform name: " + exportplatform,"",""]);
       expotRows.push(["BMICode","ProgrammeTitle","Start time","# Linear runs","000"]);
       
       for (var i in data) {
         var sum000val = Number(data[i].Sum000).toFixed(2).replace(/\./g, ',');
-        expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].FirstFromTime,data[i].CNT,data[i].Sum000]);
+        expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].FirstFromTime,data[i].CNT,sum000val]);
       }
       
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ProgrammePerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
