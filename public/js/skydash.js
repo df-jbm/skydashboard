@@ -1882,12 +1882,8 @@ $(function(){
     clearTimeout(wto);
     wto = setTimeout(function() {
       if($(this).val() == "-fytd"){
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth()+1;
-        var yy = today.getFullYear();
-        
-        WPeriod; 
+        periodcheck = true;
+        $('#periodtype').val(5)        
       }
 
       if($('#customperiod').val().length == 6){
