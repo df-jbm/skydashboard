@@ -1911,7 +1911,7 @@ $(function(){
         var dd = today.getDate();
         var mm = today.getMonth()+1;
         var yy = today.getFullYear();
-        if(Number(mm) >= 6){
+        if(Number(mm) < 6){
           fytdString = "-"+ Number(yy - 1);
         }else{
           fytdString = "-"+ Number(yy);
