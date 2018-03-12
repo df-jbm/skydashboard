@@ -1773,7 +1773,7 @@ $(function(){
       var char = $('#customperiod').val()
       clearTimeout(wto);
       wto = setTimeout(function() {
-        if($(this).val() == "-fytd"){
+        if(e.target.value == "-fytd"){
           periodcheck = true;
           $('#periodtype').val(5)        
         }
