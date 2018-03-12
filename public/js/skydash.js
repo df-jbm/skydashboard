@@ -1916,6 +1916,7 @@ $(function(){
         }else{
           fytdString = "-"+ Number(yy);
         }        
+        console.log(fytdString)
         $('#periodtype').val(5)  
         navmodule.ChannelPerformanceRequest()      
       }
