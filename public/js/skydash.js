@@ -339,7 +339,7 @@ var navmodule = {
         var Period = navmodule.externalProgdate($('#customperiod').val())
       }
     }else{
-      var period = fytdString;
+      var Period = fytdString;
     }
     
 
