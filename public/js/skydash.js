@@ -50,7 +50,8 @@ var scg = "";
 var sch = ""; 
 var scp = "";
 var datetoday = new Date();
-var fytd;
+var fytd = false;
+var fytdString;
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -331,11 +332,16 @@ var navmodule = {
   ChannelPerformanceRequest : function(){
     var ChannelGroupID = $('#channelgroup').val()
     var PeriodTypeID = $('#periodtype').val();
-    if(WPeriod != ''){
-      var Period = WPeriod
+    if(fytd == false){
+      if(WPeriod != ''){
+        var Period = WPeriod
+      }else{
+        var Period = navmodule.externalProgdate($('#customperiod').val())
+      }
     }else{
-      var Period = navmodule.externalProgdate($('#customperiod').val())
+      var period = fytdString;
     }
+    
 
     if(filterexist == true){
       var filter = $('#filterbmi').val()
@@ -491,11 +497,16 @@ var navmodule = {
                 activePlatForm = PFormID;
                 var PFormID = PFormID
                 var PtypeID = $('#periodtype').val()
-                if(WPeriod != ''){
-                  var Prange = WPeriod
+                if(fytd == false){
+                  if(WPeriod != ''){
+                    var Prange = WPeriod
+                  }else{
+                    var Prange = navmodule.externalProgdate($('#customperiod').val())
+                  }
                 }else{
-                  var Prange = navmodule.externalProgdate($('#customperiod').val())
-                }              
+                  var Prange = fytdString;
+                }                
+
                 if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
                   sort = 1
                 }else{
@@ -520,11 +531,15 @@ var navmodule = {
                 activePlatForm = PFormID;
                 var PFormID = PFormID
                 var PtypeID = $('#periodtype').val()
-                if(WPeriod != ''){
-                  var Prange = WPeriod
+                if(fytd == false){
+                  if(WPeriod != ''){
+                    var Prange = WPeriod
+                  }else{
+                    var Prange = navmodule.externalProgdate($('#customperiod').val())
+                  }
                 }else{
-                  var Prange = navmodule.externalProgdate($('#customperiod').val())
-                }
+                  var Prange = fytdString;
+                } 
                 
                 if(PerformanceChannels[i].ChannelID == -1){
                   ChGroupID = $('#channelgroup').val();
@@ -589,11 +604,15 @@ var navmodule = {
           activePlatForm = -1;
           var PFormID = -1
           var PtypeID = $('#periodtype').val()
-          if(WPeriod != ''){
-            var Prange = WPeriod
+          if(fytd == false){
+            if(WPeriod != ''){
+              var Prange = WPeriod
+            }else{
+              var Prange = navmodule.externalProgdate($('#customperiod').val())
+            }
           }else{
-            var Prange = navmodule.externalProgdate($('#customperiod').val())
-          }
+            var Prange = fytdString;
+          } 
           
           
           if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
@@ -665,11 +684,15 @@ var navmodule = {
             var ProgTitleID = -1;
             var PFormID = $(this).attr("value")
             var PtypeID = $('#periodtype').val()
-            if(WPeriod != ''){
-              var Prange = WPeriod
+            if(fytd == false){
+              if(WPeriod != ''){
+                var Prange = WPeriod
+              }else{
+                var Prange = navmodule.externalProgdate($('#customperiod').val())
+              }
             }else{
-              var Prange = navmodule.externalProgdate($('#customperiod').val())
-            }
+              var Prange = fytdString;
+            } 
 
             activeChannel = $(this).attr("id");
             activePlatForm = $(this).attr("value")
@@ -1883,7 +1906,16 @@ $(function(){
     clearTimeout(wto);
     wto = setTimeout(function() {
       if($('#customperiod').val() == "-fytd"){
-        periodcheck = true;
+        fytd = true;
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yy = today.getFullYear();
+        if(Number(mm) >= 6){
+          fytdString = "-"+ Number(yy - 1);
+        }else{
+          fytdString = "-"+ Number(yy);
+        }        
         $('#periodtype').val(5)        
       }
 
