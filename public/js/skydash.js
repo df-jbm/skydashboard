@@ -1703,6 +1703,7 @@ $(function(){
       buttonImage: "icon/datepicker.png",
       buttonImageOnly: true,
       buttonText: "Select date",
+      constrainInput: false,
       dateFormat: "ddmmy",
       firstDay : 1,
       onSelect: function(dateText) {
