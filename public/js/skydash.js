@@ -1749,6 +1749,7 @@ $(function(){
         wto = setTimeout(function() {
           if($('#customperiod').val().length == 6){
             if($.inArray( $('#customperiod').val(), daterange ) != -1){
+              fytd = false;
               periodcheck = true;
               $('#periodtype').val(1)
               scrollNum = $.inArray( $('#customperiod').val(), daterange )
@@ -1760,6 +1761,7 @@ $(function(){
           }
           if($('#customperiod').val().length == 4 && $.isNumeric(char.charAt(2)) == true ){
             if($.inArray( $('#customperiod').val(), weekrange ) != -1){
+              fytd = false;
               periodcheck = true;
               $('#periodtype').val(2)
               scrollNum = $.inArray( $('#customperiod').val(), weekrange )
@@ -1770,6 +1772,7 @@ $(function(){
             }
           }
           if(($('#customperiod').val().length == 4 || $('#customperiod').val().length == 5) && (char.charAt(2) == 'm' || char.charAt(2) == 'M' ) ){
+            fytd = false;
             if($.inArray( $('#customperiod').val(), monthrange ) != -1){
               periodcheck = true;
               $('#periodtype').val(3)
@@ -1781,6 +1784,7 @@ $(function(){
             }
           }
           if(($('#customperiod').val().length == 4 || $('#customperiod').val().length == 5) && (char.charAt(2) == 'q' || char.charAt(2) == 'Q') ){
+            fytd = false;
             if($.inArray( $('#customperiod').val(), quarterrange ) != -1){
               periodcheck = true;
               $('#periodtype').val(4)
@@ -1937,6 +1941,7 @@ $(function(){
 
       if($('#customperiod').val().length == 6){
         if($.inArray( $('#customperiod').val(), daterange ) != -1){
+          fytd = false;
           periodcheck = true;
           $('#periodtype').val(1)
           scrollNum = $.inArray( $('#customperiod').val(), daterange )
@@ -1947,6 +1952,7 @@ $(function(){
         }
       }if($('#customperiod').val().length == 4 && $.isNumeric(char.charAt(2)) == true ){
         if($.inArray( $('#customperiod').val(), weekrange ) != -1){
+          fytd = false;
           periodcheck = true;
           $('#periodtype').val(2)
           scrollNum = $.inArray( $('#customperiod').val(), weekrange )
@@ -1957,6 +1963,7 @@ $(function(){
         }
       }if(($('#customperiod').val().length == 4 || $('#customperiod').val().length == 5) && (char.charAt(2) == 'm' || char.charAt(2) == 'M' ) ){
         if($.inArray( $('#customperiod').val(), monthrange ) != -1){
+          fytd = false;
           periodcheck = true;
           $('#periodtype').val(3)
           scrollNum = $.inArray( $('#customperiod').val(), monthrange )
@@ -1967,6 +1974,7 @@ $(function(){
         }
       }if(($('#customperiod').val().length == 4 || $('#customperiod').val().length == 5) && (char.charAt(2) == 'q' || char.charAt(2) == 'Q') ){
         if($.inArray( $('#customperiod').val(), quarterrange ) != -1){
+          fytd = false;
           periodcheck = true;
           $('#periodtype').val(4)
           scrollNum = $.inArray( $('#customperiod').val(), quarterrange )
@@ -2143,6 +2151,7 @@ $(function(){
       case '1' :
         if($('#customperiod').val().length == 6){
           if($.inArray( $('#customperiod').val(), daterange ) != -1){
+            fytd = false;
             periodcheck = true;
             scrollNum = $.inArray( $('#customperiod').val(), daterange )
             navmodule.scrollproperty()
@@ -2157,6 +2166,7 @@ $(function(){
       case '2' :
         if($('#customperiod').val().length == 6){
           if($.inArray( $('#customperiod').val(), weekrange ) != -1){
+            fytd = false;
             periodcheck = true;
             scrollNum = $.inArray( $('#customperiod').val(), weekrange )
             navmodule.scrollproperty()
@@ -2171,6 +2181,7 @@ $(function(){
       case '3' :
         if($('#customperiod').val().length == 6){
           if($.inArray( $('#customperiod').val(), monthrange ) != -1){
+            fytd = false;
             periodcheck = true;
             scrollNum = $.inArray( $('#customperiod').val(), monthrange )
             navmodule.scrollproperty()
@@ -2185,6 +2196,7 @@ $(function(){
       case '4' :
         if($('#customperiod').val().length == 6){
           if($.inArray( $('#customperiod').val(), quarterrange ) != -1){
+            fytd = false;
             periodcheck = true;
             scrollNum = $.inArray( $('#customperiod').val(), quarterrange )
             navmodule.scrollproperty()
