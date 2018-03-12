@@ -49,6 +49,8 @@ var exportrendingplatform = [];
 var scg = "";
 var sch = ""; 
 var scp = "";
+var ytd = new Date();
+var ytdperiod;
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -70,89 +72,41 @@ var navmodule = {
         }
         channelgroupid = $('#channelgroup').val()
         $('#'+formID).val(2000)
-        /*
-        ===== Ajax request for period range
-        ===== initialize period range after the request
-        */
-        return $.get(window.location.href + "periodrange", request);
-      }).then(function(data){
-          var counter = 0
-          for(var i in data){
-            if(data[i].ProgDate != -1){
-              switch(counter){
-                case 0 :
-                  /*
-                  ===== default period and default scrollLength
-                  */
-                  daterange.push(data[i].ProgDate)
-                  scrollLen = daterange.length - 1;
-                  break;
-                case 1 :
-                  weekrange.push(data[i].ProgDate)
-                  break;
-                case 2 :
-                  monthrange.push(data[i].ProgDate)
-                  break;
-                case 3 :
-                  quarterrange.push(data[i].ProgDate)
-                  break;
-                case 4 :
-                  yearrange.push(data[i].ProgDate)
-                  break;
-              }
-            }else{
-              counter++;
-            }
-          }
 
-          daterange.sort(function(a, b){return b-a});
-          weekrange.sort(function(a, b){return b-a});
-          monthrange.sort(function(a, b){return b-a});
-          quarterrange.sort(function(a, b){return b-a});
-          yearrange.sort(function(a, b){return b-a});
+        var dd = ytd.getDate();
+        var mm = ytd.getMonth()+1; //January is 0!
+        var yyyy = ytd.getFullYear();
 
-          for(var i in daterange){
-            daterange[i] = navmodule.convertProgdate(daterange[i],1)
-          }
-          for(var i in weekrange){
-            weekrange[i] = navmodule.convertProgdate(weekrange[i],2)
-          }
-          for(var i in monthrange){
-            monthrange[i] = navmodule.convertProgdate(monthrange[i],3)
-          }
-          for(var i in quarterrange){
-            quarterrange[i] = navmodule.convertProgdate(quarterrange[i],4)
-          }
-          for(var i in yearrange){
-            yearrange[i] = navmodule.convertProgdate(yearrange[i],5)
-          }
-          console.log(daterange)
-          console.log(weekrange)
-          $('#customperiod').val(daterange[0])
+        if(Number(mm) >= 6){
+          ytdperiod = "-"+ yyyy
+        }else{
+          ytdperiod = "-"+ Number(yyyy - 1)
+        }
 
-          var ChannelGroupID = $('#channelgroup').val()
-          var PeriodTypeID = $('#periodtype').val();
-          var Period = daterange[0]
+        $('#customperiod').val(ytdperiod)
 
-          request = {
-            ChannelGroupID : ChannelGroupID,
-            PeriodTypeID : PeriodTypeID,
-            Period : navmodule.externalProgdate(Period),
+        var ChannelGroupID = $('#channelgroup').val()
+        var PeriodTypeID = $('#periodtype').val();
+        var Period = ytdperiod;
+
+        request = {
+          ChannelGroupID : ChannelGroupID,
+          PeriodTypeID : PeriodTypeID,
+          Period : navmodule.externalProgdate(Period),
+        }
+
+        console.log(request)
+        $.get(window.location.href + "platforms",{}, function(platforms){
+          for(var i in platforms){
+            channelplatforms.push({'PlatFormID':platforms[i].PlatFormID,'PlatFormName':platforms[i].PlatFormName})
           }
-
-          console.log(request)
-          $.get(window.location.href + "platforms",{}, function(platforms){
-            for(var i in platforms){
-              channelplatforms.push({'PlatFormID':platforms[i].PlatFormID,'PlatFormName':platforms[i].PlatFormName})
-            }
-            console.log(platforms)
-          });
-          navmodule.scrollproperty()
-          return $.get(window.location.href + "channelperformance", request);
-
+          console.log(platforms)
+        });
+        navmodule.scrollproperty()
+        return $.get(window.location.href + "channelperformance", request);
       }).then(function(data){
         channelready = true;
-        //navmodule.init_ChannelPerformance(data,$('#channelgroup').val())
+        //navmodule.init_ChannelPerformance(data,$('#channelgroup').val())  
       })
     }
   },
