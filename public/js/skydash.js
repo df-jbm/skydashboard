@@ -1612,8 +1612,17 @@ var navmodule = {
         $('#customperiod').val(quarterrange[0])
         break;
       case '5' :
-        scrollLen = yearrange.length - 1;
-        $('#customperiod').val(yearrange[0])
+        fytd = true;
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yy = today.getFullYear();
+        if(Number(mm) < 6){
+          fytdString = "-"+ Number(yy - 1);
+        }else{
+          fytdString = "-"+ Number(yy);
+        }        
+        console.log(fytdString)
         break;
     }
     navmodule.scrollproperty()
