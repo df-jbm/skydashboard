@@ -1596,18 +1596,22 @@ var navmodule = {
     scrollNum = 0;
     switch(periodtype){
       case '1' :
+        fytd = false;
         scrollLen = daterange.length - 1;
         $('#customperiod').val(daterange[0])
         break;
       case '2' :
+        fytd = false;
         scrollLen = weekrange.length - 1;
         $('#customperiod').val(weekrange[0])
         break;
       case '3' :
+        fytd = false;
         scrollLen = monthrange.length - 1;
         $('#customperiod').val(monthrange[0])
         break;
       case '4' :
+        fytd = false;
         scrollLen = quarterrange.length - 1;
         $('#customperiod').val(quarterrange[0])
         break;
@@ -1617,6 +1621,7 @@ var navmodule = {
         var dd = today.getDate();
         var mm = today.getMonth()+1;
         var yy = today.getFullYear();
+        $('#customperiod').val('-fytd')
         if(Number(mm) < 6){
           fytdString = "-"+ Number(yy - 1);
         }else{
