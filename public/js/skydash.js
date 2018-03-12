@@ -51,7 +51,7 @@ var sch = "";
 var scp = "";
 var datetoday = new Date();
 var fytd = false;
-var fytdString = "";
+var fytdString;
 var navmodule = {
   /*
   ===== Initialize navigation
