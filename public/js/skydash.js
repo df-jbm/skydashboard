@@ -92,7 +92,7 @@ var navmodule = {
         request = {
           ChannelGroupID : ChannelGroupID,
           PeriodTypeID : PeriodTypeID,
-          Period : navmodule.externalProgdate(Period),
+          Period : Period,
         }
 
         console.log(request)
