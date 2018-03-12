@@ -1769,6 +1769,69 @@ $(function(){
           }
         },1000);
       }
+  }).on("input", function (e) {
+      var char = $('#customperiod').val()
+      clearTimeout(wto);
+      wto = setTimeout(function() {
+        if($(this).val() == "-fytd"){
+          periodcheck = true;
+          $('#periodtype').val(5)        
+        }
+
+        if($('#customperiod').val().length == 6){
+          if($.inArray( $('#customperiod').val(), daterange ) != -1){
+            periodcheck = true;
+            $('#periodtype').val(1)
+            scrollNum = $.inArray( $('#customperiod').val(), daterange )
+            navmodule.scrollproperty()
+            $('#periodrange').val($('#customperiod').val())
+          }else{
+            periodcheck = false;
+          }
+        }if($('#customperiod').val().length == 4 && $.isNumeric(char.charAt(2)) == true ){
+          if($.inArray( $('#customperiod').val(), weekrange ) != -1){
+            periodcheck = true;
+            $('#periodtype').val(2)
+            scrollNum = $.inArray( $('#customperiod').val(), weekrange )
+            navmodule.scrollproperty()
+            $('#periodrange').val($('#customperiod').val())
+          }else{
+            periodcheck = false;
+          }
+        }if(($('#customperiod').val().length == 4 || $('#customperiod').val().length == 5) && (char.charAt(2) == 'm' || char.charAt(2) == 'M' ) ){
+          if($.inArray( $('#customperiod').val(), monthrange ) != -1){
+            periodcheck = true;
+            $('#periodtype').val(3)
+            scrollNum = $.inArray( $('#customperiod').val(), monthrange )
+            navmodule.scrollproperty()
+            $('#periodrange').val($('#customperiod').val())
+          }else{
+            periodcheck = false;
+          }
+        }if(($('#customperiod').val().length == 4 || $('#customperiod').val().length == 5) && (char.charAt(2) == 'q' || char.charAt(2) == 'Q') ){
+          if($.inArray( $('#customperiod').val(), quarterrange ) != -1){
+            periodcheck = true;
+            $('#periodtype').val(4)
+            scrollNum = $.inArray( $('#customperiod').val(), quarterrange )
+            navmodule.scrollproperty()
+            $('#periodrange').val($('#customperiod').val())
+          }else{
+            periodcheck = false;
+          }
+        }if($('#customperiod').val().length == 2){
+          if($.inArray( $('#customperiod').val(), yearrange ) != -1){
+            periodcheck = true;
+            $('#periodtype').val(5)
+            scrollNum = $.inArray( $('#customperiod').val(), yearrange )
+            navmodule.scrollproperty()
+            $('#periodrange').val($('#customperiod').val())
+          }else{
+            periodcheck = false;
+          }
+        }else{
+          periodcheck = false;
+        }
+      },1000);
   });
   navmodule.initnav($('#channelgroup').val(),'channelgroup',$('#periodtype').val())
   /*
