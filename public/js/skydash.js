@@ -1916,7 +1916,8 @@ $(function(){
         }else{
           fytdString = "-"+ Number(yy);
         }        
-        $('#periodtype').val(5)        
+        $('#periodtype').val(5)  
+        navmodule.ChannelPerformanceRequest()      
       }
 
       if($('#customperiod').val().length == 6){
