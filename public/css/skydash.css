@@ -244,8 +244,9 @@ body main .row #performance-content .card .card-body .table-responsive{
   padding-right: 15px;
   padding-left: 15px;
 }
+#table-channelperformance thead tr{
+  height: 52px;
+}
 @-moz-document url-prefix() {
-  #table-channelperformance thead tr{
-    height: 52px;
-  }
+  
 }
