@@ -291,7 +291,7 @@ var navmodule = {
       expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text() + ": " + $('#customperiod').val(),"Search, "+ filterval,"",""]);           
       expotRows.push(["Channel name: "+ exportchannelname,"Platform name: " + exportplatform,"",""]);
 
-      if($('#periodtype').val() == 1 && activeChannel != -1 && activePlatForm == 1){
+      if($('#periodtype').val() == 1 && $('#channelgroup').val() != 2000 && activeChannel != -1 && activePlatForm == 1){
         expotRows.push(["BMICode","ProgrammeTitle","Start time","# Linear runs","000"]);    
       }else{
         expotRows.push(["BMICode","ProgrammeTitle","# Linear runs","000"]);
@@ -299,7 +299,7 @@ var navmodule = {
       
       for (var i in data) {
         var sum000val = Number(data[i].Sum000).toFixed(2).replace(/\./g, ',');
-        if($('#periodtype').val() == 1 && activeChannel != -1 && activePlatForm == 1){
+        if($('#periodtype').val() == 1 && $('#channelgroup').val() != 2000 && activeChannel != -1 && activePlatForm == 1){
           expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].FirstFromTime,data[i].CNT,sum000val]);
         }else{
           expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,sum000val]);
