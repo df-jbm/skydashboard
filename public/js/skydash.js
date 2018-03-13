@@ -658,7 +658,7 @@ var navmodule = {
 
       output += '</tr>'
       output += '</tbody></table>';
-      $('#channelperformance').scrollTop(0)
+      //$('#channelperformance').scrollTop(0)
       $('#channelperformance').html(output)
       var $table = $('table#table-channelperformance');
       $table.floatThead();      
