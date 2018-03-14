@@ -1715,6 +1715,9 @@ $(function(){
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
+  $('.floatThead-col').css({
+    height : '52px'
+  })
   $('#programeperformance').scroll(function(){
     var appendoutput = '';
     if(page <= last_page){
