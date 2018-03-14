@@ -661,7 +661,7 @@ var navmodule = {
       $('#channelperformance').scrollTop(0)
       $('#channelperformance').html(output)
       $('.floatThead-col').css({
-        height : '53px'
+        height : '52px'
       })
       var $table = $('table#table-channelperformance');
       $table.floatThead();      
