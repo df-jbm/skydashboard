@@ -667,7 +667,7 @@ var navmodule = {
         width : channeltable+'px',
       })      
       $('.floatThead-col').css({
-        height : "52px",
+        height : "53px",
       })
       $('#table-channelperformance td:not(:first-child)').each(function(){
         $(this).click(function(){
