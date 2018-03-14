@@ -660,6 +660,9 @@ var navmodule = {
       output += '</tbody></table>';
       $('#channelperformance').scrollTop(0)
       $('#channelperformance').html(output)
+      $('.floatThead-col').css({
+        height : '52px'
+      })
       var $table = $('table#table-channelperformance');
       $table.floatThead();      
       var channeltable = ($('#channelperformance').width() - 280) / Formname.length
@@ -1714,10 +1717,7 @@ $(function(){
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
-  });
-  $('.floatThead-col').css({
-    height : '52px'
-  })
+  });  
   $('#programeperformance').scroll(function(){
     var appendoutput = '';
     if(page <= last_page){
