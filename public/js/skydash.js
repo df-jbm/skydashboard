@@ -1719,6 +1719,7 @@ $(function(){
     }
   });
   //300000
+  check_processes();
   window.setInterval(check_processes, 300000);
 
   function check_processes(){
