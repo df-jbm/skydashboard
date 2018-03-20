@@ -1728,6 +1728,7 @@ $(function(){
       console.log(data[0].ProcessName)
       var processname = data[0].ProcessName;
       var status = data[0].Status;
+      console.log(data.length)
       if(data.length > 0){
         console.log(processname + "/" + status + "/" + DumpData)
         if( processname == 'DumpData' ){
