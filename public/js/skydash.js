@@ -1733,15 +1733,9 @@ $(function(){
         if( processname == 'DumpData' ){
           $('#warning').text("Data Currently Being updated!")
           $('#warning').fadeIn();
-        }else{
-          $('#warning').fadeOut();  
-        }
-
-        if( processname == 'DeleteData'){          
+        }else if( processname == 'DeleteData'){          
           $('#warning').text("Data Currently Being deleted!")
           $('#warning').fadeIn();
-        }else{          
-          $('#warning').fadeOut();
         }
 
       }else{
