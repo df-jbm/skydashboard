@@ -1721,7 +1721,7 @@ $(function(){
   });
   //300000
   check_processes();
-  window.setInterval(check_processes, 100000);
+  window.setInterval(check_processes, 1000);
 
   function check_processes(){
     $.get(window.location.href + "process").then(function(data){
@@ -1730,20 +1730,15 @@ $(function(){
       var status = data[0].Status;
       if(data.length > 0){
         console.log(processname + "/" + status + "/" + DumpData)
-        if( processname == 'DumpData' && status == 1 && DumpData == false ){
-          DumpData = true;
-          console.log(DumpData)
+        if( processname == 'DumpData' ){
           $('#Warning-dumpdata').fadeIn();
         }else{
-          DumpData = false;
           $('#Warning-dumpdata').fadeOut();  
         }
 
-        if( processname == 'DeleteData' && status == 1 && DeleteData == false ){
-          DeleteData = true;
+        if( processname == 'DeleteData'){          
           $('#Warning-deletedata').fadeIn();
-        }else{
-          DeleteData = false;
+        }else if( processname != 'DeleteData' && DeleteData == true ){          
           $('#Warning-deletedata').fadeOut();
         }
 
