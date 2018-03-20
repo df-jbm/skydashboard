@@ -18,8 +18,7 @@
       <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">        
         <ul class="navbar-nav" id="navbase64">
           <li class="nav-item">
-            <label><strong class="font-weight-bold text-danger" id="Warning-dumpdata" style="display: none;">Data Currently Being updated!</strong></label>            
-            <label><strong class="font-weight-bold text-danger" id="Warning-deletedata" style="display: none;">Data Currently Being deleted!</strong></label>            
+            <label><strong class="font-weight-bold text-danger" id="warning" style="display: none;">Data Currently Being updated!</strong></label>                        
           </li>
         </ul>
       </div>

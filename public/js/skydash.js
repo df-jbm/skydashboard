@@ -1731,22 +1731,21 @@ $(function(){
       if(data.length > 0){
         console.log(processname + "/" + status + "/" + DumpData)
         if( processname == 'DumpData' ){
-          $('#Warning-dumpdata').fadeIn();
+          $('#warning').text("Data Currently Being updated!")
+          $('#warning').fadeIn();
         }else{
-          $('#Warning-dumpdata').fadeOut();  
+          $('#warning').fadeOut();  
         }
 
         if( processname == 'DeleteData'){          
-          $('#Warning-deletedata').fadeIn();
-        }else if( processname != 'DeleteData' && DeleteData == true ){          
-          $('#Warning-deletedata').fadeOut();
+          $('#warning').text("Data Currently Being deleted!")
+          $('#warning').fadeIn();
+        }else{          
+          $('#warning').fadeOut();
         }
 
       }else{
-        DumpData = false;
-        DeleteData = false;
-        $('#Warning-dumpdata').fadeOut();
-        $('#Warning-deletedata').fadeOut();
+        $('#warning').fadeOut();        
       }      
     });
   }  
