@@ -1730,7 +1730,10 @@ $(function(){
         if( processname == 'DumpData' && status === 1 && DumpData == false ){
           DumpData = true;
           console.log(DumpData)
+          $('#Warning-dumpdata').fadeIn();
         }
+      }else{
+        $('#Warning-dumpdata').fadeOut();
       }      
     });
   }  
