@@ -1721,7 +1721,7 @@ $(function(){
   });
   //300000
   check_processes();
-  window.setInterval(check_processes, 12000);
+  window.setInterval(check_processes, 120000);
 
   function check_processes(){
     $.get(window.location.href + "process").then(function(data){
