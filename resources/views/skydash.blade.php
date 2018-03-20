@@ -23,7 +23,7 @@
         </ul>
       </div>
     </nav>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border border-top-0">
+    <nav class="navbar navbar-expand-sm navbar-light bg-white border border-top-0">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
