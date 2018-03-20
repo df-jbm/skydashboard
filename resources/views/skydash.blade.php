@@ -15,7 +15,7 @@
   </head>
   <body class="bg-light">
     <nav class="navbar bg-white">
-      <div class="justify-content-md-center" id="navbarsExample10"> 
+      <div class="collapse navbar-collapse justify-content-md-center"> 
         <ul class="navbar-nav" id="navbase64">
           <li class="nav-item">
             <label>TEST</label>            
