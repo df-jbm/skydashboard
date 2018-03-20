@@ -1719,7 +1719,7 @@ $(function(){
     }
   });
   //300000
-  window.setInterval(check_processes, 1000);
+  window.setInterval(check_processes, 300000);
 
   function check_processes(){
     $.get(window.location.href + "process").then(function(data){
