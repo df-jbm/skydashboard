@@ -105,7 +105,7 @@
 html,
 body,
 body main{
-  height: calc(100% - 45px);
+  height: calc(100% - 50px);
 }
 body main .row:first-child{
   height: 60%;
