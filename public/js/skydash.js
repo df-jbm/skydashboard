@@ -1713,6 +1713,7 @@ function loadingstate(){
 }
 $(function(){
   var DumpData = false;
+  var DeleteData = false;
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1733,9 +1734,22 @@ $(function(){
           DumpData = true;
           console.log(DumpData)
           $('#Warning-dumpdata').fadeIn();
+        }else{
+          DumpData = false;
+          $('#Warning-dumpdata').fadeOut();  
         }
+
+        if( processname == 'DeleteData' && status == 1 && DeleteData == false ){
+          DeleteData = true;
+          $('#Warning-deletedata').fadeIn();
+        }else{
+          DeleteData = false;
+          $('#Warning-deletedata').fadeOut();
+        }
+
       }else{
         $('#Warning-dumpdata').fadeOut();
+        $('#Warning-deletedata').fadeOut();
       }      
     });
   }  
