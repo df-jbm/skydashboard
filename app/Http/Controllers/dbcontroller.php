@@ -17,6 +17,7 @@ class dbcontroller extends Controller
   protected $ProgrammeTitles = array();
   protected $numbersToTake = 0;
   protected $platforms = array();
+  protected $process = array();
 
   public function __construct(){
     $this->GetChannelGroups = DB::select('EXEC GetChannelGroups');
@@ -33,6 +34,11 @@ class dbcontroller extends Controller
 
     $writer = new Xlsx($spreadsheet);
     $writer->save('hello world.xlsx');
+  }
+
+  public function GetActiveProcess(){
+    $this->process = DB::select('EXEC GetActiveProcesses');
+    return response($this->process);
   }
 
   public function GetChannelGroups(){

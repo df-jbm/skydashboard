@@ -44,3 +44,5 @@ Route::post('/export_items_to_excel','dbcontroller@export_items_to_excel');
 Route::get('/uploadimg','dbcontroller@uploadimg');
 
 Route::get('/platforms','dbcontroller@GetPlatforms');
+
+Route::get('/process','dbcontroller@GetActiveProcess');
