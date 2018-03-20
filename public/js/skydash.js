@@ -1716,7 +1716,16 @@ $(function(){
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
-  });  
+  });
+  //300000
+  window.setInterval(check_processes, 1000);
+
+  function check_processes(){
+    $.get(window.location.href + "process").then(function(data){
+      console.log(data)
+    });
+  }  
+  
   $('#programeperformance').scroll(function(){
     var appendoutput = '';
     if(page <= last_page){
