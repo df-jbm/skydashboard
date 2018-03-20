@@ -1712,6 +1712,7 @@ function loadingstate(){
   });
 }
 $(function(){
+  var activeprocess = false;
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1722,7 +1723,8 @@ $(function(){
 
   function check_processes(){
     $.get(window.location.href + "process").then(function(data){
-      console.log(data)
+      console.log(data.ProcessName)
+
     });
   }  
   
