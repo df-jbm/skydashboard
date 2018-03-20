@@ -1728,7 +1728,7 @@ $(function(){
       var status = data[0].Status;
       if(data.length > 0){
         console.log(processname + "/" + status + "/" + DumpData)
-        if( processname == 'DumpData' && status === 1 && DumpData == false ){
+        if( processname == 'DumpData' && status == 1 && DumpData == false ){
           DumpData = true;
           console.log(DumpData)
           $('#Warning-dumpdata').fadeIn();
