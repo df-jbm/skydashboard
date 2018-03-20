@@ -1712,16 +1712,14 @@ function loadingstate(){
   });
 }
 $(function(){
-  var DumpData = false;
-  var DeleteData = false;
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  //300000
-  check_processes();
-  window.setInterval(check_processes, 1000);
+  
+  
+  window.setInterval(check_processes, 10000);
 
   function check_processes(){
     $.get(window.location.href + "process").then(function(data){      
