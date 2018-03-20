@@ -1712,8 +1712,6 @@ function loadingstate(){
   });
 }
 $(function(){
-  var DumpData = false;
-  var DeleteData = false;
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
