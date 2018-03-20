@@ -1723,7 +1723,7 @@ $(function(){
 
   function check_processes(){
     $.get(window.location.href + "process").then(function(data){
-      console.log(data.ProcessName)
+      console.log(data[0].ProcessName)
 
     });
   }  
