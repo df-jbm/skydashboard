@@ -1717,15 +1717,9 @@ $(function(){
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-<<<<<<< HEAD
-  
-  
-  window.setInterval(check_processes, 10000);
-=======
   //300000
   check_processes();
   window.setInterval(check_processes, 120000);
->>>>>>> ba1780ca3ea8d7697b3359f9056b178e24de8339
 
   function check_processes(){
     $.get(window.location.href + "process").then(function(data){      
