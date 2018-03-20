@@ -15,11 +15,13 @@
   </head>
   <body class="bg-light">
     <nav class="navbar bg-white">
-      <ul class="navbar-nav" id="navbase64">
-        <li class="nav-item">
-          <label>TEST</label>            
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10"> 
+        <ul class="navbar-nav" id="navbase64">
+          <li class="nav-item">
+            <label>TEST</label>            
+          </li>
+        </ul>
+      </div>
     </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-white border border-top-0">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
