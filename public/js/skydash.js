@@ -1712,7 +1712,7 @@ function loadingstate(){
   });
 }
 $(function(){
-  var activeprocess = false;
+  var DumpData = false;
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1724,7 +1724,14 @@ $(function(){
   function check_processes(){
     $.get(window.location.href + "process").then(function(data){
       console.log(data[0].ProcessName)
-
+      var processname = data[0].ProcessName;
+      var status = data[0].Status;
+      if(data.length > 0){
+        if( processname == 'DumpData' && status === 1 && DumpData == false ){
+          DumpData = true;
+          console.log(DumpData)
+        }
+      }      
     });
   }  
   
