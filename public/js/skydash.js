@@ -1724,12 +1724,12 @@ $(function(){
   window.setInterval(check_processes, 1000);
 
   function check_processes(){
-    $.get(window.location.href + "process").then(function(data){
-      console.log(data[0].ProcessName)
-      var processname = data[0].ProcessName;
-      var status = data[0].Status;
-      console.log(data.length)
+    $.get(window.location.href + "process").then(function(data){      
       if(data.length > 0){
+        console.log(data[0].ProcessName)
+        var processname = data[0].ProcessName;
+        var status = data[0].Status;
+        console.log(data.length)
         console.log(processname + "/" + status + "/" + DumpData)
         if( processname == 'DumpData' ){
           $('#warning').text("Data Currently Being updated!")
