@@ -1727,6 +1727,7 @@ $(function(){
       var processname = data[0].ProcessName;
       var status = data[0].Status;
       if(data.length > 0){
+        console.log(data)
         if( processname == 'DumpData' && status === 1 && DumpData == false ){
           DumpData = true;
           console.log(DumpData)
