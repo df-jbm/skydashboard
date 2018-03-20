@@ -244,3 +244,6 @@ body main .row #performance-content .card .card-body .table-responsive{
   padding-right: 15px;
   padding-left: 15px;
 }
+#warning-nav{
+  height: 20px;
+}

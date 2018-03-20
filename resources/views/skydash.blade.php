@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/skydash.css">
   </head>
   <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border" id="warning-nav">
       <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">        
         <ul class="navbar-nav" id="navbase64">
           <li class="nav-item">
