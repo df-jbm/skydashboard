@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="css/skydash.css">
   </head>
   <body class="bg-light">
+    <nav class="navbar bg-white">
+      <ul class="navbar-nav" id="navbase64">
+        <li class="nav-item">
+          <label>TEST</label>            
+        </li>
+      </ul>
+    </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-white border">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,12 +32,7 @@
           </li>
         </ul>
       </div>
-      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
-        <ul class="navbar-nav" id="navbase64">
-          <li class="nav-item">
-            <label>TEST</label>            
-          </li>
-        </ul>
+      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">        
         <ul class="navbar-nav" id="navbase64">
           <li class="nav-item" id="channelgroupholder">
             <label for="channelgroup" class="small col-form-label  align-center">Channel List</label>
