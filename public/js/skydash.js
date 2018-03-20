@@ -1721,7 +1721,7 @@ $(function(){
   });
   //300000
   check_processes();
-  window.setInterval(check_processes, 100);
+  window.setInterval(check_processes, 100000);
 
   function check_processes(){
     $.get(window.location.href + "process").then(function(data){
@@ -1748,6 +1748,8 @@ $(function(){
         }
 
       }else{
+        DumpData = false;
+        DeleteData = false;
         $('#Warning-dumpdata').fadeOut();
         $('#Warning-deletedata').fadeOut();
       }      
