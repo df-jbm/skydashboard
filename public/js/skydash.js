@@ -511,15 +511,12 @@ var navmodule = {
                 activePlatForm = PFormID;
                 var PFormID = PFormID
                 var PtypeID = $('#periodtype').val()
-                if(fytd == false){
-                  if(WPeriod != ''){
-                    var Prange = WPeriod
-                  }else{
-                    var Prange = navmodule.externalProgdate($('#customperiod').val())
-                  }
+                
+                if(WPeriod != ''){
+                  var Prange = WPeriod
                 }else{
-                  var Prange = fytdString;
-                }                
+                  var Prange = navmodule.externalProgdate($('#customperiod').val())
+                }              
 
                 if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
                   sort = 1
@@ -618,14 +615,11 @@ var navmodule = {
           activePlatForm = -1;
           var PFormID = -1
           var PtypeID = $('#periodtype').val()
-          if(fytd == false){
-            if(WPeriod != ''){
-              var Prange = WPeriod
-            }else{
-              var Prange = navmodule.externalProgdate($('#customperiod').val())
-            }
+          
+          if(WPeriod != ''){
+            var Prange = WPeriod
           }else{
-            var Prange = fytdString;
+            var Prange = navmodule.externalProgdate($('#customperiod').val())
           } 
           
           
@@ -749,6 +743,7 @@ var navmodule = {
       PlatFormID : PFormID,
       PeriodTypeID : PtypeID,
       Period : Prange,
+      PeriodString : PeriodString,
       Filter : filter,
       InputSortID : SumSort,
       page : page,
