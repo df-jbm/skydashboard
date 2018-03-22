@@ -735,6 +735,11 @@ var navmodule = {
       var filter = $('#filterbmi').val()
     }else{
       var filter = ''
+    }
+    if(fytd == false){
+      var PeriodString = '';
+    }else{
+      var PeriodString = '';
     }  
     page = 1;
     request = {
