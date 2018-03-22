@@ -778,7 +778,7 @@ var navmodule = {
       'PlatFormID' +"="+ PFormID + "&" +
       'PeriodTypeID' +"="+ PtypeID + "&" +
       'Period' +"="+ Prange + "&" +
-      'PeriodString='+ PeriodString "&"+
+      'PeriodString='+ PeriodString + "&"+
       'Filter' +"="+ filter + 
       'InputSortID' +"="+ SumSort;
 
@@ -1973,7 +1973,7 @@ $(function(){
     clearTimeout(wto);
     wto = setTimeout(function() {
       var str = $('#customperiod').val()
-      if(~str.indexOf("fy7") || ~str.indexOf("fytd7")){        
+      if(~str.indexOf("fy7") || ~str.indexOf("fytd7") ){        
         fytd = true;        
         $('#periodtype').val(5)  
         navmodule.ChannelPerformanceRequest()      
