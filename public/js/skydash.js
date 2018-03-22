@@ -1633,7 +1633,7 @@ var navmodule = {
         scrollLen = yearrange.length - 1;
         $('#customperiod').val(yearrange[0])
         break;
-      //fy7 or fytd7 or fy7,fytd7 or fy7/,fytd7 or fy7//,fytd7 or fy7///,fytd7 
+        //fy7 or fytd7 or fy7,fytd7 or fy7/,fytd7 or fy7//,fytd7 or fy7///,fytd7 
         /*fytd = true;
         var today = new Date();
         var dd = today.getDate();
@@ -1646,7 +1646,8 @@ var navmodule = {
           fytdString = "-"+ Number(yy);
         }        
         console.log(fytdString)
-        break;*/
+        */
+        break;
     }
     navmodule.scrollproperty()
   },
