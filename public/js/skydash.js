@@ -1629,12 +1629,7 @@ var navmodule = {
         $('#customperiod').val(quarterrange[0])
         break;
       case '5' :
-        fytd = false;
-        scrollLen = yearrange.length - 1;
-        $('#customperiod').val(yearrange[0])
-        break;
-        //fy7 or fytd7 or fy7,fytd7 or fy7/,fytd7 or fy7//,fytd7 or fy7///,fytd7 
-        /*fytd = true;
+        fytd = true;
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1;
@@ -1646,7 +1641,6 @@ var navmodule = {
           fytdString = "-"+ Number(yy);
         }        
         console.log(fytdString)
-        */
         break;
     }
     navmodule.scrollproperty()
