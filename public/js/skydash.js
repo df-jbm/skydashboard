@@ -346,11 +346,14 @@ var navmodule = {
     if(fytd == false){
       if(WPeriod != ''){
         var Period = WPeriod
+        var PeriodString = -1;
       }else{
         var Period = navmodule.externalProgdate($('#customperiod').val())
+        var PeriodString = -1;
       }
     }else{
-      var Period = fytdString;
+      var Period = -1;
+      var PeriodString = fytdString;
     }
     
 
@@ -363,13 +366,13 @@ var navmodule = {
       ChannelGroupID : ChannelGroupID,
       PeriodTypeID : PeriodTypeID,
       Period : Period,
-      ChannelGroupID : ChannelGroupID,
+      PeriodString : PeriodString,      
       Filter : filter
     }
     console.log(request)
     channelreq = 'ChannelGroupID' + "=" + 
                   ChannelGroupID + "&" + 'PeriodTypeID' + "=" + 
-                  PeriodTypeID + "&" + 'Period' + "=" + Period + "&" + 'ChannelGroupID' + "=" + ChannelGroupID + "&" + 'Filter' + "=" + filter;
+                  PeriodTypeID + "&" + 'Period' + "=" + Period + "&PeriodString=" + PeriodString + "&" + 'ChannelGroupID' + "=" + ChannelGroupID + "&" + 'Filter' + "=" + filter;
     //loadingstate()
     $.get(window.location.href + "channelperformance", request, function(data){
       navmodule.init_ChannelPerformance(data,ChannelGroupID)
@@ -1629,7 +1632,12 @@ var navmodule = {
         $('#customperiod').val(quarterrange[0])
         break;
       case '5' :
-        fytd = true;
+        fytd = false;
+        scrollLen = yearrange.length - 1;
+        $('#customperiod').val(yearrange[0])
+        break;
+        //fy7 or fytd7 or fy7,fytd7 or fy7/,fytd7 or fy7//,fytd7 or fy7///,fytd7 
+        /*fytd = true;
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1;
@@ -1642,6 +1650,7 @@ var navmodule = {
         }        
         console.log(fytdString)
         break;
+        */        
     }
     navmodule.scrollproperty()
   },

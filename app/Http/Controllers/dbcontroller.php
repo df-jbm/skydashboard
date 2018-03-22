@@ -50,13 +50,13 @@ class dbcontroller extends Controller
   }
 
   public function GetChannelPerformance(Request $r){
-    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->Filter));
+    $this->GetChannelPerformance = DB::select('EXEC GetChannelPerformance ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->PeriodTypeID,$r->Period,$r->PeriodString,$r->Filter));
     return response($this->GetChannelPerformance);
   }
 
   public function GetProgramePerformance(Request $r){
     $this->GetProgramePerformance = array();    
-    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->Filter,$r->InputSortID));        
+    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->PeriodString,$r->Filter,$r->InputSortID));        
     $page = Input::get('page', $r->page);
     $paginate = 10;
     $data = $this->GetProgramePerformance;
