@@ -56,8 +56,8 @@
               <option value="1">Date</option>
               <!--<option value="2">Week</option>
               <option value="3">Month</option>
-              <option value="4">Quarter</option>
-              <option value="5">Year</option>-->
+              <option value="4">Quarter</option>-->
+              <option value="5">Year</option>
             </select>
           </li>
           <li class="nav-item" id="periodwrapper">
