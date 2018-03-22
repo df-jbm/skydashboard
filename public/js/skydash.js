@@ -353,7 +353,7 @@ var navmodule = {
       }
     }else{
       var Period = -1;
-      var PeriodString = fytdString;
+      var PeriodString = $('#customperiod').val();
     }
     
 
@@ -739,7 +739,7 @@ var navmodule = {
     if(fytd == false){
       var PeriodString = '';
     }else{
-      var PeriodString = '';
+      var PeriodString = $('#customperiod').val();
     }  
     page = 1;
     request = {
@@ -778,6 +778,7 @@ var navmodule = {
       'PlatFormID' +"="+ PFormID + "&" +
       'PeriodTypeID' +"="+ PtypeID + "&" +
       'Period' +"="+ Prange + "&" +
+      'PeriodString='+ PeriodString "&"+
       'Filter' +"="+ filter + 
       'InputSortID' +"="+ SumSort;
 
@@ -1971,18 +1972,9 @@ $(function(){
     var char = $('#customperiod').val()
     clearTimeout(wto);
     wto = setTimeout(function() {
-      if($('#customperiod').val() == "-fytd"){
-        fytd = true;
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth()+1;
-        var yy = today.getFullYear();
-        if(Number(mm) < 6){
-          fytdString = "-"+ Number(yy - 1);
-        }else{
-          fytdString = "-"+ Number(yy);
-        }        
-        console.log(fytdString)
+      var str = $('#customperiod').val()
+      if(~str.indexOf("fy7") || ~str.indexOf("fytd7")){        
+        fytd = true;        
         $('#periodtype').val(5)  
         navmodule.ChannelPerformanceRequest()      
       }
