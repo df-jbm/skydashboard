@@ -740,7 +740,7 @@ var navmodule = {
       var filter = ''
     }
     if(fytd == false){
-      var PeriodString = '';
+      var PeriodString = -1;
     }else{
       var PeriodString = $('#customperiod').val();
     }  
