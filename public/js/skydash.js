@@ -371,12 +371,12 @@ var navmodule = {
     }
     console.log(request)
 
-      channelreq = 'ChannelGroupID=' +
-                  ChannelGroupID + '&PeriodTypeID=' +
-                  PeriodTypeID + '&Period=' +
-                  Period + "&PeriodString=" + 
-                  PeriodString '&ChannelGroupID='
-                  ChannelGroupID +'&Filter=' + filter;
+      channelreq = 'ChannelGroupID=' + ChannelGroupID + 
+                    '&PeriodTypeID=' + PeriodTypeID + 
+                    '&Period=' + Period +
+                    "&PeriodString=" + PeriodString +
+                    '&ChannelGroupID=' + ChannelGroupID +
+                    '&Filter=' + filter;
     //loadingstate()
     $.get(window.location.href + "channelperformance", request, function(data){
       navmodule.init_ChannelPerformance(data,ChannelGroupID)
