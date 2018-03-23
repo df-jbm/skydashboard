@@ -370,9 +370,12 @@ var navmodule = {
       Filter : filter
     }
     console.log(request)
-    channelreq = 'ChannelGroupID' + "=" + 
-                  ChannelGroupID + "&" + 'PeriodTypeID' + "=" + 
-                  PeriodTypeID + "&" + 'Period' + "=" + Period + "&PeriodString=" + PeriodString + "&" + 'ChannelGroupID' + "=" + ChannelGroupID + "&" + 'Filter' + "=" + filter;
+
+      channelreq = 'ChannelGroupID=' + ChannelGroupID + 
+                    '&PeriodTypeID=' + PeriodTypeID + 
+                    '&Period=' + Period +
+                    '&PeriodString=' + PeriodString +                    
+                    '&Filter=' + filter;
     //loadingstate()
     $.get(window.location.href + "channelperformance", request, function(data){
       navmodule.init_ChannelPerformance(data,ChannelGroupID)
@@ -1957,8 +1960,7 @@ $(function(){
         fytd = true;        
         $('#periodtype').val(5)  
         navmodule.ChannelPerformanceRequest()      
-      }
-
+      }      
       if($('#customperiod').val().length == 6){
         if($.inArray( $('#customperiod').val(), daterange ) != -1){
           fytd = false;
