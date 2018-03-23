@@ -374,8 +374,7 @@ var navmodule = {
       channelreq = 'ChannelGroupID=' + ChannelGroupID + 
                     '&PeriodTypeID=' + PeriodTypeID + 
                     '&Period=' + Period +
-                    '&PeriodString=' + PeriodString +
-                    '&ChannelGroupID=' + ChannelGroupID +
+                    '&PeriodString=' + PeriodString +                    
                     '&Filter=' + filter;
     //loadingstate()
     $.get(window.location.href + "channelperformance", request, function(data){
