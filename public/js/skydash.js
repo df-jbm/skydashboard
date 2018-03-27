@@ -1764,7 +1764,7 @@ $(function(){
   $('#programeperformance').scroll(function(){    
     var appendoutput = '';
     if(page <= last_page){
-      if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){                           
+      if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight - 10){                           
         console.log('scroll')
         $.get(window.location.href + "programmeperformance", scrollrequest, function(result){                            
           console.log(result.data.data)
