@@ -1760,10 +1760,11 @@ $(function(){
     });
   }  
   
-  $('#programeperformance').scroll(function(){
+  $('#programeperformance').scroll(function(){    
     var appendoutput = '';
     if(page <= last_page){
       if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){                           
+        console.log('scroll')
         $.get(window.location.href + "programmeperformance", scrollrequest, function(result){                            
           console.log(result.data.data)
           var ShowFromTime =$('#periodtype').val() == 1 && scg == -1 && sch != -1 && scp == 1;      
