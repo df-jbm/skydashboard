@@ -844,12 +844,11 @@ var navmodule = {
         PlatFormID : PFormID,
         PeriodTypeID : PtypeID,
         Period : Prange,
-        PeriodString : PeriodString,
-        Filter : filter,
+        PeriodString : PeriodString,        
+        Filter : filter,        
         InputSortID : SumSort,
         page : page,
-      }                             
-
+      }                                   
       $('#table-programmeperformance #sort').each(function(){
         $(this).click(function(){
           navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,ChannelName,FormName,$(this).attr('value'))          
