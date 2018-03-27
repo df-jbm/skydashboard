@@ -784,7 +784,8 @@ var navmodule = {
       'Period' +"="+ Prange + "&" +
       'PeriodString='+ PeriodString + "&"+
       'Filter' +"="+ filter + "&" +
-      'InputSortID' +"="+ SumSort;
+      'InputSortID' +"="+ SumSort + "&" +
+      'page=1';
 
     $.get(window.location.href + "programmeperformance", request, function(data){
       console.log(data)
