@@ -1882,6 +1882,7 @@ $(function(){
     navmodule.exportchannel(channelreq);
   })
   $('#exportprogramme').click(function(){
+    console.log(programmereq)
     navmodule.exportprogramme(programmereq);
   })
   $('#exporttrending').click(function(){
