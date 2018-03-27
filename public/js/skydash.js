@@ -283,7 +283,8 @@ var navmodule = {
       $('#dlchannel').html("Toogle button to download again.")
     });
   },
-  exportprogramme : function(req){    
+  exportprogramme : function(req){ 
+    console.log(req)   
     $.get(window.location.href + "exportprogramme", req, function(data){
       console.log(data)       
       var expotRows = [];
@@ -1881,8 +1882,7 @@ $(function(){
   $('#exportchannel').click(function(){
     navmodule.exportchannel(channelreq);
   })
-  $('#exportprogramme').click(function(){
-    console.log(programmereq)
+  $('#exportprogramme').click(function(){    
     navmodule.exportprogramme(programmereq);
   })
   $('#exporttrending').click(function(){
