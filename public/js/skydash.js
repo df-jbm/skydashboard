@@ -843,6 +843,7 @@ var navmodule = {
         PlatFormID : PFormID,
         PeriodTypeID : PtypeID,
         Period : Prange,
+        PeriodString : PeriodString,
         Filter : filter,
         InputSortID : SumSort,
         page : page,
