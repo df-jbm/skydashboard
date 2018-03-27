@@ -783,7 +783,7 @@ var navmodule = {
       'PeriodTypeID' +"="+ PtypeID + "&" +
       'Period' +"="+ Prange + "&" +
       'PeriodString='+ PeriodString + "&"+
-      'Filter' +"="+ filter + 
+      'Filter' +"="+ filter + "&" +
       'InputSortID' +"="+ SumSort;
 
     $.get(window.location.href + "programmeperformance", request, function(data){
