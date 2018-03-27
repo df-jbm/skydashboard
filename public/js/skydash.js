@@ -285,10 +285,7 @@ var navmodule = {
   },
   exportprogramme : function(req){    
     $.get(window.location.href + "exportprogramme", req, function(data){
-      console.log(data) 
-      data.sort(function(a,b){
-        return '1'+ a.FirstFromTime - '1'+ b.FirstFromTime;
-      })     
+      console.log(data)       
       var expotRows = [];
       var dt = new Date();
       var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
