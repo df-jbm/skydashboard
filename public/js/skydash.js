@@ -213,7 +213,7 @@ var navmodule = {
       var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
       var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
       expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text()+ ": " + $('#customperiod').val(),"Search, "+ filterval,""]);
-      expotRows.push(["Channel Name","Platform Name","000"]);      
+      expotRows.push(["Channel Name","Platform Name","000"]);
       var totalchannels = []
       for (var i in data) {
           var sum000val = Number(data[i].Sum000).toFixed(2).replace(/\./g, ',');
@@ -284,9 +284,9 @@ var navmodule = {
     });
   },
   exportprogramme : function(req){ 
-    console.log(req)   
-    $.get(window.location.href + "exportprogramme", req, function(data){
-      console.log(data)       
+    console.log('exportprogram: '+req);
+  $.get(window.location.href + "exportprogramme", req, function(data){
+      console.log(data);      
       var expotRows = [];
       var dt = new Date();
       var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
@@ -347,10 +347,10 @@ var navmodule = {
     if(fytd == false){
       if(WPeriod != ''){
         var Period = WPeriod
-        var PeriodString = -1;
+        var periodstring = '';
       }else{
         var Period = navmodule.externalProgdate($('#customperiod').val())
-        var PeriodString = -1;
+        var periodstring = '';
       }
     }else{
       var Period = -1;
@@ -470,7 +470,7 @@ var navmodule = {
       var output = '<table class="table-bordered table-channelperformance" id="table-channelperformance" width="100%">';
         output += '<thead class="bg-white"><tr><td width="250"></td>';
       for(var i in Formname){
-        output += '<td class="text-center"><img height="50" src="channel/'+ Formname[i] +'.png" alt="'+ Formname[i] +'"></td>';
+        output += '<td class="text-center"><img height="50" src="channel/'+ Formname[i] +'Channel.png" alt="'+ Formname[i] +'"></td>';
       }
         output += '<td class="text-center bg-light" width="150"><img width="25" src="channel/globe.png" class="img-responsive">&nbsp;&nbsp;<small>TOTAL</small></td>';
         output += '</tr></thead><tbody>';
@@ -515,13 +515,11 @@ var navmodule = {
                 activePlatForm = PFormID;
                 var PFormID = PFormID
                 var PtypeID = $('#periodtype').val()
-                
                 if(WPeriod != ''){
                   var Prange = WPeriod
                 }else{
                   var Prange = navmodule.externalProgdate($('#customperiod').val())
                 }              
-
                 if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
                   sort = 1
                 }else{
@@ -619,12 +617,11 @@ var navmodule = {
           activePlatForm = -1;
           var PFormID = -1
           var PtypeID = $('#periodtype').val()
-          
           if(WPeriod != ''){
             var Prange = WPeriod
           }else{
             var Prange = navmodule.externalProgdate($('#customperiod').val())
-          } 
+          }
           
           
           if($('#periodtype').val() == 1 && ChGroupID == -1 && ChID != -1 && PFormID == 1){
@@ -663,7 +660,7 @@ var navmodule = {
       output += '</tr>'
       output += '</tbody></table>';
       $('#channelperformance').scrollTop(0)
-      $('#channelperformance').html(output)      
+      $('#channelperformance').html(output)
       var $table = $('table#table-channelperformance');
       $table.floatThead();      
       var channeltable = ($('#channelperformance').width() - 280) / Formname.length
@@ -741,7 +738,7 @@ var navmodule = {
       var filter = ''
     }
     if(fytd == false){
-      var PeriodString = -1;
+      var PeriodString = '';
     }else{
       var PeriodString = $('#customperiod').val();
     }  
@@ -777,19 +774,20 @@ var navmodule = {
 
     console.log(request)
     
-    programmereq = 'ChannelGroupID' +"="+ ChGroupID + "&" +
-      'ChannelID' +"="+ ChID + "&" +
-      'PlatFormID' +"="+ PFormID + "&" +
-      'PeriodTypeID' +"="+ PtypeID + "&" +
-      'Period' +"="+ Prange + "&" +
-      'PeriodString='+ PeriodString + "&"+
-      'Filter' +"="+ filter + "&" +
-      'InputSortID' +"="+ SumSort + "&" +
-      'page=1';
+    programmereq = 'ChannelGroupID='+ ChGroupID + '&' +
+      'ChannelID='+ ChID + '&' +
+      'PlatFormID='+ PFormID + '&' +
+      'PeriodTypeID='+ PtypeID + '&' +
+      'Period='+ Prange + '&' +
+      'PeriodString="'+ PeriodString +'"&'+
+      'Filter="'+ filter +'"&'+
+      'InputSortID='+SumSort;
+  console.log('programmereq: '+programmereq);  
+    
 
     $.get(window.location.href + "programmeperformance", request, function(data){
       console.log(data)
-      var form ='<img height="30" src="channel/'+ FormName +'.png" alt="'+ FormName +'">'      
+      var form ='<img height="30" src="channel/'+ FormName +'Prog.png" alt="'+ FormName +'">'      
       var output = '<table class="table table-bordered" id="table-programmeperformance" width="100%">';
       if(ChannelName.indexOf('TNT Comedy HD') == -1){
         var cname = ChannelName.replace('.', '-');
@@ -845,11 +843,12 @@ var navmodule = {
         PlatFormID : PFormID,
         PeriodTypeID : PtypeID,
         Period : Prange,
-        PeriodString : PeriodString,        
-        Filter : filter,        
+  PeriodString : PeriodString,
+        Filter : filter,
         InputSortID : SumSort,
         page : page,
-      }                                   
+      }                             
+
       $('#table-programmeperformance #sort').each(function(){
         $(this).click(function(){
           navmodule.init_ProgrammePerformance(ChGroupID,ChID,PFormID,PtypeID,Prange,ChannelName,FormName,$(this).attr('value'))          
@@ -916,10 +915,10 @@ var navmodule = {
       }else{
         var barnum = 13;
       }
-      console.log(request)
+      console.log('Trending: '+request);
       $.get(window.location.href + "trending", request, function(data){
         console.log(data)
-
+        var barcolor;
         var chartval = []
         var label = []
         var dataseries = []
@@ -985,15 +984,16 @@ var navmodule = {
             }
           }
         }
-        console.log(graphlegend)
+        
 
         if(PFormIDs.length == 1){
-          console.log('test')
+          
           var average = [];
           for(var x in axislabel){
             var lableexist = false;
             switch(num){
               case '1' :
+          console.log('test');
                 for(var i in data){
                   if(axislabel[x] == data[i].ProgDate){
                     if(Number(x) < barnum){
@@ -1003,10 +1003,11 @@ var navmodule = {
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
                       lableexist = true;
+            barcolor = data[i].ColorCode;
                       break;
                     }
                   }
-                  var barcolor = data[i].ColorCode;
+                  
                 }
                 if(lableexist == false){
                   average.push(Number(0).toFixed(2));
@@ -1023,10 +1024,11 @@ var navmodule = {
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
                       lableexist = true;
+            barcolor = data[i].ColorCode;
                       break;
                     }
                   }
-                  var barcolor = data[i].ColorCode;
+                  
                 }
                 if(lableexist == false){
                   average.push(Number(0).toFixed(2));
@@ -1044,10 +1046,11 @@ var navmodule = {
                         average.push(Number(data[i].SumATV).toFixed(2))
                       }
                       lableexist = true;
+            barcolor = data[i].ColorCode;
                       break;
                     }
                   }
-                  var barcolor = data[i].ColorCode;
+                  
                 }
                 if(lableexist == false){
                   average.push(Number(0).toFixed(2));
@@ -1101,8 +1104,8 @@ var navmodule = {
               }
             },            
             data: average,
-          }]
-          var topxAxis = average;
+          }];
+      var topxAxis = average;
         }else{
           console.log(data)
           for(var i in PFormIDs){
@@ -1142,7 +1145,7 @@ var navmodule = {
                   }else{
                     average[x] = Number(data[d].SumATV).toFixed(2)
                   }
-                  var barcolor = data[d].ColorCode;
+                  barcolor = data[d].ColorCode;
                 }
               }
             }
@@ -1642,21 +1645,6 @@ var navmodule = {
         scrollLen = yearrange.length - 1;
         $('#customperiod').val(yearrange[0])
         break;
-        //fy7 or fytd7 or fy7,fytd7 or fy7/,fytd7 or fy7//,fytd7 or fy7///,fytd7 
-        /*fytd = true;
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth()+1;
-        var yy = today.getFullYear();
-        $('#customperiod').val('-fytd')
-        if(Number(mm) < 6){
-          fytdString = "-"+ Number(yy - 1);
-        }else{
-          fytdString = "-"+ Number(yy);
-        }        
-        console.log(fytdString)
-        break;
-        */        
     }
     navmodule.scrollproperty()
   },
@@ -1735,18 +1723,16 @@ $(function(){
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  //300000
-  check_processes();
-  window.setInterval(check_processes, 120000);
-
-  function check_processes(){
-    $.get(window.location.href + "process").then(function(data){      
+  
+  window.setInterval(check_processes, 10000);
+  function check_processes(){   
+  $.get(window.location.href + "process").then(function(data){      
       if(data.length > 0){
         console.log(data[0].ProcessName)
         var processname = data[0].ProcessName;
         var status = data[0].Status;
         console.log(data.length)
-        console.log(processname + "/" + status + "/" + DumpData)
+        console.log(processname + "/" + status + "/" + processname )
         if( processname == 'DumpData' ){
           $('#warning').text("Data Currently Being updated!")
           $('#warning').fadeIn();
@@ -1761,11 +1747,10 @@ $(function(){
     });
   }  
   
-  $('#programeperformance').scroll(function(){    
+  $('#programeperformance').scroll(function(){
     var appendoutput = '';
     if(page <= last_page){
-      if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight - 10){                           
-        console.log('scroll')
+      if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight){                           
         $.get(window.location.href + "programmeperformance", scrollrequest, function(result){                            
           console.log(result.data.data)
           var ShowFromTime =$('#periodtype').val() == 1 && scg == -1 && sch != -1 && scp == 1;      
@@ -1883,7 +1868,7 @@ $(function(){
   $('#exportchannel').click(function(){
     navmodule.exportchannel(channelreq);
   })
-  $('#exportprogramme').click(function(){    
+  $('#exportprogramme').click(function(){
     navmodule.exportprogramme(programmereq);
   })
   $('#exporttrending').click(function(){
@@ -1983,7 +1968,8 @@ $(function(){
         fytd = true;        
         $('#periodtype').val(5)  
         navmodule.ChannelPerformanceRequest()      
-      }      
+      }
+
       if($('#customperiod').val().length == 6){
         if($.inArray( $('#customperiod').val(), daterange ) != -1){
           fytd = false;
