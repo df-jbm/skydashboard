@@ -836,6 +836,8 @@ var navmodule = {
       }      
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
+      var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+      alert(isIE11);
       $('#programeperformance').css({
         'padding-right' : '100px'
       })
