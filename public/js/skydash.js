@@ -52,6 +52,7 @@ var scp = "";
 var datetoday = new Date();
 var fytd = false;
 var fytdString;
+var echartBar;
 var navmodule = {
   /*
   ===== Initialize navigation
@@ -314,7 +315,12 @@ var navmodule = {
       $('#dlprog').html("Toogle button to download again.")  
     })
   },
-  exporttrending : function(req){        
+  exporttrending : function(req){
+    base64 = new Image();
+    base64.src = echartBar.getDataURL({
+        pixelRatio: 2,
+        backgroundColor: '#fff'
+    });                          
     console.log(req)    
     console.log(base64.src)
     var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
@@ -1246,7 +1252,7 @@ var navmodule = {
             return true;
           }          
         }
-        var echartBar = echarts.init(document.getElementById('bargraph'));                
+        echartBar = echarts.init(document.getElementById('bargraph'));                
         echartBar.on('magictypechanged', function(params) {
             magicType = params.currentType;                        
         });
@@ -1473,12 +1479,7 @@ var navmodule = {
             ],
             calculable : true,
             series: dataseries
-          });
-          base64 = new Image();
-          base64.src = echartBar.getDataURL({
-              pixelRatio: 2,
-              backgroundColor: '#fff'
-          });          
+          });                  
         });
         echartBar.setOption({
           title: {
@@ -1609,12 +1610,7 @@ var navmodule = {
           ],
           calculable : true,
           series: dataseries
-        });
-        base64 = new Image();
-          base64.src = echartBar.getDataURL({
-              pixelRatio: 2,
-              backgroundColor: '#fff'
-          });                  
+        });        
       })
     }else{
       $('#bargraph').html('')
