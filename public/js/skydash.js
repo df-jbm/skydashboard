@@ -1472,7 +1472,12 @@ var navmodule = {
             ],
            calculable : true,
               series: dataseries
-          })
+          });
+          base64 = new Image();
+          base64.src = echartBar.getDataURL({
+              pixelRatio: 2,
+              backgroundColor: '#fff'
+          });
         });
         echartBar.setOption({
           title: {
