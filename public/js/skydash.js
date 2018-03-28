@@ -336,8 +336,7 @@ var navmodule = {
         formname : exportrendingplatform,
       },
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
-      success: function(result){
-        console.log(result)
+      success: function(result){        
         if(result == 'done'){
           window.open('/spreadsheet/trending.xlsx','_blank');
           $('#dltrend').html("Toogle button to download again.");  
