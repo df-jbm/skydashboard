@@ -835,12 +835,13 @@ var navmodule = {
         '</tr>';                      
       }      
       output += '</tbody></table>'
-      $('#programeperformance').scrollTop(0)      
-      alert(isIE11);
-      $('#programeperformance').css({
-        'padding-right' : '100px'
-      })
+      $('#programeperformance').scrollTop(0)            
       $('#programeperformance').html(output)
+      if(isIE11 == true){
+        $('#programeperformance').css({
+          'padding-right' : '20px'
+        })
+      }      
       last_page = data.data.last_page;
       console.log(last_page)
       page++;
