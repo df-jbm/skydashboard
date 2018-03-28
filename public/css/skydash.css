@@ -248,8 +248,9 @@ body main .row #performance-content .card .card-body .table-responsive{
   height: 25px;
   padding: 10px 0 0 0;
 }
-@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) { 
-  #programeperformance{
-    padding-right: 80px;
-  }
+@media all and (-ms-high-contrast:none){
+  
+}
+#programeperformance{
+  padding-right: 80px;
 }
