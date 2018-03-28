@@ -664,6 +664,11 @@ var navmodule = {
       output += '</tbody></table>';
       $('#channelperformance').scrollTop(0)
       $('#channelperformance').html(output)
+      if(isIE11 == true){
+        $('#channelperformance').css({
+          'padding-right' : '17px'
+        })
+      }
       var $table = $('table#table-channelperformance');
       $table.floatThead();      
       var channeltable = ($('#channelperformance').width() - 280) / Formname.length
