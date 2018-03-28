@@ -315,6 +315,11 @@ var navmodule = {
     })
   },
   exporttrending : function(req){    
+    base64 = new Image();
+    base64.src = echartBar.getDataURL({
+        pixelRatio: 2,
+        backgroundColor: '#fff'
+    });
     console.log(req)    
     console.log(base64.src)
     var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
@@ -1248,13 +1253,7 @@ var navmodule = {
         }
         var echartBar = echarts.init(document.getElementById('bargraph'));                
         echartBar.on('magictypechanged', function(params) {
-            magicType = params.currentType;            
-            base64 = new Image();
-            base64.src = echartBar.getDataURL({
-                pixelRatio: 2,
-                backgroundColor: '#fff'
-            });
-            console.log(base64.src);
+            magicType = params.currentType;                        
         });
         var excludelist = []
         echartBar.on('legendselectchanged', function(params) {                
@@ -1349,13 +1348,7 @@ var navmodule = {
           }
           echartBar.on('magictypechanged', function(params) {
             magicType = params.currentType;
-            alert(magicType)
-            base64 = new Image();
-            base64.src = echartBar.getDataURL({
-                pixelRatio: 2,
-                backgroundColor: '#fff'
-            });
-            console.log(magicType)
+            alert(magicType)            
           });
           echartBar.setOption({
             title: {
@@ -1616,12 +1609,7 @@ var navmodule = {
           ],
           calculable : true,
           series: dataseries
-        });
-        base64 = new Image();
-        base64.src = echartBar.getDataURL({
-            pixelRatio: 2,
-            backgroundColor: '#fff'
-        });
+        });        
       })
     }else{
       $('#bargraph').html('')
