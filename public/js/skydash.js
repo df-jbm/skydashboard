@@ -340,7 +340,7 @@ var navmodule = {
         console.log(result)
         if(result == 'done'){
           window.open('/spreadsheet/trending.xlsx','_blank');
-          $('#dltrend').html("Toogle button to download again.")  
+          $('#dltrend').html("Toogle button to download again.");  
         }
       }
     })    
