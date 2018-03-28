@@ -250,6 +250,6 @@ body main .row #performance-content .card .card-body .table-responsive{
 }
 @media all and (-ms-high-contrast:none){
   body main .row #performance-content .card #programeperformance{
-    padding-left: 10px;
+    padding-right: 10px;
   }
 }
