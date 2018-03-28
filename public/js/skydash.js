@@ -1348,6 +1348,7 @@ var navmodule = {
                 pixelRatio: 2,
                 backgroundColor: '#fff'
             });
+            console.log(magicType)
           });
           echartBar.setOption({
             title: {
