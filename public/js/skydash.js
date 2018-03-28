@@ -1255,7 +1255,7 @@ var navmodule = {
                 pixelRatio: 2,
                 backgroundColor: '#fff'
             });
-            console.log(magicType)
+            console.log(magicType);
         });
         var excludelist = []
         echartBar.on('legendselectchanged', function(params) {                
