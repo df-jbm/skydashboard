@@ -248,4 +248,6 @@ body main .row #performance-content .card .card-body .table-responsive{
   height: 25px;
   padding: 10px 0 0 0;
 }
-
+@media all and (-ms-high-contrast:none){
+  @-ms-viewport{width:auto!important}
+}
