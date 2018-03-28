@@ -1343,6 +1343,7 @@ var navmodule = {
           }
           echartBar.on('magictypechanged', function(params) {
             magicType = params.currentType;
+            alert(magicType)
             base64 = new Image();
             base64.src = echartBar.getDataURL({
                 pixelRatio: 2,
