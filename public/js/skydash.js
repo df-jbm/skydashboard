@@ -1249,6 +1249,13 @@ var navmodule = {
         var echartBar = echarts.init(document.getElementById('bargraph'));                
         echartBar.on('magictypechanged', function(params) {
             magicType = params.currentType;
+            alert(magicType)
+            base64 = new Image();
+            base64.src = echartBar.getDataURL({
+                pixelRatio: 2,
+                backgroundColor: '#fff'
+            });
+            console.log(magicType)
         });
         var excludelist = []
         echartBar.on('legendselectchanged', function(params) {                
