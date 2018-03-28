@@ -340,9 +340,6 @@ var navmodule = {
         console.log(result)
         if(result == 'done'){
           window.open('/spreadsheet/trending.xlsx','_blank');
-          /*$('#dltrend').attr('href','/spreadsheet/trending.xlsx')
-          $('#dltrend').html("Click here to download")
-          $('#dltrend').attr('disable',false)*/
           $('#dltrend').html("Toogle button to download again.")  
         }
       }
