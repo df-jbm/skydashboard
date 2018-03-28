@@ -314,12 +314,7 @@ var navmodule = {
       $('#dlprog').html("Toogle button to download again.")  
     })
   },
-  exporttrending : function(req){    
-    base64 = new Image();
-    base64.src = echartBar.getDataURL({
-        pixelRatio: 2,
-        backgroundColor: '#fff'
-    });
+  exporttrending : function(req){        
     console.log(req)    
     console.log(base64.src)
     var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
@@ -1476,8 +1471,13 @@ var navmodule = {
                     data: legendtopxAxis
                 }
             ],
-           calculable : true,
-              series: dataseries
+            calculable : true,
+            series: dataseries
+          });
+          base64 = new Image();
+          base64.src = echartBar.getDataURL({
+              pixelRatio: 2,
+              backgroundColor: '#fff'
           });          
         });
         echartBar.setOption({
@@ -1609,7 +1609,12 @@ var navmodule = {
           ],
           calculable : true,
           series: dataseries
-        });        
+        });
+        base64 = new Image();
+          base64.src = echartBar.getDataURL({
+              pixelRatio: 2,
+              backgroundColor: '#fff'
+          });                  
       })
     }else{
       $('#bargraph').html('')
