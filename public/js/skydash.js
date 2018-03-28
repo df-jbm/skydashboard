@@ -836,6 +836,9 @@ var navmodule = {
       }      
       output += '</tbody></table>'
       $('#programeperformance').scrollTop(0)
+      $('#programeperformance').css({
+        'padding-right' : '100px'
+      })
       $('#programeperformance').html(output)
       last_page = data.data.last_page;
       console.log(last_page)
