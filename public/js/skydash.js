@@ -839,7 +839,7 @@ var navmodule = {
       $('#programeperformance').html(output)
       if(isIE11 == true){
         $('#programeperformance').css({
-          'padding-right' : '20px'
+          'padding-right' : '17px'
         })
       }      
       last_page = data.data.last_page;
