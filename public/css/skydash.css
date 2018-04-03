@@ -56,6 +56,8 @@
 #table-channelperformance tr td img{
   vertical-align: middle;
   -ms-interpolation-mode: bicubic;
+  width: 30px;
+  height: auto;
 }
 
 #table-channelperformance tr td.active,#table-programmeperformance tr.active{
