@@ -253,4 +253,7 @@ body main .row #performance-content .card .card-body .table-responsive{
   img{
     -ms-interpolation-mode: bicubic;
   }
+  table tr td img{
+    image-rendering: crisp-edges;    
+  }
 }
