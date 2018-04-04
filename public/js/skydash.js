@@ -665,7 +665,7 @@ var navmodule = {
       $('#channelperformance').scrollTop(0)
       $('#channelperformance').html(output)
 
-      $('#table-channelperformance tbody tr td img').bicubicImgInterpolation({
+      $('#table-channelperformance tr td img').bicubicImgInterpolation({
           crossOrigin: 'anonymous' //otherwise browser security error is triggered
       });
       if(isIE11 == true){
