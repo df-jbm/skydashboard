@@ -684,13 +684,11 @@ var navmodule = {
         height : "53px",
       })      
       if(isIE11 == true){
+        alert('test')
         $('#table-channelperformance tr td img').bicubicImgInterpolation({
           crossOrigin: 'anonymous' //otherwise browser security error is triggered
         });
-      }
-      if ( isIE11 == true ) {
-        alert( $.browser.version );
-      }
+      }      
       $('#table-channelperformance td:not(:first-child)').each(function(){
         $(this).click(function(){
           if($(this).attr("id")!= undefined){
