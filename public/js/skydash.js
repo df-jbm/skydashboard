@@ -668,12 +668,7 @@ var navmodule = {
       output += '</tr>'
       output += '</tbody></table>';
       $('#channelperformance').scrollTop(0)
-      $('#channelperformance').html(output)
-      if(isIE11 == true){
-        $('#table-channelperformance tr td #channellogo').bicubicImgInterpolation({
-          crossOrigin: 'anonymous' //otherwise browser security error is triggered
-        });
-      }
+      $('#channelperformance').html(output)  
       if(isIE11 == true){
         $('#channelperformance').css({
           'padding-right' : '17px'
@@ -1742,7 +1737,11 @@ $(function(){
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-
+  if(isIE11 == true){
+    $('#table-channelperformance tr td img').bicubicImgInterpolation({
+      crossOrigin: 'anonymous' //otherwise browser security error is triggered
+    });
+  }
   window.setInterval(check_processes, 10000);
   function check_processes(){   
   $.get(window.location.href + "process").then(function(data){      
