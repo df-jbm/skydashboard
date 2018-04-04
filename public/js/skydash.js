@@ -669,7 +669,11 @@ var navmodule = {
       output += '</tbody></table>';
       $('#channelperformance').scrollTop(0)
       $('#channelperformance').html(output)
-      
+      if(isIE11 == true){
+        $('#table-channelperformance tr td img').bicubicImgInterpolation({
+          crossOrigin: 'anonymous' //otherwise browser security error is triggered
+        });
+      }
       if(isIE11 == true){
         $('#channelperformance').css({
           'padding-right' : '17px'
@@ -736,11 +740,6 @@ var navmodule = {
           }
         })
       })
-      if(isIE11){
-        $('#table-channelperformance tr td img').bicubicImgInterpolation({
-          crossOrigin: 'anonymous' //otherwise browser security error is triggered
-        });
-      }
     }else{
       $('#channelperformance').html('')
       $('#programeperformance').html('')
