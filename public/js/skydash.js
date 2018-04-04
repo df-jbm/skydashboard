@@ -664,6 +664,10 @@ var navmodule = {
       output += '</tbody></table>';
       $('#channelperformance').scrollTop(0)
       $('#channelperformance').html(output)
+
+      $('#table-channelperformance tbody tr td img').bicubicImgInterpolation({
+          crossOrigin: 'anonymous' //otherwise browser security error is triggered
+      });
       if(isIE11 == true){
         $('#channelperformance').css({
           'padding-right' : '17px'
@@ -1732,10 +1736,7 @@ $(function(){
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  
-  $('table tr td img').bicubicImgInterpolation({
-      crossOrigin: 'anonymous' //otherwise browser security error is triggered
-  });
+
   window.setInterval(check_processes, 10000);
   function check_processes(){   
   $.get(window.location.href + "process").then(function(data){      
