@@ -480,7 +480,7 @@ var navmodule = {
       for(var i in Formname){
         output += '<td class="text-center"><img height="50" src="channel/'+ Formname[i] +'Channel.'+ ext +'" alt="'+ Formname[i] +'"></td>';
       }
-        output += '<td class="text-center bg-light" width="150"><img width="25" src="channel/globe.png" class="img-responsive">&nbsp;&nbsp;<small>TOTAL</small></td>';
+        output += '<td class="text-center bg-light" width="150"><img width="25" src="channel/globe.'+ ext +'" class="img-responsive">&nbsp;&nbsp;<small>TOTAL</small></td>';
         output += '</tr></thead><tbody>';
         var globaltotal = 0;
       for(var i in PerformanceChannels){
