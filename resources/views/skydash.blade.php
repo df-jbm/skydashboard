@@ -174,6 +174,7 @@
     <script src="js/html2canvas.min.js"></script>
     <script src="js/xlsx.core.min.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script src="js/bicubicInterpolation.js"></script>
     <script src="js/skydash.js?v=1"></script>
   </body>
 </html>
