@@ -1733,6 +1733,9 @@ $(function(){
     }
   });
   
+  $('table tr td img').bicubicImgInterpolation({
+      crossOrigin: 'anonymous' //otherwise browser security error is triggered
+  });
   window.setInterval(check_processes, 10000);
   function check_processes(){   
   $.get(window.location.href + "process").then(function(data){      
