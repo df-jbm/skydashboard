@@ -683,8 +683,7 @@ var navmodule = {
       $('.floatThead-col').css({
         height : "53px",
       })      
-      if(isIE11 == true){
-        alert('test')
+      if(isIE11 == true){        
         $('#table-channelperformance tr td img').bicubicImgInterpolation({
           crossOrigin: 'anonymous' //otherwise browser security error is triggered
         });
