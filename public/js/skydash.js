@@ -736,7 +736,7 @@ var navmodule = {
           }
         })
       })
-      if(isIE11 == true){
+      if(isIE11){
         $('#table-channelperformance tr td img').bicubicImgInterpolation({
           crossOrigin: 'anonymous' //otherwise browser security error is triggered
         });
