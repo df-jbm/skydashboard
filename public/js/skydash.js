@@ -500,7 +500,7 @@ var navmodule = {
         if(PerformanceChannels[i].ChannelName != ''){          
           output += '<td>'+ PerformanceChannels[i].ChannelName +'<img class="float-right" src="logo/'+ logo.replace('+', '-') +'.'+ ext +'" class="img-responsive"></td>';
         }else{
-          output += '<td class="text-center bg-light"><img width="25" src="channel/globe.png" class="img-responsive">&nbsp;&nbsp;TOTAL</td>';
+          output += '<td class="text-center bg-light"><img width="25" src="channel/globe.'+ ext +'" class="img-responsive">&nbsp;&nbsp;TOTAL</td>';
         }
         for(var x in Formname){
 
