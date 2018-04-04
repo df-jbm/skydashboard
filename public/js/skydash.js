@@ -469,13 +469,18 @@ var navmodule = {
           GetPlatFormIDs.push(PerformanceChannels[i].Channels[x].PlatFormID)
         }
       }
+      if(isIE11 == true){
+        var ext = 'jpg'
+      }else{
+        var ext = 'png'
+      }
 
       var output = '<table class="table-bordered table-channelperformance" id="table-channelperformance" width="100%">';
         output += '<thead class="bg-white"><tr><td width="250"></td>';
       for(var i in Formname){
-        output += '<td class="text-center"><img height="50" src="channel/'+ Formname[i] +'Channel.png" alt="'+ Formname[i] +'"></td>';
+        output += '<td class="text-center"><img height="50" src="channel/'+ Formname[i] +'Channel.'+ ext +'" alt="'+ Formname[i] +'"></td>';
       }
-        output += '<td class="text-center bg-light" width="150"><img width="25" src="channel/globe.png" class="img-responsive">&nbsp;&nbsp;<small>TOTAL</small></td>';
+        output += '<td class="text-center bg-light" width="150"><img width="25" src="channel/globe.'+ ext +'" class="img-responsive">&nbsp;&nbsp;<small>TOTAL</small></td>';
         output += '</tr></thead><tbody>';
         var globaltotal = 0;
       for(var i in PerformanceChannels){
@@ -492,12 +497,7 @@ var navmodule = {
         }
         var totalAvgVal = 0;
         output += '<tr>';
-        if(PerformanceChannels[i].ChannelName != ''){
-          if(isIE11 == true){
-            var ext = 'jpg'
-          }else{
-            var ext = 'png'
-          }
+        if(PerformanceChannels[i].ChannelName != ''){          
           output += '<td>'+ PerformanceChannels[i].ChannelName +'<img class="float-right" src="logo/'+ logo.replace('+', '-') +'.'+ ext +'" class="img-responsive"></td>';
         }else{
           output += '<td class="text-center bg-light"><img width="25" src="channel/globe.png" class="img-responsive">&nbsp;&nbsp;TOTAL</td>';
