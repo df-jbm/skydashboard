@@ -164,6 +164,7 @@
       </div>
     </main>
     <script src="js/jquery.min.js"></script>    
+    <script src="js/bicubicInterpolation.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootbox.min.js"></script>
@@ -173,8 +174,7 @@
     <script src="js/alasql.min.js"></script>
     <script src="js/html2canvas.min.js"></script>
     <script src="js/xlsx.core.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/bicubicInterpolation.js"></script>
+    <script src="js/jquery-ui.js"></script>    
     <script src="js/skydash.js?v=1"></script>
   </body>
 </html>
