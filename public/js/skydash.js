@@ -684,11 +684,9 @@ var navmodule = {
       $('.floatThead-col').css({
         height : "53px",
       })
-      if(isIE11 == true){
-        $('#table-channelperformance tr td img').bicubicImgInterpolation({
-          crossOrigin: 'anonymous' //otherwise browser security error is triggered
-        });
-      }
+      $('#table-channelperformance tr td img').bicubicImgInterpolation({
+        crossOrigin: 'anonymous' //otherwise browser security error is triggered
+      });
       $('#table-channelperformance td:not(:first-child)').each(function(){
         $(this).click(function(){
           if($(this).attr("id")!= undefined){
