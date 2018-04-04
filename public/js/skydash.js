@@ -498,7 +498,7 @@ var navmodule = {
         var totalAvgVal = 0;
         output += '<tr>';
         if(PerformanceChannels[i].ChannelName != ''){          
-          output += '<td>'+ PerformanceChannels[i].ChannelName +'<img class="float-right" src="logo/'+ logo.replace('+', '-') +'.'+ ext +'" class="img-responsive"></td>';
+          output += '<td>'+ PerformanceChannels[i].ChannelName +'<img id="channellogo" class="float-right" src="logo/'+ logo.replace('+', '-') +'.'+ ext +'" class="img-responsive"></td>';
         }else{
           output += '<td class="text-center bg-light"><img width="25" src="channel/globe.'+ ext +'" class="img-responsive">&nbsp;&nbsp;TOTAL</td>';
         }
@@ -670,7 +670,7 @@ var navmodule = {
       $('#channelperformance').scrollTop(0)
       $('#channelperformance').html(output)
       if(isIE11 == true){
-        $('#table-channelperformance tr td img').bicubicImgInterpolation({
+        $('#table-channelperformance tr td #channellogo').bicubicImgInterpolation({
           crossOrigin: 'anonymous' //otherwise browser security error is triggered
         });
       }
