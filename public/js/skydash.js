@@ -688,7 +688,7 @@ var navmodule = {
           crossOrigin: 'anonymous' //otherwise browser security error is triggered
         });
       }
-      if ( $.browser.msie ) {
+      if ( isIE11 == true ) {
         alert( $.browser.version );
       }
       $('#table-channelperformance td:not(:first-child)').each(function(){
