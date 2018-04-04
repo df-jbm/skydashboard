@@ -669,14 +669,13 @@ var navmodule = {
       output += '</tbody></table>';
       $('#channelperformance').scrollTop(0)
       $('#channelperformance').html(output)
-      
+      $('#table-channelperformance tr td img').bicubicImgInterpolation({
+        crossOrigin: 'anonymous' //otherwise browser security error is triggered
+      });
       if(isIE11 == true){
         $('#channelperformance').css({
           'padding-right' : '17px'
-        })
-        $('#table-channelperformance tr td img').bicubicImgInterpolation({
-          crossOrigin: 'anonymous' //otherwise browser security error is triggered
-        });
+        })        
       }
       var $table = $('table#table-channelperformance');
       $table.floatThead();      
