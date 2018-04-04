@@ -668,14 +668,7 @@ var navmodule = {
       output += '</tr>'
       output += '</tbody></table>';
       $('#channelperformance').scrollTop(0)
-      $('#channelperformance').html(output)
-      if(isIE11 == true){
-        $('#table-channelperformance tr td #channellogo').each(function(){
-          $(this).bicubicImgInterpolation({
-            crossOrigin: 'anonymous' //otherwise browser security error is triggered
-          });
-        })        
-      }
+      $('#channelperformance').html(output)      
       if(isIE11 == true){
         $('#channelperformance').css({
           'padding-right' : '17px'
@@ -690,6 +683,11 @@ var navmodule = {
       $('.floatThead-col').css({
         height : "53px",
       })      
+      if(isIE11 == true){
+        $('#table-channelperformance tr td img').bicubicImgInterpolation({
+          crossOrigin: 'anonymous' //otherwise browser security error is triggered
+        });
+      }
       $('#table-channelperformance td:not(:first-child)').each(function(){
         $(this).click(function(){
           if($(this).attr("id")!= undefined){
