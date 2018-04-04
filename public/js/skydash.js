@@ -493,7 +493,12 @@ var navmodule = {
         var totalAvgVal = 0;
         output += '<tr>';
         if(PerformanceChannels[i].ChannelName != ''){
-          output += '<td>'+ PerformanceChannels[i].ChannelName +'<img class="float-right" src="logo/'+ logo.replace('+', '-') +'.png" class="img-responsive"></td>';
+          if(isIE11 == true){
+            var ext = 'jpg'
+          }else{
+            var ext = 'png'
+          }
+          output += '<td>'+ PerformanceChannels[i].ChannelName +'<img class="float-right" src="logo/'+ logo.replace('+', '-') +'.'+ ext +'" class="img-responsive"></td>';
         }else{
           output += '<td class="text-center bg-light"><img width="25" src="channel/globe.png" class="img-responsive">&nbsp;&nbsp;TOTAL</td>';
         }
