@@ -670,9 +670,11 @@ var navmodule = {
       $('#channelperformance').scrollTop(0)
       $('#channelperformance').html(output)
 
-      $('#table-channelperformance tr td img').bicubicImgInterpolation({
+      if(isIE11 == true){
+        $('#table-channelperformance tr td img').bicubicImgInterpolation({
           crossOrigin: 'anonymous' //otherwise browser security error is triggered
-      });
+        });
+      }
       if(isIE11 == true){
         $('#channelperformance').css({
           'padding-right' : '17px'
