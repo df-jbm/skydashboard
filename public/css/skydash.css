@@ -253,11 +253,6 @@ body main .row #performance-content .card .card-body .table-responsive{
 @media all and (-ms-high-contrast:none){
   @-ms-viewport{width:auto!important}
   img{
-    -ms-interpolation-mode: bicubic;
-    -ms-interpolation-mode: nearest-neighbor;
-  }  
-  table tr td img{
-    image-rendering: crisp-edges;    
-    -ms-interpolation-mode: nearest-neighbor;
-  }
+    -ms-interpolation-mode: bicubic;  
+  }    
 }
