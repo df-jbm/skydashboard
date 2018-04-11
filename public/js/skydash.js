@@ -684,11 +684,9 @@ var navmodule = {
         height : "53px",
       })      
       if(isIE11 == true){        
-        $('#table-channelperformance #channellogo').each(function(){
-          $(this).bicubicImgInterpolation({
-            crossOrigin: 'anonymous' //otherwise browser security error is triggered
-          });
-        })        
+        $('#table-channelperformance tr td img').bicubicImgInterpolation({
+          crossOrigin: 'anonymous',
+        });
       }      
       $('#table-channelperformance td:not(:first-child)').each(function(){
         $(this).click(function(){
