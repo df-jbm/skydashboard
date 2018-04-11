@@ -4,12 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- enable canvas for old versions of IE -->
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta http-equiv="edit-Type" edit="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+    <meta name="author" content="">    
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.css" rel="stylesheet">
@@ -17,6 +12,10 @@
     <link href="css/jquery-ui.css" rel="stylesheet">
     <!-- <link href="css/style.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/skydash.css">
+    <!-- enable canvas for old versions of IE -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="edit-Type" edit="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" id="warning-nav">
