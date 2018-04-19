@@ -761,7 +761,8 @@ var navmodule = {
       var PeriodString = $('#customperiod').val();
     }  
     page = 1;
-    request = {
+    
+    programmereq = {
       ChannelGroupID : ChGroupID,
       ChannelID : ChID,
       PlatFormID : PFormID,
@@ -788,31 +789,13 @@ var navmodule = {
       var sort000 = ''
       var sortCount = '<img height="20" src="sort/sort.png" class="img-responsive float-right">'
       var sortATV = ''
-    }
-
-    console.log(request)
+    }    
     
-    /*programmereq = 'ChannelGroupID='+ ChGroupID + '&' +
-      'ChannelID='+ ChID + '&' +
-      'PlatFormID='+ PFormID + '&' +
-      'PeriodTypeID='+ PtypeID + '&' +
-      'Period='+ Prange + '&' +
-      'PeriodString="'+ PeriodString +'"&'+
-      'Filter="'+ filter +'"&'+
-      'InputSortID='+SumSort;*/
-    programmereq = {
-      ChannelGroupID : ChGroupID,
-      ChannelID : ChID,
-      PlatFormID : PFormID,
-      PeriodTypeID : PtypeID,
-      Period : Prange,
-      Filter : filter,
-      InputSortID : SumSort,
-    }
+
   console.log('programmereq: '+programmereq);  
     
 
-    $.get(window.location.href + "programmeperformance", request, function(data){
+    $.get(window.location.href + "programmeperformance", programmereq, function(data){
       console.log(data)
       var form ='<img height="30" src="channel/'+ FormName +'Prog.png" alt="'+ FormName +'">'      
       var output = '<table class="table table-bordered" id="table-programmeperformance" width="100%">';
