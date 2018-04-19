@@ -214,7 +214,7 @@ var navmodule = {
       var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
       var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
       expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text()+ ": " + $('#customperiod').val(),"Search, "+ filterval,""]);
-      expotRows.push(["Channel Name","Platform Name","000"]);
+      expotRows.push(["Channel Name","Platform Name","000",""]);
       var totalchannels = []
       for (var i in data) {
           var sum000val = Number(data[i].Sum000).toFixed(2).replace(/\./g, ',');
@@ -242,7 +242,7 @@ var navmodule = {
               }   
             }
           }else{
-            expotRows.push(["Total",data[i].PlatFormName,sum000val]);
+            expotRows.push(["Total",data[i].PlatFormName,sum000val,""]);
           }                  
       }
       for(var i in totalchannels){
@@ -264,7 +264,7 @@ var navmodule = {
           //console.log(totalfigure)
         }
         if(totalchannels[i] != ""){
-          expotRows.push([totalchannels[i],"Total",totalfigure.toFixed(2).replace(/\./g, ',')]);
+          expotRows.push([totalchannels[i],"Total",totalfigure.toFixed(2).replace(/\./g, ','),""]);
         }         
       }
       var totaltotalfigure = 0;
@@ -277,7 +277,7 @@ var navmodule = {
           totaltotalfigure += parseFloat(data[d].Sum000)           
         }
       }
-      expotRows.push(["Total","Total",totaltotalfigure.toFixed(2).replace(/\./g, ',')]);
+      expotRows.push(["Total","Total",totaltotalfigure.toFixed(2).replace(/\./g, ','),""]);
       expotRows.push([""])
       expotRows.push(["Sources: linear: ClearView Panel (15k since Dec16), aggregation on household level / on demand: Push: ClearView Panel (15k since Dec16), aggregation on household level; Pull: Backend measurement, Germany / Go and Ticket: Census measurement, Omniture/Adobe, Germany / rossi version 1.0"])
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ChannelPerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);
@@ -858,7 +858,7 @@ var navmodule = {
         PlatFormID : PFormID,
         PeriodTypeID : PtypeID,
         Period : Prange,
-  PeriodString : PeriodString,
+        PeriodString : PeriodString,
         Filter : filter,
         InputSortID : SumSort,
         page : page,
