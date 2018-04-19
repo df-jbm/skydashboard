@@ -792,14 +792,23 @@ var navmodule = {
 
     console.log(request)
     
-    programmereq = 'ChannelGroupID='+ ChGroupID + '&' +
+    /*programmereq = 'ChannelGroupID='+ ChGroupID + '&' +
       'ChannelID='+ ChID + '&' +
       'PlatFormID='+ PFormID + '&' +
       'PeriodTypeID='+ PtypeID + '&' +
       'Period='+ Prange + '&' +
       'PeriodString="'+ PeriodString +'"&'+
       'Filter="'+ filter +'"&'+
-      'InputSortID='+SumSort;
+      'InputSortID='+SumSort;*/
+    programmereq = {
+      ChannelGroupID : ChGroupID,
+      ChannelID : ChID,
+      PlatFormID : PFormID,
+      PeriodTypeID : PtypeID,
+      Period : Prange,
+      Filter : filter,
+      InputSortID : SumSort,
+    }
   console.log('programmereq: '+programmereq);  
     
 
