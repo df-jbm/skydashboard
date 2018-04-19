@@ -326,7 +326,7 @@ var navmodule = {
     var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
     $.ajax({
       type: "POST",
-      url: "/spreadsheet/basic.php?"+ req +"&Channel="+exportchannelname+"&Platform="+exportplatform,
+      url: "/Export/basic.php?"+ req +"&Channel="+exportchannelname+"&Platform="+exportplatform,
       data: {
         img: base64.src,
         Channellist : $('#channelgroup option:selected').text(),
