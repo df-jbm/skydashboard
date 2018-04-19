@@ -222,9 +222,9 @@ var navmodule = {
             if($('#channelgroup').val() != 2000){
               
               if(data[i].ChannelName != ""){
-                expotRows.push([data[i].ChannelName,data[i].PlatFormName,sum000val]);
+                expotRows.push([data[i].ChannelName,data[i].PlatFormName,sum000val,""]);
               }else{
-                expotRows.push(["Total",data[i].PlatFormName,sum000val]);
+                expotRows.push(["Total",data[i].PlatFormName,sum000val,""]);
               }
               if($.inArray(data[i].ChannelName, totalchannels) == -1){
                 totalchannels.push(data[i].ChannelName)
@@ -232,9 +232,9 @@ var navmodule = {
             
             }else{              
               if(data[i].ChannelGroupName != ""){
-                expotRows.push([data[i].ChannelGroupName,data[i].PlatFormName,sum000val]);
+                expotRows.push([data[i].ChannelGroupName,data[i].PlatFormName,sum000val,""]);
               }else{
-                expotRows.push(["Total",data[i].PlatFormName,sum000val]);
+                expotRows.push(["Total",data[i].PlatFormName,sum000val,""]);
               }              
 
               if($.inArray(data[i].ChannelGroupName, totalchannels) == -1){
@@ -278,8 +278,8 @@ var navmodule = {
         }
       }
       expotRows.push(["Total","Total",totaltotalfigure.toFixed(2).replace(/\./g, ','),""]);
-      expotRows.push([""])
-      expotRows.push(["Sources: linear: ClearView Panel (15k since Dec16), aggregation on household level / on demand: Push: ClearView Panel (15k since Dec16), aggregation on household level; Pull: Backend measurement, Germany / Go and Ticket: Census measurement, Omniture/Adobe, Germany / rossi version 1.0"])
+      expotRows.push(["","","",""])
+      expotRows.push(["Sources: linear: ClearView Panel (15k since Dec16), aggregation on household level / on demand: Push: ClearView Panel (15k since Dec16), aggregation on household level; Pull: Backend measurement, Germany / Go and Ticket: Census measurement, Omniture/Adobe, Germany / rossi version 1.0","","",""])
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ChannelPerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);
       $('#dlchannel').html("Toogle button to download again.")
     });
@@ -293,24 +293,24 @@ var navmodule = {
       var datetime = dt.getFullYear() + "" + Number(dt.getMonth() + 1)  + "" + dt.getDate() + "" + dt.getHours() + "" + dt.getMinutes() + "" + dt.getSeconds();
       var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
       expotRows.push(["Channel list, "+ $('#channelgroup option:selected').text(),"Period, "+ $('#periodtype option:selected').text() + ": " + $('#customperiod').val(),"Search, "+ filterval,"",""]);           
-      expotRows.push(["Channel name: "+ exportchannelname,"Platform name: " + exportplatform,"",""]);
+      expotRows.push(["Channel name: "+ exportchannelname,"Platform name: " + exportplatform,"","","",""]);
 
       if($('#periodtype').val() == 1 && $('#channelgroup').val() != 2000 && activeChannel != -1 && activePlatForm == 1){
         expotRows.push(["BMICode","ProgrammeTitle","Start time","# Linear runs","000"]);    
       }else{
-        expotRows.push(["BMICode","ProgrammeTitle","# Linear runs","000"]);
+        expotRows.push(["BMICode","ProgrammeTitle","# Linear runs","000",""]);
       }                
       
       for (var i in data) {
         var sum000val = Number(data[i].Sum000).toFixed(2).replace(/\./g, ',');
         if($('#periodtype').val() == 1 && $('#channelgroup').val() != 2000 && activeChannel != -1 && activePlatForm == 1){
-          expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].FirstFromTime,data[i].CNT,sum000val]);
+          expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].FirstFromTime,data[i].CNT,sum000val,""]);
         }else{
-          expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,sum000val]);
+          expotRows.push([data[i].BMICode,data[i].ProgrammeTitle,data[i].CNT,sum000val,""]);
         }        
-      }
-      expotRows.push([""])
-      expotRows.push(["Sources: linear: ClearView Panel (15k since Dec16), aggregation on household level / on demand: Push: ClearView Panel (15k since Dec16), aggregation on household level; Pull: Backend measurement, Germany / Go and Ticket: Census measurement, Omniture/Adobe, Germany / rossi version 1.0"])
+      }      
+      expotRows.push(["","","","",""])
+      expotRows.push(["Sources: linear: ClearView Panel (15k since Dec16), aggregation on household level / on demand: Push: ClearView Panel (15k since Dec16), aggregation on household level; Pull: Backend measurement, Germany / Go and Ticket: Census measurement, Omniture/Adobe, Germany / rossi version 1.0","","","",""])
       alasql("SELECT * INTO "+ $("input[name='format']:checked").val() +" ('ProgrammePerformance"+ datetime +"."+ $("input[name='format']:checked").val() +"',{headers:false}) FROM ? ", [expotRows]);      
       $('#dlprog').html("Toogle button to download again.")  
     })
