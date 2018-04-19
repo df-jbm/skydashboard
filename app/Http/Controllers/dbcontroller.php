@@ -18,6 +18,7 @@ class dbcontroller extends Controller
   protected $numbersToTake = 0;
   protected $platforms = array();
   protected $process = array();
+  protected $exportprogramme = array();
 
   public function __construct(){
     $this->GetChannelGroups = DB::select('EXEC GetChannelGroups');
@@ -54,8 +55,7 @@ class dbcontroller extends Controller
     return response($this->GetChannelPerformance);
   }
 
-  public function GetProgramePerformance(Request $r){
-    $this->GetProgramePerformance = array();    
+  public function GetProgramePerformance(Request $r){            
     $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->PeriodString,$r->Filter,$r->InputSortID));        
     $page = Input::get('page', $r->page);
     $paginate = 10;
@@ -83,8 +83,8 @@ class dbcontroller extends Controller
 
   public function exportprogramme(Request $r){
     $currentdatetime = date('Ymdhis');
-    $this->GetProgramePerformance = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->PeriodString,$r->Filter,$r->InputSortID));
-    return response($this->GetProgramePerformance);
+    $this->exportprogramme = DB::select('EXEC GetProgramePerformance ?, ?, ?, ?, ?, ?, ?, ?',array($r->ChannelGroupID,$r->ChannelID,$r->PlatFormID,$r->PeriodTypeID,$r->Period,$r->PeriodString,$r->Filter,$r->InputSortID));
+    return response($this->exportprogramme);
   }
   public function exporttrending(Request $r){
     $currentdatetime = date('Ymdhis');
