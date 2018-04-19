@@ -326,7 +326,7 @@ var navmodule = {
     var filterval = $('#filterbmi').val() != '' ? $('#filterbmi').val() : 'None';
     $.ajax({
       type: "POST",
-      url: "/Export/basic.php?"+ req +"&Channel="+exportchannelname+"&Platform="+exportplatform,
+      url: "/spreadsheet/basic.php?"+ req +"&Channel="+exportchannelname+"&Platform="+exportplatform,
       data: {
         img: base64.src,
         Channellist : $('#channelgroup option:selected').text(),
@@ -338,7 +338,7 @@ var navmodule = {
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
       success: function(result){        
         if(result == 'done'){
-          window.open('/spreadsheet/trending.xlsx','_blank');
+          window.open('/Export/trending.xlsx','_blank');
           $('#dltrend').html("Toogle button to download again.");  
         }
       }
